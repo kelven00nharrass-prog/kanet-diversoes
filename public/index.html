@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ka'Net diversões — O Jogo das Equipas</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonte Premium de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NOTIFICAÇÕES GLOBAL (Erros, alertas, etc.) -->
+  <div id="toast" class="toast hidden"></div>
+
+  <!-- CONTAINER PRINCIPAL -->
+  <main id="app-container">
+
+    <!-- ==============================================
+         1. TELA DE ENTRADA / SELECÇÃO DE PAPEL (LOBBY JOIN)
+         ============================================== -->
+    <section id="screen-lobby-join" class="screen active">
+      <div class="glass-card logo-header">
+        <h1 class="logo-text">Ka'Net <span>diversões</span></h1>
+        <p class="subtitle">Inspirado no jogo 30 Segundos</p>
+      </div>
+
+      <div class="grid-lobby">
+        <!-- Criar Partida -->
+        <div class="glass-card lobby-choice-card">
+          <h2>👑 Criar Novo Jogo</h2>
+          <p>Seja o anfitrião, configure as equipas, lance o dado e controle toda a partida.</p>
+          <button id="btn-create-room" class="btn btn-primary btn-glow-blue">Criar Sala</button>
+        </div>
+
+        <!-- Entrar em Partida -->
+        <div class="glass-card lobby-choice-card">
+          <h2>📱 Entrar numa Partida</h2>
+          <p>Ligue o seu telemóvel como jogador ou configure uma TV no centro da mesa.</p>
+          
+          <div class="form-group">
+            <input type="text" id="input-room-code" placeholder="Código da Sala (Ex: A8D7F)" maxlength="5" class="input-field">
+          </div>
+          
+          <div class="form-group">
+            <select id="select-join-role" class="select-field">
+              <option value="player">👤 Jogador de Equipa</option>
+              <option value="tv">📺 Ecrã Principal (TV Mode)</option>
+              <option value="spectator">👁️ Espectador</option>
+            </select>
+          </div>
+
+          <div id="player-inputs" class="form-group">
+            <input type="text" id="input-player-name" placeholder="O seu Nome" maxlength="15" class="input-field">
+            <select id="select-player-team" class="select-field">
+              <option value="Azul">Equipa Azul 🔵</option>
+              <option value="Vermelho">Equipa Vermelha 🔴</option>
+              <option value="Verde">Equipa Verde 🟢</option>
+              <option value="Amarelo">Equipa Amarela 🟡</option>
+            </select>
+          </div>
+
+          <button id="btn-join-room" class="btn btn-secondary">Entrar no Jogo</button>
+        </div>
+      </div>
+
+      <!-- Botões de Ajuda/Instruções -->
+      <div class="lobby-help-buttons" style="margin-top: 30px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <button id="btn-help-rules" class="btn-sm">📖 Regras</button>
+        <button id="btn-help-connect" class="btn-sm">📱 Como Conectar</button>
+        <button id="btn-help-play" class="btn-sm">🎮 Como Jogar</button>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         2. TELA DE SALA DE ESPERA (LOBBY ACTIVE)
+         ============================================== -->
+    <section id="screen-lobby-active" class="screen">
+      <div class="header-room">
+        <div>
+          <h2>Código da Sala: <span id="display-room-code" class="glow-text">-----</span></h2>
+          <p id="room-ip-info" class="ip-info"></p>
+        </div>
+        <button id="btn-leave-room" class="btn btn-danger">Sair</button>
+      </div>
+
+      <div class="grid-lobby-active">
+        <!-- Configurações e Jogadores -->
+        <div class="glass-card">
+          <div class="card-header">
+            <h3>👥 Gestão de Equipas</h3>
+            <div id="host-controls" class="host-only hidden">
+              <button id="btn-shuffle-teams" class="btn-sm btn-glow-green">✨ Sortear Equipas</button>
+            </div>
+          </div>
+
+          <!-- LISTA DE EQUIPAS E SEUS MEMBROS -->
+          <div class="teams-container">
+            <!-- Equipa Azul -->
+            <div class="team-lobby-card border-blue" data-team="Azul">
+              <h4 class="color-blue">🔵 Equipa Azul</h4>
+              <ul class="player-list" id="list-team-azul"></ul>
+              <button class="btn-sm btn-join-team" data-team="Azul">+ Entrar</button>
+            </div>
+            <!-- Equipa Vermelha -->
+            <div class="team-lobby-card border-red" data-team="Vermelho">
+              <h4 class="color-red">🔴 Equipa Vermelha</h4>
+              <ul class="player-list" id="list-team-vermelho"></ul>
+              <button class="btn-sm btn-join-team" data-team="Vermelho">+ Entrar</button>
+            </div>
+            <!-- Equipa Verde -->
+            <div class="team-lobby-card border-green" data-team="Verde">
+              <h4 class="color-green">🟢 Equipa Verde</h4>
+              <ul class="player-list" id="list-team-verde"></ul>
+              <button class="btn-sm btn-join-team" data-team="Verde">+ Entrar</button>
+            </div>
+            <!-- Equipa Amarela -->
+            <div class="team-lobby-card border-yellow" data-team="Amarelo">
+              <h4 class="color-yellow">🟡 Equipa Amarela</h4>
+              <ul class="player-list" id="list-team-amarelo"></ul>
+              <button class="btn-sm btn-join-team" data-team="Amarelo">+ Entrar</button>
+            </div>
+          </div>
+          <!-- Host can add players manually (crucial for Mode 1 - Single Device) -->
+          <div class="host-only hidden" style="margin-top: 16px; display: flex; gap: 8px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 16px; width: 100%;">
+            <input type="text" id="input-add-player-manual" placeholder="Nome do Jogador" class="input-field" style="padding: 10px;">
+            <select id="select-add-player-team" class="select-field" style="padding: 10px; max-width: 140px;">
+              <option value="Azul">Azul 🔵</option>
+              <option value="Vermelho">Vermelho 🔴</option>
+              <option value="Verde">Verde 🟢</option>
+              <option value="Amarelo">Amarelo 🟡</option>
+            </select>
+            <button id="btn-add-player-manual" class="btn btn-primary" style="padding: 10px 16px;">+ Adicionar</button>
+          </div>
+        </div>
+
+        <!-- QR Code e Start -->
+        <div class="glass-card flex-center flex-column">
+          <h3>📱 Ligar Dispositivos</h3>
+          <p class="text-muted">Aponte a câmara para entrar instantaneamente</p>
+          <div id="qrcode-container" class="qrcode-wrapper"></div>
+          
+          <div class="host-only hidden settings-wrapper form-group">
+            <label for="input-target-score">🏠 Pontos para ganhar:</label>
+            <input type="number" id="input-target-score" value="30" min="10" max="50" class="input-field short-input">
+          </div>
+
+          <div class="host-only hidden action-wrapper">
+            <button id="btn-start-game" class="btn btn-large btn-primary btn-glow-blue">🚀 Iniciar Partida</button>
+          </div>
+          <div class="player-only">
+            <p class="waiting-message animate-pulse">A aguardar que o anfitrião inicie a partida...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         3. TELA DE JOGO ATIVO
+         ============================================== -->
+    <section id="screen-game-active" class="screen">
+      <!-- PAINEL SUPERIOR: INFOS E SCOREBOARD -->
+      <header class="game-header">
+        <div class="game-info-badge">
+          <span id="game-status-label">A JOGAR</span>
+        </div>
+        <div id="game-score-board" class="mini-score-board">
+          <!-- Gerado dinamicamente -->
+        </div>
+        <div>
+          <span class="room-label">Sala: <strong id="game-room-id">-----</strong></span>
+        </div>
+      </header>
+
+      <!-- LAYOUT CENTRAL DE ACORDO COM O PAPEL -->
+      <div id="game-layout" class="game-layout">
+
+        <!-- A: VISÃO DO ANFITRIÃO (CONTROLES) -->
+        <div id="view-host" class="view-role hidden">
+          <div class="grid-host-controls">
+            <!-- Coluna de Ações -->
+            <div class="glass-card flex-center flex-column text-center">
+              <h3 class="turn-announcement">Fase Atual</h3>
+              <div id="host-turn-info" class="team-banner text-large">...</div>
+              
+              <!-- Área de Lançamento de Dado -->
+              <div class="dice-section form-group">
+                <button id="btn-host-roll" class="btn btn-secondary btn-glow-yellow">🎲 Lançar Dado</button>
+                <div id="host-dice-result" class="dice-badge">--</div>
+              </div>
+
+              <!-- Ações da Ronda -->
+              <div class="round-actions form-group">
+                <button id="btn-host-start-round" class="btn btn-large btn-success btn-glow-green" disabled>▶️ Iniciar Rodada (30s)</button>
+                <button id="btn-host-stop-early" class="btn btn-danger hidden">🛑 Parar Tempo</button>
+              </div>
+
+              <div class="confirm-score-section">
+                <button id="btn-host-confirm-score" class="btn btn-large btn-primary btn-glow-blue" disabled>✅ Confirmar Pontos</button>
+              </div>
+            </div>
+
+            <!-- Coluna das Palavras da Carta -->
+            <div class="glass-card">
+              <h3>🎴 Validação da Carta</h3>
+              <p class="text-muted form-group">Selecione as palavras que a equipa acertou:</p>
+              
+              <ul id="host-words-list" class="words-validation-list">
+                <!-- Injetado dinamicamente -->
+              </ul>
+            </div>
+          </div>
+          <!-- Tabuleiro para o Host acompanhar -->
+          <div class="glass-card flex-column board-container-host" style="margin-top: 24px;">
+            <h3>🏆 Tabuleiro de Corrida</h3>
+            <div id="host-board-track" class="board-track">
+              <!-- Injetado dinamicamente -->
+            </div>
+          </div>
+        </div>
+
+        <!-- B: VISÃO DO ECRÃ PRINCIPAL (TV MODE) -->
+        <div id="view-tv" class="view-role hidden">
+          <div class="grid-tv-mode">
+            <!-- Tabuleiro à esquerda -->
+            <div class="glass-card flex-column">
+              <h3>🏆 Tabuleiro de Corrida</h3>
+              <div id="tv-board-track" class="board-track">
+                <!-- Casas do tabuleiro injetadas via JS -->
+              </div>
+            </div>
+
+            <!-- Status do Turno e Cronómetro à direita -->
+            <div class="flex-column grid-tv-sidebar">
+              <!-- Turn Banner -->
+              <div class="glass-card text-center flex-center flex-column sidebar-card">
+                <h3 id="tv-turn-title">Vez de Jogar</h3>
+                <div id="tv-current-team" class="team-banner-large">--</div>
+                <div id="tv-current-explainer" class="explainer-name">Explicador: --</div>
+              </div>
+
+              <!-- Dado e Tempo -->
+              <div class="glass-card flex-center flex-column sidebar-card relative">
+                <!-- Temporizador Circular -->
+                <div class="circular-timer-wrapper">
+                  <svg class="circular-timer-svg" viewBox="0 0 100 100">
+                    <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
+                    <circle id="timer-progress" class="timer-progress-bar" cx="50" cy="50" r="45"></circle>
+                  </svg>
+                  <div id="tv-timer-display" class="timer-text">30</div>
+                </div>
+
+                <!-- Dado Virtual -->
+                <div id="dice-container-3d" class="dice-container-3d">
+                  <div id="cube-3d" class="cube-3d show-front">
+                    <figure class="face front">0</figure>
+                    <figure class="face back">1</figure>
+                    <figure class="face right">2</figure>
+                    <figure class="face left">0</figure>
+                    <figure class="face top">1</figure>
+                    <figure class="face bottom">2</figure>
+                  </div>
+                </div>
+                <div id="tv-dice-label" class="dice-label">Lançando o Dado...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C: VISÃO DO JOGADOR DA EQUIPA -->
+        <div id="view-player" class="view-role hidden">
+          <!-- Caso 1: Aguardar a sua vez -->
+          <div id="player-waiting" class="glass-card text-center flex-center flex-column h-full">
+            <h3 class="animate-pulse">Aguarde...</h3>
+            <p id="player-waiting-msg" class="text-large">Outra equipa está a jogar de momento.</p>
+            <div id="player-turn-warning" class="team-banner-large">--</div>
+          </div>
+
+          <!-- Caso 2: É a vez da equipa, mas eu sou ADIVINHADOR -->
+          <div id="player-guessing" class="glass-card text-center flex-center flex-column h-full hidden">
+            <h3 class="color-green text-large uppercase">A sua equipa está a jogar!</h3>
+            <p class="text-muted form-group">Ouça com atenção o explicador e tente adivinhar!</p>
+            <div class="active-team-icon border-glow-green">🧠</div>
+            <div class="big-timer-display" id="player-guess-timer">30</div>
+          </div>
+
+          <!-- Caso 3: É a vez da equipa e EU SOU O EXPLICADOR (MOSTRA AS PALAVRAS) -->
+          <div id="player-explaining" class="glass-card flex-center flex-column h-full hidden">
+            <div class="text-center form-group">
+              <span class="badge badge-warning uppercase">Você é o Explicador!</span>
+              <h2>Descreva as palavras abaixo:</h2>
+              <p class="text-danger small">⚠️ Não diga a palavra, derivados ou traduções!</p>
+            </div>
+
+            <!-- LISTA DE 5 PALAVRAS -->
+            <div class="words-card-container" id="player-words-card">
+              <div class="word-card-item">1. <span class="word-text" id="p-word-0">-----</span></div>
+              <div class="word-card-item">2. <span class="word-text" id="p-word-1">-----</span></div>
+              <div class="word-card-item">3. <span class="word-text" id="p-word-2">-----</span></div>
+              <div class="word-card-item">4. <span class="word-text" id="p-word-3">-----</span></div>
+              <div class="word-card-item">5. <span class="word-text" id="p-word-4">-----</span></div>
+            </div>
+
+            <!-- Tempo Restante -->
+            <div class="big-timer-display color-red" id="player-explain-timer">30</div>
+          </div>
+        </div>
+
+        <!-- D: VISÃO DO ESPECTADOR -->
+        <div id="view-spectator" class="view-role hidden">
+          <div class="grid-spectator">
+            <div class="glass-card flex-column text-center">
+              <h3>Vez de Jogar</h3>
+              <div id="spec-current-team" class="team-banner">--</div>
+              <div id="spec-current-explainer" class="explainer-name">Explicador: --</div>
+              
+              <div class="big-timer-display" id="spec-timer-display">30</div>
+              <div id="spec-dice-display" class="dice-badge">Dado: --</div>
+            </div>
+
+            <div class="glass-card flex-column">
+              <h3>🏆 Tabuleiro de Corrida</h3>
+              <div id="spectator-board-track" class="board-track">
+                <!-- Injetado dinamicamente -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         4. TELA DE FIM DE JOGO (GAME OVER)
+         ============================================== -->
+    <section id="screen-game-over" class="screen">
+      <div class="glass-card text-center flex-center flex-column max-w-md margin-auto">
+        <h1 class="logo-text">Vencedor!</h1>
+        <div class="trophy-icon">🏆</div>
+        <div id="winner-banner" class="team-banner-large">--</div>
+        <p class="text-large form-group">A equipa alcançou a meta e é a grande campeã!</p>
+
+        <div class="host-only hidden">
+          <button id="btn-host-restart" class="btn btn-large btn-primary btn-glow-blue">🔄 Jogar Novamente</button>
+        </div>
+        <div class="player-only">
+          <p class="waiting-message">A aguardar que o anfitrião reinicie a partida...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL DE INSTRUÇÕES -->
+    <div id="instructions-modal" class="modal hidden">
+      <div class="glass-card modal-content">
+        <span class="close-modal" id="btn-close-modal">&times;</span>
+        <h2 id="modal-title">Instruções</h2>
+        <div id="modal-body" class="modal-body-text">
+          <!-- Conteúdo dinâmico -->
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- BIBLIOTECAS E SCRIPTS -->
+  <script src="qrcode.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
