@@ -757,6 +757,9 @@ function syncGameScreen(isExplaining) {
     scoreBoard.appendChild(scoreItem);
   });
 
+  // Renderizar a lista de alinhamento ativa e a ordem de jogo
+  renderActiveTeamsInfo();
+
   // Ocultar todas as visões de papel primeiro
   document.querySelectorAll('.view-role').forEach(el => el.classList.add('hidden'));
 
@@ -975,6 +978,86 @@ function renderBoard(containerId = 'tv-board-track') {
     }
   } catch (error) {
     console.error("Erro ao renderizar o tabuleiro:", error);
+  }
+}
+
+// Renderizar Alinhamento de Equipas e Ordem de Jogo
+function renderActiveTeamsInfo() {
+  try {
+    const containerIds = [
+      'tv-teams-list-active',
+      'spec-teams-list-active',
+      'player-teams-list-active',
+      'host-teams-list-active'
+    ];
+
+    containerIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.innerHTML = '';
+
+      if (!gameState || !gameState.teamOrder) return;
+
+      const currentPlayingTeam = gameState.teamOrder[gameState.currentTeamIndex];
+
+      gameState.teamOrder.forEach((team) => {
+        const isCurrentTeam = (team === currentPlayingTeam);
+        
+        const teamRow = document.createElement('div');
+        teamRow.className = `tv-team-row-active ${isCurrentTeam ? 'current-turn' : ''}`;
+        
+        // Cabeçalho da equipa
+        const header = document.createElement('div');
+        header.className = 'tv-team-header-active';
+        
+        // Nome com cor
+        const nameSpan = document.createElement('span');
+        nameSpan.className = `color-${team.toLowerCase()}`;
+        nameSpan.innerHTML = `${isCurrentTeam ? '▶ ' : ''}Equipa ${team}`;
+        header.appendChild(nameSpan);
+        
+        // Score
+        const scoreSpan = document.createElement('span');
+        scoreSpan.className = 'text-muted';
+        scoreSpan.innerText = `${gameState.teams[team].score} pts`;
+        header.appendChild(scoreSpan);
+        
+        teamRow.appendChild(header);
+
+        // Jogadores e explicador
+        const playersContainer = document.createElement('div');
+        playersContainer.className = 'tv-team-players-active';
+
+        const teamPlayers = gameState.teams[team].players || [];
+        if (teamPlayers.length === 0) {
+          playersContainer.innerHTML = '<em>Sem jogadores</em>';
+        } else {
+          const currentExplainerIndex = isCurrentTeam ? gameState.currentExplainerIndex : 0;
+          
+          teamPlayers.forEach((pName, pIdx) => {
+            const isExplainer = isCurrentTeam && (pIdx === currentExplainerIndex);
+            const pSpan = document.createElement('span');
+            pSpan.className = `tv-player-active-name ${isExplainer ? 'is-explainer' : ''}`;
+            
+            if (isExplainer) {
+              pSpan.innerHTML = `🎤 <strong>${pName}</strong>`;
+            } else {
+              pSpan.innerText = pName;
+            }
+            
+            if (pIdx < teamPlayers.length - 1) {
+              pSpan.innerHTML += '<span class="text-muted">, </span>';
+            }
+            playersContainer.appendChild(pSpan);
+          });
+        }
+        
+        teamRow.appendChild(playersContainer);
+        el.appendChild(teamRow);
+      });
+    });
+  } catch (err) {
+    console.error("Erro ao renderizar alinhamento das equipas:", err);
   }
 }
 
