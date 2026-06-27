@@ -151,6 +151,30 @@
             <input type="number" id="input-target-score" value="30" min="10" max="50" class="input-field short-input">
           </div>
 
+          <div class="host-only hidden settings-wrapper form-group">
+            <label style="margin-bottom: 10px; display: block;">🎲 Modo de Pontuação:</label>
+            <div class="dice-mode-toggle">
+              <button id="btn-mode-dado" class="btn btn-mode active" onclick="setDiceMode(true)">
+                🎲 Com Dado<br><small>Acertos − Dado</small>
+              </button>
+              <button id="btn-mode-semDado" class="btn btn-mode" onclick="setDiceMode(false)">
+                ✅ Sem Dado<br><small>Só os Acertos</small>
+              </button>
+            </div>
+          </div>
+
+          <div class="host-only hidden settings-wrapper form-group">
+            <label style="margin-bottom: 10px; display: block;">👥 Modo de Jogadores:</label>
+            <div class="dice-mode-toggle">
+              <button id="btn-mode-comNomes" class="btn btn-mode active" onclick="setNamedMode(true)">
+                🏷️ Com Nomes<br><small>App escolhe o explicador</small>
+              </button>
+              <button id="btn-mode-semNomes" class="btn btn-mode" onclick="setNamedMode(false)">
+                👥 Sem Nomes<br><small>Equipa decide entre si</small>
+              </button>
+            </div>
+          </div>
+
           <div class="host-only hidden action-wrapper">
             <button id="btn-start-game" class="btn btn-large btn-primary btn-glow-blue">🚀 Iniciar Partida</button>
           </div>
@@ -190,7 +214,7 @@
               <div id="host-turn-info" class="team-banner text-large">...</div>
               
               <!-- Área de Lançamento de Dado -->
-              <div class="dice-section form-group">
+              <div id="host-dice-row" class="dice-section form-group">
                 <button id="btn-host-roll" class="btn btn-secondary btn-glow-yellow">🎲 Lançar Dado</button>
                 <div id="host-dice-result" class="dice-badge">--</div>
               </div>
@@ -306,12 +330,25 @@
             </div>
           </div>
 
-          <!-- Caso 2: É a vez da equipa, mas eu sou ADIVINHADOR -->
-          <div id="player-guessing" class="glass-card text-center flex-center flex-column h-full hidden">
-            <h3 class="color-green text-large uppercase">A sua equipa está a jogar!</h3>
-            <p class="text-muted form-group">Ouça com atenção o explicador e tente adivinhar!</p>
-            <div class="active-team-icon border-glow-green">🧠</div>
-            <div class="big-timer-display" id="player-guess-timer">30</div>
+          <!-- Caso 2: É a vez da equipa e EU SOU ADIVINHADOR (VÊ AS PALAVRAS TAMBÉM) -->
+          <div id="player-guessing" class="glass-card flex-center flex-column h-full hidden">
+            <div class="text-center form-group">
+              <span class="badge badge-success uppercase">A sua equipa joga!</span>
+              <h2>Ouça e advinhe as palavras:</h2>
+              <p class="text-muted small">⚠️ Não diga a palavra nem ajude o explicador!</p>
+            </div>
+
+            <!-- LISTA DE 5 PALAVRAS (só leitura para adivinhadores) -->
+            <div class="words-card-container" id="player-words-card-guess">
+              <div class="word-card-item word-card-guesser">1. <span class="word-text" id="g-word-0">-----</span></div>
+              <div class="word-card-item word-card-guesser">2. <span class="word-text" id="g-word-1">-----</span></div>
+              <div class="word-card-item word-card-guesser">3. <span class="word-text" id="g-word-2">-----</span></div>
+              <div class="word-card-item word-card-guesser">4. <span class="word-text" id="g-word-3">-----</span></div>
+              <div class="word-card-item word-card-guesser">5. <span class="word-text" id="g-word-4">-----</span></div>
+            </div>
+
+            <!-- Tempo Restante -->
+            <div class="big-timer-display color-green" id="player-guess-timer">30</div>
           </div>
 
           <!-- Caso 3: É a vez da equipa e EU SOU O EXPLICADOR (MOSTRA AS PALAVRAS) -->
