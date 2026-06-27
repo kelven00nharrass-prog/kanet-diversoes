@@ -288,6 +288,7 @@ wss.on('connection', (ws) => {
     // Resetar pontuações
     for (const t of room.gameState.teamOrder) {
       room.gameState.teams[t].score = 0;
+      room.gameState.teams[t].stats = { totalCorrect: 0, roundsPlayed: 0 };
       room.gameState.teams[t].players = room.players
         .filter(p => p.team === t && p.role !== 'tv')
         .map(p => p.name);
@@ -411,6 +412,13 @@ wss.on('connection', (ws) => {
     
     const currentTeam = room.gameState.teamOrder[room.gameState.currentTeamIndex];
     room.gameState.teams[currentTeam].score += pointsEarned;
+
+    // Atualizar estatísticas da equipa
+    if (!room.gameState.teams[currentTeam].stats) {
+      room.gameState.teams[currentTeam].stats = { totalCorrect: 0, roundsPlayed: 0 };
+    }
+    room.gameState.teams[currentTeam].stats.totalCorrect += correctCount;
+    room.gameState.teams[currentTeam].stats.roundsPlayed += 1;
 
     // Verificar se ganhou
     if (room.gameState.teams[currentTeam].score >= room.gameState.targetScore) {
