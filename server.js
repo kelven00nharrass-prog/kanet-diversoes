@@ -175,7 +175,9 @@ wss.on('connection', (ws) => {
         teamOrder: ['Azul', 'Vermelho', 'Verde', 'Amarelo'],
         currentTeamIndex: 0,
         currentExplainerIndex: 0,
-        targetScore: 30, // Casas para ganhar
+        targetScore: 30,  // Casas para ganhar
+        useDice: true,    // true = com dado, false = apenas acertos
+        namedMode: true,  // true = app escolhe explicador, false = equipa decide
         activeRound: {
           timer: 30,
           isTimerRunning: false,
@@ -266,12 +268,14 @@ wss.on('connection', (ws) => {
     const room = rooms.get(userSession.roomId);
     if (!room) return;
 
-    const { players, teams, teamOrder, targetScore } = payload;
+    const { players, teams, teamOrder, targetScore, useDice, namedMode } = payload;
     
     if (players) room.players = players;
     if (teams) room.gameState.teams = teams;
     if (teamOrder) room.gameState.teamOrder = teamOrder;
     if (targetScore) room.gameState.targetScore = parseInt(targetScore) || 30;
+    if (typeof useDice !== 'undefined') room.gameState.useDice = useDice;
+    if (typeof namedMode !== 'undefined') room.gameState.namedMode = namedMode;
 
     broadcastRoomState(room);
   }
@@ -400,8 +404,10 @@ wss.on('connection', (ws) => {
     const correctCount = room.gameState.activeRound.correctWords.filter(Boolean).length;
     const diceRoll = room.gameState.activeRound.diceRoll || 0;
     
-    // Casas = Acertos - Dado (mínimo 0)
-    const pointsEarned = Math.max(0, correctCount - diceRoll);
+    // Casas = Acertos - Dado (se useDice) ou apenas Acertos
+    const pointsEarned = room.gameState.useDice
+      ? Math.max(0, correctCount - diceRoll)
+      : correctCount;
     
     const currentTeam = room.gameState.teamOrder[room.gameState.currentTeamIndex];
     room.gameState.teams[currentTeam].score += pointsEarned;
@@ -511,8 +517,13 @@ function broadcastRoomState(room) {
     const currentTeamName = room.gameState.teamOrder[room.gameState.currentTeamIndex];
     const currentTeamPlayers = room.gameState.teams[currentTeamName] ? room.gameState.teams[currentTeamName].players : [];
     const currentExplainer = currentTeamPlayers[room.gameState.currentExplainerIndex];
-    
-    const isCurrentExplainer = (role === 'player' && name === currentExplainer && team === currentTeamName);
+    const isActiveTeam = (role === 'player' && team === currentTeamName);
+
+    // Modo Com Nomes: só o explicador designado tem isExplaining=true
+    // Modo Sem Nomes: ninguém tem isExplaining=true (equipa decide entre si)
+    const isCurrentExplainer = room.gameState.namedMode
+      ? (role === 'player' && name === currentExplainer && team === currentTeamName)
+      : false;
 
     // Filtrar estado
     const filteredState = {
@@ -522,6 +533,8 @@ function broadcastRoomState(room) {
       currentTeamIndex: room.gameState.currentTeamIndex,
       currentExplainerIndex: room.gameState.currentExplainerIndex,
       targetScore: room.gameState.targetScore,
+      useDice: room.gameState.useDice,
+      namedMode: room.gameState.namedMode,
       winner: room.gameState.winner,
       activeRound: {
         timer: room.gameState.activeRound.timer,
@@ -532,12 +545,16 @@ function broadcastRoomState(room) {
       }
     };
 
-    // Segredo: Apenas o Host ou o Explicador Ativo podem ver as palavras
-    // Além disso, mostramos apenas se a rodada estiver em curso ou se for o Host (para validação)
-    if (role === 'host' || isCurrentExplainer) {
+    // Palavras: visíveis para Host, Explicador ativo (Com Nomes),
+    // ou TODOS da equipa ativa (Sem Nomes)
+    const canSeeWords = role === 'host'
+      || isCurrentExplainer
+      || (!room.gameState.namedMode && isActiveTeam);
+
+    if (canSeeWords) {
       filteredState.activeRound.words = room.gameState.activeRound.words;
     } else {
-      // Ocultar palavras para ecrã principal, espectadores ou outros jogadores
+      // Ocultar palavras para ecrã principal, espectadores ou equipa adversária
       filteredState.activeRound.words = ["?????", "?????", "?????", "?????", "?????"];
     }
 
