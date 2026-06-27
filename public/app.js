@@ -155,6 +155,13 @@ const wsUrl = `${wsProtocol}//${window.location.host}`;
 window.addEventListener('DOMContentLoaded', () => {
   setupEventListeners();
   loadSavedSession();
+  
+  // Registar Service Worker para suporte PWA (Instalação)
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(() => console.log('PWA Service Worker registado!'))
+      .catch((err) => console.log('Erro ao registar Service Worker:', err));
+  }
 });
 
 // Restaurar sessão se o jogador atualizar o navegador ou escaneou QR Code
