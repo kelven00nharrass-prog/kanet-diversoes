@@ -409,17 +409,29 @@
          4. TELA DE FIM DE JOGO (GAME OVER)
          ============================================== -->
     <section id="screen-game-over" class="screen">
-      <div class="glass-card text-center flex-center flex-column max-w-md margin-auto">
-        <h1 class="logo-text">Vencedor!</h1>
-        <div class="trophy-icon">🏆</div>
-        <div id="winner-banner" class="team-banner-large">--</div>
-        <p class="text-large form-group">A equipa alcançou a meta e é a grande campeã!</p>
+      <!-- Confetti Canvas (por trás de tudo) -->
+      <canvas id="confetti-canvas"></canvas>
 
-        <div class="host-only hidden">
-          <button id="btn-host-restart" class="btn btn-large btn-primary btn-glow-blue">🔄 Jogar Novamente</button>
-        </div>
-        <div class="player-only">
-          <p class="waiting-message">A aguardar que o anfitrião reinicie a partida...</p>
+      <div class="victory-container">
+        <div class="glass-card text-center flex-center flex-column victory-card">
+          <div class="victory-sparkle">✨</div>
+          <h1 class="victory-title">VITÓRIA!</h1>
+          <div class="trophy-icon victory-trophy">🏆</div>
+          <div id="winner-banner" class="team-banner-large">--</div>
+          <p class="text-large form-group victory-subtitle">A equipa alcançou a meta e é a grande campeã!</p>
+
+          <!-- Estatísticas de Todas as Equipas -->
+          <div class="stats-section">
+            <h3 class="stats-title">📊 Estatísticas da Partida</h3>
+            <div id="stats-table-container"></div>
+          </div>
+
+          <div class="host-only hidden" style="margin-top: 20px;">
+            <button id="btn-host-restart" class="btn btn-large btn-primary btn-glow-blue">🔄 Jogar Novamente</button>
+          </div>
+          <div class="player-only">
+            <p class="waiting-message">A aguardar que o anfitrião reinicie a partida...</p>
+          </div>
         </div>
       </div>
     </section>
