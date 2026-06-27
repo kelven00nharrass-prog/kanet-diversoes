@@ -107,8 +107,6 @@ class SoundSynth {
   playDiceRattle() {
     this.init();
     if (!this.ctx) return;
-    const now = this.ctx.currentTime;
-    
     for (let i = 0; i < 8; i++) {
       const delay = i * 0.08;
       const freq = 100 + Math.random() * 300;
@@ -125,6 +123,44 @@ class SoundSynth {
       osc.start(now + delay);
       osc.stop(now + delay + 0.07);
     }
+  }
+
+  playFanfare() {
+    this.init();
+    if (!this.ctx) return;
+    const now = this.ctx.currentTime;
+    
+    const playBrassNote = (freq, delay, duration, volume = 0.08) => {
+      const osc = this.ctx.createOscillator();
+      const osc2 = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(freq, now + delay);
+      
+      osc2.type = 'triangle';
+      osc2.frequency.setValueAtTime(freq * 1.005, now + delay);
+      
+      gain.gain.setValueAtTime(volume, now + delay);
+      gain.gain.linearRampToValueAtTime(volume, now + delay + duration - 0.05);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + delay + duration);
+      
+      osc.connect(gain);
+      osc2.connect(gain);
+      gain.connect(this.ctx.destination);
+      
+      osc.start(now + delay);
+      osc2.start(now + delay);
+      osc.stop(now + delay + duration);
+      osc2.stop(now + delay + duration);
+    };
+
+    playBrassNote(261.63, 0, 0.2); // C4
+    playBrassNote(329.63, 0.2, 0.2); // E4
+    playBrassNote(392.00, 0.4, 0.2); // G4
+    playBrassNote(523.25, 0.6, 0.8, 0.12); // C5
+    playBrassNote(392.00, 0.6, 0.8, 0.05); // G4
+    playBrassNote(659.25, 0.8, 0.6, 0.06); // E5
   }
 }
 
@@ -761,12 +797,20 @@ function syncGameScreen(isExplaining) {
     document.getElementById('winner-banner').className = `team-banner-large bg-team-${gameState.winner}`;
     document.getElementById('winner-banner').innerText = `Equipa ${gameState.winner}`;
     
+    // Lançar confetti épico!
+    launchConfetti();
+    sounds.playFanfare();
+
+    // Renderizar estatísticas
+    renderStatsTable();
+
     const hostRestarts = document.querySelectorAll('.host-only');
     if (role === 'host') {
       hostRestarts.forEach(el => el.classList.remove('hidden'));
     } else {
       hostRestarts.forEach(el => el.classList.add('hidden'));
     }
+    releaseWakeLock();
     return;
   }
 
@@ -1338,6 +1382,15 @@ function hostConfirmScore() {
 
 function hostResetGame() {
   sounds.playClick();
+  if (confettiAnimationId) {
+    cancelAnimationFrame(confettiAnimationId);
+    confettiAnimationId = null;
+    const canvas = document.getElementById('confetti-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  }
   socket.send(JSON.stringify({ type: 'RESET_GAME' }));
 }
 
@@ -1400,4 +1453,122 @@ document.addEventListener('visibilitychange', async () => {
     }
   }
 });
+
+// 14. MOTOR DE CONFETIS E TABELA DE ESTATÍSTICAS
+let confettiAnimationId = null;
+
+function launchConfetti() {
+  const canvas = document.getElementById('confetti-canvas');
+  if (!canvas) return;
+  
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const colors = [
+    '#f59e0b', '#fbbf24', '#3b82f6', '#60a5fa', 
+    '#10b981', '#34d399', '#ef4444', '#f87171'
+  ];
+  
+  const particles = [];
+  for (let i = 0; i < 120; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height - canvas.height,
+      r: Math.random() * 6 + 4,
+      d: Math.random() * canvas.height,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      tilt: Math.random() * 10 - 5,
+      tiltAngleIncremental: Math.random() * 0.07 + 0.02,
+      tiltAngle: 0
+    });
+  }
+
+  if (confettiAnimationId) {
+    cancelAnimationFrame(confettiAnimationId);
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    particles.forEach((p) => {
+      p.tiltAngle += p.tiltAngleIncremental;
+      p.y += (Math.cos(p.d) + 3 + p.r / 2) / 2;
+      p.x += Math.sin(p.tiltAngle);
+      p.tilt = Math.sin(p.tiltAngle - (p.r / 3)) * 15;
+      
+      if (p.y > canvas.height) {
+        p.y = -20;
+        p.x = Math.random() * canvas.width;
+      }
+      
+      ctx.beginPath();
+      ctx.lineWidth = p.r;
+      ctx.strokeStyle = p.color;
+      ctx.moveTo(p.x + p.tilt + p.r / 2, p.y);
+      ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 2);
+      ctx.stroke();
+    });
+    
+    confettiAnimationId = requestAnimationFrame(draw);
+  }
+  
+  draw();
+}
+
+function renderStatsTable() {
+  const container = document.getElementById('stats-table-container');
+  if (!container || !gameState || !gameState.teamOrder) return;
+
+  const teamOrder = gameState.teamOrder;
+  const teams = gameState.teams;
+
+  // Ordenar equipas por pontuação final
+  const sortedTeams = [...teamOrder].sort((a, b) => (teams[b].score || 0) - (teams[a].score || 0));
+
+  let html = `
+    <table class="stats-table">
+      <thead>
+        <tr>
+          <th>Equipa</th>
+          <th>Pontos</th>
+          <th>Acertos Totais</th>
+          <th>Rodadas</th>
+          <th>Média/Rodada</th>
+        </tr>
+      </thead>
+      <tbody>
+  `;
+
+  sortedTeams.forEach((teamName, index) => {
+    const team = teams[teamName];
+    const score = team.score || 0;
+    const stats = team.stats || { totalCorrect: 0, roundsPlayed: 0 };
+    const totalCorrect = stats.totalCorrect || 0;
+    const roundsPlayed = stats.roundsPlayed || 0;
+    const average = roundsPlayed > 0 ? (totalCorrect / roundsPlayed).toFixed(1) : '0.0';
+    
+    const isWinner = teamName === gameState.winner;
+    const rowClass = isWinner ? 'stats-row-winner' : '';
+    const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : '👥';
+
+    html += `
+      <tr class="${rowClass}">
+        <td><span class="stats-medal">${medal}</span> <span class="color-${teamName.toLowerCase()}">${teamName}</span></td>
+        <td><strong>${score}</strong></td>
+        <td>${totalCorrect}</td>
+        <td>${roundsPlayed}</td>
+        <td>${average}</td>
+      </tr>
+    `;
+  });
+
+  html += `
+      </tbody>
+    </table>
+  `;
+
+  container.innerHTML = html;
+}
+
 
