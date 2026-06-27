@@ -753,12 +753,15 @@ p {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.03);
   flex-grow: 1;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .board-row {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 8px;
+  width: 100%;
 }
 
 .board-cell {
@@ -766,6 +769,7 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   aspect-ratio: 1;
+  min-height: 32px; /* Evita colapso em ecrãs pequenos ou browsers específicos */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
