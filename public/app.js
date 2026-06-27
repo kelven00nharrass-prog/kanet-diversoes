@@ -138,6 +138,7 @@ let playerName = null;
 let playerTeam = null; // 'Azul', 'Vermelho', 'Verde', 'Amarelo'
 let gameState = null;
 let playersList = [];
+let wasTimerRunning = false; // Flag para scroll automático no início da rodada
 
 // Elementos DOM
 const screens = {
@@ -743,6 +744,13 @@ function addPlayerManual() {
 function syncGameScreen(isExplaining) {
   if (!gameState) return;
 
+  // Manter o ecrã sempre ligado durante o jogo ativo
+  if (gameState.step === 'playing' || gameState.step === 'score_recap') {
+    requestWakeLock();
+  } else {
+    releaseWakeLock();
+  }
+
   // Redirecionamento automático de ecrãs principais
   if (gameState.step === 'lobby') {
     showScreen('lobbyActive');
@@ -1149,6 +1157,13 @@ function renderPlayerMode(isExplaining) {
 
   } else {
     // ─── ESTADO 5: Rodada a decorrer — MOSTRAR PALAVRAS ───────────────────
+    if (!wasTimerRunning && gameState.activeRound.isTimerRunning) {
+      // Rodada começou! Rola automaticamente para o topo do ecrã para focar nas cartas
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 50);
+    }
+
     if (isExplaining) {
       // Com Nomes: eu sou o explicador designado pela app
       explainingView.classList.remove('hidden');
@@ -1196,6 +1211,7 @@ function renderPlayerMode(isExplaining) {
       }
     }
   }
+  wasTimerRunning = gameState.activeRound.isTimerRunning;
 }
 
 
@@ -1349,3 +1365,39 @@ function showToast(message, type = 'info') {
     toastEl.classList.add('hidden');
   }, 3500);
 }
+
+// 13. WAKE LOCK API (PREVENIR QUE O ECRÃ SE DESLIGUE)
+async function requestWakeLock() {
+  if (wakeLock !== null) return;
+  try {
+    if ('wakeLock' in navigator) {
+      wakeLock = await navigator.wakeLock.request('screen');
+      console.log('Wake Lock ativo: o ecrã não vai suspender.');
+      
+      wakeLock.addEventListener('release', () => {
+        console.log('Wake Lock libertado.');
+        wakeLock = null;
+      });
+    }
+  } catch (err) {
+    console.warn(`Não foi possível adquirir Wake Lock: ${err.message}`);
+  }
+}
+
+function releaseWakeLock() {
+  if (wakeLock !== null) {
+    wakeLock.release();
+    wakeLock = null;
+  }
+}
+
+// Re-adquirir Wake Lock quando voltar à aba se o jogo estiver a decorrer
+document.addEventListener('visibilitychange', async () => {
+  if (wakeLock !== null && document.visibilityState === 'visible') {
+    wakeLock = null;
+    if (gameState && (gameState.step === 'playing' || gameState.step === 'score_recap')) {
+      await requestWakeLock();
+    }
+  }
+});
+
