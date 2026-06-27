@@ -891,69 +891,83 @@ function renderTVMode() {
 
 // Render do Tabuleiro 30 Segundos
 function renderBoard(containerId = 'tv-board-track') {
-  const boardTrack = document.getElementById(containerId);
-  if (!boardTrack) return;
-  boardTrack.innerHTML = '';
+  try {
+    const boardTrack = document.getElementById(containerId);
+    if (!boardTrack) return;
+    boardTrack.innerHTML = '';
 
-  const totalCells = gameState.targetScore; // Geralmente 30
-  
-  // Criar grelha em linhas de 10
-  const rowsCount = Math.ceil((totalCells + 1) / 10);
-  
-  let currentCell = 0;
-
-  for (let r = 0; r < rowsCount; r++) {
-    const rowEl = document.createElement('div');
-    rowEl.className = 'board-row';
-    
-    // Determinar se a linha anda da esquerda para a direita ou da direita para a esquerda (Snake path)
-    const cols = [];
-    for (let c = 0; c < 10; c++) {
-      if (currentCell <= totalCells) {
-        cols.push(currentCell);
-        currentCell++;
-      }
-    }
-    
-    // Inverter linhas ímpares para criar caminho em ziguezague continuo (serpente)
-    if (r % 2 === 1) {
-      cols.reverse();
+    if (!gameState) {
+      console.warn("renderBoard: gameState não definido.");
+      return;
     }
 
-    cols.forEach(cellNum => {
-      const cell = document.createElement('div');
-      cell.className = 'board-cell';
-      
-      if (cellNum === 0) {
-        cell.classList.add('start');
-        cell.innerHTML = `<span class="cell-number">PARTIDA</span>`;
-      } else if (cellNum === totalCells) {
-        cell.classList.add('finish');
-        cell.innerHTML = `<span class="cell-number">META</span>`;
-      } else {
-        cell.innerHTML = `<span class="cell-number">${cellNum}</span>`;
-      }
+    const totalCells = parseInt(gameState.targetScore) || 30;
+    
+    // Criar grelha em linhas de 10
+    const rowsCount = Math.ceil((totalCells + 1) / 10);
+    if (isNaN(rowsCount) || rowsCount <= 0) {
+      console.error("renderBoard: rowsCount inválido:", rowsCount);
+      return;
+    }
+    
+    let currentCell = 0;
 
-      // Adicionar contentor de pinos
-      const pegContainer = document.createElement('div');
-      pegContainer.className = 'peg-container';
+    for (let r = 0; r < rowsCount; r++) {
+      const rowEl = document.createElement('div');
+      rowEl.className = 'board-row';
       
-      // Adicionar pinos das equipas que estão nesta casa
-      gameState.teamOrder.forEach(team => {
-        const teamScore = Math.min(totalCells, gameState.teams[team].score);
-        if (teamScore === cellNum) {
-          const peg = document.createElement('div');
-          peg.className = `peg peg-${team}`;
-          peg.title = team;
-          pegContainer.appendChild(peg);
+      const cols = [];
+      for (let c = 0; c < 10; c++) {
+        if (currentCell <= totalCells) {
+          cols.push(currentCell);
+          currentCell++;
         }
-      });
+      }
       
-      cell.appendChild(pegContainer);
-      rowEl.appendChild(cell);
-    });
+      if (r % 2 === 1) {
+        cols.reverse();
+      }
 
-    boardTrack.appendChild(rowEl);
+      cols.forEach(cellNum => {
+        const cell = document.createElement('div');
+        cell.className = 'board-cell';
+        
+        if (cellNum === 0) {
+          cell.classList.add('start');
+          cell.innerHTML = `<span class="cell-number">PARTIDA</span>`;
+        } else if (cellNum === totalCells) {
+          cell.classList.add('finish');
+          cell.innerHTML = `<span class="cell-number">META</span>`;
+        } else {
+          cell.innerHTML = `<span class="cell-number">${cellNum}</span>`;
+        }
+
+        const pegContainer = document.createElement('div');
+        pegContainer.className = 'peg-container';
+        
+        const teamOrder = gameState.teamOrder || ['Azul', 'Vermelho', 'Verde', 'Amarelo'];
+        const teams = gameState.teams || {};
+
+        teamOrder.forEach(team => {
+          if (teams[team]) {
+            const teamScore = Math.min(totalCells, teams[team].score || 0);
+            if (teamScore === cellNum) {
+              const peg = document.createElement('div');
+              peg.className = `peg peg-${team}`;
+              peg.title = team;
+              pegContainer.appendChild(peg);
+            }
+          }
+        });
+        
+        cell.appendChild(pegContainer);
+        rowEl.appendChild(cell);
+      });
+
+      boardTrack.appendChild(rowEl);
+    }
+  } catch (error) {
+    console.error("Erro ao renderizar o tabuleiro:", error);
   }
 }
 
