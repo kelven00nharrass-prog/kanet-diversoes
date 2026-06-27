@@ -216,6 +216,14 @@
               </ul>
             </div>
           </div>
+          <!-- Alinhamento das Equipas e Ordem de Jogo para o Host -->
+          <div class="glass-card flex-column board-container-host" style="margin-top: 24px;">
+            <h3>👥 Alinhamento das Equipas</h3>
+            <div id="host-teams-list-active" class="tv-teams-list-active">
+              <!-- Injetado dinamicamente -->
+            </div>
+          </div>
+
           <!-- Tabuleiro para o Host acompanhar -->
           <div class="glass-card flex-column board-container-host" style="margin-top: 24px;">
             <h3>🏆 Tabuleiro de Corrida</h3>
@@ -269,6 +277,14 @@
                 </div>
                 <div id="tv-dice-label" class="dice-label">Lançando o Dado...</div>
               </div>
+              
+              <!-- Alinhamento das Equipas e Ordem de Jogo -->
+              <div class="glass-card sidebar-card" style="padding: 16px; min-height: 180px;">
+                <h3 style="margin-bottom: 12px; font-size: 1.15rem; text-align: center;">👥 Alinhamento das Equipas</h3>
+                <div id="tv-teams-list-active" class="tv-teams-list-active">
+                  <!-- Injetado dinamicamente -->
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -280,6 +296,14 @@
             <h3 class="animate-pulse">Aguarde...</h3>
             <p id="player-waiting-msg" class="text-large">Outra equipa está a jogar de momento.</p>
             <div id="player-turn-warning" class="team-banner-large">--</div>
+            
+            <!-- Alinhamento das Equipas -->
+            <div style="margin-top: 24px; width: 100%; max-width: 450px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 15px; text-align: left;">
+              <h4 style="margin-bottom: 12px; font-size: 1rem; text-align: center;">👥 Alinhamento das Equipas</h4>
+              <div id="player-teams-list-active" class="tv-teams-list-active">
+                <!-- Injetado dinamicamente -->
+              </div>
+            </div>
           </div>
 
           <!-- Caso 2: É a vez da equipa, mas eu sou ADIVINHADOR -->
@@ -322,6 +346,14 @@
               
               <div class="big-timer-display" id="spec-timer-display">30</div>
               <div id="spec-dice-display" class="dice-badge">Dado: --</div>
+              
+              <!-- Alinhamento das Equipas -->
+              <div style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 15px; width: 100%; text-align: left;">
+                <h4 style="margin-bottom: 12px; font-size: 1rem; text-align: center;">👥 Alinhamento das Equipas</h4>
+                <div id="spec-teams-list-active" class="tv-teams-list-active">
+                  <!-- Injetado dinamicamente -->
+                </div>
+              </div>
             </div>
 
             <div class="glass-card flex-column">
