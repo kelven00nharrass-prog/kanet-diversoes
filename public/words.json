@@ -1,0 +1,5202 @@
+[
+  {
+    "id": 1,
+    "words": [
+      "Produção de Bíblias",
+      "Deserto do Sara",
+      "Caná",
+      "Martelo",
+      "Melga"
+    ]
+  },
+  {
+    "id": 2,
+    "words": [
+      "Maçã",
+      "Tiago",
+      "Inglaterra",
+      "David e o perdão",
+      "Santidade"
+    ]
+  },
+  {
+    "id": 3,
+    "words": [
+      "Goiaba",
+      "Neutralidade Cristã",
+      "Otília",
+      "Artaxerxes",
+      "Buenos Aires"
+    ]
+  },
+  {
+    "id": 4,
+    "words": [
+      "Mosquito",
+      "Cântico de Salomão",
+      "Monapo",
+      "Armagedon",
+      "Computador"
+    ]
+  },
+  {
+    "id": 5,
+    "words": [
+      "Cevada",
+      "Afia-lápis",
+      "Língua de Sinais",
+      "Arquipélago das Quirimbas",
+      "Lídia"
+    ]
+  },
+  {
+    "id": 6,
+    "words": [
+      "Jeremias",
+      "Pimento",
+      "Lúcia",
+      "Segundo de Samuel",
+      "Eráti"
+    ]
+  },
+  {
+    "id": 7,
+    "words": [
+      "Secretário",
+      "Paz Mental",
+      "Salmão",
+      "Londres",
+      "Território de Pregação"
+    ]
+  },
+  {
+    "id": 8,
+    "words": [
+      "David",
+      "Fé Inabalável",
+      "Gato",
+      "Urbanização",
+      "Estojo"
+    ]
+  },
+  {
+    "id": 9,
+    "words": [
+      "Jónatas",
+      "Víbora",
+      "Lima",
+      "Jó",
+      "Nacala"
+    ]
+  },
+  {
+    "id": 10,
+    "words": [
+      "Jacob viaja",
+      "Zuraida",
+      "Cairo",
+      "Homem Mau",
+      "Tarântula"
+    ]
+  },
+  {
+    "id": 11,
+    "words": [
+      "Ancuabe",
+      "Garçom",
+      "Doze Espias",
+      "Crocodilo",
+      "Arca de Noé"
+    ]
+  },
+  {
+    "id": 12,
+    "words": [
+      "Lot",
+      "Serrote",
+      "Peru",
+      "União de irmãos",
+      "Helsínquia"
+    ]
+  },
+  {
+    "id": 13,
+    "words": [
+      "Sarça que arde",
+      "Chita",
+      "Diretor",
+      "Boas maneiras",
+      "Ancara"
+    ]
+  },
+  {
+    "id": 14,
+    "words": [
+      "Sangar",
+      "Santiago",
+      "Fogo",
+      "Lucas",
+      "Bildade"
+    ]
+  },
+  {
+    "id": 15,
+    "words": [
+      "Pedro arrependeu-se",
+      "Canalizador",
+      "Damasco",
+      "França",
+      "Iguana"
+    ]
+  },
+  {
+    "id": 16,
+    "words": [
+      "Melão",
+      "Atenas",
+      "Filisteus",
+      "Neemias",
+      "Pasteleiro"
+    ]
+  },
+  {
+    "id": 17,
+    "words": [
+      "Atum",
+      "Juiz",
+      "Abel",
+      "Zambézia",
+      "Pregação com os pais"
+    ]
+  },
+  {
+    "id": 18,
+    "words": [
+      "Anuário",
+      "Bruna",
+      "Jezabel a má",
+      "Tucano",
+      "Accra"
+    ]
+  },
+  {
+    "id": 19,
+    "words": [
+      "Chave Inglesa",
+      "Serafim",
+      "Gideão",
+      "Paris",
+      "Alpaca"
+    ]
+  },
+  {
+    "id": 20,
+    "words": [
+      "Tesoura",
+      "Cobre",
+      "Juízes",
+      "Ai",
+      "Magude"
+    ]
+  },
+  {
+    "id": 21,
+    "words": [
+      "Girafa",
+      "Rio Limpopo",
+      "Nuno",
+      "Selo da Sociedade",
+      "Terceira de João"
+    ]
+  },
+  {
+    "id": 22,
+    "words": [
+      "Jornalista",
+      "Água",
+      "Holanda",
+      "Otniel",
+      "Vida e Ministério"
+    ]
+  },
+  {
+    "id": 23,
+    "words": [
+      "Mesaque",
+      "Voluntários de Salão",
+      "Trópico de Câncer",
+      "Bárbara",
+      "Abacate"
+    ]
+  },
+  {
+    "id": 24,
+    "words": [
+      "Barragem de Cahora Bassa",
+      "Estêvão",
+      "Ostra",
+      "Gabriel",
+      "Assembleias de Circuito"
+    ]
+  },
+  {
+    "id": 25,
+    "words": [
+      "Pequeno rebanho",
+      "Copo",
+      "Rebeca",
+      "Cavalo Marinho",
+      "Nangade"
+    ]
+  },
+  {
+    "id": 26,
+    "words": [
+      "Gigantes na Terra",
+      "Reserva Especial de Maputo",
+      "Almofada",
+      "Chimpanzé",
+      "Sonhos do Faraó"
+    ]
+  },
+  {
+    "id": 27,
+    "words": [
+      "Bilene",
+      "Ressurreição de Lázaro",
+      "Rosa",
+      "Criação Louva",
+      "Escaravelho"
+    ]
+  },
+  {
+    "id": 28,
+    "words": [
+      "Francisco",
+      "Mar das Caraíbas",
+      "Onésimo",
+      "Voz no Sinai",
+      "Elefante"
+    ]
+  },
+  {
+    "id": 29,
+    "words": [
+      "Roma",
+      "Cláudio",
+      "Cova dos Leões",
+      "Saul",
+      "Esponja Marinha"
+    ]
+  },
+  {
+    "id": 30,
+    "words": [
+      "Tiago",
+      "Abigail",
+      "Alfredo",
+      "Nacala-a-Velha",
+      "Cágado-terrestre"
+    ]
+  },
+  {
+    "id": 31,
+    "words": [
+      "Ilha de Santa Carolina",
+      "Portátil",
+      "Gnu",
+      "Matias",
+      "Ana pede um filho"
+    ]
+  },
+  {
+    "id": 32,
+    "words": [
+      "Resposta a Satanás",
+      "Reserva de Niassa",
+      "Patrício",
+      "Carvalho",
+      "Primeiro das Crónicas"
+    ]
+  },
+  {
+    "id": 33,
+    "words": [
+      "Memorial da Morte",
+      "Tesoura de Poda",
+      "Gafanhoto",
+      "Ilha do Bazaruto",
+      "Estudo de Livro"
+    ]
+  },
+  {
+    "id": 34,
+    "words": [
+      "Cama",
+      "Bogotá",
+      "Jericó",
+      "Arroz",
+      "Siló"
+    ]
+  },
+  {
+    "id": 35,
+    "words": [
+      "Amigo de Deus",
+      "Escultor",
+      "Bandeira de Moçambique",
+      "Carapau",
+      "Watchtower"
+    ]
+  },
+  {
+    "id": 36,
+    "words": [
+      "Macia",
+      "Tomate",
+      "Marcador",
+      "Elias e os profetas",
+      "Zofar"
+    ]
+  },
+  {
+    "id": 37,
+    "words": [
+      "Jair",
+      "Pescada",
+      "Fidelidade",
+      "Ilha de Moçambique",
+      "Cómoda"
+    ]
+  },
+  {
+    "id": 38,
+    "words": [
+      "Zacarias",
+      "Formiga",
+      "Nova Vida",
+      "Gomorra",
+      "Coreia do Sul"
+    ]
+  },
+  {
+    "id": 39,
+    "words": [
+      "Caneta",
+      "Roubo de Acã",
+      "Chacal",
+      "Nome Testemunhas de Jeová",
+      "Abuja"
+    ]
+  },
+  {
+    "id": 40,
+    "words": [
+      "Oliveira",
+      "Muralhas de Jericó",
+      "Comissão de Editores",
+      "Polónia",
+      "Amélia"
+    ]
+  },
+  {
+    "id": 41,
+    "words": [
+      "Wallkill",
+      "Betel",
+      "Berlim",
+      "Barman",
+      "Louva-a-deus"
+    ]
+  },
+  {
+    "id": 42,
+    "words": [
+      "Ema",
+      "Lima",
+      "Júlia",
+      "Cantemos de Coração",
+      "Parábola do Semeador"
+    ]
+  },
+  {
+    "id": 43,
+    "words": [
+      "Cenoura",
+      "Régua",
+      "Malaquias",
+      "Caramujo",
+      "Primeira de Pedro"
+    ]
+  },
+  {
+    "id": 44,
+    "words": [
+      "Belsazar",
+      "México",
+      "Martelo Elétrico",
+      "Amêijoa",
+      "Regresso ao Céu"
+    ]
+  },
+  {
+    "id": 45,
+    "words": [
+      "Câmara Fotográfica",
+      "Pedro diz a verdade",
+      "Ponta do Ouro",
+      "Trovão",
+      "Batismo no Jordão"
+    ]
+  },
+  {
+    "id": 46,
+    "words": [
+      "Tanzânia",
+      "Resgate de Cristo",
+      "Carrinho de Mão",
+      "Boi",
+      "Testemunho Informal"
+    ]
+  },
+  {
+    "id": 47,
+    "words": [
+      "Ervilha",
+      "Comissão de Pessoal",
+      "Rio Mississippi",
+      "Tadeu",
+      "Gonçalo"
+    ]
+  },
+  {
+    "id": 48,
+    "words": [
+      "Tubarão",
+      "Vara de Arão",
+      "Grécia",
+      "Fita Adesiva",
+      "Congressos de Distrito"
+    ]
+  },
+  {
+    "id": 49,
+    "words": [
+      "Ungidos",
+      "Angoche Cidade",
+      "Filipa",
+      "Gavião",
+      "Comissão de Ensino"
+    ]
+  },
+  {
+    "id": 50,
+    "words": [
+      "Saduceus",
+      "Teclado",
+      "Eude",
+      "Escorpião",
+      "Washington"
+    ]
+  },
+  {
+    "id": 51,
+    "words": [
+      "Médico",
+      "Itália",
+      "Tiago de Alfeu",
+      "Segunda a Timóteo",
+      "Mármore"
+    ]
+  },
+  {
+    "id": 52,
+    "words": [
+      "Clips",
+      "Petróleo",
+      "China",
+      "Elias",
+      "Funda de David"
+    ]
+  },
+  {
+    "id": 53,
+    "words": [
+      "Colômbia",
+      "Kelven",
+      "Grande Torre",
+      "Dirigente do Estudo",
+      "Orquídea"
+    ]
+  },
+  {
+    "id": 54,
+    "words": [
+      "Cadeira",
+      "Cartas de Testemunho",
+      "Sara esperou",
+      "Urso Polar",
+      "Rio Búzi"
+    ]
+  },
+  {
+    "id": 55,
+    "words": [
+      "Jacaré",
+      "Lustre",
+      "Carruagem de Fogo",
+      "Parque Nacional das Quirimbas",
+      "Potifar"
+    ]
+  },
+  {
+    "id": 56,
+    "words": [
+      "Baleia",
+      "Zélia",
+      "Naftali",
+      "Tete",
+      "Baraque"
+    ]
+  },
+  {
+    "id": 57,
+    "words": [
+      "Garfo",
+      "Repolho",
+      "Mulher de Lot",
+      "Oceano Atlântico",
+      "JW Library"
+    ]
+  },
+  {
+    "id": 58,
+    "words": [
+      "Liquidificador",
+      "Cobra-coral",
+      "Integridade",
+      "Escutar nas reuniões",
+      "Dublin"
+    ]
+  },
+  {
+    "id": 59,
+    "words": [
+      "Rã",
+      "Marrocos",
+      "Destruição de Cidades",
+      "Mostarda",
+      "Neuza"
+    ]
+  },
+  {
+    "id": 60,
+    "words": [
+      "Rio Zambeze",
+      "Gisela",
+      "Antílope",
+      "Himeneu",
+      "Comissões de Ligação com Hospitais"
+    ]
+  },
+  {
+    "id": 61,
+    "words": [
+      "Terra",
+      "Bate-Seba",
+      "Rita",
+      "Eli",
+      "Montepuez"
+    ]
+  },
+  {
+    "id": 62,
+    "words": [
+      "Urso",
+      "Amigos na escola",
+      "Catarina",
+      "Parque Nacional do Limpopo",
+      "Caminho de Damasco"
+    ]
+  },
+  {
+    "id": 63,
+    "words": [
+      "Olívia",
+      "Albatroz",
+      "Pretória",
+      "Ajudar os necessitados",
+      "Estudantes da Bíblia"
+    ]
+  },
+  {
+    "id": 64,
+    "words": [
+      "Chávena",
+      "Zacarias",
+      "Serpente de Cobre",
+      "Mbabane",
+      "Castor"
+    ]
+  },
+  {
+    "id": 65,
+    "words": [
+      "Serpente",
+      "Atos",
+      "Vendedor",
+      "Dinamarca",
+      "Anjo Gabriel"
+    ]
+  },
+  {
+    "id": 66,
+    "words": [
+      "Batata",
+      "Namaacha",
+      "Livro",
+      "Filipos",
+      "Azeite"
+    ]
+  },
+  {
+    "id": 67,
+    "words": [
+      "Calebe",
+      "Pontagêa",
+      "Cavalo",
+      "Pamela",
+      "Eliú"
+    ]
+  },
+  {
+    "id": 68,
+    "words": [
+      "Morte na estaca",
+      "Sílvia",
+      "Inhambane Cidade",
+      "Touro",
+      "Abraão obedeceu"
+    ]
+  },
+  {
+    "id": 69,
+    "words": [
+      "Quadro",
+      "Europa",
+      "Camelo",
+      "Fred Franz",
+      "Laodiceia"
+    ]
+  },
+  {
+    "id": 70,
+    "words": [
+      "Reino dividido",
+      "Serviço de Informação sobre Hospitais",
+      "Malhangalene",
+      "Canário",
+      "Parafuso"
+    ]
+  },
+  {
+    "id": 71,
+    "words": [
+      "David foge",
+      "Morcego",
+      "Miguel",
+      "Ana",
+      "Harare"
+    ]
+  },
+  {
+    "id": 72,
+    "words": [
+      "Última Ceia",
+      "Esturro",
+      "Santa Ceia",
+      "Hera",
+      "Tábua de Cortar"
+    ]
+  },
+  {
+    "id": 73,
+    "words": [
+      "Tangerina",
+      "Disco Externo",
+      "Sabedoria de Salomão",
+      "Pedro",
+      "Ottawa"
+    ]
+  },
+  {
+    "id": 74,
+    "words": [
+      "Joaninha",
+      "Pedreiro",
+      "Escola do Ministério Teocrático",
+      "1914",
+      "Alto Molócuè"
+    ]
+  },
+  {
+    "id": 75,
+    "words": [
+      "Lalaua",
+      "Prego",
+      "César",
+      "Mangueira",
+      "Ana e a perseverança"
+    ]
+  },
+  {
+    "id": 76,
+    "words": [
+      "Primeira de João",
+      "Dez Mandamentos",
+      "Pêssego",
+      "Débora",
+      "Mocuba"
+    ]
+  },
+  {
+    "id": 77,
+    "words": [
+      "Nampula",
+      "Carvão",
+      "Foto-Drama da Criação",
+      "Polícia",
+      "Presidente da Reunião"
+    ]
+  },
+  {
+    "id": 78,
+    "words": [
+      "Ur",
+      "Paraíso Restaurado",
+      "Vanessa",
+      "Tigre",
+      "Angoche"
+    ]
+  },
+  {
+    "id": 79,
+    "words": [
+      "Malawi",
+      "Figo",
+      "Smartphone",
+      "Trabalho voluntário",
+      "Design e Construção Local"
+    ]
+  },
+  {
+    "id": 80,
+    "words": [
+      "Direitos Humanos",
+      "Elias orou",
+      "T3",
+      "Impressora",
+      "Manta"
+    ]
+  },
+  {
+    "id": 81,
+    "words": [
+      "Áustria",
+      "Apocalipse",
+      "Bombeiro",
+      "Pedra",
+      "Baruque"
+    ]
+  },
+  {
+    "id": 82,
+    "words": [
+      "Fileto",
+      "Bandeira do Brasil",
+      "Colibri",
+      "Segurança",
+      "Naum"
+    ]
+  },
+  {
+    "id": 83,
+    "words": [
+      "Enxada",
+      "Beija-flor",
+      "Jonas e a misericórdia",
+      "Filipe",
+      "Irlanda"
+    ]
+  },
+  {
+    "id": 84,
+    "words": [
+      "Mocímboa da Praia",
+      "Alexandre",
+      "Estante",
+      "Rouxinol",
+      "Luz na Escuridão"
+    ]
+  },
+  {
+    "id": 85,
+    "words": [
+      "Irene",
+      "Cisne",
+      "Mordecai",
+      "Catandica",
+      "Eufrates"
+    ]
+  },
+  {
+    "id": 86,
+    "words": [
+      "Guilherme",
+      "Tóquio",
+      "Obediência aos pais",
+      "Pioneiro Regular",
+      "Leopardo"
+    ]
+  },
+  {
+    "id": 87,
+    "words": [
+      "Babilónios",
+      "Lebre",
+      "Lamentações",
+      "Oceano Pacífico",
+      "Maquinista"
+    ]
+  },
+  {
+    "id": 88,
+    "words": [
+      "Isaías",
+      "Estudos Bíblicos",
+      "Coruja",
+      "Veterinário",
+      "Copenhaga"
+    ]
+  },
+  {
+    "id": 89,
+    "words": [
+      "Flamingo",
+      "Diótrefes",
+      "Revisitas",
+      "Linha do Equador",
+      "Newton"
+    ]
+  },
+  {
+    "id": 90,
+    "words": [
+      "Granito",
+      "Jeú",
+      "Sofia",
+      "Ajudar nas limpezas",
+      "Suíça"
+    ]
+  },
+  {
+    "id": 91,
+    "words": [
+      "Limpeza do Salão",
+      "JW Broadcasting",
+      "Ornitorrinco",
+      "Recepcionista",
+      "Cabo das Correntes"
+    ]
+  },
+  {
+    "id": 92,
+    "words": [
+      "Tamanduá",
+      "Maná",
+      "Procurador",
+      "Carrinhos de Testemunho",
+      "Rio Amazonas"
+    ]
+  },
+  {
+    "id": 93,
+    "words": [
+      "Niassa",
+      "Telemóvel",
+      "Rato",
+      "Tabernáculo",
+      "Sião"
+    ]
+  },
+  {
+    "id": 94,
+    "words": [
+      "Samuel",
+      "Jope",
+      "Eliseu",
+      "Metangula",
+      "Veado"
+    ]
+  },
+  {
+    "id": 95,
+    "words": [
+      "Traição de Judas",
+      "Polana",
+      "Manga",
+      "Yuri",
+      "Sidom"
+    ]
+  },
+  {
+    "id": 96,
+    "words": [
+      "Repórter",
+      "Filadélfia",
+      "Espinafre",
+      "Páscoa",
+      "Zandamela"
+    ]
+  },
+  {
+    "id": 97,
+    "words": [
+      "Cabo USB",
+      "Levítico",
+      "São Tomé Cidade",
+      "Habacuque",
+      "Peixe Palhaço"
+    ]
+  },
+  {
+    "id": 98,
+    "words": [
+      "Colher",
+      "Salmos",
+      "Barata",
+      "Matutuíne",
+      "Gaza"
+    ]
+  },
+  {
+    "id": 99,
+    "words": [
+      "Tete Cidade",
+      "Garça",
+      "Siquém",
+      "Pragas no Egipto",
+      "Frigideira"
+    ]
+  },
+  {
+    "id": 100,
+    "words": [
+      "Caderno",
+      "Sansão o forte",
+      "Esposa para Isaque",
+      "Berna",
+      "Galo"
+    ]
+  },
+  {
+    "id": 101,
+    "words": [
+      "Trigo",
+      "Perseguição na Rússia",
+      "Vilankulo",
+      "Recusa de Sangue",
+      "Hélder"
+    ]
+  },
+  {
+    "id": 102,
+    "words": [
+      "Saul o primeiro rei",
+      "Persas",
+      "Pato",
+      "Vitória",
+      "Monte Kilimanjaro"
+    ]
+  },
+  {
+    "id": 103,
+    "words": [
+      "Esmirna",
+      "Máquina de Café",
+      "Coelho",
+      "Escribas",
+      "Nova Deli"
+    ]
+  },
+  {
+    "id": 104,
+    "words": [
+      "Pen Drive",
+      "João",
+      "Medusa",
+      "Beira",
+      "Comida do Céu"
+    ]
+  },
+  {
+    "id": 105,
+    "words": [
+      "Maganja da Costa",
+      "Sete",
+      "Paulo viaja",
+      "Cacto",
+      "Artista"
+    ]
+  },
+  {
+    "id": 106,
+    "words": [
+      "Válter",
+      "Oceano Índico",
+      "Traça",
+      "Ester arriscou",
+      "Corpo de Anciãos"
+    ]
+  },
+  {
+    "id": 107,
+    "words": [
+      "David",
+      "Silas",
+      "Cidade do México",
+      "Tessalónica",
+      "Cacau"
+    ]
+  },
+  {
+    "id": 108,
+    "words": [
+      "Administrador",
+      "Jonas e o grande peixe",
+      "Bacalhau",
+      "Não ser egoísta",
+      "Milange"
+    ]
+  },
+  {
+    "id": 109,
+    "words": [
+      "Chaleira",
+      "Donativos Voluntários",
+      "Oceano Ártico",
+      "Rute e Noemi",
+      "Lagartixa"
+    ]
+  },
+  {
+    "id": 110,
+    "words": [
+      "Aloe Vera",
+      "Estrela de Belém",
+      "Chibuto",
+      "Abajur",
+      "Provérbios"
+    ]
+  },
+  {
+    "id": 111,
+    "words": [
+      "Jiboia",
+      "Vaso",
+      "Monte Carmelo",
+      "Amesterdão",
+      "Coroa de Espinhos"
+    ]
+  },
+  {
+    "id": 112,
+    "words": [
+      "Burro",
+      "Alto Maé",
+      "Marta serviu",
+      "António",
+      "Neemias reconstrói"
+    ]
+  },
+  {
+    "id": 113,
+    "words": [
+      "Pequim",
+      "Ester salva o povo",
+      "Melancia",
+      "Tiatira",
+      "Beatriz"
+    ]
+  },
+  {
+    "id": 114,
+    "words": [
+      "Revista Sentinela",
+      "Investigador",
+      "Sapo",
+      "Sinédrio",
+      "Peru"
+    ]
+  },
+  {
+    "id": 115,
+    "words": [
+      "Servos Ministeriais",
+      "Jumenta de Balaão",
+      "Enxofre",
+      "Eduardo",
+      "Pebane"
+    ]
+  },
+  {
+    "id": 116,
+    "words": [
+      "Torradeira",
+      "Sofala",
+      "Êxodo",
+      "Hiena",
+      "Pão Asmo"
+    ]
+  },
+  {
+    "id": 117,
+    "words": [
+      "Montanhas dos Himalaias",
+      "Pentecostes",
+      "Baleia Azul",
+      "Militar",
+      "Joel"
+    ]
+  },
+  {
+    "id": 118,
+    "words": [
+      "Ribáuè",
+      "Gabriela",
+      "Ananás",
+      "Entrada em Jerusalém",
+      "Nova Luz"
+    ]
+  },
+  {
+    "id": 119,
+    "words": [
+      "Namuno",
+      "Coluna de Som",
+      "Hipopótamo",
+      "Mirra",
+      "Isabel"
+    ]
+  },
+  {
+    "id": 120,
+    "words": [
+      "Periquito",
+      "Daniela",
+      "Marrupa",
+      "Galileia",
+      "Paulo"
+    ]
+  },
+  {
+    "id": 121,
+    "words": [
+      "Chaimite",
+      "Leão Marinho",
+      "Eva",
+      "Jorge",
+      "Samuel ouviu"
+    ]
+  },
+  {
+    "id": 122,
+    "words": [
+      "Armadilho",
+      "Patmos",
+      "África do Sul",
+      "Sarça Ardente",
+      "Quadro Branco"
+    ]
+  },
+  {
+    "id": 123,
+    "words": [
+      "Asa",
+      "Sérgio",
+      "Amora",
+      "Gorongosa",
+      "1975"
+    ]
+  },
+  {
+    "id": 124,
+    "words": [
+      "Eletricista",
+      "Escola de Gileade",
+      "Chile",
+      "Coco",
+      "Dorcás"
+    ]
+  },
+  {
+    "id": 125,
+    "words": [
+      "Músico",
+      "Pavão",
+      "Filho Pródigo",
+      "Inhassoro",
+      "Demas"
+    ]
+  },
+  {
+    "id": 126,
+    "words": [
+      "Nova Jerusalém",
+      "Swazilândia",
+      "Declaração de Factos",
+      "Mesa de Jantar",
+      "Cegonha"
+    ]
+  },
+  {
+    "id": 127,
+    "words": [
+      "Sonhos de José",
+      "Zípora",
+      "Mafurreira",
+      "Mogovolas",
+      "Ator"
+    ]
+  },
+  {
+    "id": 128,
+    "words": [
+      "André",
+      "Raquel",
+      "Varsóvia",
+      "Caranguejo",
+      "Obra Proibida"
+    ]
+  },
+  {
+    "id": 129,
+    "words": [
+      "Judas Iscariotes",
+      "Videira",
+      "Trabalho Clandestino",
+      "Lara",
+      "Homoíne"
+    ]
+  },
+  {
+    "id": 130,
+    "words": [
+      "Vento",
+      "Bezerro infiel",
+      "Jonas aprendeu",
+      "Inês",
+      "Rio Púnguè"
+    ]
+  },
+  {
+    "id": 131,
+    "words": [
+      "Trópico de Capricórnio",
+      "Pá",
+      "Monte Tabor",
+      "Abimeleque",
+      "Margarida"
+    ]
+  },
+  {
+    "id": 132,
+    "words": [
+      "Feijão",
+      "Manjedoura",
+      "Lago Niassa",
+      "Piloto de Avião",
+      "Tenda de Adoração"
+    ]
+  },
+  {
+    "id": 133,
+    "words": [
+      "Argentina",
+      "Leão",
+      "Fariseus",
+      "Pesca Maravilhosa",
+      "Metro de Carpinteiro"
+    ]
+  },
+  {
+    "id": 134,
+    "words": [
+      "Samuel no templo",
+      "Coral",
+      "Xai-Xai",
+      "Triângulo Roxo",
+      "Inácio"
+    ]
+  },
+  {
+    "id": 135,
+    "words": [
+      "Frigorífico",
+      "Ganso",
+      "Bandeira de Malawi",
+      "Buzi",
+      "Daniel na cova"
+    ]
+  },
+  {
+    "id": 136,
+    "words": [
+      "Tabita",
+      "Esmeralda",
+      "Finlândia",
+      "Sara",
+      "Bruno"
+    ]
+  },
+  {
+    "id": 137,
+    "words": [
+      "Feto",
+      "Braille",
+      "Raquel",
+      "Engenheiro Civil",
+      "Matola F"
+    ]
+  },
+  {
+    "id": 138,
+    "words": [
+      "Fé de Abel",
+      "Faisão",
+      "Lã de Gideão",
+      "Nível de Bolha",
+      "Bairro do Porto"
+    ]
+  },
+  {
+    "id": 139,
+    "words": [
+      "Andorinha",
+      "Mandimba",
+      "Primeiro de Samuel",
+      "1942",
+      "Auscultadores"
+    ]
+  },
+  {
+    "id": 140,
+    "words": [
+      "Multiplicação dos Pães",
+      "Tigre",
+      "Luanda",
+      "Glória",
+      "Neve"
+    ]
+  },
+  {
+    "id": 141,
+    "words": [
+      "Ásia",
+      "Edson",
+      "Talentos",
+      "Ferro",
+      "Jesus cura doentes"
+    ]
+  },
+  {
+    "id": 142,
+    "words": [
+      "Ralador",
+      "Jetro",
+      "Parque Nacional de Bazaruto",
+      "Cordoniz",
+      "Josias"
+    ]
+  },
+  {
+    "id": 143,
+    "words": [
+      "Marinheiro",
+      "Lontra",
+      "Salão do Reino",
+      "Mateus",
+      "Lichinga"
+    ]
+  },
+  {
+    "id": 144,
+    "words": [
+      "Cabo Verde",
+      "Outras ovelhas",
+      "Alfaiate",
+      "Arara",
+      "Atenas"
+    ]
+  },
+  {
+    "id": 145,
+    "words": [
+      "Zebra",
+      "Orlando",
+      "Operador de Vídeo",
+      "Manica",
+      "Jafé"
+    ]
+  },
+  {
+    "id": 146,
+    "words": [
+      "Milénio",
+      "Escada",
+      "Marromeu",
+      "Jesus no templo",
+      "Águia"
+    ]
+  },
+  {
+    "id": 147,
+    "words": [
+      "Pescador",
+      "Maua",
+      "Sinai",
+      "Pombo",
+      "Encargo do Reino"
+    ]
+  },
+  {
+    "id": 148,
+    "words": [
+      "Trigo e Joio",
+      "Eliseu e os milagres",
+      "Forno",
+      "Batata-doce",
+      "Índia"
+    ]
+  },
+  {
+    "id": 149,
+    "words": [
+      "Victor",
+      "Chiúre",
+      "Despertai!",
+      "Rute e a lealdade",
+      "Pica-pau"
+    ]
+  },
+  {
+    "id": 150,
+    "words": [
+      "Moatize",
+      "Travessia do Mar",
+      "Ouriço do Mar",
+      "Arco-Íris",
+      "Duarte"
+    ]
+  },
+  {
+    "id": 151,
+    "words": [
+      "Distribuição Gratuita",
+      "Éden",
+      "Pera",
+      "Inhagoia",
+      "Chave de Fendas"
+    ]
+  },
+  {
+    "id": 152,
+    "words": [
+      "Belo Horizonte",
+      "Ameixa",
+      "Aristarco",
+      "Congelador",
+      "Teste de Abraão"
+    ]
+  },
+  {
+    "id": 153,
+    "words": [
+      "Quissanga",
+      "Amalequitas",
+      "Lírio",
+      "Calculadora",
+      "Fazer as pazes"
+    ]
+  },
+  {
+    "id": 154,
+    "words": [
+      "Sussundenga",
+      "Sodoma",
+      "Fornalha Ardente",
+      "Argila",
+      "Caixa"
+    ]
+  },
+  {
+    "id": 155,
+    "words": [
+      "Isaque",
+      "Moisés foge",
+      "Ar",
+      "Gaza",
+      "Agricultor"
+    ]
+  },
+  {
+    "id": 156,
+    "words": [
+      "Chamanculo",
+      "Comissão de Filial",
+      "Arquiteto",
+      "Primeira a Timóteo",
+      "Papaia"
+    ]
+  },
+  {
+    "id": 157,
+    "words": [
+      "Quénia",
+      "Antioquia",
+      "Tarsos",
+      "Papagaio",
+      "Papel A4"
+    ]
+  },
+  {
+    "id": 158,
+    "words": [
+      "Pepino",
+      "Liberdade de Adoração",
+      "Malema",
+      "Patrícia",
+      "Governo do Reino"
+    ]
+  },
+  {
+    "id": 159,
+    "words": [
+      "Mesa de Cabeceira",
+      "Marracuene",
+      "Golfinho",
+      "Trabalho duro",
+      "Salomão"
+    ]
+  },
+  {
+    "id": 160,
+    "words": [
+      "Yasmin",
+      "Cananeus",
+      "Gémeos Diferentes",
+      "Liberdade",
+      "Pulga"
+    ]
+  },
+  {
+    "id": 161,
+    "words": [
+      "Bissau",
+      "Alberto",
+      "David coroado",
+      "Nuvem",
+      "Charles Russell"
+    ]
+  },
+  {
+    "id": 162,
+    "words": [
+      "Mambone",
+      "Estudo em família",
+      "Daniel",
+      "Sandro",
+      "Lula"
+    ]
+  },
+  {
+    "id": 163,
+    "words": [
+      "América do Norte",
+      "Tritão",
+      "Comissão de Coordenadores",
+      "Contabilista",
+      "Dilúvio"
+    ]
+  },
+  {
+    "id": 164,
+    "words": [
+      "José na prisão",
+      "Cabeleireiro",
+      "Gurúè",
+      "Áquila",
+      "Gelo"
+    ]
+  },
+  {
+    "id": 165,
+    "words": [
+      "Leitor da Sentinela",
+      "Foca",
+      "Gerente",
+      "Suécia",
+      "Criação da Terra"
+    ]
+  },
+  {
+    "id": 166,
+    "words": [
+      "Corinto",
+      "Imite a Sua Fé",
+      "Router Wi-Fi",
+      "Acácia",
+      "Macurungo"
+    ]
+  },
+  {
+    "id": 167,
+    "words": [
+      "Promessa de Isaías",
+      "João",
+      "Munhava",
+      "Resolução de Columbus",
+      "Percevejo"
+    ]
+  },
+  {
+    "id": 168,
+    "words": [
+      "Videira",
+      "Polvo",
+      "Perdoar o amigo",
+      "Monitor",
+      "Austrália"
+    ]
+  },
+  {
+    "id": 169,
+    "words": [
+      "Cristal",
+      "William",
+      "Nigéria",
+      "Hamã",
+      "Jordão"
+    ]
+  },
+  {
+    "id": 170,
+    "words": [
+      "Romanos",
+      "Josias e a retidão",
+      "Juba",
+      "Rui",
+      "Roseira"
+    ]
+  },
+  {
+    "id": 171,
+    "words": [
+      "Bom Samaritano",
+      "Marcha do Reino",
+      "Morango",
+      "Moamba",
+      "Micro-ondas"
+    ]
+  },
+  {
+    "id": 172,
+    "words": [
+      "Ricardo",
+      "Mar Vermelho",
+      "Água-viva",
+      "Morrumbene",
+      "Egipto"
+    ]
+  },
+  {
+    "id": 173,
+    "words": [
+      "Nicoadala",
+      "Dez Virgens",
+      "Orca",
+      "Henrique",
+      "Manutenção do Salão"
+    ]
+  },
+  {
+    "id": 174,
+    "words": [
+      "Esquilo",
+      "Éfeso",
+      "Bruxelas",
+      "Filipe",
+      "Batismo de Jesus"
+    ]
+  },
+  {
+    "id": 175,
+    "words": [
+      "Pelicano",
+      "Aeroporto",
+      "Templo construído",
+      "Igor",
+      "Associação Internacional"
+    ]
+  },
+  {
+    "id": 176,
+    "words": [
+      "Rato",
+      "Milho",
+      "Juízo Final",
+      "Cades-Barneia",
+      "Chimoio"
+    ]
+  },
+  {
+    "id": 177,
+    "words": [
+      "Zimpeto",
+      "Roboão",
+      "Nádia",
+      "Horebe",
+      "Gaivota"
+    ]
+  },
+  {
+    "id": 178,
+    "words": [
+      "Vaca",
+      "Noemi e o consolo",
+      "Enfermeiro",
+      "Rio Lúrio",
+      "Tábua das Leis"
+    ]
+  },
+  {
+    "id": 179,
+    "words": [
+      "Ouro",
+      "Warwick",
+      "Chinde",
+      "Jessica",
+      "Colossenses"
+    ]
+  },
+  {
+    "id": 180,
+    "words": [
+      "Wilson",
+      "José vendido",
+      "Enoque",
+      "Deserto do Kalahari",
+      "Raia"
+    ]
+  },
+  {
+    "id": 181,
+    "words": [
+      "Vassoura",
+      "Egipto",
+      "Elcana",
+      "Sardinha",
+      "Eclesiastes"
+    ]
+  },
+  {
+    "id": 182,
+    "words": [
+      "Fernanda",
+      "Embondeiro",
+      "Babilónia",
+      "Nova Zelândia",
+      "Proteger a criação"
+    ]
+  },
+  {
+    "id": 183,
+    "words": [
+      "Dili",
+      "Hebrom",
+      "Vera",
+      "Aligator",
+      "Sociedade Torre de Vigia"
+    ]
+  },
+  {
+    "id": 184,
+    "words": [
+      "Simeão",
+      "Inharrime",
+      "Piolho",
+      "Arão",
+      "José"
+    ]
+  },
+  {
+    "id": 185,
+    "words": [
+      "Tola",
+      "Turquia",
+      "Corvo",
+      "Gaius",
+      "Otávio"
+    ]
+  },
+  {
+    "id": 186,
+    "words": [
+      "Assírios",
+      "Segunda de Pedro",
+      "Praia",
+      "Cervo",
+      "Sara"
+    ]
+  },
+  {
+    "id": 187,
+    "words": [
+      "Pedir desculpa",
+      "Tribunais e Defesa Legal",
+      "Rio Nilo",
+      "Chazeiro",
+      "Cozinheiro"
+    ]
+  },
+  {
+    "id": 188,
+    "words": [
+      "César",
+      "Issacar",
+      "José",
+      "Nipepe",
+      "Vespa"
+    ]
+  },
+  {
+    "id": 189,
+    "words": [
+      "Esponja",
+      "Coqueiro",
+      "Perseverança nas Provações",
+      "Esdras",
+      "Inhassunge"
+    ]
+  },
+  {
+    "id": 190,
+    "words": [
+      "Kevin",
+      "Abigail e a prudência",
+      "Jeroboão",
+      "Cabo Delgado",
+      "Rinoceronte"
+    ]
+  },
+  {
+    "id": 191,
+    "words": [
+      "Comemoração",
+      "Berbequim",
+      "Trigo",
+      "Cobra",
+      "Bairro FPLM"
+    ]
+  },
+  {
+    "id": 192,
+    "words": [
+      "Fita Métrica",
+      "Mostarda",
+      "Campanhas Especiais",
+      "Rio Licungo",
+      "Números"
+    ]
+  },
+  {
+    "id": 193,
+    "words": [
+      "Nairobi",
+      "Jefté",
+      "Aser",
+      "Sobreiro",
+      "Telma"
+    ]
+  },
+  {
+    "id": 194,
+    "words": [
+      "Mandioca",
+      "Engenheiro",
+      "Harpa de David",
+      "Primeira aos Tessalonicenses",
+      "Maxaquene"
+    ]
+  },
+  {
+    "id": 195,
+    "words": [
+      "Cuamba",
+      "Abelha",
+      "Timóteo",
+      "Maria",
+      "Porquê Envelhecer"
+    ]
+  },
+  {
+    "id": 196,
+    "words": [
+      "Rute",
+      "Mar Morto",
+      "Salamandra",
+      "Lava-louça",
+      "Songo"
+    ]
+  },
+  {
+    "id": 197,
+    "words": [
+      "Primeiro dos Reis",
+      "Canaã",
+      "Fio de Prumo",
+      "Rio Rovuma",
+      "Ovelha"
+    ]
+  },
+  {
+    "id": 198,
+    "words": [
+      "Hebreus",
+      "Astrónomo",
+      "Alemanha",
+      "Impala",
+      "Templo de Salomão"
+    ]
+  },
+  {
+    "id": 199,
+    "words": [
+      "Jesus",
+      "Canguru",
+      "Cesareia",
+      "Leonel",
+      "Liúpo"
+    ]
+  },
+  {
+    "id": 200,
+    "words": [
+      "Choupal",
+      "Monte das Oliveiras",
+      "Palmeira",
+      "Mecânico",
+      "Anciãos"
+    ]
+  },
+  {
+    "id": 201,
+    "words": [
+      "Dan",
+      "Gregos",
+      "Gana",
+      "Katya",
+      "Camarão"
+    ]
+  },
+  {
+    "id": 202,
+    "words": [
+      "Limão",
+      "Motorista",
+      "Central",
+      "Soberania de Jeová",
+      "Sofonias"
+    ]
+  },
+  {
+    "id": 203,
+    "words": [
+      "Musgo",
+      "Comando",
+      "Mar Vermelho",
+      "Ester e a coragem",
+      "Comissão de Redação"
+    ]
+  },
+  {
+    "id": 204,
+    "words": [
+      "Coala",
+      "Filipe o Evangelizador",
+      "Informático",
+      "Primeiro Lar",
+      "Namacurra"
+    ]
+  },
+  {
+    "id": 205,
+    "words": [
+      "Tulipa",
+      "Festo",
+      "África",
+      "Rafael",
+      "Honestidade nos testes"
+    ]
+  },
+  {
+    "id": 206,
+    "words": [
+      "Prato",
+      "Areia",
+      "Antártida",
+      "Dina",
+      "Miriã"
+    ]
+  },
+  {
+    "id": 207,
+    "words": [
+      "Ilha da Benguerra",
+      "Visão de João",
+      "Taxista",
+      "Jonas",
+      "Raposa"
+    ]
+  },
+  {
+    "id": 208,
+    "words": [
+      "Samaria",
+      "Helena",
+      "Lucas",
+      "Cana-de-açúcar",
+      "Quelimane"
+    ]
+  },
+  {
+    "id": 209,
+    "words": [
+      "Obadias",
+      "Respeito pelos mais velhos",
+      "Bambu",
+      "Magoanine",
+      "Tablet"
+    ]
+  },
+  {
+    "id": 210,
+    "words": [
+      "Canadá",
+      "Barbeiro",
+      "Bezerro de Ouro",
+      "Filipenses",
+      "Galinha"
+    ]
+  },
+  {
+    "id": 211,
+    "words": [
+      "Microfonista",
+      "Mecanhelas",
+      "Noé",
+      "Quartzo",
+      "Elísio"
+    ]
+  },
+  {
+    "id": 212,
+    "words": [
+      "Camila",
+      "Samuel",
+      "Rússia",
+      "Tito",
+      "Abóbora"
+    ]
+  },
+  {
+    "id": 213,
+    "words": [
+      "Pinheiro",
+      "Túmulo vazio",
+      "Rio Incomati",
+      "Pregação Pública",
+      "Cantor"
+    ]
+  },
+  {
+    "id": 214,
+    "words": [
+      "Escritor",
+      "Centopeia",
+      "Benjamim",
+      "Matola A",
+      "Querubim"
+    ]
+  },
+  {
+    "id": 215,
+    "words": [
+      "Pintor Artístico",
+      "Manhiça",
+      "Nabucondonosor",
+      "Alface",
+      "Visão de Pedro"
+    ]
+  },
+  {
+    "id": 216,
+    "words": [
+      "Ester",
+      "Chuva",
+      "Costa do Sol",
+      "Jesus escolhe apóstolos",
+      "Fotógrafo"
+    ]
+  },
+  {
+    "id": 217,
+    "words": [
+      "Wellington",
+      "David e Golias",
+      "Cortina",
+      "Martim-pescador",
+      "Abraão"
+    ]
+  },
+  {
+    "id": 218,
+    "words": [
+      "Seul",
+      "Cebola",
+      "Reino de Jeová",
+      "Amós",
+      "Carla"
+    ]
+  },
+  {
+    "id": 219,
+    "words": [
+      "América do Sul",
+      "Tito",
+      "Alegria da Colheita",
+      "Laranja",
+      "Abedego"
+    ]
+  },
+  {
+    "id": 220,
+    "words": [
+      "Ezequias",
+      "Oslo",
+      "Grampeador",
+      "Ovelha Perdida",
+      "Cabra"
+    ]
+  },
+  {
+    "id": 221,
+    "words": [
+      "Teresa",
+      "Sadraque",
+      "David confiou",
+      "Framboesa",
+      "Xinavane"
+    ]
+  },
+  {
+    "id": 222,
+    "words": [
+      "Nathan Knorr",
+      "Construção de Salões",
+      "Boane",
+      "Cágado",
+      "Professor"
+    ]
+  },
+  {
+    "id": 223,
+    "words": [
+      "Água em Vinho",
+      "Luis",
+      "Inhamízua",
+      "Rubi",
+      "Cafarnaum"
+    ]
+  },
+  {
+    "id": 224,
+    "words": [
+      "Advogado",
+      "Jesus aparece",
+      "Coop",
+      "Visita do Superintendente",
+      "Tubarão Martelo"
+    ]
+  },
+  {
+    "id": 225,
+    "words": [
+      "Judas",
+      "Cartão de Território",
+      "Cudo",
+      "Oceânia",
+      "Esteticista"
+    ]
+  },
+  {
+    "id": 226,
+    "words": [
+      "Betelita",
+      "Choupana",
+      "Débora e o encorajamento",
+      "Guiné-Bissau",
+      "Marta"
+    ]
+  },
+  {
+    "id": 227,
+    "words": [
+      "Bairro da Manga",
+      "Jacob em Harã",
+      "Augusto",
+      "Caminhar sobre a Água",
+      "Sal"
+    ]
+  },
+  {
+    "id": 228,
+    "words": [
+      "Relâmpago",
+      "Manica Vila",
+      "Rute escolheu",
+      "Dossiê",
+      "Ascensão"
+    ]
+  },
+  {
+    "id": 229,
+    "words": [
+      "Sofia aprende a partilhar",
+      "Família unida",
+      "Mueda",
+      "Rola",
+      "Tapete"
+    ]
+  },
+  {
+    "id": 230,
+    "words": [
+      "Macaco",
+      "Estação de Rádio WBBR",
+      "Farmacêutico",
+      "Moscovo",
+      "Getsemani"
+    ]
+  },
+  {
+    "id": 231,
+    "words": [
+      "Alho",
+      "Ruben",
+      "Daniel",
+      "Viena",
+      "Grande multidão"
+    ]
+  },
+  {
+    "id": 232,
+    "words": [
+      "Alicate",
+      "Sábado",
+      "Ana a Profetisa",
+      "Babuíno",
+      "Balama"
+    ]
+  },
+  {
+    "id": 233,
+    "words": [
+      "Dondo",
+      "Lagarto",
+      "Jerusalém",
+      "Dentista",
+      "Filemon"
+    ]
+  },
+  {
+    "id": 234,
+    "words": [
+      "Rake",
+      "Nascimento em Belém",
+      "Abdom",
+      "Brasil",
+      "Jasmim"
+    ]
+  },
+  {
+    "id": 235,
+    "words": [
+      "São Tomé e Príncipe",
+      "Panda",
+      "Segunda aos Tessalonicenses",
+      "Naamã",
+      "Mochila"
+    ]
+  },
+  {
+    "id": 236,
+    "words": [
+      "Perseguição na Alemanha",
+      "Lagoa Bilene",
+      "Dromedário",
+      "Elifaz",
+      "Tomás"
+    ]
+  },
+  {
+    "id": 237,
+    "words": [
+      "Estocolmo",
+      "Programador",
+      "Roma",
+      "Colossos",
+      "Pinguim"
+    ]
+  },
+  {
+    "id": 238,
+    "words": [
+      "Televisão",
+      "Lealdade Cristã",
+      "Raabe",
+      "Prata",
+      "Rio Save"
+    ]
+  },
+  {
+    "id": 239,
+    "words": [
+      "Lia",
+      "Brochuras",
+      "Eucalipto",
+      "Auriculares",
+      "Zâmbia"
+    ]
+  },
+  {
+    "id": 240,
+    "words": [
+      "Porco",
+      "Hugo",
+      "Priscila",
+      "Pérgamo",
+      "Angola"
+    ]
+  },
+  {
+    "id": 241,
+    "words": [
+      "Paraíso na Terra",
+      "Zimbabwe",
+      "Tradução do Novo Mundo",
+      "Mexilhão",
+      "Lápis"
+    ]
+  },
+  {
+    "id": 242,
+    "words": [
+      "Matola",
+      "Josafá",
+      "Bebé no cesto",
+      "Borboleta",
+      "Poeta"
+    ]
+  },
+  {
+    "id": 243,
+    "words": [
+      "Acabe",
+      "Elena",
+      "Ageu",
+      "Aranha",
+      "Lusaka"
+    ]
+  },
+  {
+    "id": 244,
+    "words": [
+      "Lisboa",
+      "Tartaruga",
+      "Vasco",
+      "Gad",
+      "Queda de Jericó"
+    ]
+  },
+  {
+    "id": 245,
+    "words": [
+      "Ouro",
+      "Relatório de Serviço",
+      "Joana",
+      "Rio Umbeluzi",
+      "Pardal"
+    ]
+  },
+  {
+    "id": 246,
+    "words": [
+      "Oseias",
+      "Natália",
+      "Pemba",
+      "Nínive",
+      "Cachorro"
+    ]
+  },
+  {
+    "id": 247,
+    "words": [
+      "Quissico",
+      "Grande Família",
+      "Tratados",
+      "Armário",
+      "Tubarão Branco"
+    ]
+  },
+  {
+    "id": 248,
+    "words": [
+      "Belo Jardim",
+      "Carpinteiro",
+      "Gráficas de Betel",
+      "Gondola",
+      "Caféeiro"
+    ]
+  },
+  {
+    "id": 249,
+    "words": [
+      "Missionário",
+      "Ponta Mamoli",
+      "Anaconda",
+      "Belém",
+      "Comissário de Bordo"
+    ]
+  },
+  {
+    "id": 250,
+    "words": [
+      "Bronze",
+      "Paula",
+      "Namapa",
+      "Nome de Deus",
+      "Félix"
+    ]
+  },
+  {
+    "id": 251,
+    "words": [
+      "Camaleão",
+      "Segundo dos Reis",
+      "Moma",
+      "Agenda",
+      "Jacob"
+    ]
+  },
+  {
+    "id": 252,
+    "words": [
+      "Golgota",
+      "Dar graças",
+      "EUA",
+      "Avestruz",
+      "Diana"
+    ]
+  },
+  {
+    "id": 253,
+    "words": [
+      "Sermão do Monte",
+      "Anjo visita Maria",
+      "Gorila",
+      "Mário",
+      "Rabat"
+    ]
+  },
+  {
+    "id": 254,
+    "words": [
+      "Tíquico",
+      "Fogão",
+      "Nazaré",
+      "Caia",
+      "Grilo"
+    ]
+  },
+  {
+    "id": 255,
+    "words": [
+      "Mosca",
+      "Zabulão",
+      "Xavier",
+      "Deuteronómio",
+      "Chokwé"
+    ]
+  },
+  {
+    "id": 256,
+    "words": [
+      "Falcão",
+      "Pentecostes em Jerusalém",
+      "Monte Evereste",
+      "Envelope",
+      "Salão de Assembleias"
+    ]
+  },
+  {
+    "id": 257,
+    "words": [
+      "Palma",
+      "Maria",
+      "Estrela do Mar",
+      "Batedeira",
+      "Simão o Zelote"
+    ]
+  },
+  {
+    "id": 258,
+    "words": [
+      "Bartolomeu",
+      "Brasília",
+      "Mocho",
+      "Reunião de Fim de Semana",
+      "Consola de Jogos"
+    ]
+  },
+  {
+    "id": 259,
+    "words": [
+      "Espanha",
+      "Lama",
+      "Patterson",
+      "Bons Amigos",
+      "Pano de Prato"
+    ]
+  },
+  {
+    "id": 260,
+    "words": [
+      "Josué comanda",
+      "Jardineiro",
+      "Diamante",
+      "Esperança da Ressurreição",
+      "Inhambane"
+    ]
+  },
+  {
+    "id": 261,
+    "words": [
+      "Maputo",
+      "Búfalo",
+      "Padeiro",
+      "Segunda de João",
+      "Sansão"
+    ]
+  },
+  {
+    "id": 262,
+    "words": [
+      "Três hebreus salvos",
+      "Repartidor",
+      "Facocero",
+      "Portugal",
+      "Elom"
+    ]
+  },
+  {
+    "id": 263,
+    "words": [
+      "Incenso",
+      "Espelho",
+      "Primeira aos Coríntios",
+      "Preguiça",
+      "Parque Nacional da Gorongosa"
+    ]
+  },
+  {
+    "id": 264,
+    "words": [
+      "Associação das Testemunhas",
+      "Nelson",
+      "Cravo",
+      "Moisés",
+      "Mafalala"
+    ]
+  },
+  {
+    "id": 265,
+    "words": [
+      "Ciro",
+      "Pintor",
+      "Dakar",
+      "Judá",
+      "Termita"
+    ]
+  },
+  {
+    "id": 266,
+    "words": [
+      "Manuel",
+      "Torre de Vigia de Sião",
+      "Changara",
+      "Banana",
+      "Betel a nossa casa"
+    ]
+  },
+  {
+    "id": 267,
+    "words": [
+      "Roupeiro",
+      "Entendimento Clarificado",
+      "Dodoma",
+      "Carrapato",
+      "Joseph Rutherford"
+    ]
+  },
+  {
+    "id": 268,
+    "words": [
+      "Tiro",
+      "Nhamatanda",
+      "Serralheiro",
+      "Algodoeiro",
+      "Sardes"
+    ]
+  },
+  {
+    "id": 269,
+    "words": [
+      "Sommerschield",
+      "Débora",
+      "Tatiana",
+      "Girassol",
+      "Maria aceitou"
+    ]
+  },
+  {
+    "id": 270,
+    "words": [
+      "Noé construiu",
+      "Bento",
+      "Fomento",
+      "Miqueias",
+      "Lagosta"
+    ]
+  },
+  {
+    "id": 271,
+    "words": [
+      "Cascavel",
+      "Pessoas Interessadas",
+      "Corda",
+      "Ibçã",
+      "Camberra"
+    ]
+  },
+  {
+    "id": 272,
+    "words": [
+      "Meconta",
+      "Dalila",
+      "Mariana",
+      "Barnabé",
+      "Uva"
+    ]
+  },
+  {
+    "id": 273,
+    "words": [
+      "Lilongwe",
+      "Caim",
+      "Gideão vence",
+      "Dançarino",
+      "Lobo"
+    ]
+  },
+  {
+    "id": 274,
+    "words": [
+      "Mutarara",
+      "Mical",
+      "Melga",
+      "2013",
+      "Abridor de Garrafas"
+    ]
+  },
+  {
+    "id": 275,
+    "words": [
+      "Pedro e Sofia",
+      "Maçã",
+      "Faca",
+      "Ministério de Casa em Casa",
+      "Timor-Leste"
+    ]
+  },
+  {
+    "id": 276,
+    "words": [
+      "Nilo",
+      "Mar Mediterrâneo",
+      "Goiaba",
+      "Cordeiro Pascal",
+      "Luísa"
+    ]
+  },
+  {
+    "id": 277,
+    "words": [
+      "Mosquito",
+      "Departamento de Tradução",
+      "Costureira",
+      "Bélgica",
+      "Ajuda em Desastres"
+    ]
+  },
+  {
+    "id": 278,
+    "words": [
+      "Cevada",
+      "Jezabel",
+      "Mar da Galileia",
+      "Ilha da Inhaca",
+      "Ivo"
+    ]
+  },
+  {
+    "id": 279,
+    "words": [
+      "Folhetos",
+      "Designer",
+      "Pimento",
+      "Monte Hermom",
+      "Munhuana"
+    ]
+  },
+  {
+    "id": 280,
+    "words": [
+      "Salmão",
+      "Memba",
+      "Filémon",
+      "José protegeu",
+      "Ester"
+    ]
+  },
+  {
+    "id": 281,
+    "words": [
+      "Fisioterapeuta",
+      "Gato",
+      "Madrid",
+      "Estudo Pessoal",
+      "Senaqueribe"
+    ]
+  },
+  {
+    "id": 282,
+    "words": [
+      "Segunda aos Coríntios",
+      "Víbora",
+      "Manjacaze",
+      "Goliás",
+      "Óscar"
+    ]
+  },
+  {
+    "id": 283,
+    "words": [
+      "Cientista",
+      "Enoque andou com Deus",
+      "Egípcios",
+      "Bandeira de Portugal",
+      "Tarântula"
+    ]
+  },
+  {
+    "id": 284,
+    "words": [
+      "Esaú",
+      "Crocodilo",
+      "Alice",
+      "Hulene",
+      "Ararate"
+    ]
+  },
+  {
+    "id": 285,
+    "words": [
+      "Isabel",
+      "Edificações de Filiais",
+      "Peru",
+      "Arcanjo Miguel",
+      "Noruega"
+    ]
+  },
+  {
+    "id": 286,
+    "words": [
+      "Mossuril",
+      "Operador de Som",
+      "Chita",
+      "Escola para Evangelizadores",
+      "Pedro"
+    ]
+  },
+  {
+    "id": 287,
+    "words": [
+      "Carlos",
+      "Discurso Público",
+      "Senegal",
+      "Alternativas Médicas",
+      "Fogo"
+    ]
+  },
+  {
+    "id": 288,
+    "words": [
+      "Poltrona",
+      "Iguana",
+      "Bíblias em miniatura",
+      "Massinga",
+      "Dízimo"
+    ]
+  },
+  {
+    "id": 289,
+    "words": [
+      "Maxixe",
+      "Moabe",
+      "Indicador",
+      "Júlio",
+      "Melão"
+    ]
+  },
+  {
+    "id": 290,
+    "words": [
+      "Japão",
+      "1931",
+      "Atum",
+      "Ana",
+      "Dário"
+    ]
+  },
+  {
+    "id": 291,
+    "words": [
+      "Deserto do Sara",
+      "Levi",
+      "Tucano",
+      "Oração de Agradecimento",
+      "Borracha"
+    ]
+  },
+  {
+    "id": 292,
+    "words": [
+      "Sofá",
+      "Alpaca",
+      "Inglaterra",
+      "Corpo Governante",
+      "Agripa"
+    ]
+  },
+  {
+    "id": 293,
+    "words": [
+      "Malta",
+      "Educador",
+      "Cobre",
+      "Buenos Aires",
+      "Adopção do Nome"
+    ]
+  },
+  {
+    "id": 294,
+    "words": [
+      "Monapo",
+      "Supremo Tribunal",
+      "Escola de Pioneiros",
+      "Girafa",
+      "Projetor"
+    ]
+  },
+  {
+    "id": 295,
+    "words": [
+      "Torre de Babel",
+      "Água",
+      "Segundo das Crónicas",
+      "Panela",
+      "Arquipélago das Quirimbas"
+    ]
+  },
+  {
+    "id": 296,
+    "words": [
+      "Abacate",
+      "Fátima",
+      "Eráti",
+      "Brooklyn",
+      "Marcos"
+    ]
+  },
+  {
+    "id": 297,
+    "words": [
+      "Fernando",
+      "Rio Jordão",
+      "Londres",
+      "Ostra",
+      "Ressurreição"
+    ]
+  },
+  {
+    "id": 298,
+    "words": [
+      "Cavalo Marinho",
+      "Urbanização",
+      "Promessa de Deus",
+      "Elisa",
+      "Figueira"
+    ]
+  },
+  {
+    "id": 299,
+    "words": [
+      "Novo Cântico",
+      "Nacala",
+      "Chimpanzé",
+      "Paulo",
+      "José governa"
+    ]
+  },
+  {
+    "id": 300,
+    "words": [
+      "Carregador",
+      "Cairo",
+      "Escaravelho",
+      "Adão",
+      "Génesis"
+    ]
+  },
+  {
+    "id": 301,
+    "words": [
+      "Bernardo",
+      "Cornélio",
+      "Elefante",
+      "Ancuabe",
+      "Reunião de Meio de Semana"
+    ]
+  },
+  {
+    "id": 302,
+    "words": [
+      "Relógio de Parede",
+      "Esponja Marinha",
+      "Helsínquia",
+      "Pioneiro Auxiliar",
+      "Cabelo de Sansão"
+    ]
+  },
+  {
+    "id": 303,
+    "words": [
+      "Harã",
+      "Dez Pragas",
+      "Cágado-terrestre",
+      "Ancara",
+      "Martelo"
+    ]
+  },
+  {
+    "id": 304,
+    "words": [
+      "Gnu",
+      "Tiago",
+      "Santiago",
+      "Oração diária",
+      "Amor Fraternal"
+    ]
+  },
+  {
+    "id": 305,
+    "words": [
+      "Carvalho",
+      "Efésios",
+      "Otília",
+      "Grande Barco",
+      "França"
+    ]
+  },
+  {
+    "id": 306,
+    "words": [
+      "Tomé",
+      "Computador",
+      "Ezequiel",
+      "Atenas",
+      "Gafanhoto"
+    ]
+  },
+  {
+    "id": 307,
+    "words": [
+      "Arroz",
+      "1919",
+      "Sem",
+      "Zambézia",
+      "Afia-lápis"
+    ]
+  },
+  {
+    "id": 308,
+    "words": [
+      "Cevada",
+      "Arca da Aliança",
+      "Lúcia",
+      "Accra",
+      "Carapau"
+    ]
+  },
+  {
+    "id": 309,
+    "words": [
+      "Secretário",
+      "Tomate",
+      "Paris",
+      "Cam",
+      "Epafrodito"
+    ]
+  },
+  {
+    "id": 310,
+    "words": [
+      "Tentação no Deserto",
+      "Magude",
+      "Apolo",
+      "Estojo",
+      "Pescada"
+    ]
+  },
+  {
+    "id": 311,
+    "words": [
+      "Lima",
+      "Formiga",
+      "Rio Limpopo",
+      "João Batista",
+      "Gálatas"
+    ]
+  },
+  {
+    "id": 312,
+    "words": [
+      "Holanda",
+      "Josué",
+      "Zuraida",
+      "Produção de Bíblias",
+      "Chacal"
+    ]
+  },
+  {
+    "id": 313,
+    "words": [
+      "Caná",
+      "Oliveira",
+      "Garçom",
+      "David e o perdão",
+      "Trópico de Câncer"
+    ]
+  },
+  {
+    "id": 314,
+    "words": [
+      "Louva-a-deus",
+      "Santidade",
+      "Artaxerxes",
+      "Barragem de Cahora Bassa",
+      "Serrote"
+    ]
+  },
+  {
+    "id": 315,
+    "words": [
+      "Nangade",
+      "Ema",
+      "Cântico de Salomão",
+      "Diretor",
+      "Neutralidade Cristã"
+    ]
+  },
+  {
+    "id": 316,
+    "words": [
+      "Armagedon",
+      "Reserva Especial de Maputo",
+      "Língua de Sinais",
+      "Cenoura",
+      "Lucas"
+    ]
+  },
+  {
+    "id": 317,
+    "words": [
+      "Canalizador",
+      "Bilene",
+      "Lídia",
+      "Amêijoa",
+      "Segundo de Samuel"
+    ]
+  },
+  {
+    "id": 318,
+    "words": [
+      "Trovão",
+      "Jeremias",
+      "Mar das Caraíbas",
+      "Paz Mental",
+      "Pasteleiro"
+    ]
+  },
+  {
+    "id": 319,
+    "words": [
+      "David",
+      "Juiz",
+      "Boi",
+      "Roma",
+      "Território de Pregação"
+    ]
+  },
+  {
+    "id": 320,
+    "words": [
+      "Bruna",
+      "Ervilha",
+      "Nacala-a-Velha",
+      "Fé Inabalável",
+      "Jónatas"
+    ]
+  },
+  {
+    "id": 321,
+    "words": [
+      "Chave Inglesa",
+      "Jó",
+      "Jacob viaja",
+      "Tubarão",
+      "Ilha de Santa Carolina"
+    ]
+  },
+  {
+    "id": 322,
+    "words": [
+      "Tesoura",
+      "Doze Espias",
+      "Gavião",
+      "Homem Mau",
+      "Reserva de Niassa"
+    ]
+  },
+  {
+    "id": 323,
+    "words": [
+      "Escorpião",
+      "Ilha do Bazaruto",
+      "Nuno",
+      "Lot",
+      "Arca de Noé"
+    ]
+  },
+  {
+    "id": 324,
+    "words": [
+      "Bogotá",
+      "Jornalista",
+      "União de irmãos",
+      "Mármore",
+      "Sarça que arde"
+    ]
+  },
+  {
+    "id": 325,
+    "words": [
+      "Bildade",
+      "Petróleo",
+      "Boas maneiras",
+      "Bárbara",
+      "Bandeira de Moçambique"
+    ]
+  },
+  {
+    "id": 326,
+    "words": [
+      "Gabriel",
+      "Sangar",
+      "Damasco",
+      "Macia",
+      "Orquídea"
+    ]
+  },
+  {
+    "id": 327,
+    "words": [
+      "Ilha de Moçambique",
+      "Urso Polar",
+      "Copo",
+      "Pedro arrependeu-se",
+      "Neemias"
+    ]
+  },
+  {
+    "id": 328,
+    "words": [
+      "Pregação com os pais",
+      "Almofada",
+      "Jacaré",
+      "Coreia do Sul",
+      "Filisteus"
+    ]
+  },
+  {
+    "id": 329,
+    "words": [
+      "Abel",
+      "Jezabel a má",
+      "Baleia",
+      "Abuja",
+      "Rosa"
+    ]
+  },
+  {
+    "id": 330,
+    "words": [
+      "Polónia",
+      "Anuário",
+      "Francisco",
+      "Serafim",
+      "Repolho"
+    ]
+  },
+  {
+    "id": 331,
+    "words": [
+      "Berlim",
+      "Cobra-coral",
+      "Gideão",
+      "Cláudio",
+      "Ai"
+    ]
+  },
+  {
+    "id": 332,
+    "words": [
+      "Juízes",
+      "Terceira de João",
+      "Rã",
+      "Alfredo",
+      "Lima"
+    ]
+  },
+  {
+    "id": 333,
+    "words": [
+      "Portátil",
+      "Vida e Ministério",
+      "Selo da Sociedade",
+      "Caramujo",
+      "Antílope"
+    ]
+  },
+  {
+    "id": 334,
+    "words": [
+      "Mesaque",
+      "Patrício",
+      "Terra",
+      "Otniel",
+      "México"
+    ]
+  },
+  {
+    "id": 335,
+    "words": [
+      "Estêvão",
+      "Tesoura de Poda",
+      "Voluntários de Salão",
+      "Ponta do Ouro",
+      "Urso"
+    ]
+  },
+  {
+    "id": 336,
+    "words": [
+      "Cama",
+      "Albatroz",
+      "Pequeno rebanho",
+      "Tanzânia",
+      "Assembleias de Circuito"
+    ]
+  },
+  {
+    "id": 337,
+    "words": [
+      "Sonhos do Faraó",
+      "Rio Mississippi",
+      "Escultor",
+      "Castor",
+      "Rebeca"
+    ]
+  },
+  {
+    "id": 338,
+    "words": [
+      "Marcador",
+      "Grécia",
+      "Criação Louva",
+      "Serpente",
+      "Gigantes na Terra"
+    ]
+  },
+  {
+    "id": 339,
+    "words": [
+      "Angoche Cidade",
+      "Batata",
+      "Ressurreição de Lázaro",
+      "Onésimo",
+      "Cómoda"
+    ]
+  },
+  {
+    "id": 340,
+    "words": [
+      "Cavalo",
+      "Voz no Sinai",
+      "Zacarias",
+      "Saul",
+      "Washington"
+    ]
+  },
+  {
+    "id": 341,
+    "words": [
+      "Caneta",
+      "Cova dos Leões",
+      "Abigail",
+      "Touro",
+      "Itália"
+    ]
+  },
+  {
+    "id": 342,
+    "words": [
+      "Tiago",
+      "Camelo",
+      "Ana pede um filho",
+      "China",
+      "Amélia"
+    ]
+  },
+  {
+    "id": 343,
+    "words": [
+      "Barman",
+      "Canário",
+      "Matias",
+      "Colômbia",
+      "Primeiro das Crónicas"
+    ]
+  },
+  {
+    "id": 344,
+    "words": [
+      "Resposta a Satanás",
+      "Estudo de Livro",
+      "Morcego",
+      "Rio Búzi",
+      "Júlia"
+    ]
+  },
+  {
+    "id": 345,
+    "words": [
+      "Memorial da Morte",
+      "Parque Nacional das Quirimbas",
+      "Régua",
+      "Siló",
+      "Hera"
+    ]
+  },
+  {
+    "id": 346,
+    "words": [
+      "Tete",
+      "Amigo de Deus",
+      "Jericó",
+      "Tangerina",
+      "Martelo Elétrico"
+    ]
+  },
+  {
+    "id": 347,
+    "words": [
+      "Joaninha",
+      "Watchtower",
+      "Oceano Atlântico",
+      "Zofar",
+      "Câmara Fotográfica"
+    ]
+  },
+  {
+    "id": 348,
+    "words": [
+      "Elias e os profetas",
+      "Jair",
+      "Mangueira",
+      "Dublin",
+      "Carrinho de Mão"
+    ]
+  },
+  {
+    "id": 349,
+    "words": [
+      "Gomorra",
+      "Marrocos",
+      "Fidelidade",
+      "Pêssego",
+      "Gonçalo"
+    ]
+  },
+  {
+    "id": 350,
+    "words": [
+      "Rio Zambeze",
+      "Fita Adesiva",
+      "Carvão",
+      "Roubo de Acã",
+      "Nova Vida"
+    ]
+  },
+  {
+    "id": 351,
+    "words": [
+      "Tigre",
+      "Nome Testemunhas de Jeová",
+      "Filipa",
+      "Muralhas de Jericó",
+      "Montepuez"
+    ]
+  },
+  {
+    "id": 352,
+    "words": [
+      "Figo",
+      "Comissão de Editores",
+      "Teclado",
+      "Betel",
+      "Parque Nacional do Limpopo"
+    ]
+  },
+  {
+    "id": 353,
+    "words": [
+      "Médico",
+      "Cantemos de Coração",
+      "Pretória",
+      "Wallkill",
+      "Manta"
+    ]
+  },
+  {
+    "id": 354,
+    "words": [
+      "Parábola do Semeador",
+      "Clips",
+      "Pedra",
+      "Primeira de Pedro",
+      "Mbabane"
+    ]
+  },
+  {
+    "id": 355,
+    "words": [
+      "Dinamarca",
+      "Kelven",
+      "Colibri",
+      "Regresso ao Céu",
+      "Malaquias"
+    ]
+  },
+  {
+    "id": 356,
+    "words": [
+      "Namaacha",
+      "Beija-flor",
+      "Cadeira",
+      "Belsazar",
+      "Batismo no Jordão"
+    ]
+  },
+  {
+    "id": 357,
+    "words": [
+      "Pedro diz a verdade",
+      "Lustre",
+      "Rouxinol",
+      "Resgate de Cristo",
+      "Pontagêa"
+    ]
+  },
+  {
+    "id": 358,
+    "words": [
+      "Testemunho Informal",
+      "Inhambane Cidade",
+      "Cisne",
+      "Tadeu",
+      "Zélia"
+    ]
+  },
+  {
+    "id": 359,
+    "words": [
+      "Leopardo",
+      "Europa",
+      "Congressos de Distrito",
+      "Garfo",
+      "Comissão de Pessoal"
+    ]
+  },
+  {
+    "id": 360,
+    "words": [
+      "Vara de Arão",
+      "Lebre",
+      "Malhangalene",
+      "Comissão de Ensino",
+      "Liquidificador"
+    ]
+  },
+  {
+    "id": 361,
+    "words": [
+      "Harare",
+      "Neuza",
+      "Eude",
+      "Ungidos",
+      "Coruja"
+    ]
+  },
+  {
+    "id": 362,
+    "words": [
+      "Flamingo",
+      "Esturro",
+      "Gisela",
+      "Segunda a Timóteo",
+      "Saduceus"
+    ]
+  },
+  {
+    "id": 363,
+    "words": [
+      "Tiago de Alfeu",
+      "Granito",
+      "Ottawa",
+      "Elias",
+      "Rita"
+    ]
+  },
+  {
+    "id": 364,
+    "words": [
+      "Funda de David",
+      "Catarina",
+      "Ornitorrinco",
+      "Alto Molócuè",
+      "Dirigente do Estudo"
+    ]
+  },
+  {
+    "id": 365,
+    "words": [
+      "Olívia",
+      "Sara esperou",
+      "Lalaua",
+      "Grande Torre",
+      "Tamanduá"
+    ]
+  },
+  {
+    "id": 366,
+    "words": [
+      "Potifar",
+      "Cartas de Testemunho",
+      "Chávena",
+      "Rato",
+      "Mocuba"
+    ]
+  },
+  {
+    "id": 367,
+    "words": [
+      "Carruagem de Fogo",
+      "Vendedor",
+      "Nampula",
+      "Veado",
+      "Baraque"
+    ]
+  },
+  {
+    "id": 368,
+    "words": [
+      "Livro",
+      "Mulher de Lot",
+      "Angoche",
+      "Manga",
+      "Naftali"
+    ]
+  },
+  {
+    "id": 369,
+    "words": [
+      "Pamela",
+      "JW Library",
+      "Integridade",
+      "Malawi",
+      "Espinafre"
+    ]
+  },
+  {
+    "id": 370,
+    "words": [
+      "Sílvia",
+      "Escutar nas reuniões",
+      "Peixe Palhaço",
+      "T3",
+      "Mostarda"
+    ]
+  },
+  {
+    "id": 371,
+    "words": [
+      "Destruição de Cidades",
+      "Quadro",
+      "Barata",
+      "Comissões de Ligação com Hospitais",
+      "Áustria"
+    ]
+  },
+  {
+    "id": 372,
+    "words": [
+      "Garça",
+      "Parafuso",
+      "Bandeira do Brasil",
+      "Eli",
+      "Himeneu"
+    ]
+  },
+  {
+    "id": 373,
+    "words": [
+      "Bate-Seba",
+      "Irlanda",
+      "Miguel",
+      "Caminho de Damasco",
+      "Galo"
+    ]
+  },
+  {
+    "id": 374,
+    "words": [
+      "Trigo",
+      "Mocímboa da Praia",
+      "Tábua de Cortar",
+      "Estudantes da Bíblia",
+      "Amigos na escola"
+    ]
+  },
+  {
+    "id": 375,
+    "words": [
+      "Catandica",
+      "Serpente de Cobre",
+      "Pato",
+      "Disco Externo",
+      "Ajudar os necessitados"
+    ]
+  },
+  {
+    "id": 376,
+    "words": [
+      "Coelho",
+      "Anjo Gabriel",
+      "Tóquio",
+      "Zacarias",
+      "Pedreiro"
+    ]
+  },
+  {
+    "id": 377,
+    "words": [
+      "Atos",
+      "Oceano Pacífico",
+      "Filipos",
+      "Prego",
+      "Medusa"
+    ]
+  },
+  {
+    "id": 378,
+    "words": [
+      "Azeite",
+      "Calebe",
+      "Débora",
+      "Copenhaga",
+      "Cacto"
+    ]
+  },
+  {
+    "id": 379,
+    "words": [
+      "Polícia",
+      "Linha do Equador",
+      "Traça",
+      "Eliú",
+      "Morte na estaca"
+    ]
+  },
+  {
+    "id": 380,
+    "words": [
+      "Abraão obedeceu",
+      "Cacau",
+      "Laodiceia",
+      "Suíça",
+      "Vanessa"
+    ]
+  },
+  {
+    "id": 381,
+    "words": [
+      "Serviço de Informação sobre Hospitais",
+      "Cabo das Correntes",
+      "Fred Franz",
+      "Bacalhau",
+      "Smartphone"
+    ]
+  },
+  {
+    "id": 382,
+    "words": [
+      "Impressora",
+      "David foge",
+      "Reino dividido",
+      "Rio Amazonas",
+      "Lagartixa"
+    ]
+  },
+  {
+    "id": 383,
+    "words": [
+      "Aloe Vera",
+      "Santa Ceia",
+      "Niassa",
+      "Ana",
+      "Bombeiro"
+    ]
+  },
+  {
+    "id": 384,
+    "words": [
+      "Segurança",
+      "Jiboia",
+      "Metangula",
+      "Última Ceia",
+      "Sabedoria de Salomão"
+    ]
+  },
+  {
+    "id": 385,
+    "words": [
+      "Burro",
+      "Enxada",
+      "Polana",
+      "Escola do Ministério Teocrático",
+      "Pedro"
+    ]
+  },
+  {
+    "id": 386,
+    "words": [
+      "1914",
+      "Ana e a perseverança",
+      "Zandamela",
+      "Melancia",
+      "Estante"
+    ]
+  },
+  {
+    "id": 387,
+    "words": [
+      "Sapo",
+      "São Tomé Cidade",
+      "Primeira de João",
+      "César",
+      "Irene"
+    ]
+  },
+  {
+    "id": 388,
+    "words": [
+      "Enxofre",
+      "Guilherme",
+      "Matutuíne",
+      "Foto-Drama da Criação",
+      "Dez Mandamentos"
+    ]
+  },
+  {
+    "id": 389,
+    "words": [
+      "Tete Cidade",
+      "Presidente da Reunião",
+      "Hiena",
+      "Ur",
+      "Maquinista"
+    ]
+  },
+  {
+    "id": 390,
+    "words": [
+      "Trabalho voluntário",
+      "Berna",
+      "Paraíso Restaurado",
+      "Veterinário",
+      "Baleia Azul"
+    ]
+  },
+  {
+    "id": 391,
+    "words": [
+      "Direitos Humanos",
+      "Newton",
+      "Ananás",
+      "Design e Construção Local",
+      "Vilankulo"
+    ]
+  },
+  {
+    "id": 392,
+    "words": [
+      "Elias orou",
+      "Apocalipse",
+      "Monte Kilimanjaro",
+      "Hipopótamo",
+      "Sofia"
+    ]
+  },
+  {
+    "id": 393,
+    "words": [
+      "Fileto",
+      "Recepcionista",
+      "Periquito",
+      "Baruque",
+      "Nova Deli"
+    ]
+  },
+  {
+    "id": 394,
+    "words": [
+      "Beira",
+      "Filipe",
+      "Naum",
+      "Procurador",
+      "Leão Marinho"
+    ]
+  },
+  {
+    "id": 395,
+    "words": [
+      "Armadilho",
+      "Maganja da Costa",
+      "Jonas e a misericórdia",
+      "Telemóvel",
+      "Alexandre"
+    ]
+  },
+  {
+    "id": 396,
+    "words": [
+      "Amora",
+      "Eufrates",
+      "Samuel",
+      "Luz na Escuridão",
+      "Oceano Índico"
+    ]
+  },
+  {
+    "id": 397,
+    "words": [
+      "Cidade do México",
+      "Coco",
+      "Obediência aos pais",
+      "Mordecai",
+      "Yuri"
+    ]
+  },
+  {
+    "id": 398,
+    "words": [
+      "Pavão",
+      "Pioneiro Regular",
+      "Milange",
+      "Repórter",
+      "Lamentações"
+    ]
+  },
+  {
+    "id": 399,
+    "words": [
+      "Babilónios",
+      "Oceano Ártico",
+      "Cabo USB",
+      "Estudos Bíblicos",
+      "Cegonha"
+    ]
+  },
+  {
+    "id": 400,
+    "words": [
+      "Colher",
+      "Isaías",
+      "Mafurreira",
+      "Diótrefes",
+      "Chibuto"
+    ]
+  },
+  {
+    "id": 401,
+    "words": [
+      "Amesterdão",
+      "Frigideira",
+      "Caranguejo",
+      "Revisitas",
+      "Ajudar nas limpezas"
+    ]
+  },
+  {
+    "id": 402,
+    "words": [
+      "Alto Maé",
+      "Caderno",
+      "Jeú",
+      "JW Broadcasting",
+      "Videira"
+    ]
+  },
+  {
+    "id": 403,
+    "words": [
+      "Hélder",
+      "Pequim",
+      "Maná",
+      "Vento",
+      "Limpeza do Salão"
+    ]
+  },
+  {
+    "id": 404,
+    "words": [
+      "Peru",
+      "Margarida",
+      "Carrinhos de Testemunho",
+      "Sião",
+      "Vitória"
+    ]
+  },
+  {
+    "id": 405,
+    "words": [
+      "Jope",
+      "Máquina de Café",
+      "Feijão",
+      "Tabernáculo",
+      "Pebane"
+    ]
+  },
+  {
+    "id": 406,
+    "words": [
+      "Leão",
+      "Sidom",
+      "Sofala",
+      "Pen Drive",
+      "Eliseu"
+    ]
+  },
+  {
+    "id": 407,
+    "words": [
+      "Traição de Judas",
+      "Artista",
+      "Montanhas dos Himalaias",
+      "Filadélfia",
+      "Coral"
+    ]
+  },
+  {
+    "id": 408,
+    "words": [
+      "Ganso",
+      "Habacuque",
+      "Válter",
+      "Páscoa",
+      "Ribáuè"
+    ]
+  },
+  {
+    "id": 409,
+    "words": [
+      "David",
+      "Levítico",
+      "Salmos",
+      "Esmeralda",
+      "Namuno"
+    ]
+  },
+  {
+    "id": 410,
+    "words": [
+      "Marrupa",
+      "Pragas no Egipto",
+      "Gaza",
+      "Feto",
+      "Administrador"
+    ]
+  },
+  {
+    "id": 411,
+    "words": [
+      "Chaleira",
+      "Sansão o forte",
+      "Chaimite",
+      "Siquém",
+      "Faisão"
+    ]
+  },
+  {
+    "id": 412,
+    "words": [
+      "Abajur",
+      "África do Sul",
+      "Andorinha",
+      "Perseguição na Rússia",
+      "Esposa para Isaque"
+    ]
+  },
+  {
+    "id": 413,
+    "words": [
+      "Vaso",
+      "Gorongosa",
+      "Neve",
+      "Persas",
+      "Recusa de Sangue"
+    ]
+  },
+  {
+    "id": 414,
+    "words": [
+      "Ferro",
+      "António",
+      "Chile",
+      "Escribas",
+      "Saul o primeiro rei"
+    ]
+  },
+  {
+    "id": 415,
+    "words": [
+      "Esmirna",
+      "Comida do Céu",
+      "Inhassoro",
+      "Beatriz",
+      "Cordoniz"
+    ]
+  },
+  {
+    "id": 416,
+    "words": [
+      "Lontra",
+      "João",
+      "Paulo viaja",
+      "Investigador",
+      "Swazilândia"
+    ]
+  },
+  {
+    "id": 417,
+    "words": [
+      "Arara",
+      "Ester arriscou",
+      "Sete",
+      "Eduardo",
+      "Mogovolas"
+    ]
+  },
+  {
+    "id": 418,
+    "words": [
+      "Torradeira",
+      "Varsóvia",
+      "Corpo de Anciãos",
+      "Zebra",
+      "Silas"
+    ]
+  },
+  {
+    "id": 419,
+    "words": [
+      "Militar",
+      "Homoíne",
+      "Tessalónica",
+      "Águia",
+      "Jonas e o grande peixe"
+    ]
+  },
+  {
+    "id": 420,
+    "words": [
+      "Gabriela",
+      "Pombo",
+      "Rio Púnguè",
+      "Donativos Voluntários",
+      "Não ser egoísta"
+    ]
+  },
+  {
+    "id": 421,
+    "words": [
+      "Provérbios",
+      "Rute e Noemi",
+      "Trópico de Capricórnio",
+      "Batata-doce",
+      "Coluna de Som"
+    ]
+  },
+  {
+    "id": 422,
+    "words": [
+      "Daniela",
+      "Monte Carmelo",
+      "Estrela de Belém",
+      "Pica-pau",
+      "Lago Niassa"
+    ]
+  },
+  {
+    "id": 423,
+    "words": [
+      "Ouriço do Mar",
+      "Argentina",
+      "Marta serviu",
+      "Coroa de Espinhos",
+      "Jorge"
+    ]
+  },
+  {
+    "id": 424,
+    "words": [
+      "Tiatira",
+      "Neemias reconstrói",
+      "Xai-Xai",
+      "Pera",
+      "Quadro Branco"
+    ]
+  },
+  {
+    "id": 425,
+    "words": [
+      "Buzi",
+      "Ester salva o povo",
+      "Ameixa",
+      "Sinédrio",
+      "Sérgio"
+    ]
+  },
+  {
+    "id": 426,
+    "words": [
+      "Lírio",
+      "Servos Ministeriais",
+      "Revista Sentinela",
+      "Eletricista",
+      "Finlândia"
+    ]
+  },
+  {
+    "id": 427,
+    "words": [
+      "Jumenta de Balaão",
+      "Músico",
+      "Êxodo",
+      "Matola F",
+      "Argila"
+    ]
+  },
+  {
+    "id": 428,
+    "words": [
+      "Mesa de Jantar",
+      "Pão Asmo",
+      "Ar",
+      "Joel",
+      "Bairro do Porto"
+    ]
+  },
+  {
+    "id": 429,
+    "words": [
+      "Pentecostes",
+      "Papaia",
+      "Mandimba",
+      "Ator",
+      "Entrada em Jerusalém"
+    ]
+  },
+  {
+    "id": 430,
+    "words": [
+      "Raquel",
+      "Luanda",
+      "Nova Luz",
+      "Papagaio",
+      "Mirra"
+    ]
+  },
+  {
+    "id": 431,
+    "words": [
+      "Ásia",
+      "Isabel",
+      "Paulo",
+      "Lara",
+      "Pepino"
+    ]
+  },
+  {
+    "id": 432,
+    "words": [
+      "Golfinho",
+      "Eva",
+      "Inês",
+      "Galileia",
+      "Parque Nacional de Bazaruto"
+    ]
+  },
+  {
+    "id": 433,
+    "words": [
+      "Pá",
+      "Samuel ouviu",
+      "Patmos",
+      "Lichinga",
+      "Pulga"
+    ]
+  },
+  {
+    "id": 434,
+    "words": [
+      "Sarça Ardente",
+      "Asa",
+      "Piloto de Avião",
+      "Cabo Verde",
+      "Nuvem"
+    ]
+  },
+  {
+    "id": 435,
+    "words": [
+      "Lula",
+      "Metro de Carpinteiro",
+      "Dorcás",
+      "1975",
+      "Manica"
+    ]
+  },
+  {
+    "id": 436,
+    "words": [
+      "Marromeu",
+      "Escola de Gileade",
+      "Demas",
+      "Tritão",
+      "Inácio"
+    ]
+  },
+  {
+    "id": 437,
+    "words": [
+      "Frigorífico",
+      "Gelo",
+      "Declaração de Factos",
+      "Maua",
+      "Filho Pródigo"
+    ]
+  },
+  {
+    "id": 438,
+    "words": [
+      "Bruno",
+      "Foca",
+      "Nova Jerusalém",
+      "Zípora",
+      "Índia"
+    ]
+  },
+  {
+    "id": 439,
+    "words": [
+      "Sonhos de José",
+      "Acácia",
+      "Obra Proibida",
+      "Engenheiro Civil",
+      "Chiúre"
+    ]
+  },
+  {
+    "id": 440,
+    "words": [
+      "Judas Iscariotes",
+      "Percevejo",
+      "André",
+      "Nível de Bolha",
+      "Moatize"
+    ]
+  },
+  {
+    "id": 441,
+    "words": [
+      "Polvo",
+      "Inhagoia",
+      "Auscultadores",
+      "Trabalho Clandestino",
+      "Jonas aprendeu"
+    ]
+  },
+  {
+    "id": 442,
+    "words": [
+      "Abimeleque",
+      "Bezerro infiel",
+      "Glória",
+      "Belo Horizonte",
+      "Cristal"
+    ]
+  },
+  {
+    "id": 443,
+    "words": [
+      "Monte Tabor",
+      "Quissanga",
+      "Roseira",
+      "Manjedoura",
+      "Edson"
+    ]
+  },
+  {
+    "id": 444,
+    "words": [
+      "Ralador",
+      "Morango",
+      "Fariseus",
+      "Sussundenga",
+      "Tenda de Adoração"
+    ]
+  },
+  {
+    "id": 445,
+    "words": [
+      "Triângulo Roxo",
+      "Pesca Maravilhosa",
+      "Marinheiro",
+      "Gaza",
+      "Água-viva"
+    ]
+  },
+  {
+    "id": 446,
+    "words": [
+      "Chamanculo",
+      "Samuel no templo",
+      "Orca",
+      "Alfaiate",
+      "Bandeira de Malawi"
+    ]
+  },
+  {
+    "id": 447,
+    "words": [
+      "Quénia",
+      "Daniel na cova",
+      "Esquilo",
+      "Tabita",
+      "Orlando"
+    ]
+  },
+  {
+    "id": 448,
+    "words": [
+      "Braille",
+      "Sara",
+      "Pelicano",
+      "Escada",
+      "Malema"
+    ]
+  },
+  {
+    "id": 449,
+    "words": [
+      "Pescador",
+      "Raquel",
+      "Milho",
+      "Marracuene",
+      "Fé de Abel"
+    ]
+  },
+  {
+    "id": 450,
+    "words": [
+      "Lã de Gideão",
+      "Liberdade",
+      "1942",
+      "Gaivota",
+      "Forno"
+    ]
+  },
+  {
+    "id": 451,
+    "words": [
+      "Vaca",
+      "Bissau",
+      "Victor",
+      "Primeiro de Samuel",
+      "Tigre"
+    ]
+  },
+  {
+    "id": 452,
+    "words": [
+      "Talentos",
+      "Ouro",
+      "Mambone",
+      "Multiplicação dos Pães",
+      "Duarte"
+    ]
+  },
+  {
+    "id": 453,
+    "words": [
+      "Raia",
+      "Chave de Fendas",
+      "Jetro",
+      "Jesus cura doentes",
+      "América do Norte"
+    ]
+  },
+  {
+    "id": 454,
+    "words": [
+      "Josias",
+      "Gurúè",
+      "Sardinha",
+      "Mateus",
+      "Congelador"
+    ]
+  },
+  {
+    "id": 455,
+    "words": [
+      "Suécia",
+      "Salão do Reino",
+      "Atenas",
+      "Calculadora",
+      "Embondeiro"
+    ]
+  },
+  {
+    "id": 456,
+    "words": [
+      "Caixa",
+      "Operador de Vídeo",
+      "Aligator",
+      "Outras ovelhas",
+      "Macurungo"
+    ]
+  },
+  {
+    "id": 457,
+    "words": [
+      "Piolho",
+      "Jafé",
+      "Munhava",
+      "Agricultor",
+      "Jesus no templo"
+    ]
+  },
+  {
+    "id": 458,
+    "words": [
+      "Corvo",
+      "Austrália",
+      "Arquiteto",
+      "Sinai",
+      "Milénio"
+    ]
+  },
+  {
+    "id": 459,
+    "words": [
+      "Papel A4",
+      "Trigo e Joio",
+      "Nigéria",
+      "Cervo",
+      "Encargo do Reino"
+    ]
+  },
+  {
+    "id": 460,
+    "words": [
+      "Despertai!",
+      "Patrícia",
+      "Eliseu e os milagres",
+      "Juba",
+      "Chazeiro"
+    ]
+  },
+  {
+    "id": 461,
+    "words": [
+      "Arco-Íris",
+      "Moamba",
+      "Vespa",
+      "Rute e a lealdade",
+      "Mesa de Cabeceira"
+    ]
+  },
+  {
+    "id": 462,
+    "words": [
+      "Éden",
+      "Yasmin",
+      "Travessia do Mar",
+      "Morrumbene",
+      "Coqueiro"
+    ]
+  },
+  {
+    "id": 463,
+    "words": [
+      "Rinoceronte",
+      "Teste de Abraão",
+      "Distribuição Gratuita",
+      "Alberto",
+      "Nicoadala"
+    ]
+  },
+  {
+    "id": 464,
+    "words": [
+      "Fazer as pazes",
+      "Aristarco",
+      "Sandro",
+      "Cobra",
+      "Bruxelas"
+    ]
+  },
+  {
+    "id": 465,
+    "words": [
+      "Aeroporto",
+      "Mostarda",
+      "Contabilista",
+      "Sodoma",
+      "Amalequitas"
+    ]
+  },
+  {
+    "id": 466,
+    "words": [
+      "Fornalha Ardente",
+      "Chimoio",
+      "Moisés foge",
+      "Sobreiro",
+      "Cabeleireiro"
+    ]
+  },
+  {
+    "id": 467,
+    "words": [
+      "Mandioca",
+      "Isaque",
+      "Gerente",
+      "Comissão de Filial",
+      "Zimpeto"
+    ]
+  },
+  {
+    "id": 468,
+    "words": [
+      "Router Wi-Fi",
+      "Rio Lúrio",
+      "Antioquia",
+      "Primeira a Timóteo",
+      "Abelha"
+    ]
+  },
+  {
+    "id": 469,
+    "words": [
+      "João",
+      "Liberdade de Adoração",
+      "Chinde",
+      "Tarsos",
+      "Salamandra"
+    ]
+  },
+  {
+    "id": 470,
+    "words": [
+      "Governo do Reino",
+      "Salomão",
+      "Ovelha",
+      "Monitor",
+      "Deserto do Kalahari"
+    ]
+  },
+  {
+    "id": 471,
+    "words": [
+      "William",
+      "Trabalho duro",
+      "Impala",
+      "Egipto",
+      "Cananeus"
+    ]
+  },
+  {
+    "id": 472,
+    "words": [
+      "Charles Russell",
+      "Canguru",
+      "Gémeos Diferentes",
+      "Rui",
+      "Nova Zelândia"
+    ]
+  },
+  {
+    "id": 473,
+    "words": [
+      "Micro-ondas",
+      "Dili",
+      "David coroado",
+      "Palmeira",
+      "Daniel"
+    ]
+  },
+  {
+    "id": 474,
+    "words": [
+      "Inharrime",
+      "Camarão",
+      "Estudo em família",
+      "Ricardo",
+      "Comissão de Coordenadores"
+    ]
+  },
+  {
+    "id": 475,
+    "words": [
+      "Limão",
+      "Turquia",
+      "Dilúvio",
+      "Henrique",
+      "Áquila"
+    ]
+  },
+  {
+    "id": 476,
+    "words": [
+      "Praia",
+      "Musgo",
+      "José na prisão",
+      "Filipe",
+      "Leitor da Sentinela"
+    ]
+  },
+  {
+    "id": 477,
+    "words": [
+      "Criação da Terra",
+      "Corinto",
+      "Rio Nilo",
+      "Coala",
+      "Igor"
+    ]
+  },
+  {
+    "id": 478,
+    "words": [
+      "Resolução de Columbus",
+      "Rato",
+      "Nipepe",
+      "Imite a Sua Fé",
+      "Tulipa"
+    ]
+  },
+  {
+    "id": 479,
+    "words": [
+      "Videira",
+      "Areia",
+      "Promessa de Isaías",
+      "Inhassunge",
+      "Nádia"
+    ]
+  },
+  {
+    "id": 480,
+    "words": [
+      "Enfermeiro",
+      "Perdoar o amigo",
+      "Hamã",
+      "Cabo Delgado",
+      "Raposa"
+    ]
+  },
+  {
+    "id": 481,
+    "words": [
+      "Romanos",
+      "Jessica",
+      "Cana-de-açúcar",
+      "Jordão",
+      "Bairro FPLM"
+    ]
+  },
+  {
+    "id": 482,
+    "words": [
+      "Rio Licungo",
+      "Bom Samaritano",
+      "Wilson",
+      "Bambu",
+      "Josias e a retidão"
+    ]
+  },
+  {
+    "id": 483,
+    "words": [
+      "Nairobi",
+      "Marcha do Reino",
+      "Egipto",
+      "Vassoura",
+      "Galinha"
+    ]
+  },
+  {
+    "id": 484,
+    "words": [
+      "Manutenção do Salão",
+      "Mar Vermelho",
+      "Fernanda",
+      "Quartzo",
+      "Maxaquene"
+    ]
+  },
+  {
+    "id": 485,
+    "words": [
+      "Cuamba",
+      "Éfeso",
+      "Abóbora",
+      "Dez Virgens",
+      "Vera"
+    ]
+  },
+  {
+    "id": 486,
+    "words": [
+      "Batismo de Jesus",
+      "José",
+      "Templo construído",
+      "Pinheiro",
+      "Songo"
+    ]
+  },
+  {
+    "id": 487,
+    "words": [
+      "Centopeia",
+      "Rio Rovuma",
+      "Otávio",
+      "Cades-Barneia",
+      "Associação Internacional"
+    ]
+  },
+  {
+    "id": 488,
+    "words": [
+      "Alemanha",
+      "Roboão",
+      "Alface",
+      "Juízo Final",
+      "Sara"
+    ]
+  },
+  {
+    "id": 489,
+    "words": [
+      "Chuva",
+      "Horebe",
+      "Noemi e o consolo",
+      "Cozinheiro",
+      "Liúpo"
+    ]
+  },
+  {
+    "id": 490,
+    "words": [
+      "Tábua das Leis",
+      "Choupal",
+      "Colossenses",
+      "César",
+      "Martim-pescador"
+    ]
+  },
+  {
+    "id": 491,
+    "words": [
+      "Esponja",
+      "José vendido",
+      "Warwick",
+      "Gana",
+      "Cebola"
+    ]
+  },
+  {
+    "id": 492,
+    "words": [
+      "Laranja",
+      "Central",
+      "Enoque",
+      "Elcana",
+      "Kevin"
+    ]
+  },
+  {
+    "id": 493,
+    "words": [
+      "Mar Vermelho",
+      "Cabra",
+      "Proteger a criação",
+      "Berbequim",
+      "Eclesiastes"
+    ]
+  },
+  {
+    "id": 494,
+    "words": [
+      "Fita Métrica",
+      "Framboesa",
+      "Hebrom",
+      "Babilónia",
+      "Namacurra"
+    ]
+  },
+  {
+    "id": 495,
+    "words": [
+      "Sociedade Torre de Vigia",
+      "Simeão",
+      "Telma",
+      "África",
+      "Cágado"
+    ]
+  },
+  {
+    "id": 496,
+    "words": [
+      "Gaius",
+      "Rubi",
+      "Engenheiro",
+      "Antártida",
+      "Arão"
+    ]
+  },
+  {
+    "id": 497,
+    "words": [
+      "Tola",
+      "Assírios",
+      "Maria",
+      "Tubarão Martelo",
+      "Ilha da Benguerra"
+    ]
+  },
+  {
+    "id": 498,
+    "words": [
+      "Segunda de Pedro",
+      "Cudo",
+      "Quelimane",
+      "Tribunais e Defesa Legal",
+      "Lava-louça"
+    ]
+  },
+  {
+    "id": 499,
+    "words": [
+      "Magoanine",
+      "Choupana",
+      "Issacar",
+      "Pedir desculpa",
+      "Fio de Prumo"
+    ]
+  },
+  {
+    "id": 500,
+    "words": [
+      "José",
+      "Sal",
+      "Canadá",
+      "Perseverança nas Provações",
+      "Astrónomo"
+    ]
+  },
+  {
+    "id": 501,
+    "words": [
+      "Mecanhelas",
+      "Abigail e a prudência",
+      "Esdras",
+      "Relâmpago",
+      "Leonel"
+    ]
+  },
+  {
+    "id": 502,
+    "words": [
+      "Trigo",
+      "Rola",
+      "Jeroboão",
+      "Rússia",
+      "Mecânico"
+    ]
+  },
+  {
+    "id": 503,
+    "words": [
+      "Números",
+      "Comemoração",
+      "Rio Incomati",
+      "Macaco",
+      "Katya"
+    ]
+  },
+  {
+    "id": 504,
+    "words": [
+      "Jefté",
+      "Matola A",
+      "Campanhas Especiais",
+      "Motorista",
+      "Alho"
+    ]
+  },
+  {
+    "id": 505,
+    "words": [
+      "Harpa de David",
+      "Babuíno",
+      "Aser",
+      "Manhiça",
+      "Comando"
+    ]
+  },
+  {
+    "id": 506,
+    "words": [
+      "Primeira aos Tessalonicenses",
+      "Timóteo",
+      "Informático",
+      "Lagarto",
+      "Costa do Sol"
+    ]
+  },
+  {
+    "id": 507,
+    "words": [
+      "Mar Morto",
+      "Rafael",
+      "Jasmim",
+      "Porquê Envelhecer",
+      "Wellington"
+    ]
+  },
+  {
+    "id": 508,
+    "words": [
+      "Panda",
+      "Rute",
+      "Seul",
+      "Primeiro dos Reis",
+      "Prato"
+    ]
+  },
+  {
+    "id": 509,
+    "words": [
+      "Canaã",
+      "América do Sul",
+      "Taxista",
+      "Dromedário",
+      "Templo de Salomão"
+    ]
+  },
+  {
+    "id": 510,
+    "words": [
+      "Cesareia",
+      "Hebreus",
+      "Pinguim",
+      "Helena",
+      "Oslo"
+    ]
+  },
+  {
+    "id": 511,
+    "words": [
+      "Jesus",
+      "Anciãos",
+      "Prata",
+      "Xinavane",
+      "Tablet"
+    ]
+  },
+  {
+    "id": 512,
+    "words": [
+      "Dan",
+      "Barbeiro",
+      "Boane",
+      "Monte das Oliveiras",
+      "Eucalipto"
+    ]
+  },
+  {
+    "id": 513,
+    "words": [
+      "Elísio",
+      "Porco",
+      "Inhamízua",
+      "Sofonias",
+      "Gregos"
+    ]
+  },
+  {
+    "id": 514,
+    "words": [
+      "Mexilhão",
+      "Camila",
+      "Coop",
+      "Soberania de Jeová",
+      "Comissão de Redação"
+    ]
+  },
+  {
+    "id": 515,
+    "words": [
+      "Oceânia",
+      "Borboleta",
+      "Primeiro Lar",
+      "Ester e a coragem",
+      "Cantor"
+    ]
+  },
+  {
+    "id": 516,
+    "words": [
+      "Festo",
+      "Escritor",
+      "Guiné-Bissau",
+      "Filipe o Evangelizador",
+      "Aranha"
+    ]
+  },
+  {
+    "id": 517,
+    "words": [
+      "Bairro da Manga",
+      "Pintor Artístico",
+      "Miriã",
+      "Honestidade nos testes",
+      "Tartaruga"
+    ]
+  },
+  {
+    "id": 518,
+    "words": [
+      "Dina",
+      "Visão de João",
+      "Manica Vila",
+      "Fotógrafo",
+      "Pardal"
+    ]
+  },
+  {
+    "id": 519,
+    "words": [
+      "Jonas",
+      "Cortina",
+      "Mueda",
+      "Cachorro",
+      "Lucas"
+    ]
+  },
+  {
+    "id": 520,
+    "words": [
+      "Moscovo",
+      "Respeito pelos mais velhos",
+      "Carla",
+      "Tubarão Branco",
+      "Samaria"
+    ]
+  }
+]
