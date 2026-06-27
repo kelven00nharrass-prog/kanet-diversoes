@@ -944,12 +944,18 @@ function renderBoard(containerId = 'tv-board-track') {
         
         if (cellNum === 0) {
           cell.classList.add('start');
-          cell.innerHTML = `<span class="cell-number">PARTIDA</span>`;
+          cell.innerHTML = `<span class="cell-number">PARTIDA</span><span class="cell-theme-icon">🏁</span>`;
         } else if (cellNum === totalCells) {
           cell.classList.add('finish');
-          cell.innerHTML = `<span class="cell-number">META</span>`;
+          cell.innerHTML = `<span class="cell-number">META</span><span class="cell-theme-icon">🏆</span>`;
         } else {
-          cell.innerHTML = `<span class="cell-number">${cellNum}</span>`;
+          let themeIcon = '';
+          if (cellNum % 4 === 1) themeIcon = '📖';
+          else if (cellNum % 4 === 2) themeIcon = '🌍';
+          else if (cellNum % 4 === 3) themeIcon = '🦁';
+          else themeIcon = '🧠';
+
+          cell.innerHTML = `<span class="cell-number">${cellNum}</span><span class="cell-theme-icon">${themeIcon}</span>`;
         }
 
         const pegContainer = document.createElement('div');
