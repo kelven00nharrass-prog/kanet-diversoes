@@ -1,0 +1,14 @@
+{
+  "name": "kanet-diversoes",
+  "version": "1.0.0",
+  "description": "Jogo Ka'Net diversões baseado em 30 Segundos",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "generate": "node generate_words.js"
+  },
+  "dependencies": {
+    "express": "^4.22.1",
+    "ws": "^8.18.0"
+  }
+}
