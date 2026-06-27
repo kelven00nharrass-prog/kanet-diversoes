@@ -384,6 +384,22 @@ p {
   text-align: center;
 }
 
+/* App Logo Image */
+.app-logo-img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 8px auto;
+  filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.5));
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
 /* QR Code */
 .qrcode-wrapper {
   background: #fff;
