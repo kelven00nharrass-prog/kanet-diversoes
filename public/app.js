@@ -669,13 +669,35 @@ function shuffleTeams() {
   }));
 }
 
+// Modo de dado: true = com penalização, false = sem dado
+let useDice = true;
+
+function setDiceMode(withDice) {
+  useDice = withDice;
+  document.getElementById('btn-mode-dado').classList.toggle('active', withDice);
+  document.getElementById('btn-mode-semDado').classList.toggle('active', !withDice);
+  sounds.playClick();
+}
+
+// Modo de nomes: true = app escolhe explicador, false = equipa decide
+let namedMode = true;
+
+function setNamedMode(withNames) {
+  namedMode = withNames;
+  document.getElementById('btn-mode-comNomes').classList.toggle('active', withNames);
+  document.getElementById('btn-mode-semNomes').classList.toggle('active', !withNames);
+  sounds.playClick();
+}
+
 function startGame() {
   sounds.playClick();
   const targetScore = document.getElementById('input-target-score').value;
   socket.send(JSON.stringify({
     type: 'UPDATE_TEAMS',
     payload: {
-      targetScore: targetScore
+      targetScore: targetScore,
+      useDice: useDice,
+      namedMode: namedMode
     }
   }));
 
@@ -683,6 +705,7 @@ function startGame() {
     type: 'START_GAME'
   }));
 }
+
 
 function addPlayerManual() {
   const nameInput = document.getElementById('input-add-player-manual');
@@ -796,8 +819,15 @@ function renderHostControls() {
   const stopEarlyBtn = document.getElementById('btn-host-stop-early');
   const confirmScoreBtn = document.getElementById('btn-host-confirm-score');
   const diceBadge = document.getElementById('host-dice-result');
+  const diceRow = document.getElementById('host-dice-row');
 
-  if (gameState.activeRound.hasRolled) {
+  // Mostrar ou esconder linha do dado consoante o modo
+  if (diceRow) diceRow.style.display = gameState.useDice ? '' : 'none';
+
+  if (!gameState.useDice) {
+    // Sem dado: inicia imediatamente sem rolar
+    startRoundBtn.disabled = gameState.step !== 'playing' || gameState.activeRound.isTimerRunning;
+  } else if (gameState.activeRound.hasRolled) {
     rollBtn.disabled = true;
     diceBadge.innerText = gameState.activeRound.diceRoll;
     if (gameState.step === 'playing' && !gameState.activeRound.isTimerRunning) {
@@ -868,7 +898,7 @@ function renderTVMode() {
   const diceLabel = document.getElementById('tv-dice-label');
   const diceContainer = document.getElementById('dice-container-3d');
   
-  if (gameState.activeRound.hasRolled && gameState.activeRound.diceRoll !== null) {
+  if (gameState.useDice && gameState.activeRound.hasRolled && gameState.activeRound.diceRoll !== null) {
     diceLabel.style.display = 'block';
     diceLabel.innerText = `Subtração do Dado: -${gameState.activeRound.diceRoll}`;
     
@@ -1073,37 +1103,61 @@ function renderPlayerMode(isExplaining) {
   const currentExplainer = gameState.teams[currentTeam].players[gameState.currentExplainerIndex] || "Ninguém";
 
   const isMyTeamActive = (playerTeam === currentTeam);
+  const roundRunning = gameState.activeRound.isTimerRunning;
+  const isRecap = (gameState.step === 'score_recap');
 
-  const waitingView = document.getElementById('player-waiting');
-  const guessingView = document.getElementById('player-guessing');
+  const waitingView   = document.getElementById('player-waiting');
+  const guessingView  = document.getElementById('player-guessing');
   const explainingView = document.getElementById('player-explaining');
 
+  // Esconder tudo primeiro
   waitingView.classList.add('hidden');
   guessingView.classList.add('hidden');
   explainingView.classList.add('hidden');
 
   if (!isMyTeamActive) {
-    // Equipa adversária joga
+    // ─── ESTADO 1: Outra equipa joga ───────────────────────────────────────
     waitingView.classList.remove('hidden');
     document.getElementById('player-waiting-msg').innerText = `A Equipa ${currentTeam} está a jogar de momento.`;
-    
     const warning = document.getElementById('player-turn-warning');
     warning.className = `team-banner-large bg-team-${currentTeam}`;
-    warning.innerText = `Vez de: ${currentExplainer}`;
+    warning.innerText = `Vez de: ${currentTeam}`;
+
+  } else if (isRecap) {
+    // ─── ESTADO 2: Fim da rodada — esconder palavras, mostrar resumo ───────
+    waitingView.classList.remove('hidden');
+    document.getElementById('player-waiting-msg').innerText = '⏱️ Tempo esgotado! O anfitrião está a confirmar os pontos.';
+    const warning = document.getElementById('player-turn-warning');
+    warning.className = `team-banner-large bg-team-${currentTeam}`;
+    warning.innerText = `Equipa ${currentTeam}`;
+
+  } else if (!roundRunning && !gameState.activeRound.hasRolled && gameState.useDice) {
+    // ─── ESTADO 3: Minha equipa, à espera que o dado seja lançado ──────────
+    waitingView.classList.remove('hidden');
+    document.getElementById('player-waiting-msg').innerText = '🎲 À espera que o anfitrião lance o dado...';
+    const warning = document.getElementById('player-turn-warning');
+    warning.className = `team-banner-large bg-team-${currentTeam}`;
+    warning.innerText = gameState.namedMode ? `Explicador: ${currentExplainer}` : `Equipa ${currentTeam}`;
+
+  } else if (!roundRunning && !gameState.activeRound.isTimerRunning) {
+    // ─── ESTADO 4: Minha equipa, dado lançado, à espera do início ──────────
+    waitingView.classList.remove('hidden');
+    document.getElementById('player-waiting-msg').innerText = '▶️ À espera que o anfitrião inicie os 30 segundos...';
+    const warning = document.getElementById('player-turn-warning');
+    warning.className = `team-banner-large bg-team-${currentTeam}`;
+    warning.innerText = gameState.namedMode ? `Explicador: ${currentExplainer}` : `Equipa ${currentTeam}`;
+
   } else {
-    // Minha equipa joga
+    // ─── ESTADO 5: Rodada a decorrer — MOSTRAR PALAVRAS ───────────────────
     if (isExplaining) {
-      // Eu sou o explicador: ver palavras!
+      // Com Nomes: eu sou o explicador designado pela app
       explainingView.classList.remove('hidden');
-      
-      // Preencher palavras
       if (gameState.activeRound.words) {
         for (let i = 0; i < 5; i++) {
-          const w = gameState.activeRound.words[i] || "-----";
+          const w = gameState.activeRound.words[i] || '-----';
           document.getElementById(`p-word-${i}`).innerText = w;
         }
       }
-      
       document.getElementById('player-explain-timer').innerText = gameState.activeRound.timer;
       if (gameState.activeRound.timer <= 5) {
         document.getElementById('player-explain-timer').classList.add('color-red');
@@ -1111,12 +1165,39 @@ function renderPlayerMode(isExplaining) {
         document.getElementById('player-explain-timer').classList.remove('color-red');
       }
     } else {
-      // Sou adivinhador na minha equipa: não ver palavras!
+      // Adivinhador (Com Nomes) ou toda a equipa (Sem Nomes) — ver palavras
       guessingView.classList.remove('hidden');
+
+      // Mudar badge conforme o modo
+      const badge = guessingView.querySelector('.badge');
+      if (badge) {
+        if (!gameState.namedMode) {
+          badge.textContent = '🎯 Decidam quem explica!';
+          badge.className = 'badge badge-warning uppercase';
+        } else {
+          badge.textContent = 'A sua equipa joga!';
+          badge.className = 'badge badge-success uppercase';
+        }
+      }
+
       document.getElementById('player-guess-timer').innerText = gameState.activeRound.timer;
+      if (gameState.activeRound.timer <= 5) {
+        document.getElementById('player-guess-timer').classList.add('color-red');
+        document.getElementById('player-guess-timer').classList.remove('color-green');
+      } else {
+        document.getElementById('player-guess-timer').classList.remove('color-red');
+        document.getElementById('player-guess-timer').classList.add('color-green');
+      }
+      if (gameState.activeRound.words) {
+        for (let i = 0; i < 5; i++) {
+          const el = document.getElementById(`g-word-${i}`);
+          if (el) el.innerText = gameState.activeRound.words[i] || '-----';
+        }
+      }
     }
   }
 }
+
 
 // D: VISÃO ESPECTADOR
 function renderSpectatorMode() {
@@ -1128,10 +1209,17 @@ function renderSpectatorMode() {
   document.getElementById('spec-current-explainer').innerText = `Explicador: ${currentExplainer}`;
   document.getElementById('spec-timer-display').innerText = gameState.activeRound.timer;
   
-  if (gameState.activeRound.hasRolled && gameState.activeRound.diceRoll !== null) {
-    document.getElementById('spec-dice-display').innerText = `Dado: -${gameState.activeRound.diceRoll}`;
+  const specDiceEl = document.getElementById('spec-dice-display');
+  if (!gameState.useDice) {
+    specDiceEl.innerText = '';
+    specDiceEl.style.display = 'none';
   } else {
-    document.getElementById('spec-dice-display').innerText = `Dado: --`;
+    specDiceEl.style.display = '';
+    if (gameState.activeRound.hasRolled && gameState.activeRound.diceRoll !== null) {
+      specDiceEl.innerText = `Dado: -${gameState.activeRound.diceRoll}`;
+    } else {
+      specDiceEl.innerText = `Dado: --`;
+    }
   }
 
   // Renderizar o tabuleiro no ecrã do Espectador
