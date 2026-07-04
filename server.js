@@ -233,8 +233,9 @@ wss.on('connection', (ws) => {
     } else if (playerName && playerName.trim()) {
       assignedName = playerName.trim();
     } else {
-      const teamCount = room.players.filter(p => p.team === (team || 'Azul') && p.role !== 'tv').length;
-      assignedName = `Membro ${teamCount + 1}`;
+      // Usar contagem global para garantir nomes únicos e evitar colisões de busca
+      const totalCount = room.players.filter(p => p.role !== 'tv').length;
+      assignedName = `Membro ${totalCount + 1}`;
     }
     userSession.playerName = assignedName;
 
