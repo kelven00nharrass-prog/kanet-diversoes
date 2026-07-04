@@ -223,7 +223,8 @@ function loadSavedSession() {
   const savedTeam = localStorage.getItem('kanet_team');
 
   if (savedRole) {
-    document.getElementById('input-player-name').value = savedPlayerName || '';
+    const nameInput = document.getElementById('input-player-name');
+    if (nameInput) nameInput.value = savedPlayerName || '';
     document.getElementById('select-join-role').value = savedRole;
     document.getElementById('select-player-team').value = savedTeam || 'Azul';
     
@@ -604,6 +605,40 @@ function updateLobbyUI() {
     colorDark : "#0d1326",
     colorLight : "#ffffff",
     correctLevel : QRCode.CorrectLevel.M
+  });
+
+  // Limpar listas de jogadores
+  const lists = {
+    'Azul': document.getElementById('list-team-azul'),
+    'Vermelho': document.getElementById('list-team-vermelho'),
+    'Verde': document.getElementById('list-team-verde'),
+    'Amarelo': document.getElementById('list-team-amarelo')
+  };
+
+  for (const key in lists) {
+    if (lists[key]) lists[key].innerHTML = '';
+  }
+
+  // Preencher listas
+  playersList.forEach(player => {
+    const listEl = lists[player.team];
+    if (listEl) {
+      const li = document.createElement('li');
+      li.innerText = player.name;
+      if (player.name === playerName && player.team === playerTeam) {
+        li.classList.add('me');
+      }
+      
+      // Botão para o host remover/chutar
+      if (role === 'host') {
+        const kickBtn = document.createElement('span');
+        kickBtn.innerHTML = ' ❌';
+        kickBtn.style.cursor = 'pointer';
+        kickBtn.addEventListener('click', () => kickPlayer(player.name));
+        li.appendChild(kickBtn);
+      }
+      listEl.appendChild(li);
+    }
   });
 
   // Preencher contagem de membros por equipa
