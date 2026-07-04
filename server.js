@@ -249,6 +249,9 @@ wss.on('connection', (ws) => {
     if (role === 'tv') {
       console.log(`Ecrã Principal conectado na sala ${cleanRoomId}`);
     } else {
+      // Remover duplicados com o mesmo nome para evitar bugs de reconexão ou re-entrada
+      room.players = room.players.filter(p => p.name !== assignedName);
+
       room.players.push({
         name: assignedName,
         role: userSession.role,
@@ -575,6 +578,8 @@ function broadcastRoomState(room) {
       // Ocultar palavras para ecrã principal, espectadores ou equipa adversária
       filteredState.activeRound.words = ["?????", "?????", "?????", "?????", "?????"];
     }
+
+    console.log(`[STATE] Para: ${name} | Papel: ${role} | Equipa: ${team} | Equipa Ativa: ${currentTeamName} | Ativo? ${isActiveTeam} | Vê cartas? ${canSeeWords} | Timer: ${room.gameState.activeRound.timer}s`);
 
     clientSocket.send(JSON.stringify({
       type: 'STATE_UPDATE',
