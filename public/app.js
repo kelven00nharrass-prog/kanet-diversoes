@@ -248,14 +248,18 @@ function setupEventListeners() {
   // Ações do Host no Lobby
   document.getElementById('btn-shuffle-teams').addEventListener('click', shuffleTeams);
   document.getElementById('btn-start-game').addEventListener('click', startGame);
-  document.getElementById('btn-add-player-manual').addEventListener('click', addPlayerManual);
 
-  // Entrar nas equipas manualmente (Host muda qualquer um, player muda a si próprio)
+  // Botões + Membro por equipa (apenas host)
   document.querySelectorAll('.btn-join-team').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      const selectedTeam = e.target.getAttribute('data-team');
-      changeTeam(selectedTeam);
+      const selectedTeam = e.target.getAttribute('data-team') || e.target.closest('[data-team]')?.getAttribute('data-team');
+      if (!selectedTeam) return;
       sounds.playClick();
+      if (role === 'host') {
+        addMemberToTeam(selectedTeam);
+      } else {
+        changeTeam(selectedTeam);
+      }
     });
   });
 
@@ -531,16 +535,10 @@ function joinRoom() {
   sounds.playClick();
   const code = document.getElementById('input-room-code').value.trim();
   const selectedRole = document.getElementById('select-join-role').value;
-  const name = document.getElementById('input-player-name').value.trim();
-  const team = document.getElementById('select-player-team').value;
+  const team = document.getElementById('select-player-team') ? document.getElementById('select-player-team').value : 'Azul';
 
   if (!code || code.length !== 5) {
     showToast("Por favor, introduza o código de 5 caracteres.", "error");
-    return;
-  }
-
-  if (selectedRole !== 'tv' && !name) {
-    showToast("Por favor, digite o seu nome para entrar.", "error");
     return;
   }
 
@@ -549,7 +547,7 @@ function joinRoom() {
       type: 'JOIN_ROOM',
       payload: {
         roomId: code,
-        playerName: name,
+        playerName: '',   // Servidor auto-atribui número sequencial
         role: selectedRole,
         team: team
       }
@@ -608,37 +606,13 @@ function updateLobbyUI() {
     correctLevel : QRCode.CorrectLevel.M
   });
 
-  // Limpar listas de jogadores
-  const lists = {
-    'Azul': document.getElementById('list-team-azul'),
-    'Vermelho': document.getElementById('list-team-vermelho'),
-    'Verde': document.getElementById('list-team-verde'),
-    'Amarelo': document.getElementById('list-team-amarelo')
-  };
-
-  for (const key in lists) {
-    if (lists[key]) lists[key].innerHTML = '';
-  }
-
-  // Preencher listas
-  playersList.forEach(player => {
-    const listEl = lists[player.team];
-    if (listEl) {
-      const li = document.createElement('li');
-      li.innerText = player.name;
-      if (player.name === playerName && player.team === playerTeam) {
-        li.classList.add('me');
-      }
-      
-      // Botão para o host remover/chutar
-      if (role === 'host') {
-        const kickBtn = document.createElement('span');
-        kickBtn.innerHTML = ' ❌';
-        kickBtn.style.cursor = 'pointer';
-        kickBtn.addEventListener('click', () => kickPlayer(player.name));
-        li.appendChild(kickBtn);
-      }
-      listEl.appendChild(li);
+  // Preencher contagem de membros por equipa
+  const teamKeys = { 'Azul': 'azul', 'Vermelho': 'vermelho', 'Verde': 'verde', 'Amarelo': 'amarelo' };
+  Object.entries(teamKeys).forEach(([team, key]) => {
+    const countEl = document.getElementById(`count-team-${key}`);
+    if (countEl) {
+      const count = playersList.filter(p => p.team === team && p.role !== 'tv').length;
+      countEl.innerText = count === 0 ? 'Sem membros' : `${count} membro${count !== 1 ? 's' : ''}`;
     }
   });
 }
@@ -716,15 +690,6 @@ function setDiceMode(withDice) {
   sounds.playClick();
 }
 
-// Modo de nomes: true = app escolhe explicador, false = equipa decide
-let namedMode = true;
-
-function setNamedMode(withNames) {
-  namedMode = withNames;
-  document.getElementById('btn-mode-comNomes').classList.toggle('active', withNames);
-  document.getElementById('btn-mode-semNomes').classList.toggle('active', !withNames);
-  sounds.playClick();
-}
 
 function startGame() {
   sounds.playClick();
@@ -734,7 +699,7 @@ function startGame() {
     payload: {
       targetScore: targetScore,
       useDice: useDice,
-      namedMode: namedMode
+      namedMode: false  // Sempre sem nomes: equipa decide quem explica
     }
   }));
 
@@ -744,37 +709,22 @@ function startGame() {
 }
 
 
-function addPlayerManual() {
-  const nameInput = document.getElementById('input-add-player-manual');
-  const teamSelect = document.getElementById('select-add-player-team');
-  const name = nameInput.value.trim();
-  const selectedTeam = teamSelect.value;
-  
-  if (!name) {
-    showToast("Digite o nome do jogador.", "error");
-    return;
-  }
-  
+// Adicionar membro genérico a uma equipa (sem nome, sistema auto-atribui número)
+function addMemberToTeam(team) {
   sounds.playClick();
-  
-  const newPlayer = {
-    name: name,
-    role: 'player',
-    team: selectedTeam,
-    active: true
-  };
-  
-  const updatedPlayers = [...playersList.filter(p => p.name !== name), newPlayer];
+  const teamCount = playersList.filter(p => p.team === team && p.role !== 'tv').length;
+  const memberName = `Membro ${teamCount + 1}`;
+  const newPlayer = { name: memberName, role: 'player', team: team, active: true };
+  const updatedPlayers = [...playersList, newPlayer];
   socket.send(JSON.stringify({
     type: 'UPDATE_TEAMS',
-    payload: {
-      players: updatedPlayers
-    }
+    payload: { players: updatedPlayers }
   }));
-  
-  nameInput.value = '';
-  showToast(`Jogador ${name} adicionado à Equipa ${selectedTeam}!`, "success");
+  showToast(`${memberName} adicionado à Equipa ${team}!`, "success");
 }
+
+// Manter compatibilidade — reencaminhar btn-join-team para addMemberToTeam quando é host
+function addPlayerManual() { /* Removido — substituido por addMemberToTeam */ }
 
 // 8. SINCRONIZAÇÃO E FLUXO DO ECRÃ DE JOGO
 function syncGameScreen(isExplaining) {
@@ -1149,114 +1099,82 @@ function renderActiveTeamsInfo() {
   }
 }
 
-// C: VISÃO JOGADOR DA EQUIPA
-function renderPlayerMode(isExplaining) {
+// C: VISÃO JOGADOR DA EQUIPA (simplificada sem nomes)
+function renderPlayerMode() {
   const currentTeam = gameState.teamOrder[gameState.currentTeamIndex];
-  const currentExplainer = gameState.teams[currentTeam].players[gameState.currentExplainerIndex] || "Ninguém";
-
   const isMyTeamActive = (playerTeam === currentTeam);
   const roundRunning = gameState.activeRound.isTimerRunning;
   const isRecap = (gameState.step === 'score_recap');
 
-  const waitingView   = document.getElementById('player-waiting');
-  const guessingView  = document.getElementById('player-guessing');
-  const explainingView = document.getElementById('player-explaining');
+  const waitingView    = document.getElementById('player-waiting');
+  const myTeamWait     = document.getElementById('player-my-team-wait');
+  const activeView     = document.getElementById('player-active');
 
   // Esconder tudo primeiro
   waitingView.classList.add('hidden');
-  guessingView.classList.add('hidden');
-  explainingView.classList.add('hidden');
+  myTeamWait.classList.add('hidden');
+  activeView.classList.add('hidden');
 
-  if (!isMyTeamActive) {
-    // ─── ESTADO 1: Outra equipa joga ───────────────────────────────────────
+  if (!isMyTeamActive || isRecap) {
+    // ─── Outra equipa joga OU recap: mostrar timer decrescente ─────────────
     waitingView.classList.remove('hidden');
-    document.getElementById('player-waiting-msg').innerText = `A Equipa ${currentTeam} está a jogar de momento.`;
-    const warning = document.getElementById('player-turn-warning');
-    warning.className = `team-banner-large bg-team-${currentTeam}`;
-    warning.innerText = `Vez de: ${currentTeam}`;
 
-  } else if (isRecap) {
-    // ─── ESTADO 2: Fim da rodada — esconder palavras, mostrar resumo ───────
-    waitingView.classList.remove('hidden');
-    document.getElementById('player-waiting-msg').innerText = '⏱️ Tempo esgotado! O anfitrião está a confirmar os pontos.';
     const warning = document.getElementById('player-turn-warning');
     warning.className = `team-banner-large bg-team-${currentTeam}`;
     warning.innerText = `Equipa ${currentTeam}`;
 
-  } else if (!roundRunning && !gameState.activeRound.hasRolled && gameState.useDice) {
-    // ─── ESTADO 3: Minha equipa, à espera que o dado seja lançado ──────────
-    waitingView.classList.remove('hidden');
-    document.getElementById('player-waiting-msg').innerText = '🎲 À espera que o anfitrião lance o dado...';
-    const warning = document.getElementById('player-turn-warning');
-    warning.className = `team-banner-large bg-team-${currentTeam}`;
-    warning.innerText = gameState.namedMode ? `Explicador: ${currentExplainer}` : `Equipa ${currentTeam}`;
+    const msg = document.getElementById('player-waiting-msg');
+    msg.innerText = isRecap
+      ? '⏱️ O anfitrião está a confirmar os pontos...'
+      : `A Equipa ${currentTeam} está a jogar`;
 
-  } else if (!roundRunning && !gameState.activeRound.isTimerRunning) {
-    // ─── ESTADO 4: Minha equipa, dado lançado, à espera do início ──────────
-    waitingView.classList.remove('hidden');
-    document.getElementById('player-waiting-msg').innerText = '▶️ À espera que o anfitrião inicie os 30 segundos...';
-    const warning = document.getElementById('player-turn-warning');
-    warning.className = `team-banner-large bg-team-${currentTeam}`;
-    warning.innerText = gameState.namedMode ? `Explicador: ${currentExplainer}` : `Equipa ${currentTeam}`;
-
-  } else {
-    // ─── ESTADO 5: Rodada a decorrer — MOSTRAR PALAVRAS ───────────────────
-    if (!wasTimerRunning && gameState.activeRound.isTimerRunning) {
-      // Rodada começou! Rola automaticamente para o topo do ecrã para focar nas cartas
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }, 50);
+    const timerEl = document.getElementById('player-waiting-timer');
+    if (roundRunning) {
+      timerEl.innerText = gameState.activeRound.timer;
+      timerEl.style.opacity = '1';
+      timerEl.style.color = gameState.activeRound.timer <= 5 ? '#ef4444' : 'rgba(255,255,255,0.7)';
+    } else {
+      timerEl.innerText = '--';
+      timerEl.style.opacity = '0.4';
+      timerEl.style.color = '';
     }
 
-    if (isExplaining) {
-      // Com Nomes: eu sou o explicador designado pela app
-      explainingView.classList.remove('hidden');
-      if (gameState.activeRound.words) {
-        for (let i = 0; i < 5; i++) {
-          const w = gameState.activeRound.words[i] || '-----';
-          document.getElementById(`p-word-${i}`).innerText = w;
-        }
-      }
-      document.getElementById('player-explain-timer').innerText = gameState.activeRound.timer;
-      if (gameState.activeRound.timer <= 5) {
-        document.getElementById('player-explain-timer').classList.add('color-red');
-      } else {
-        document.getElementById('player-explain-timer').classList.remove('color-red');
-      }
-    } else {
-      // Adivinhador (Com Nomes) ou toda a equipa (Sem Nomes) — ver palavras
-      guessingView.classList.remove('hidden');
+  } else if (!roundRunning) {
+    // ─── É a minha vez mas o round ainda não começou ──────────────────────
+    myTeamWait.classList.remove('hidden');
+    const warning = document.getElementById('player-my-turn-warning');
+    warning.className = `team-banner-large bg-team-${currentTeam}`;
+    warning.innerText = `Equipa ${currentTeam}`;
 
-      // Mudar badge conforme o modo
-      const badge = guessingView.querySelector('.badge');
-      if (badge) {
-        if (!gameState.namedMode) {
-          badge.textContent = '🎯 Decidam quem explica!';
-          badge.className = 'badge badge-warning uppercase';
-        } else {
-          badge.textContent = 'A sua equipa joga!';
-          badge.className = 'badge badge-success uppercase';
-        }
-      }
+  } else {
+    // ─── ROUND A DECORRER: MOSTRAR APENAS AS CARTAS ────────────────────────
+    if (!wasTimerRunning && gameState.activeRound.isTimerRunning) {
+      setTimeout(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, 50);
+    }
 
-      document.getElementById('player-guess-timer').innerText = gameState.activeRound.timer;
-      if (gameState.activeRound.timer <= 5) {
-        document.getElementById('player-guess-timer').classList.add('color-red');
-        document.getElementById('player-guess-timer').classList.remove('color-green');
-      } else {
-        document.getElementById('player-guess-timer').classList.remove('color-red');
-        document.getElementById('player-guess-timer').classList.add('color-green');
+    activeView.classList.remove('hidden');
+
+    if (gameState.activeRound.words) {
+      for (let i = 0; i < 5; i++) {
+        const el = document.getElementById(`a-word-${i}`);
+        if (el) el.innerText = gameState.activeRound.words[i] || '-----';
       }
-      if (gameState.activeRound.words) {
-        for (let i = 0; i < 5; i++) {
-          const el = document.getElementById(`g-word-${i}`);
-          if (el) el.innerText = gameState.activeRound.words[i] || '-----';
-        }
+    }
+
+    const timerEl = document.getElementById('player-active-timer');
+    if (timerEl) {
+      timerEl.innerText = gameState.activeRound.timer;
+      if (gameState.activeRound.timer <= 5) {
+        timerEl.classList.add('color-red');
+      } else {
+        timerEl.classList.remove('color-red');
       }
     }
   }
+
   wasTimerRunning = gameState.activeRound.isTimerRunning;
 }
+
 
 
 // D: VISÃO ESPECTADOR
