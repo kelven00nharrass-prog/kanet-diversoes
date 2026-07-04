@@ -745,11 +745,11 @@ function startGame() {
 }
 
 
-// Adicionar membro genérico a uma equipa (sem nome, sistema auto-atribui número)
+// Adicionar membro genérico a uma equipa (sem nome, sistema auto-atribui número global único)
 function addMemberToTeam(team) {
   sounds.playClick();
-  const teamCount = playersList.filter(p => p.team === team && p.role !== 'tv').length;
-  const memberName = `Membro ${teamCount + 1}`;
+  const totalCount = playersList.filter(p => p.role !== 'tv').length;
+  const memberName = `Membro ${totalCount + 1}`;
   const newPlayer = { name: memberName, role: 'player', team: team, active: true };
   const updatedPlayers = [...playersList, newPlayer];
   socket.send(JSON.stringify({
