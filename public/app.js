@@ -1186,17 +1186,17 @@ function renderPlayerMode() {
 
   } else {
     // ─── ROUND A DECORRER: MOSTRAR APENAS AS CARTAS ────────────────────────
+    activeView.classList.remove('hidden');
+
     if (gameState.activeRound.isTimerRunning && !hasScrolledThisRound) {
       hasScrolledThisRound = true;
       const activeWordsCard = document.getElementById('player-words-card-active');
       if (activeWordsCard) {
         setTimeout(() => {
           activeWordsCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 100);
+        }, 150);
       }
     }
-
-    activeView.classList.remove('hidden');
 
     if (gameState.activeRound.words) {
       for (let i = 0; i < 5; i++) {
