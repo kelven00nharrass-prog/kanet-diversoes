@@ -57,7 +57,6 @@
           </div>
 
           <div id="player-inputs" class="form-group">
-            <input type="text" id="input-player-name" placeholder="O seu Nome" maxlength="15" class="input-field">
             <select id="select-player-team" class="select-field">
               <option value="Azul">Equipa Azul 🔵</option>
               <option value="Vermelho">Equipa Vermelha 🔴</option>
@@ -100,43 +99,32 @@
             </div>
           </div>
 
-          <!-- LISTA DE EQUIPAS E SEUS MEMBROS -->
+          <!-- LISTA DE EQUIPAS E CONTAGEM DE MEMBROS -->
           <div class="teams-container">
             <!-- Equipa Azul -->
             <div class="team-lobby-card border-blue" data-team="Azul">
               <h4 class="color-blue">🔵 Equipa Azul</h4>
-              <ul class="player-list" id="list-team-azul"></ul>
-              <button class="btn-sm btn-join-team" data-team="Azul">+ Entrar</button>
+              <div class="member-count-badge" id="count-team-azul">0 membros</div>
+              <button class="btn-sm btn-join-team host-only hidden" data-team="Azul">+ Membro</button>
             </div>
             <!-- Equipa Vermelha -->
             <div class="team-lobby-card border-red" data-team="Vermelho">
               <h4 class="color-red">🔴 Equipa Vermelha</h4>
-              <ul class="player-list" id="list-team-vermelho"></ul>
-              <button class="btn-sm btn-join-team" data-team="Vermelho">+ Entrar</button>
+              <div class="member-count-badge" id="count-team-vermelho">0 membros</div>
+              <button class="btn-sm btn-join-team host-only hidden" data-team="Vermelho">+ Membro</button>
             </div>
             <!-- Equipa Verde -->
             <div class="team-lobby-card border-green" data-team="Verde">
               <h4 class="color-green">🟢 Equipa Verde</h4>
-              <ul class="player-list" id="list-team-verde"></ul>
-              <button class="btn-sm btn-join-team" data-team="Verde">+ Entrar</button>
+              <div class="member-count-badge" id="count-team-verde">0 membros</div>
+              <button class="btn-sm btn-join-team host-only hidden" data-team="Verde">+ Membro</button>
             </div>
             <!-- Equipa Amarela -->
             <div class="team-lobby-card border-yellow" data-team="Amarelo">
               <h4 class="color-yellow">🟡 Equipa Amarela</h4>
-              <ul class="player-list" id="list-team-amarelo"></ul>
-              <button class="btn-sm btn-join-team" data-team="Amarelo">+ Entrar</button>
+              <div class="member-count-badge" id="count-team-amarelo">0 membros</div>
+              <button class="btn-sm btn-join-team host-only hidden" data-team="Amarelo">+ Membro</button>
             </div>
-          </div>
-          <!-- Host can add players manually (crucial for Mode 1 - Single Device) -->
-          <div class="host-only hidden" style="margin-top: 16px; display: flex; gap: 8px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 16px; width: 100%;">
-            <input type="text" id="input-add-player-manual" placeholder="Nome do Jogador" class="input-field" style="padding: 10px;">
-            <select id="select-add-player-team" class="select-field" style="padding: 10px; max-width: 140px;">
-              <option value="Azul">Azul 🔵</option>
-              <option value="Vermelho">Vermelho 🔴</option>
-              <option value="Verde">Verde 🟢</option>
-              <option value="Amarelo">Amarelo 🟡</option>
-            </select>
-            <button id="btn-add-player-manual" class="btn btn-primary" style="padding: 10px 16px;">+ Adicionar</button>
           </div>
         </div>
 
@@ -163,17 +151,6 @@
             </div>
           </div>
 
-          <div class="host-only hidden settings-wrapper form-group">
-            <label style="margin-bottom: 10px; display: block;">👥 Modo de Jogadores:</label>
-            <div class="dice-mode-toggle">
-              <button id="btn-mode-comNomes" class="btn btn-mode active" onclick="setNamedMode(true)">
-                🏷️ Com Nomes<br><small>App escolhe o explicador</small>
-              </button>
-              <button id="btn-mode-semNomes" class="btn btn-mode" onclick="setNamedMode(false)">
-                👥 Sem Nomes<br><small>Equipa decide entre si</small>
-              </button>
-            </div>
-          </div>
 
           <div class="host-only hidden action-wrapper">
             <button id="btn-start-game" class="btn btn-large btn-primary btn-glow-blue">🚀 Iniciar Partida</button>
@@ -315,62 +292,38 @@
 
         <!-- C: VISÃO DO JOGADOR DA EQUIPA -->
         <div id="view-player" class="view-role hidden">
-          <!-- Caso 1: Aguardar a sua vez -->
+
+          <!-- Estado 1: Outra equipa joga — mostrar timer como contagem decrescente -->
           <div id="player-waiting" class="glass-card text-center flex-center flex-column h-full">
-            <h3 class="animate-pulse">Aguarde...</h3>
-            <p id="player-waiting-msg" class="text-large">Outra equipa está a jogar de momento.</p>
             <div id="player-turn-warning" class="team-banner-large">--</div>
-            
-            <!-- Alinhamento das Equipas -->
-            <div style="margin-top: 24px; width: 100%; max-width: 450px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 15px; text-align: left;">
-              <h4 style="margin-bottom: 12px; font-size: 1rem; text-align: center;">👥 Alinhamento das Equipas</h4>
-              <div id="player-teams-list-active" class="tv-teams-list-active">
-                <!-- Injetado dinamicamente -->
-              </div>
-            </div>
+            <p id="player-waiting-msg" class="text-muted">A outra equipa está a jogar...</p>
+            <div class="big-timer-display" id="player-waiting-timer" style="opacity: 0.5;">--</div>
           </div>
 
-          <!-- Caso 2: É a vez da equipa e EU SOU ADIVINHADOR (VÊ AS PALAVRAS TAMBÉM) -->
-          <div id="player-guessing" class="glass-card flex-center flex-column h-full hidden">
-            <div class="text-center form-group">
-              <span class="badge badge-success uppercase">A sua equipa joga!</span>
-              <h2>Ouça e advinhe as palavras:</h2>
-              <p class="text-muted small">⚠️ Não diga a palavra nem ajude o explicador!</p>
-            </div>
-
-            <!-- LISTA DE 5 PALAVRAS (só leitura para adivinhadores) -->
-            <div class="words-card-container" id="player-words-card-guess">
-              <div class="word-card-item word-card-guesser">1. <span class="word-text" id="g-word-0">-----</span></div>
-              <div class="word-card-item word-card-guesser">2. <span class="word-text" id="g-word-1">-----</span></div>
-              <div class="word-card-item word-card-guesser">3. <span class="word-text" id="g-word-2">-----</span></div>
-              <div class="word-card-item word-card-guesser">4. <span class="word-text" id="g-word-3">-----</span></div>
-              <div class="word-card-item word-card-guesser">5. <span class="word-text" id="g-word-4">-----</span></div>
-            </div>
-
-            <!-- Tempo Restante -->
-            <div class="big-timer-display color-green" id="player-guess-timer">30</div>
+          <!-- Estado 2: É a minha vez mas o round ainda não começou -->
+          <div id="player-my-team-wait" class="glass-card text-center flex-center flex-column h-full hidden">
+            <div id="player-my-turn-warning" class="team-banner-large">--</div>
+            <p class="text-large animate-pulse">🎯 É a vossa vez!</p>
+            <p class="text-muted">Aguardem o anfitrião iniciar os 30 segundos...</p>
           </div>
 
-          <!-- Caso 3: É a vez da equipa e EU SOU O EXPLICADOR (MOSTRA AS PALAVRAS) -->
-          <div id="player-explaining" class="glass-card flex-center flex-column h-full hidden">
+          <!-- Estado 3: Round a decorrer — MOSTRAR APENAS AS CARTAS -->
+          <div id="player-active" class="glass-card flex-center flex-column h-full hidden">
             <div class="text-center form-group">
-              <span class="badge badge-warning uppercase">Você é o Explicador!</span>
-              <h2>Descreva as palavras abaixo:</h2>
-              <p class="text-danger small">⚠️ Não diga a palavra, derivados ou traduções!</p>
+              <span class="badge badge-warning uppercase">🎯 A vossa equipa joga!</span>
             </div>
-
             <!-- LISTA DE 5 PALAVRAS -->
-            <div class="words-card-container" id="player-words-card">
-              <div class="word-card-item">1. <span class="word-text" id="p-word-0">-----</span></div>
-              <div class="word-card-item">2. <span class="word-text" id="p-word-1">-----</span></div>
-              <div class="word-card-item">3. <span class="word-text" id="p-word-2">-----</span></div>
-              <div class="word-card-item">4. <span class="word-text" id="p-word-3">-----</span></div>
-              <div class="word-card-item">5. <span class="word-text" id="p-word-4">-----</span></div>
+            <div class="words-card-container" id="player-words-card-active">
+              <div class="word-card-item">1. <span class="word-text" id="a-word-0">-----</span></div>
+              <div class="word-card-item">2. <span class="word-text" id="a-word-1">-----</span></div>
+              <div class="word-card-item">3. <span class="word-text" id="a-word-2">-----</span></div>
+              <div class="word-card-item">4. <span class="word-text" id="a-word-3">-----</span></div>
+              <div class="word-card-item">5. <span class="word-text" id="a-word-4">-----</span></div>
             </div>
-
             <!-- Tempo Restante -->
-            <div class="big-timer-display color-red" id="player-explain-timer">30</div>
+            <div class="big-timer-display color-red" id="player-active-timer">30</div>
           </div>
+
         </div>
 
         <!-- D: VISÃO DO ESPECTADOR -->
