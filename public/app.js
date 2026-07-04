@@ -175,6 +175,7 @@ let playerTeam = null; // 'Azul', 'Vermelho', 'Verde', 'Amarelo'
 let gameState = null;
 let playersList = [];
 let wasTimerRunning = false; // Flag para scroll automático no início da rodada
+let hasScrolledThisRound = false; // Flag para scroll suave até à carta quando começa a rodada
 
 // Elementos DOM
 const screens = {
@@ -1152,6 +1153,7 @@ function renderPlayerMode() {
 
   if (!isMyTeamActive || isRecap) {
     // ─── Outra equipa joga OU recap: mostrar timer decrescente ─────────────
+    hasScrolledThisRound = false;
     waitingView.classList.remove('hidden');
 
     const warning = document.getElementById('player-turn-warning');
@@ -1176,6 +1178,7 @@ function renderPlayerMode() {
 
   } else if (!roundRunning) {
     // ─── É a minha vez mas o round ainda não começou ──────────────────────
+    hasScrolledThisRound = false;
     myTeamWait.classList.remove('hidden');
     const warning = document.getElementById('player-my-turn-warning');
     warning.className = `team-banner-large bg-team-${currentTeam}`;
@@ -1183,8 +1186,14 @@ function renderPlayerMode() {
 
   } else {
     // ─── ROUND A DECORRER: MOSTRAR APENAS AS CARTAS ────────────────────────
-    if (!wasTimerRunning && gameState.activeRound.isTimerRunning) {
-      setTimeout(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, 50);
+    if (gameState.activeRound.isTimerRunning && !hasScrolledThisRound) {
+      hasScrolledThisRound = true;
+      const activeWordsCard = document.getElementById('player-words-card-active');
+      if (activeWordsCard) {
+        setTimeout(() => {
+          activeWordsCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
     }
 
     activeView.classList.remove('hidden');
