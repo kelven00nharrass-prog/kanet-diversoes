@@ -1353,3 +1353,13 @@ p {
   font-size: 1.1rem;
   margin-right: 4px;
 }
+
+/* 19. MEMBER COUNT BADGE (lobby sem nomes) */
+.member-count-badge {
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 12px 0;
+  color: var(--color-text-secondary);
+  letter-spacing: 1px;
+  text-align: center;
+}
