@@ -223,31 +223,38 @@ wss.on('connection', (ws) => {
     }
 
     userSession.roomId = cleanRoomId;
-    userSession.playerName = playerName || (role === 'tv' ? 'Ecrã Principal' : 'Jogador');
     userSession.role = role || 'player';
     userSession.team = team || 'Azul';
 
+    // Auto-atribuir número sequencial se não tiver nome (modo sem nomes)
+    let assignedName;
+    if (role === 'tv') {
+      assignedName = 'Ecrã Principal';
+    } else if (playerName && playerName.trim()) {
+      assignedName = playerName.trim();
+    } else {
+      const teamCount = room.players.filter(p => p.team === (team || 'Azul') && p.role !== 'tv').length;
+      assignedName = `Membro ${teamCount + 1}`;
+    }
+    userSession.playerName = assignedName;
+
     socket.roomId = cleanRoomId;
-    socket.playerName = userSession.playerName;
+    socket.playerName = assignedName;
     socket.role = userSession.role;
     socket.team = userSession.team;
 
     room.clients.add(socket);
 
     if (role === 'tv') {
-      // Adicionar ecrã principal
       console.log(`Ecrã Principal conectado na sala ${cleanRoomId}`);
     } else {
-      // Adicionar jogador
-      // Remover duplicados se houver reconexão com mesmo nome
-      room.players = room.players.filter(p => p.name !== userSession.playerName);
       room.players.push({
-        name: userSession.playerName,
+        name: assignedName,
         role: userSession.role,
         team: userSession.team,
         active: true
       });
-      console.log(`Jogador ${userSession.playerName} entrou na sala ${cleanRoomId} na equipa ${userSession.team}`);
+      console.log(`Jogador ${assignedName} entrou na sala ${cleanRoomId} na equipa ${userSession.team}`);
     }
 
     socket.send(JSON.stringify({
@@ -255,7 +262,7 @@ wss.on('connection', (ws) => {
       payload: {
         roomId: cleanRoomId,
         role: userSession.role,
-        playerName: userSession.playerName,
+        playerName: assignedName,
         team: userSession.team
       }
     }));
@@ -527,11 +534,8 @@ function broadcastRoomState(room) {
     const currentExplainer = currentTeamPlayers[room.gameState.currentExplainerIndex];
     const isActiveTeam = (role === 'player' && team === currentTeamName);
 
-    // Modo Com Nomes: só o explicador designado tem isExplaining=true
-    // Modo Sem Nomes: ninguém tem isExplaining=true (equipa decide entre si)
-    const isCurrentExplainer = room.gameState.namedMode
-      ? (role === 'player' && name === currentExplainer && team === currentTeamName)
-      : false;
+    // Sem modo de nomes: toda a equipa ativa vê as cartas
+    const isCurrentExplainer = false;
 
     // Filtrar estado
     const filteredState = {
@@ -553,11 +557,8 @@ function broadcastRoomState(room) {
       }
     };
 
-    // Palavras: visíveis para Host, Explicador ativo (Com Nomes),
-    // ou TODOS da equipa ativa (Sem Nomes)
-    const canSeeWords = role === 'host'
-      || isCurrentExplainer
-      || (!room.gameState.namedMode && isActiveTeam);
+    // Palavras: visíveis para Host e TODOS os membros da equipa ativa
+    const canSeeWords = role === 'host' || isActiveTeam;
 
     if (canSeeWords) {
       filteredState.activeRound.words = room.gameState.activeRound.words;
