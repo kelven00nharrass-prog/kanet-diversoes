@@ -1363,3 +1363,73 @@ p {
   letter-spacing: 1px;
   text-align: center;
 }
+
+/* 20. VISTA DO JOGADOR — OTIMIZADA PARA TELEMOVEL */
+
+/* Faz o game-layout ocupar o ecra completo no telemovel */
+#view-player {
+  width: 100%;
+  min-height: calc(100dvh - 80px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cartas: ocupar o ecra completo */
+#player-active,
+#player-waiting,
+#player-my-team-wait {
+  width: 100%;
+  min-height: calc(100dvh - 80px);
+  border-radius: 0;
+  padding: 16px;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container das palavras: ocupa todo o espaco disponivel */
+#player-words-card-active {
+  width: 100%;
+  max-width: 100%;
+  margin: 12px 0;
+  gap: 10px;
+  flex: 1;
+  justify-content: center;
+}
+
+/* Cada carta de palavra: tamanho generoso no telemovel */
+#player-words-card-active .word-card-item {
+  font-size: 1.15rem;
+  padding: 14px 16px;
+  border-radius: 10px;
+}
+
+/* Timer no telemovel: grande e centrado */
+#player-active-timer {
+  font-size: 4.5rem;
+  margin-top: 8px;
+}
+
+/* Timer na vista de espera: discreto mas visivel */
+#player-waiting-timer {
+  font-size: 3.5rem;
+  margin-top: 8px;
+}
+
+/* Em ecras muito pequenos (< 380px): reduzir ligeiramente */
+@media (max-width: 380px) {
+  #player-words-card-active .word-card-item {
+    font-size: 1rem;
+    padding: 12px 14px;
+  }
+  #player-active-timer { font-size: 3.8rem; }
+  #player-waiting-timer { font-size: 3rem; }
+}
+
+/* Badge no topo das cartas */
+#player-active .badge {
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
