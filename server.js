@@ -526,7 +526,15 @@ function broadcastRoomState(room) {
 
     const role = clientSocket.role || 'spectator';
     const name = clientSocket.playerName || 'Espectador';
-    const team = clientSocket.team || '';
+    
+    // Obter equipa correta da lista de jogadores (source of truth)
+    const playerObj = room.players.find(p => p.name === name);
+    const team = playerObj ? playerObj.team : (clientSocket.team || '');
+    
+    // Sincronizar propriedade do socket
+    if (playerObj) {
+      clientSocket.team = playerObj.team;
+    }
 
     // Determinar se este cliente é o explicador ativo da rodada
     const currentTeamName = room.gameState.teamOrder[room.gameState.currentTeamIndex];
