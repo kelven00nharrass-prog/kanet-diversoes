@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ka'Net diversões — Impressão de Cartas</title>
+  <title>Ka'Net diversões — Impressão de Cartas Frente e Verso (Azul e Amarelo)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
@@ -27,9 +27,7 @@
     body, 
     .page-a4, 
     .printable-card, 
-    .card-front, 
-    .card-back, 
-    .back-pattern, 
+    .card-content, 
     .word-item,
     .card-header,
     .word-num {
@@ -159,31 +157,28 @@
     .printable-card {
       width: 62mm;
       height: 88mm;
-      border: 1px dotted rgba(0, 0, 0, 0.15); /* Linha de corte */
+      border: 1px dotted rgba(0, 0, 0, 0.12); /* Linha de corte */
       box-sizing: border-box;
       position: relative;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      background-color: #ffffff;
     }
 
-    /* =====================================================
-       FRENTE DA CARTA: MODO ECONÓMICO (PADRÃO)
-       ===================================================== */
-    .card-front {
+    /* CONTEÚDO DA CARTA (LADO AZUL OU AMARELO) */
+    .card-content {
       display: flex;
       flex-direction: column;
       height: 100%;
       padding: 6mm 5mm;
       justify-content: space-between;
-      background-color: #ffffff;
     }
 
+    /* Cabeçalho da Carta */
     .card-header {
       border-bottom: 2px solid #1f2937;
       padding-bottom: 2mm;
-      margin-bottom: 3mm;
+      margin-bottom: 3.5mm;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -193,138 +188,115 @@
       font-family: var(--font-display);
       font-size: 12px;
       font-weight: 800;
-      letter-spacing: 1px;
-      color: #111827;
+      letter-spacing: 1.5px;
     }
 
     .card-id {
       font-family: monospace;
       font-size: 10px;
-      color: #4b5563;
       font-weight: bold;
     }
 
+    /* Lista de Palavras */
     .words-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 2mm;
+      gap: 1.8mm;
       flex: 1;
       justify-content: center;
     }
 
     .word-item {
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 700;
-      color: #1f2937;
-      padding: 2.2mm 3mm;
+      padding: 2.2mm 2.8mm;
       border-radius: 6px;
-      background: #f3f4f6; /* Fundo suave */
-      border-left: 4px solid #9ca3af; /* Borda lateral padrão */
       display: flex;
       align-items: center;
-    }
-
-    /* Cores Alternadas dos Itens no Modo Económico */
-    .word-item.border-blue {
-      border-left-color: #0284c7;
-    }
-    .word-item.border-yellow {
-      border-left-color: #d97706;
+      line-height: 1.2;
     }
 
     .word-num {
       font-weight: 800;
-      margin-right: 2.5mm;
-      opacity: 0.7;
+      margin-right: 2mm;
+      opacity: 0.8;
     }
 
     /* =====================================================
-       FRENTE DA CARTA: MODO PREMIUM (FUNDO ESCURO)
+       CORES LADO AZUL (FRENTE) - MODO ECONÓMICO
        ===================================================== */
-    .premium-mode .printable-card.card-front-theme {
+    .theme-blue-light {
+      background-color: #ffffff;
+    }
+    .theme-blue-light .logo-text { color: #0284c7; }
+    .theme-blue-light .card-header { border-bottom-color: #0284c7; }
+    .theme-blue-light .card-id { color: #6b7280; }
+    .theme-blue-light .word-item {
+      background: #f0f9ff;
+      color: #0369a1;
+      border-left: 3.5px solid #0284c7;
+    }
+    .theme-blue-light .word-num { color: #0284c7; }
+
+    /* =====================================================
+       CORES LADO AMARELO (VERSO) - MODO ECONÓMICO
+       ===================================================== */
+    .theme-yellow-light {
+      background-color: #ffffff;
+    }
+    .theme-yellow-light .logo-text { color: #b45309; }
+    .theme-yellow-light .card-header { border-bottom-color: #b45309; }
+    .theme-yellow-light .card-id { color: #6b7280; }
+    .theme-yellow-light .word-item {
+      background: #fffbeb;
+      color: #78350f;
+      border-left: 3.5px solid #d97706;
+    }
+    .theme-yellow-light .word-num { color: #d97706; }
+
+    /* =====================================================
+       CORES LADO AZUL (FRENTE) - MODO PREMIUM (ESCURECIDO)
+       ===================================================== */
+    .premium-mode .theme-blue-premium {
       background-color: var(--color-dark-card);
-      border-color: rgba(255, 255, 255, 0.08);
     }
-
-    .premium-mode .card-front-theme .card-front {
-      background: radial-gradient(circle at top right, #0d1527 0%, #030712 100%);
+    .premium-mode .theme-blue-premium .card-content {
+      background: radial-gradient(circle at top right, #0d223f 0%, #030712 100%);
     }
-
-    .premium-mode .card-front-theme .card-header {
-      border-bottom-color: rgba(255, 255, 255, 0.1);
+    .premium-mode .theme-blue-premium .logo-text { color: var(--color-blue); }
+    .premium-mode .theme-blue-premium .card-header { border-bottom-color: var(--color-blue); }
+    .premium-mode .theme-blue-premium .card-id { color: var(--color-blue); }
+    .premium-mode .theme-blue-premium .word-item {
+      background: rgba(0, 210, 255, 0.04);
+      color: #e0f2fe;
+      border: 1px solid rgba(0, 210, 255, 0.08);
+      border-left: 4px solid var(--color-blue);
+      box-shadow: 0 0 8px rgba(0, 210, 255, 0.08);
     }
-
-    .premium-mode .card-front-theme .logo-text {
-      color: #fff;
-    }
-
-    .premium-mode .card-front-theme .card-id {
-      color: var(--color-blue);
-    }
-
-    .premium-mode .card-front-theme .word-item {
-      background: rgba(255, 255, 255, 0.03);
-      color: #f3f4f6;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-left: 4px solid #9ca3af;
-    }
-
-    .premium-mode .card-front-theme .word-item.border-blue {
-      border-left-color: var(--color-blue);
-      box-shadow: 0 0 10px rgba(0, 210, 255, 0.1);
-    }
-
-    .premium-mode .card-front-theme .word-item.border-yellow {
-      border-left-color: var(--color-yellow);
-      box-shadow: 0 0 10px rgba(255, 204, 0, 0.1);
-    }
+    .premium-mode .theme-blue-premium .word-num { color: var(--color-blue); }
 
     /* =====================================================
-       VERSO DA CARTA (DESIGN PREMIUM OBRIGATÓRIO)
+       CORES LADO AMARELO (VERSO) - MODO PREMIUM (ESCURECIDO)
        ===================================================== */
-    .card-back {
-      height: 100%;
-      background: radial-gradient(circle at center, #0d1527 0%, #030712 100%) !important;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 6mm;
-      text-align: center;
-      position: relative;
+    .premium-mode .theme-yellow-premium {
+      background-color: var(--color-dark-card);
     }
+    .premium-mode .theme-yellow-premium .card-content {
+      background: radial-gradient(circle at top right, #332b00 0%, #030712 100%);
+    }
+    .premium-mode .theme-yellow-premium .logo-text { color: var(--color-yellow); }
+    .premium-mode .theme-yellow-premium .card-header { border-bottom-color: var(--color-yellow); }
+    .premium-mode .theme-yellow-premium .card-id { color: var(--color-yellow); }
+    .premium-mode .theme-yellow-premium .word-item {
+      background: rgba(255, 204, 0, 0.03);
+      color: #fef3c7;
+      border: 1px solid rgba(255, 204, 0, 0.06);
+      border-left: 4px solid var(--color-yellow);
+      box-shadow: 0 0 8px rgba(255, 204, 0, 0.06);
+    }
+    .premium-mode .theme-yellow-premium .word-num { color: var(--color-yellow); }
 
-    .back-logo {
-      font-family: var(--font-display);
-      font-size: 17px;
-      font-weight: 800;
-      color: var(--color-blue);
-      letter-spacing: 2px;
-      text-shadow: 0 0 12px rgba(0, 210, 255, 0.6);
-    }
-
-    .back-subtitle {
-      font-size: 8px;
-      color: var(--color-yellow);
-      margin-top: 4px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-weight: bold;
-      text-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
-    }
-
-    .back-pattern {
-      position: absolute;
-      top: 4mm;
-      left: 4mm;
-      right: 4mm;
-      bottom: 4mm;
-      border: 1px solid rgba(0, 210, 255, 0.2);
-      border-radius: 8px;
-      pointer-events: none;
-    }
 
     /* =====================================================
        IMPRESSÃO DE PÁGINAS (CONFIGURAÇÕES DO SISTEMA)
@@ -355,35 +327,36 @@
   <!-- Painel de Controlo -->
   <div class="control-panel no-print">
     <div class="panel-row">
-      <div class="panel-title">🎴 Impressão de Cartas Ka'Net</div>
+      <div class="panel-title">🎴 Impressão de Cartas Ka'Net (Dupla Face)</div>
       <button class="btn-print" onclick="window.print()">🖨️ Imprimir / Guardar em PDF</button>
     </div>
     <div class="panel-row">
       <div class="form-group">
-        <label for="select-range">Intervalo de Cartas:</label>
+        <label for="select-range">Intervalo de Cartas (285 Cartas Totais):</label>
         <select id="select-range" onchange="loadCards()">
-          <option value="1-54">Cartas 1 a 54 (6 páginas)</option>
-          <option value="55-108">Cartas 55 a 108 (6 páginas)</option>
-          <option value="109-162">Cartas 109 a 162 (6 páginas)</option>
-          <option value="163-216">Cartas 163 a 216 (6 páginas)</option>
-          <option value="217-270">Cartas 217 a 270 (6 páginas)</option>
-          <option value="271-360">Cartas 271 a 360 (10 páginas)</option>
-          <option value="361-450">Cartas 361 a 450 (10 páginas)</option>
-          <option value="451-570">Cartas 451 a 570 (13 páginas)</option>
+          <option value="1-27">Cartas 1 a 27 (6 páginas A4: 3 Frente + 3 Verso)</option>
+          <option value="28-54">Cartas 28 a 54 (6 páginas A4)</option>
+          <option value="55-108">Cartas 55 a 108 (12 páginas A4)</option>
+          <option value="109-162">Cartas 109 a 162 (12 páginas A4)</option>
+          <option value="163-216">Cartas 163 a 216 (12 páginas A4)</option>
+          <option value="217-285">Cartas 217 a 285 (16 páginas A4)</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label for="select-style">Estilo de Impressão (Frente):</label>
+        <label for="select-style">Estilo Visual das Cartas:</label>
         <select id="select-style" onchange="toggleStyle()">
           <option value="premium">✨ Premium (Fundo Escuro Original)</option>
           <option value="light">🏠 Económico (Fundo Branco - Poupa Tinta)</option>
         </select>
       </div>
     </div>
-    <p style="font-size: 11.5px; color: #9ca3af; text-align: center; line-height: 1.5;">
-      💡 <strong>Como imprimir frente e verso:</strong> No menu de impressão do navegador, marque a caixa <strong>"Imprimir gráficos de fundo" (Background graphics)</strong>. Escolha <strong>Imprimir em ambos os lados</strong> virando na <strong>Borda Longa</strong>.
-    </p>
+    <div style="font-size: 11.5px; color: #9ca3af; line-height: 1.5; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 12px;">
+      💡 <strong>Como funciona a Dupla Face (Lado Azul e Lado Amarelo):</strong><br>
+      • Cada carta física tem o <strong>Lado Azul</strong> na frente e o <strong>Lado Amarelo</strong> no verso.<br>
+      • No menu de impressão do navegador, selecione <strong>Imprimir em ambos os lados</strong> virando na <strong>Borda Longa</strong>.<br>
+      • Certifique-se de marcar a opção <strong>"Imprimir gráficos de fundo" (Background graphics)</strong> nas definições para que as cores do fundo apareçam.
+    </div>
   </div>
 
   <!-- Contentor das Páginas A4 -->
@@ -419,48 +392,68 @@
     function loadCards() {
       const range = document.getElementById('select-range').value;
       const parts = range.split('-');
-      const startIdx = parseInt(parts[0]) - 1;
-      const endIdx = parseInt(parts[1]) - 1;
+      const startCard = parseInt(parts[0]);
+      const endCard = parseInt(parts[1]);
 
-      const selected = allCards.slice(startIdx, endIdx + 1);
-      renderPrintLayout(selected, startIdx + 1);
+      // Cada carta física = 2 objetos do words.json
+      // Ex: Carta Física 1 = Lado Azul (id 1) + Lado Amarelo (id 2)
+      // Portanto, o intervalo físico [startCard, endCard] corresponde a:
+      const startIdx = (startCard - 1) * 2;
+      const endIdx = (endCard * 2) - 1;
+
+      const selectedWords = allCards.slice(startIdx, endIdx + 1);
+      renderDoubleSidedLayout(selectedWords, startCard);
     }
 
-    function renderPrintLayout(cards, startId) {
+    function renderDoubleSidedLayout(wordsArray, startCardId) {
       const container = document.getElementById('pages-container');
       container.innerHTML = '';
 
       const cardsPerPage = 9;
-      const pagesCount = Math.ceil(cards.length / cardsPerPage);
+      // Quantas cartas físicas temos neste bloco
+      const totalPhysicalCards = Math.ceil(wordsArray.length / 2);
+      const pagesCount = Math.ceil(totalPhysicalCards / cardsPerPage);
 
       for (let p = 0; p < pagesCount; p++) {
-        const pageCards = cards.slice(p * cardsPerPage, (p + 1) * cardsPerPage);
-        
-        // 1. Criar a Página de FRENTE
+        // Obter até 9 cartas físicas para este par de páginas A4
+        const pagePhysicalCards = [];
+        for (let i = 0; i < cardsPerPage; i++) {
+          const idx = (p * cardsPerPage + i) * 2;
+          if (idx < wordsArray.length) {
+            pagePhysicalCards.push({
+              id: startCardId + (p * cardsPerPage) + i,
+              blueSide: wordsArray[idx],       // Carta Ímpar
+              yellowSide: wordsArray[idx + 1]  // Carta Par
+            });
+          }
+        }
+
+        // =====================================================
+        // 1. PÁGINA DE FRENTES (TODOS OS LADOS AZUIS)
+        // =====================================================
         const frontPage = document.createElement('div');
         frontPage.className = 'page-a4';
         
         const labelF = document.createElement('div');
         labelF.className = 'page-a4-label';
-        labelF.innerText = `PÁGINA ${p * 2 + 1} (FRENTE) - Cartas ${startId + p * 9} a ${startId + p * 9 + pageCards.length - 1}`;
+        labelF.innerText = `PÁGINA A4 - LADO AZUL (Frentes) - Cartas ${pagePhysicalCards[0].id} a ${pagePhysicalCards[pagePhysicalCards.length-1].id}`;
         frontPage.appendChild(labelF);
 
-        pageCards.forEach((card) => {
+        pagePhysicalCards.forEach((card) => {
           const cardEl = document.createElement('div');
-          cardEl.className = 'printable-card card-front-theme';
+          // Classes dinâmicas para modo light/premium
+          cardEl.className = 'printable-card theme-blue-light theme-blue-premium card-front-theme';
           
           let wordsHtml = '';
-          card.words.forEach((word, wIdx) => {
-            // Alternar cores azul e amarelo da borda lateral
-            const borderColorClass = (wIdx % 2 === 0) ? 'border-blue' : 'border-yellow';
-            wordsHtml += `<li class="word-item ${borderColorClass}"><span class="word-num">${wIdx + 1}.</span> ${word}</li>`;
+          card.blueSide.words.forEach((word, wIdx) => {
+            wordsHtml += `<li class="word-item"><span class="word-num">${wIdx + 1}.</span> ${word}</li>`;
           });
 
           cardEl.innerHTML = `
-            <div class="card-front">
+            <div class="card-content">
               <div class="card-header">
                 <span class="logo-text">KA'NET</span>
-                <span class="card-id">#${card.id}</span>
+                <span class="card-id">#${card.id}A</span>
               </div>
               <ul class="words-list">
                 ${wordsHtml}
@@ -470,32 +463,37 @@
           frontPage.appendChild(cardEl);
         });
 
-        // Completar a página com placeholders vazios se houver menos de 9 cartas
-        for (let i = pageCards.length; i < cardsPerPage; i++) {
+        // Preencher placeholders se menos de 9
+        for (let i = pagePhysicalCards.length; i < cardsPerPage; i++) {
           const empty = document.createElement('div');
           empty.className = 'printable-card';
-          empty.style.border = '1px dashed #f0f0f0';
+          empty.style.border = '1px dashed #e5e7eb';
           frontPage.appendChild(empty);
         }
-
         container.appendChild(frontPage);
 
-        // 2. Criar a Página de VERSO (com colunas espelhadas horizontalmente)
+
+        // =====================================================
+        // 2. PÁGINA DE VERSOS (TODOS OS LADOS AMARELOS)
+        // OBRIGATÓRIO: Espelhamento de colunas horizontal
+        // Linha 1: 2 -> 1 -> 0
+        // Linha 2: 5 -> 4 -> 3
+        // Linha 3: 8 -> 7 -> 6
+        // =====================================================
         const backPage = document.createElement('div');
         backPage.className = 'page-a4';
         
         const labelB = document.createElement('div');
         labelB.className = 'page-a4-label';
-        labelB.innerText = `PÁGINA ${p * 2 + 2} (VERSO) - Versos correspondentes`;
+        labelB.innerText = `PÁGINA A4 - LADO AMARELO (Versos) - Cartas correspondentes`;
         backPage.appendChild(labelB);
 
-        // Espelhar colunas horizontalmente
         const mirroredCards = [];
         for (let row = 0; row < 3; row++) {
           const rowStart = row * 3;
-          const card1 = pageCards[rowStart + 2];
-          const card2 = pageCards[rowStart + 1];
-          const card3 = pageCards[rowStart + 0];
+          const card1 = pagePhysicalCards[rowStart + 2];
+          const card2 = pagePhysicalCards[rowStart + 1];
+          const card3 = pagePhysicalCards[rowStart + 0];
           
           mirroredCards.push(card1);
           mirroredCards.push(card2);
@@ -504,18 +502,27 @@
 
         mirroredCards.forEach((card) => {
           const cardEl = document.createElement('div');
-          cardEl.className = 'printable-card';
+          cardEl.className = 'printable-card theme-yellow-light theme-yellow-premium card-front-theme';
           
-          if (card) {
+          if (card && card.yellowSide) {
+            let wordsHtml = '';
+            card.yellowSide.words.forEach((word, wIdx) => {
+              wordsHtml += `<li class="word-item"><span class="word-num">${wIdx + 1}.</span> ${word}</li>`;
+            });
+
             cardEl.innerHTML = `
-              <div class="card-back">
-                <div class="back-pattern"></div>
-                <div class="back-logo">KA'NET</div>
-                <div class="back-subtitle">Equipas</div>
+              <div class="card-content">
+                <div class="card-header">
+                  <span class="logo-text">KA'NET</span>
+                  <span class="card-id">#${card.id}B</span>
+                </div>
+                <ul class="words-list">
+                  ${wordsHtml}
+                </ul>
               </div>
             `;
           } else {
-            cardEl.style.border = '1px dashed #f0f0f0';
+            cardEl.style.border = '1px dashed #e5e7eb';
           }
           backPage.appendChild(cardEl);
         });
