@@ -175,7 +175,8 @@ let playerTeam = null; // 'Azul', 'Vermelho', 'Verde', 'Amarelo'
 let gameState = null;
 let playersList = [];
 let wasTimerRunning = false; // Flag para scroll automático no início da rodada
-let hasScrolledThisRound = false; // Flag para scroll suave até à carta quando começa a rodada
+let hasScrolledThisRound = false; // Flag para scroll suave ate a carta quando comeca a rodada
+let wakeLock = null; // Wake Lock para manter o ecra ligado
 
 // Elementos DOM
 const screens = {
