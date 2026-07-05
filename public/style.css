@@ -1433,3 +1433,49 @@ p {
   letter-spacing: 1px;
   margin-bottom: 4px;
 }
+
+/* =====================================================
+   21. MODO ECRA COMPLETO PARA JOGADORES (player-mode)
+   Quando o papel e 'player', o ecra de jogo ocupa
+   100dvh sem padding nem header - a carta e o timer
+   ficam imediatamente visiveis, sem scroll.
+   ===================================================== */
+
+/* O contentor principal perde o padding quando e jogador */
+#screen-game-active.player-mode {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Esconder o header (placar/sala) na vista do jogador */
+#screen-game-active.player-mode .game-header {
+  display: none;
+}
+
+/* O game-layout ocupa o restante do ecra */
+#screen-game-active.player-mode #game-layout {
+  flex: 1;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/* O view-player ocupa 100dvh completo */
+#screen-game-active.player-mode #view-player {
+  height: 100dvh;
+  min-height: 100dvh;
+}
+
+/* Cada estado do jogador ocupa 100dvh completo */
+#screen-game-active.player-mode #player-active,
+#screen-game-active.player-mode #player-waiting,
+#screen-game-active.player-mode #player-my-team-wait {
+  height: 100dvh;
+  min-height: 100dvh;
+  border-radius: 0;
+  padding: 20px 16px;
+  box-sizing: border-box;
+}
