@@ -10,12 +10,9 @@
   <style>
     :root {
       --color-blue: #00d2ff;
-      --color-red: #ff3b30;
-      --color-green: #34c759;
       --color-yellow: #ffcc00;
-      --color-dark: #0d1326;
-      --color-bg-light: #ffffff;
-      --color-border-light: #e5e7eb;
+      --color-dark-bg: #0d1326;
+      --color-dark-card: #080d1a;
       --font-primary: 'Outfit', sans-serif;
       --font-display: 'Space Grotesk', sans-serif;
     }
@@ -26,26 +23,40 @@
       padding: 0;
     }
 
+    /* FORÇAR A IMPRESSÃO DE CORES E IMAGENS DE FUNDO NO NAVEGADOR */
+    body, 
+    .page-a4, 
+    .printable-card, 
+    .card-front, 
+    .card-back, 
+    .back-pattern, 
+    .word-item,
+    .card-header,
+    .word-num {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
     body {
       font-family: var(--font-primary);
-      background-color: #080a10;
+      background-color: #030712;
       color: #f3f4f6;
-      padding: 20px;
+      padding: 30px;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    /* Painel de Controlo */
+    /* Painel de Controlo (escondido na impressão) */
     .control-panel {
-      background: rgba(13, 19, 38, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 20px;
+      background: rgba(17, 24, 39, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 24px;
       border-radius: 16px;
       width: 100%;
-      max-width: 800px;
-      margin-bottom: 30px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      max-width: 820px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
       display: flex;
       flex-direction: column;
       gap: 15px;
@@ -56,36 +67,39 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 20px;
     }
 
     .panel-title {
       font-family: var(--font-display);
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       color: var(--color-blue);
+      text-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
     }
 
     .form-group {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     label {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: #9ca3af;
+      font-weight: 600;
     }
 
-    select, input, button {
+    select, button {
       font-family: var(--font-primary);
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.15);
       color: #fff;
-      padding: 8px 12px;
-      border-radius: 8px;
-      font-size: 0.9rem;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 0.95rem;
       outline: none;
       transition: all 0.2s ease;
+      cursor: pointer;
     }
 
     select:focus, button:hover {
@@ -96,17 +110,16 @@
     .btn-print {
       background: linear-gradient(135deg, #00d2ff 0%, #0066ff 100%);
       border: none;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(0, 210, 255, 0.35);
     }
 
     .btn-print:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 210, 255, 0.4);
+      box-shadow: 0 6px 20px rgba(0, 210, 255, 0.5);
     }
 
-    /* Simulação das Páginas no Ecrã */
+    /* Container de Páginas */
     .print-pages-container {
       display: flex;
       flex-direction: column;
@@ -115,15 +128,15 @@
       width: 100%;
     }
 
-    /* Página A4 */
+    /* Página A4 (Dimensões Exatas de Impressão) */
     .page-a4 {
       width: 210mm;
       height: 297mm;
-      background-color: var(--color-bg-light);
+      background-color: #ffffff;
       color: #000;
-      padding: 16.5mm 12mm; /* Margens perfeitas para centralizar o grid */
+      padding: 16.5mm 12mm; /* Centraliza a grelha de 3x3 perfeitamente na página */
       box-sizing: border-box;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
       position: relative;
       display: grid;
       grid-template-columns: repeat(3, 62mm);
@@ -138,36 +151,39 @@
       top: 5mm;
       left: 12mm;
       font-size: 10px;
-      color: #999;
+      color: #888;
       font-family: monospace;
     }
 
-    /* Estrutura das Cartas */
+    /* Estilo Base da Carta */
     .printable-card {
       width: 62mm;
       height: 88mm;
-      border: 1px dotted #ccc; /* Linha de corte */
+      border: 1px dotted rgba(0, 0, 0, 0.15); /* Linha de corte */
       box-sizing: border-box;
       position: relative;
       overflow: hidden;
-      padding: 8mm 6mm;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      background-color: #fff;
+      background-color: #ffffff;
     }
 
-    /* FRENTE DA CARTA */
+    /* =====================================================
+       FRENTE DA CARTA: MODO ECONÓMICO (PADRÃO)
+       ===================================================== */
     .card-front {
       display: flex;
       flex-direction: column;
       height: 100%;
+      padding: 6mm 5mm;
+      justify-content: space-between;
+      background-color: #ffffff;
     }
 
     .card-header {
-      border-bottom: 2px solid var(--color-dark);
+      border-bottom: 2px solid #1f2937;
       padding-bottom: 2mm;
-      margin-bottom: 4mm;
+      margin-bottom: 3mm;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -176,47 +192,100 @@
     .logo-text {
       font-family: var(--font-display);
       font-size: 12px;
-      font-weight: bold;
+      font-weight: 800;
       letter-spacing: 1px;
-      color: var(--color-dark);
+      color: #111827;
     }
 
     .card-id {
       font-family: monospace;
       font-size: 10px;
-      color: #666;
+      color: #4b5563;
+      font-weight: bold;
     }
 
     .words-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 2mm;
       flex: 1;
+      justify-content: center;
     }
 
     .word-item {
-      font-size: 13px;
-      font-weight: 600;
-      color: #111;
-      padding: 2mm 0;
-      border-bottom: 1px solid #f0f0f0;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #1f2937;
+      padding: 2.2mm 3mm;
+      border-radius: 6px;
+      background: #f3f4f6; /* Fundo suave */
+      border-left: 4px solid #9ca3af; /* Borda lateral padrão */
+      display: flex;
+      align-items: center;
     }
 
-    .word-item:last-child {
-      border-bottom: none;
+    /* Cores Alternadas dos Itens no Modo Económico */
+    .word-item.border-blue {
+      border-left-color: #0284c7;
+    }
+    .word-item.border-yellow {
+      border-left-color: #d97706;
     }
 
     .word-num {
-      color: var(--color-blue);
-      font-weight: bold;
-      margin-right: 2mm;
+      font-weight: 800;
+      margin-right: 2.5mm;
+      opacity: 0.7;
     }
 
-    /* VERSO DA CARTA (Estilo Premium) */
+    /* =====================================================
+       FRENTE DA CARTA: MODO PREMIUM (FUNDO ESCURO)
+       ===================================================== */
+    .premium-mode .printable-card.card-front-theme {
+      background-color: var(--color-dark-card);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .premium-mode .card-front-theme .card-front {
+      background: radial-gradient(circle at top right, #0d1527 0%, #030712 100%);
+    }
+
+    .premium-mode .card-front-theme .card-header {
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .premium-mode .card-front-theme .logo-text {
+      color: #fff;
+    }
+
+    .premium-mode .card-front-theme .card-id {
+      color: var(--color-blue);
+    }
+
+    .premium-mode .card-front-theme .word-item {
+      background: rgba(255, 255, 255, 0.03);
+      color: #f3f4f6;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-left: 4px solid #9ca3af;
+    }
+
+    .premium-mode .card-front-theme .word-item.border-blue {
+      border-left-color: var(--color-blue);
+      box-shadow: 0 0 10px rgba(0, 210, 255, 0.1);
+    }
+
+    .premium-mode .card-front-theme .word-item.border-yellow {
+      border-left-color: var(--color-yellow);
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.1);
+    }
+
+    /* =====================================================
+       VERSO DA CARTA (DESIGN PREMIUM OBRIGATÓRIO)
+       ===================================================== */
     .card-back {
       height: 100%;
-      background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+      background: radial-gradient(circle at center, #0d1527 0%, #030712 100%) !important;
       color: #fff;
       display: flex;
       flex-direction: column;
@@ -227,78 +296,63 @@
       position: relative;
     }
 
-    /* Modo Premium nas Frentes */
-    .premium-mode .printable-card.card-front-theme {
-      background: radial-gradient(circle at top right, #0f172a 0%, #020617 100%);
-      color: #fff;
-      border-color: rgba(255, 255, 255, 0.1);
-    }
-    
-    .premium-mode .card-front-theme .card-header {
-      border-bottom-color: var(--color-blue);
-    }
-    .premium-mode .card-front-theme .logo-text {
-      color: #fff;
-    }
-    .premium-mode .card-front-theme .word-item {
-      color: #e5e7eb;
-      border-bottom-color: rgba(255,255,255,0.05);
-    }
-
-    /* Arte de fundo no Verso */
     .back-logo {
       font-family: var(--font-display);
-      font-size: 18px;
-      font-weight: bold;
+      font-size: 17px;
+      font-weight: 800;
       color: var(--color-blue);
       letter-spacing: 2px;
-      text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+      text-shadow: 0 0 12px rgba(0, 210, 255, 0.6);
     }
 
     .back-subtitle {
-      font-size: 9px;
-      color: #64748b;
-      margin-top: 5px;
+      font-size: 8px;
+      color: var(--color-yellow);
+      margin-top: 4px;
       letter-spacing: 3px;
       text-transform: uppercase;
+      font-weight: bold;
+      text-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
     }
 
     .back-pattern {
       position: absolute;
-      top: 5px;
-      left: 5px;
-      right: 5px;
-      bottom: 5px;
-      border: 1px solid rgba(0, 210, 255, 0.15);
+      top: 4mm;
+      left: 4mm;
+      right: 4mm;
+      bottom: 4mm;
+      border: 1px solid rgba(0, 210, 255, 0.2);
       border-radius: 8px;
       pointer-events: none;
     }
 
-    /* CONFIGURAÇÃO DE IMPRESSÃO */
+    /* =====================================================
+       IMPRESSÃO DE PÁGINAS (CONFIGURAÇÕES DO SISTEMA)
+       ===================================================== */
     @media print {
       body {
-        background-color: #fff;
-        color: #000;
-        padding: 0;
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        padding: 0 !important;
+        margin: 0 !important;
       }
       .no-print {
         display: none !important;
       }
       .page-a4 {
-        box-shadow: none;
-        page-break-after: always;
-        position: relative;
-        margin: 0;
+        box-shadow: none !important;
+        page-break-after: always !important;
+        margin: 0 !important;
       }
       .page-a4-label {
-        display: none;
+        display: none !important;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Painel de Configurações -->
+  <!-- Painel de Controlo -->
   <div class="control-panel no-print">
     <div class="panel-row">
       <div class="panel-title">🎴 Impressão de Cartas Ka'Net</div>
@@ -322,18 +376,18 @@
       <div class="form-group">
         <label for="select-style">Estilo de Impressão (Frente):</label>
         <select id="select-style" onchange="toggleStyle()">
-          <option value="light">🏠 Económico (Fundo Branco - Poupa Tinta)</option>
           <option value="premium">✨ Premium (Fundo Escuro Original)</option>
+          <option value="light">🏠 Económico (Fundo Branco - Poupa Tinta)</option>
         </select>
       </div>
     </div>
-    <p style="font-size: 11px; color: #9ca3af; text-align: center;">
-      💡 <strong>Como imprimir frente e verso:</strong> No menu de impressão, escolha "Imprimir em ambos os lados" (Frente e Verso) virando na <strong>Borda Longa</strong>. O grid está desenhado para alinhar perfeitamente.
+    <p style="font-size: 11.5px; color: #9ca3af; text-align: center; line-height: 1.5;">
+      💡 <strong>Como imprimir frente e verso:</strong> No menu de impressão do navegador, marque a caixa <strong>"Imprimir gráficos de fundo" (Background graphics)</strong>. Escolha <strong>Imprimir em ambos os lados</strong> virando na <strong>Borda Longa</strong>.
     </p>
   </div>
 
   <!-- Contentor das Páginas A4 -->
-  <div class="print-pages-container" id="pages-container">
+  <div class="print-pages-container premium-mode" id="pages-container">
     <p>A carregar base de dados de palavras...</p>
   </div>
 
@@ -376,7 +430,6 @@
       const container = document.getElementById('pages-container');
       container.innerHTML = '';
 
-      // Agrupar as cartas em blocos de 9 (1 página A4)
       const cardsPerPage = 9;
       const pagesCount = Math.ceil(cards.length / cardsPerPage);
 
@@ -398,7 +451,9 @@
           
           let wordsHtml = '';
           card.words.forEach((word, wIdx) => {
-            wordsHtml += `<li class="word-item"><span class="word-num">${wIdx + 1}</span>${word}</li>`;
+            // Alternar cores azul e amarelo da borda lateral
+            const borderColorClass = (wIdx % 2 === 0) ? 'border-blue' : 'border-yellow';
+            wordsHtml += `<li class="word-item ${borderColorClass}"><span class="word-num">${wIdx + 1}.</span> ${word}</li>`;
           });
 
           cardEl.innerHTML = `
@@ -415,7 +470,7 @@
           frontPage.appendChild(cardEl);
         });
 
-        // Se a página não tiver 9 cartas, preencher com placeholders vazios
+        // Completar a página com placeholders vazios se houver menos de 9 cartas
         for (let i = pageCards.length; i < cardsPerPage; i++) {
           const empty = document.createElement('div');
           empty.className = 'printable-card';
@@ -434,9 +489,7 @@
         labelB.innerText = `PÁGINA ${p * 2 + 2} (VERSO) - Versos correspondentes`;
         backPage.appendChild(labelB);
 
-        // Para espelhar no sentido horizontal (esquerda <-> direita):
-        // Mapeamento de 3 colunas: 0->2, 1->1, 2->0
-        // Para uma linha de 3 cartas (A, B, C), a ordem no verso deve ser (C, B, A).
+        // Espelhar colunas horizontalmente
         const mirroredCards = [];
         for (let row = 0; row < 3; row++) {
           const rowStart = row * 3;
@@ -454,7 +507,6 @@
           cardEl.className = 'printable-card';
           
           if (card) {
-            // Verso premium da carta
             cardEl.innerHTML = `
               <div class="card-back">
                 <div class="back-pattern"></div>
@@ -463,7 +515,6 @@
               </div>
             `;
           } else {
-            // Placeholder vazio correspondente
             cardEl.style.border = '1px dashed #f0f0f0';
           }
           backPage.appendChild(cardEl);
@@ -472,7 +523,7 @@
         container.appendChild(backPage);
       }
       
-      toggleStyle(); // Aplicar estilo selecionado
+      toggleStyle();
     }
   </script>
 </body>
