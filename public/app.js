@@ -1287,11 +1287,27 @@ function updateTimerUI(seconds) {
   }
 
   // Atualizar timer também nas outras visões locais
-  const playerExplainTimer = document.getElementById('player-explain-timer');
-  if (playerExplainTimer) playerExplainTimer.innerText = seconds;
-  
-  const playerGuessTimer = document.getElementById('player-guess-timer');
-  if (playerGuessTimer) playerGuessTimer.innerText = seconds;
+  const playerActiveTimer = document.getElementById('player-active-timer');
+  if (playerActiveTimer) {
+    playerActiveTimer.innerText = seconds;
+    if (seconds <= 5) {
+      playerActiveTimer.classList.add('color-red');
+    } else {
+      playerActiveTimer.classList.remove('color-red');
+    }
+  }
+
+  const playerWaitingTimer = document.getElementById('player-waiting-timer');
+  if (playerWaitingTimer) {
+    playerWaitingTimer.innerText = seconds;
+    if (seconds <= 5) {
+      playerWaitingTimer.style.color = '#ef4444';
+      playerWaitingTimer.style.opacity = '1';
+    } else {
+      playerWaitingTimer.style.color = '';
+      playerWaitingTimer.style.opacity = '0.5';
+    }
+  }
 
   const specTimer = document.getElementById('spec-timer-display');
   if (specTimer) specTimer.innerText = seconds;
