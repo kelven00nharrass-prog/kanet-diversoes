@@ -1147,6 +1147,16 @@ function renderPlayerMode() {
   const roundRunning = gameState.activeRound.isTimerRunning;
   const isRecap = (gameState.step === 'score_recap');
 
+  // Debug visual no telemovel
+  let dbg = document.getElementById('player-debug-bar');
+  if (!dbg) {
+    dbg = document.createElement('div');
+    dbg.id = 'player-debug-bar';
+    dbg.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:rgba(0,0,0,0.85);color:#0f0;font-size:11px;padding:4px 8px;z-index:9999;font-family:monospace;';
+    document.body.appendChild(dbg);
+  }
+  dbg.innerText = `Eu:${playerTeam} | Ativa:${currentTeam} | Minha?${isMyTeamActive} | Timer:${roundRunning} | Step:${gameState.step}`;
+
   const waitingView    = document.getElementById('player-waiting');
   const myTeamWait     = document.getElementById('player-my-team-wait');
   const activeView     = document.getElementById('player-active');
