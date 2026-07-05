@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    KA'NET DIVERSÕES — ESTILO VISUAL PREMIUM (TEMA ESCURO & GLASSMORPHISM)
    ========================================================================== */
 
@@ -32,6 +32,8 @@
 }
 
 /* 2. CONFIGURAÇÃO BASE */
+.hidden { display: none !important; }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -1364,7 +1366,7 @@ p {
   text-align: center;
 }
 
-/* 20. VISTA DO JOGADOR � OTIMIZADA PARA TELEMOVEL */
+/* 20. VISTA DO JOGADOR � OTIMIZADA PARA TELEMOVEL */
 
 /* Faz o game-layout ocupar o ecra completo no telemovel */
 #view-player {
