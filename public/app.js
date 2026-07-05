@@ -825,16 +825,21 @@ function syncGameScreen(isExplaining) {
   document.querySelectorAll('.view-role').forEach(el => el.classList.add('hidden'));
 
   // Ativar a visão correta
+  const gameScreen = document.getElementById('screen-game-active');
   if (role === 'host') {
+    gameScreen.classList.remove('player-mode');
     document.getElementById('view-host').classList.remove('hidden');
     renderHostControls();
   } else if (role === 'tv') {
+    gameScreen.classList.remove('player-mode');
     document.getElementById('view-tv').classList.remove('hidden');
     renderTVMode();
   } else if (role === 'spectator') {
+    gameScreen.classList.remove('player-mode');
     document.getElementById('view-spectator').classList.remove('hidden');
     renderSpectatorMode();
   } else if (role === 'player') {
+    gameScreen.classList.add('player-mode');
     document.getElementById('view-player').classList.remove('hidden');
     renderPlayerMode(isExplaining);
   }
