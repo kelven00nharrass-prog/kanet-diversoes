@@ -26,9 +26,11 @@
     /* FORÇAR A IMPRESSÃO DE CORES E FUNDOS */
     body, 
     .page-a4, 
+    .board-grid,
     .board-cell, 
     .cutout-box, 
     .dice-face, 
+    .logo-cell,
     .peg-preview {
       -webkit-print-color-adjust: exact !important;
       print-color-adjust: exact !important;
@@ -180,28 +182,28 @@
       align-self: flex-start;
     }
 
-    /* Alternância de cores nas células */
+    /* Alternância de cores nas células (Modo Económico) */
     .cell-blue {
-      background-color: #e0f2fe; /* Azul claro */
+      background-color: #e0f2fe;
       border: 2px solid #0284c7;
       color: #0369a1;
     }
 
     .cell-yellow {
-      background-color: #fef3c7; /* Amarelo claro */
+      background-color: #fef3c7;
       border: 2px solid #d97706;
       color: #78350f;
     }
 
     .board-cell.start-cell {
-      background-color: #dcfce7; /* Verde */
+      background-color: #dcfce7;
       border: 3px solid #16a34a;
       color: #15803d;
       justify-content: center;
     }
 
     .board-cell.finish-cell {
-      background-color: #fee2e2; /* Vermelho/Meta */
+      background-color: #fee2e2;
       border: 3px solid #dc2626;
       color: #991b1b;
       justify-content: center;
@@ -248,29 +250,50 @@
       margin-top: 5px;
     }
 
-    /* Premium Mode no Tabuleiro */
+    /* =====================================================
+       PREMIUM MODE (TEMA ESCURO COM FUNDO ORIGINAL)
+       ===================================================== */
     .premium-mode .board-grid {
-      background-color: #020617;
+      background-image: url('board_bg.png') !important; /* Fundo original do jogo */
+      background-size: cover !important;
+      background-position: center !important;
       border-color: #1e293b;
     }
     
     .premium-mode .board-cell {
-      background-color: #020617;
-      border-color: rgba(255,255,255,0.05);
+      background-color: rgba(4, 8, 20, 0.72) !important; /* Translúcido para ver o fundo original */
+      border-color: rgba(255, 255, 255, 0.08);
     }
 
     .premium-mode .cell-blue {
-      background: rgba(0, 210, 255, 0.08);
+      background-color: rgba(0, 210, 255, 0.1) !important;
       border-color: var(--color-blue);
       color: var(--color-blue);
-      text-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+      text-shadow: 0 0 8px rgba(0, 210, 255, 0.4);
     }
 
     .premium-mode .cell-yellow {
-      background: rgba(255, 204, 0, 0.08);
+      background-color: rgba(255, 204, 0, 0.1) !important;
       border-color: var(--color-yellow);
       color: var(--color-yellow);
-      text-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+      text-shadow: 0 0 8px rgba(255, 204, 0, 0.4);
+    }
+
+    .premium-mode .start-cell {
+      background-color: rgba(22, 163, 74, 0.15) !important;
+      border-color: #22c55e;
+      color: #22c55e;
+    }
+
+    .premium-mode .finish-cell {
+      background-color: rgba(220, 38, 38, 0.15) !important;
+      border-color: #ef4444;
+      color: #ef4444;
+    }
+
+    .premium-mode .logo-cell {
+      background: rgba(4, 8, 20, 0.72) !important;
+      border-color: rgba(255, 255, 255, 0.08);
     }
 
     /* =====================================================
@@ -302,7 +325,7 @@
       padding-bottom: 5px;
     }
 
-    /* Pinos para recortar (Tendas Dobráveis) */
+    /* Pinos para recortar */
     .pegs-row {
       display: flex;
       justify-content: space-around;
@@ -370,7 +393,6 @@
       position: relative;
     }
 
-    /* Cruz do cubo */
     .dice-grid {
       display: grid;
       grid-template-columns: repeat(4, 25mm);
@@ -393,7 +415,6 @@
       color: #111827;
     }
 
-    /* Abas de Colagem (Triangulares / Trapezoidais) */
     .tab-top::before {
       content: 'COLA';
       font-size: 8px;
@@ -462,7 +483,6 @@
       justify-content: center;
     }
 
-    /* Posicionamento dos elementos na cruz do dado */
     .cell-empty {
       visibility: hidden;
     }
@@ -501,16 +521,13 @@
       <div class="form-group">
         <label for="select-style">Estilo do Tabuleiro:</label>
         <select id="select-style" onchange="toggleStyle()">
-          <option value="premium">✨ Premium (Fundo Escuro Original)</option>
+          <option value="premium">✨ Premium (Fundo Escuro com Gráfico Original)</option>
           <option value="light">🏠 Económico (Fundo Branco - Poupa Tinta)</option>
         </select>
       </div>
     </div>
     <div style="font-size: 11.5px; color: #9ca3af; line-height: 1.5; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 12px;">
-      💡 <strong>Como funciona o tabuleiro:</strong><br>
-      • O tabuleiro possui **30 casas** alternando em azul e amarelo, ligadas diretamente às cores das cartas.<br>
-      • A página 1 contém o tabuleiro de jogo A4.<br>
-      • A página 2 contém as **4 peças de equipa** (tendas dobráveis) e o **Dado do Handicap** (0, 1, 2) prontos para recortar e montar.
+      💡 <strong>Novidade:</strong> O modo **Premium** agora inclui o fundo de ecrã oficial do jogo com a Bíblia, o leão e a terra a brilhar por trás das casas translúcidas!
     </div>
   </div>
 
