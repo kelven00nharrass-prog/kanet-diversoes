@@ -99,6 +99,31 @@
             </div>
           </div>
 
+          <!-- CONFIGURAÇÕES DO HOST (visíveis logo no topo no telemóvel) -->
+          <div class="host-only hidden settings-wrapper form-group">
+            <label for="input-target-score">🏠 Pontos para ganhar:</label>
+            <input type="number" id="input-target-score" value="30" min="10" max="50" class="input-field short-input">
+          </div>
+
+          <div class="host-only hidden settings-wrapper form-group">
+            <label style="margin-bottom: 10px; display: block;">🎲 Modo de Pontuação:</label>
+            <div class="dice-mode-toggle">
+              <button id="btn-mode-dado" class="btn btn-mode active" onclick="setDiceMode(true)">
+                🎲 Com Dado<br><small>Acertos − Dado</small>
+              </button>
+              <button id="btn-mode-semDado" class="btn btn-mode" onclick="setDiceMode(false)">
+                ✅ Sem Dado<br><small>Só os Acertos</small>
+              </button>
+            </div>
+          </div>
+
+          <div class="host-only hidden action-wrapper">
+            <button id="btn-start-game" class="btn btn-large btn-primary btn-glow-blue">🚀 Iniciar Partida</button>
+          </div>
+          <div class="player-only">
+            <p class="waiting-message animate-pulse">A aguardar que o anfitrião inicie a partida...</p>
+          </div>
+
           <!-- LISTA DE EQUIPAS E CONTAGEM DE MEMBROS -->
           <div class="teams-container">
             <!-- Equipa Azul -->
@@ -132,36 +157,11 @@
           </div>
         </div>
 
-        <!-- QR Code e Start -->
+        <!-- QR Code -->
         <div class="glass-card flex-center flex-column">
           <h3>📱 Ligar Dispositivos</h3>
           <p class="text-muted">Aponte a câmara para entrar instantaneamente</p>
           <div id="qrcode-container" class="qrcode-wrapper"></div>
-          
-          <div class="host-only hidden settings-wrapper form-group">
-            <label for="input-target-score">🏠 Pontos para ganhar:</label>
-            <input type="number" id="input-target-score" value="30" min="10" max="50" class="input-field short-input">
-          </div>
-
-          <div class="host-only hidden settings-wrapper form-group">
-            <label style="margin-bottom: 10px; display: block;">🎲 Modo de Pontuação:</label>
-            <div class="dice-mode-toggle">
-              <button id="btn-mode-dado" class="btn btn-mode active" onclick="setDiceMode(true)">
-                🎲 Com Dado<br><small>Acertos − Dado</small>
-              </button>
-              <button id="btn-mode-semDado" class="btn btn-mode" onclick="setDiceMode(false)">
-                ✅ Sem Dado<br><small>Só os Acertos</small>
-              </button>
-            </div>
-          </div>
-
-
-          <div class="host-only hidden action-wrapper">
-            <button id="btn-start-game" class="btn btn-large btn-primary btn-glow-blue">🚀 Iniciar Partida</button>
-          </div>
-          <div class="player-only">
-            <p class="waiting-message animate-pulse">A aguardar que o anfitrião inicie a partida...</p>
-          </div>
         </div>
       </div>
     </section>
