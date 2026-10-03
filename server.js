@@ -28,6 +28,33 @@ try {
   console.error("Erro ao carregar words.json:", err);
 }
 
+// ── Registo global de palavras usadas nas últimas 24h ──────────────────────────
+// Chave: palavra (string), Valor: timestamp (ms) da última vez que foi exibida
+const usedWordsLog = new Map();
+const TWENTY_FOUR_HOURS = 24 * 60 * 60 * 1000;
+
+/** Remove do registo entradas com mais de 24h. */
+function purgeOldWords() {
+  const now = Date.now();
+  for (const [word, ts] of usedWordsLog) {
+    if (now - ts > TWENTY_FOUR_HOURS) usedWordsLog.delete(word);
+  }
+}
+
+/** Devolve true se a palavra já foi usada nas últimas 24h. */
+function isWordUsedRecently(word) {
+  const ts = usedWordsLog.get(word);
+  if (!ts) return false;
+  return (Date.now() - ts) < TWENTY_FOUR_HOURS;
+}
+
+/** Regista todas as palavras de uma carta como "usadas agora". */
+function logCardWords(words) {
+  const now = Date.now();
+  words.forEach(w => usedWordsLog.set(w, now));
+}
+// ─────────────────────────────────────────────────────────────────────────────
+
 // Auxiliar para gerar código de sala aleatório (5 caracteres)
 function generateRoomId() {
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // Sem O, I, 0, 1 para evitar confusão
@@ -469,19 +496,52 @@ wss.on('connection', (ws) => {
 
   // Prepara uma nova carta e reseta o cronómetro e dado
   function prepareNextRound(room) {
-    // Ir buscar carta do baralho
-    if (room.deckIndex >= room.deck.length) {
-      // Baralhar novamente
-      console.log("Baralho esgotado. Baralhando as cartas novamente...");
-      room.deckIndex = 0;
-      // Fisher-Yates shuffle
-      for (let i = room.deck.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [room.deck[i], room.deck[j]] = [room.deck[j], room.deck[i]];
+    purgeOldWords(); // limpar entradas antigas antes de escolher
+
+    // Tenta encontrar uma carta onde NENHUMA palavra tenha sido usada nas últimas 24h
+    let attempts = 0;
+    let nextCard = null;
+    const totalCards = room.deck.length;
+
+    while (attempts < totalCards) {
+      // Se o baralho acabou, baralha novamente
+      if (room.deckIndex >= room.deck.length) {
+        console.log("Baralho esgotado. Baralhando as cartas novamente...");
+        room.deckIndex = 0;
+        for (let i = room.deck.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [room.deck[i], room.deck[j]] = [room.deck[j], room.deck[i]];
+        }
+      }
+
+      const candidate = room.deck[room.deckIndex];
+      room.deckIndex++;
+      attempts++;
+
+      // Verificar se alguma palavra desta carta já foi usada nas últimas 24h
+      const hasUsed = candidate && candidate.words.some(w => isWordUsedRecently(w));
+      if (!hasUsed && candidate) {
+        nextCard = candidate;
+        break;
       }
     }
 
-    const nextCard = room.deck[room.deckIndex++];
+    // Se não encontrou carta "limpa" (pool muito pequeno vs 24h), usa a próxima de qualquer forma
+    if (!nextCard) {
+      console.warn("[24h] Todas as cartas têm palavras recentes. Usando a próxima sem filtro.");
+      if (room.deckIndex >= room.deck.length) {
+        room.deckIndex = 0;
+        for (let i = room.deck.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [room.deck[i], room.deck[j]] = [room.deck[j], room.deck[i]];
+        }
+      }
+      nextCard = room.deck[room.deckIndex++];
+    }
+
+    // Registar as palavras desta carta como "usadas agora"
+    if (nextCard) logCardWords(nextCard.words);
+
     room.gameState.activeRound = {
       timer: 30,
       isTimerRunning: false,
