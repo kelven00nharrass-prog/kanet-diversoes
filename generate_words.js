@@ -109,7 +109,46 @@ const rawEverydayWords = [
   "Pedra", "Árvore", "Flor", "Fruta", "Comida", "Pizza", "Hambúrguer", "Arroz", "Frango", "Chocolate",
   "Café", "Chá", "Música", "Filme", "Série", "Jogo", "Fotografia", "Festa", "Presente", "Casamento",
   "Aniversário", "Viagem", "Dinossauro", "Robô", "Foguete", "Astronauta", "Castelo", "Rei", "Rainha", "Pirata",
-  "Dragão", "Tesouro", "Mistério", "Aventura", "Vitória", "Equipa", "Campeão", "Amizade", "Família", "Sorriso"
+  "Dragão", "Tesouro", "Mistério", "Aventura", "Vitória", "Equipa", "Campeão", "Amizade", "Família", "Sorriso",
+
+  // Nomes pessoais adicionados
+  "Solange", "Anita", "Nerson", "Anabela", "Ester", "Euclides", "Catia", "Angelo", "Joaquim", "Arnaldo",
+  "Moises", "Agnes", "Jacinto", "Alcindo", "Max", "Beatriz", "Chanel", "Minelda", "Marcia", "Nascimento",
+  "Saulo", "Cartao", "Garafinha de Verniz",
+
+  // Fenómenos naturais e eventos
+  "Cheias", "Ciclone", "Tsunami", "Terremoto", "Erupção vulcânica", "Furacão", "Tornado", "Seca", "Granizo", "Relâmpago",
+
+  // Qualidades e virtudes
+  "Fé", "Amor", "Bondade", "Benignidade", "Benevolência", "Paciência", "Humildade", "Lealdade",
+  "Coragem", "Respeito", "Gratidão", "Generosidade", "Perseverança", "Honestidade", "Compaixão",
+
+  // Mais nomes moçambicanos e africanos comuns
+  "Filomena", "Benedita", "Graça", "Esperança", "Fátima", "Regina", "Lurdes", "Conceição", "Amélia", "Helena",
+  "Fernando", "Domingos", "António", "Manuel", "Francisco", "Eduardo", "Carlos", "Sérgio", "Ricardo", "Nelson",
+  "Marta", "Cristina", "Suzana", "Rosa", "Olga", "Irene", "Vera", "Sandra", "Patrícia", "Diana",
+  "Hélder", "Jorge", "Rui", "Hugo", "Sandro", "Nuno", "Valério", "Calisto", "Cremildo", "Inácio",
+  "Dercílio", "Zenaida", "Zilma", "Odete", "Dulce", "Celina", "Lurdinhas", "Custódia", "Felicidade", "Benvinda",
+
+  // Comidas e bebidas moçambicanas
+  "Matapa", "Xima", "Caril de caranguejo", "Piri-piri", "Chamussas", "Makhewa", "Nhangau", "Pão de leite",
+  "Sura", "Ucanhe", "Mapiko", "Badjia", "Frango grelhado", "Peixe grelhado", "Arroz com feijão",
+
+  // Objetos do quotidiano moçambicano
+  "Capulana", "Chitenge", "Panela de barro", "Cesto", "Catana", "Enxada", "Foice", "Pilão", "Esteira",
+  "Mota de carga", "Chapa 100", "Rickshaw", "Bicicleta de carga", "Barco de pesca",
+
+  // Desportos e entretenimento
+  "Futebol", "Basquetebol", "Voleibol", "Atletismo", "Natação", "Boxe", "Karaté", "Andebol",
+  "Xadrez", "Damas", "Corrida de sacos", "Cabo de guerra", "Dança tradicional",
+
+  // Tecnologia e redes sociais
+  "WhatsApp", "Facebook", "YouTube", "Instagram", "TikTok", "Google", "Email", "Selfie",
+  "Carregador portátil", "Auriculares", "Smartwatch", "Leitor de QR", "Aplicação",
+
+  // Escola e trabalho
+  "Nota positiva", "Reprovação", "Exame", "Trabalho de casa", "Recreio", "Biblioteca", "Quadro negro",
+  "Giz", "Régua", "Compasso", "Mochila escolar", "Uniforme", "Diretor de turma", "Colega de turma"
 ];
 
 const everydayPool = Array.from(new Set(
