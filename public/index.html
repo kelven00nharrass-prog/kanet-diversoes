@@ -129,6 +129,28 @@
             </div>
           </div>
 
+          <!-- SELETOR DA EQUIPA DO ANFITRIÃO -->
+          <div id="host-team-section" class="host-only hidden settings-wrapper form-group">
+            <label style="margin-bottom: 6px; display: block; font-weight: 700;">👤 A sua Equipa neste dispositivo:</label>
+            <div class="host-team-picker">
+              <button type="button" class="btn btn-host-team border-blue active" data-team="Azul" onclick="setHostTeam('Azul')">
+                🔵 Equipa Azul
+              </button>
+              <button type="button" class="btn btn-host-team border-red" data-team="Vermelho" onclick="setHostTeam('Vermelho')">
+                🔴 Equipa Vermelha
+              </button>
+              <button type="button" class="btn btn-host-team border-green" data-team="Verde" onclick="setHostTeam('Verde')">
+                🟢 Equipa Verde
+              </button>
+              <button type="button" class="btn btn-host-team border-yellow" data-team="Amarelo" onclick="setHostTeam('Amarelo')">
+                🟡 Equipa Amarela
+              </button>
+            </div>
+            <small class="text-muted" style="display: block; font-size: 0.85rem;">
+              ⚡ No Anfitrião Automático, você jogará diretamente na equipa escolhida acima!
+            </small>
+          </div>
+
           <div class="host-only hidden action-wrapper">
             <button id="btn-start-game" class="btn btn-large btn-primary btn-glow-blue">🚀 Iniciar Partida</button>
           </div>
