@@ -220,19 +220,28 @@ wss.on('connection', (ws) => {
     };
 
     rooms.set(roomId, room);
+    const defaultHostTeam = 'Azul';
     userSession.roomId = roomId;
     userSession.role = 'host';
-    userSession.playerName = 'Anfitrião';
+    userSession.playerName = 'Você (Anfitrião)';
+    userSession.team = defaultHostTeam;
 
     socket.roomId = roomId;
     socket.role = 'host';
-    socket.playerName = 'Anfitrião';
+    socket.playerName = 'Você (Anfitrião)';
+    socket.team = defaultHostTeam;
+
+    // Registar o anfitrião na lista de jogadores da sua equipa
+    room.players = [
+      { name: 'Você (Anfitrião)', role: 'player', team: defaultHostTeam, active: true, isHost: true }
+    ];
 
     socket.send(JSON.stringify({
       type: 'ROOM_CREATED',
       payload: {
         roomId: roomId,
         role: 'host',
+        team: defaultHostTeam,
         gameState: room.gameState
       }
     }));
@@ -307,8 +316,12 @@ wss.on('connection', (ws) => {
     const room = rooms.get(userSession.roomId);
     if (!room) return;
 
-    const { players, teams, teamOrder, targetScore, useDice, namedMode, autoHost } = payload;
+    const { players, teams, teamOrder, targetScore, useDice, namedMode, autoHost, hostTeam } = payload;
     
+    if (hostTeam && userSession.role === 'host') {
+      userSession.team = hostTeam;
+      socket.team = hostTeam;
+    }
     if (players) room.players = players;
     if (teams) room.gameState.teams = teams;
     if (teamOrder) room.gameState.teamOrder = teamOrder;
@@ -649,7 +662,11 @@ function broadcastRoomState(room) {
     const validatorTeamName = room.gameState.teamOrder[validatorTeamIndex];
     const currentTeamPlayers = room.gameState.teams[currentTeamName] ? room.gameState.teams[currentTeamName].players : [];
     const currentExplainer = currentTeamPlayers[room.gameState.currentExplainerIndex];
-    const isActiveTeam = (role === 'player' && team === currentTeamName);
+    
+    // No modo Anfitrião Automático, o próprio host joga numa das equipas!
+    const isPlayingHost = (role === 'host' && room.gameState.autoHost && team && team !== 'none');
+    const isPlayerOrPlayingHost = (role === 'player' || isPlayingHost);
+    const isActiveTeam = isPlayerOrPlayingHost && (team === currentTeamName);
 
     // Sem modo de nomes: toda a equipa ativa vê as cartas
     const isCurrentExplainer = false;
@@ -680,7 +697,7 @@ function broadcastRoomState(room) {
     // 1. Host
     // 2. Membros da equipa ativa (para explicar)
     // 3. Membros da equipa adversária quando o Modo Anfitrião Automático estiver ligado (para fiscalizar/validar!)
-    const isOpponentInAuto = room.gameState.autoHost && (role === 'player' && !isActiveTeam);
+    const isOpponentInAuto = room.gameState.autoHost && (isPlayerOrPlayingHost && !isActiveTeam);
     const canSeeWords = role === 'host' || isActiveTeam || isOpponentInAuto;
 
     if (canSeeWords) {
@@ -696,7 +713,8 @@ function broadcastRoomState(room) {
       type: 'STATE_UPDATE',
       payload: {
         gameState: filteredState,
-        role: role,
+        role: isPlayingHost ? 'player' : role,
+        isHost: (role === 'host'),
         playerName: name,
         team: team,
         players: room.players,
