@@ -266,6 +266,23 @@ function setupEventListeners() {
     });
   });
 
+  // Controlos do Jogador no Modo Anfitrião Automático
+  const btnPlayerStart = document.getElementById('btn-player-start-round');
+  if (btnPlayerStart) {
+    btnPlayerStart.addEventListener('click', () => {
+      sounds.playClick();
+      socket.send(JSON.stringify({ type: 'START_ROUND' }));
+    });
+  }
+
+  const btnPlayerConfirm = document.getElementById('btn-player-confirm-score');
+  if (btnPlayerConfirm) {
+    btnPlayerConfirm.addEventListener('click', () => {
+      sounds.playClick();
+      socket.send(JSON.stringify({ type: 'CONFIRM_ROUND_SCORE' }));
+    });
+  }
+
   // Ações de Controle de Jogo (Host)
   document.getElementById('btn-host-roll').addEventListener('click', hostRollDice);
   document.getElementById('btn-host-start-round').addEventListener('click', hostStartRound);
@@ -722,10 +739,26 @@ let useDice = true;
 
 function setDiceMode(withDice) {
   useDice = withDice;
-  document.getElementById('btn-mode-dado').classList.toggle('active', withDice);
-  document.getElementById('btn-mode-semDado').classList.toggle('active', !withDice);
+  const btnDado = document.getElementById('btn-mode-dado');
+  const btnSemDado = document.getElementById('btn-mode-semDado');
+  if (btnDado) btnDado.classList.toggle('active', withDice);
+  if (btnSemDado) btnSemDado.classList.toggle('active', !withDice);
   sounds.playClick();
 }
+window.setDiceMode = setDiceMode;
+
+// Modo de Anfitrião: true = Automático (adversários fiscalizam), false = Manual (árbitro dedicado)
+let autoHost = true;
+
+function setAutoHostMode(isAuto) {
+  autoHost = isAuto;
+  const btnAuto = document.getElementById('btn-mode-auto');
+  const btnManual = document.getElementById('btn-mode-manual');
+  if (btnAuto) btnAuto.classList.toggle('active', isAuto);
+  if (btnManual) btnManual.classList.toggle('active', !isAuto);
+  sounds.playClick();
+}
+window.setAutoHostMode = setAutoHostMode;
 
 
 function startGame() {
@@ -736,6 +769,7 @@ function startGame() {
     payload: {
       targetScore: targetScore,
       useDice: useDice,
+      autoHost: autoHost,
       namedMode: false  // Sempre sem nomes: equipa decide quem explica
     }
   }));
@@ -1141,12 +1175,13 @@ function renderActiveTeamsInfo() {
   }
 }
 
-// C: VISÃO JOGADOR DA EQUIPA (simplificada sem nomes)
+// C: VISÃO JOGADOR DA EQUIPA (simplificada sem nomes e com Modo Anfitrião Automático)
 function renderPlayerMode() {
   const currentTeam = gameState.teamOrder[gameState.currentTeamIndex];
   const isMyTeamActive = (playerTeam === currentTeam);
   const roundRunning = gameState.activeRound.isTimerRunning;
   const isRecap = (gameState.step === 'score_recap');
+  const isAutoHost = !!gameState.autoHost;
 
   // Debug visual no telemovel
   let dbg = document.getElementById('player-debug-bar');
@@ -1156,78 +1191,174 @@ function renderPlayerMode() {
     dbg.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:rgba(0,0,0,0.85);color:#0f0;font-size:11px;padding:4px 8px;z-index:9999;font-family:monospace;';
     document.body.appendChild(dbg);
   }
-  dbg.innerText = `Eu:${playerTeam} | Ativa:${currentTeam} | Minha?${isMyTeamActive} | Timer:${roundRunning} | Step:${gameState.step}`;
+  dbg.innerText = `Eu:${playerTeam} | Ativa:${currentTeam} | Minha?${isMyTeamActive} | Timer:${roundRunning} | Step:${gameState.step} | Auto:${isAutoHost}`;
 
   const waitingView    = document.getElementById('player-waiting');
   const myTeamWait     = document.getElementById('player-my-team-wait');
   const activeView     = document.getElementById('player-active');
+  const validatorView  = document.getElementById('player-validator');
 
   // Esconder tudo primeiro
-  waitingView.classList.add('hidden');
-  myTeamWait.classList.add('hidden');
-  activeView.classList.add('hidden');
+  if (waitingView) waitingView.classList.add('hidden');
+  if (myTeamWait) myTeamWait.classList.add('hidden');
+  if (activeView) activeView.classList.add('hidden');
+  if (validatorView) validatorView.classList.add('hidden');
 
-  if (!isMyTeamActive || isRecap) {
-    // ─── Outra equipa joga OU recap: mostrar timer decrescente ─────────────
-    hasScrolledThisRound = false;
-    waitingView.classList.remove('hidden');
-
-    const warning = document.getElementById('player-turn-warning');
-    warning.className = `team-banner-large bg-team-${currentTeam}`;
-    warning.innerText = `Equipa ${currentTeam}`;
-
-    const msg = document.getElementById('player-waiting-msg');
-    msg.innerText = isRecap
-      ? '⏱️ O anfitrião está a confirmar os pontos...'
-      : `A Equipa ${currentTeam} está a jogar`;
-
-    const timerEl = document.getElementById('player-waiting-timer');
-    if (roundRunning) {
-      timerEl.innerText = gameState.activeRound.timer;
-      timerEl.style.opacity = '1';
-      timerEl.style.color = gameState.activeRound.timer <= 5 ? '#ef4444' : 'rgba(255,255,255,0.7)';
-    } else {
-      timerEl.innerText = '--';
-      timerEl.style.opacity = '0.4';
-      timerEl.style.color = '';
-    }
-
-  } else if (!roundRunning) {
-    // ─── É a minha vez mas o round ainda não começou ──────────────────────
-    hasScrolledThisRound = false;
-    myTeamWait.classList.remove('hidden');
-    const warning = document.getElementById('player-my-turn-warning');
-    warning.className = `team-banner-large bg-team-${currentTeam}`;
-    warning.innerText = `Equipa ${currentTeam}`;
-
-  } else {
-    // ─── ROUND A DECORRER: MOSTRAR APENAS AS CARTAS ────────────────────────
-    activeView.classList.remove('hidden');
-
-    if (gameState.activeRound.isTimerRunning && !hasScrolledThisRound) {
-      hasScrolledThisRound = true;
-      const activeWordsCard = document.getElementById('player-words-card-active');
-      if (activeWordsCard) {
-        setTimeout(() => {
-          activeWordsCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 150);
+  if (isMyTeamActive) {
+    // ─── A MINHA EQUIPA É A EQUIPA DA VEZ ──────────────────────
+    if (!roundRunning && !isRecap) {
+      // Estado 2: Aguardar início da rodada
+      hasScrolledThisRound = false;
+      if (myTeamWait) myTeamWait.classList.remove('hidden');
+      const warning = document.getElementById('player-my-turn-warning');
+      if (warning) {
+        warning.className = `team-banner-large bg-team-${currentTeam}`;
+        warning.innerText = `Equipa ${currentTeam}`;
       }
-    }
-
-    if (gameState.activeRound.words) {
-      for (let i = 0; i < 5; i++) {
-        const el = document.getElementById(`a-word-${i}`);
-        if (el) el.innerText = gameState.activeRound.words[i] || '-----';
-      }
-    }
-
-    const timerEl = document.getElementById('player-active-timer');
-    if (timerEl) {
-      timerEl.innerText = gameState.activeRound.timer;
-      if (gameState.activeRound.timer <= 5) {
-        timerEl.classList.add('color-red');
+      const waitMsg = document.getElementById('player-my-team-wait-msg');
+      const btnStart = document.getElementById('btn-player-start-round');
+      if (isAutoHost) {
+        if (waitMsg) waitMsg.innerText = 'Quando a vossa equipa estiver pronta, cliquem no botão abaixo para começar a carta!';
+        if (btnStart) btnStart.classList.remove('hidden');
       } else {
-        timerEl.classList.remove('color-red');
+        if (waitMsg) waitMsg.innerText = 'Aguardem o anfitrião iniciar os 30 segundos...';
+        if (btnStart) btnStart.classList.add('hidden');
+      }
+    } else if (roundRunning) {
+      // Estado 3: Round a decorrer — A MINHA EQUIPA VÊ AS 5 PALAVRAS PARA EXPLICAR
+      if (activeView) activeView.classList.remove('hidden');
+
+      if (!hasScrolledThisRound) {
+        hasScrolledThisRound = true;
+        const activeWordsCard = document.getElementById('player-words-card-active');
+        if (activeWordsCard) {
+          setTimeout(() => {
+            activeWordsCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 150);
+        }
+      }
+
+      if (gameState.activeRound.words) {
+        for (let i = 0; i < 5; i++) {
+          const el = document.getElementById(`a-word-${i}`);
+          if (el) el.innerText = gameState.activeRound.words[i] || '-----';
+        }
+      }
+
+      const timerEl = document.getElementById('player-active-timer');
+      if (timerEl) {
+        timerEl.innerText = gameState.activeRound.timer;
+        if (gameState.activeRound.timer <= 5) {
+          timerEl.classList.add('color-red');
+        } else {
+          timerEl.classList.remove('color-red');
+        }
+      }
+    } else if (isRecap) {
+      // Estado: Tempo esgotado! Aguardando confirmação dos pontos
+      hasScrolledThisRound = false;
+      if (waitingView) waitingView.classList.remove('hidden');
+      const warning = document.getElementById('player-turn-warning');
+      if (warning) {
+        warning.className = `team-banner-large bg-team-${currentTeam}`;
+        warning.innerText = `Equipa ${currentTeam}`;
+      }
+      const msg = document.getElementById('player-waiting-msg');
+      if (msg) {
+        msg.innerText = isAutoHost
+          ? '⏱️ Tempo esgotado! Os adversários estão a confirmar os vossos pontos...'
+          : '⏱️ O anfitrião está a confirmar os pontos...';
+      }
+      const timerEl = document.getElementById('player-waiting-timer');
+      if (timerEl) {
+        timerEl.innerText = '0';
+        timerEl.style.opacity = '0.5';
+      }
+    }
+  } else {
+    // ─── A OUTRA EQUIPA ESTÁ A JOGAR (EU SOU ADVERSÁRIO) ──────────────────
+    if (isAutoHost && (roundRunning || isRecap)) {
+      // Estado 4: MODO ANFITRIÃO AUTOMÁTICO — ADVERSÁRIOS SÃO OS FISCAIS
+      if (validatorView) validatorView.classList.remove('hidden');
+
+      const wordsList = document.getElementById('player-validator-words-list');
+      if (wordsList) {
+        wordsList.innerHTML = '';
+        if (gameState.activeRound.words && gameState.activeRound.words.length > 0) {
+          gameState.activeRound.words.forEach((word, index) => {
+            const isChecked = !!(gameState.activeRound.correctWords && gameState.activeRound.correctWords[index]);
+            const li = document.createElement('li');
+            li.className = isChecked ? 'checked' : '';
+            li.innerHTML = `<span><strong>${index + 1}.</strong> ${word}</span> <div class="check-pill"></div>`;
+
+            li.addEventListener('click', () => {
+              sounds.playClick();
+              socket.send(JSON.stringify({
+                type: 'TOGGLE_WORD',
+                payload: {
+                  wordIndex: index,
+                  value: !isChecked
+                }
+              }));
+            });
+            wordsList.appendChild(li);
+          });
+        }
+      }
+
+      const valTimer = document.getElementById('player-validator-timer');
+      if (valTimer) {
+        valTimer.innerText = gameState.activeRound.timer;
+        if (gameState.activeRound.timer <= 5) {
+          valTimer.classList.add('color-red');
+        } else {
+          valTimer.classList.remove('color-red');
+        }
+      }
+
+      const confirmWrap = document.getElementById('player-validator-confirm-wrap');
+      if (confirmWrap) {
+        if (isRecap) {
+          confirmWrap.classList.remove('hidden');
+        } else {
+          confirmWrap.classList.add('hidden');
+        }
+      }
+    } else {
+      // Estado 1 normal de espera
+      hasScrolledThisRound = false;
+      if (waitingView) waitingView.classList.remove('hidden');
+
+      const warning = document.getElementById('player-turn-warning');
+      if (warning) {
+        warning.className = `team-banner-large bg-team-${currentTeam}`;
+        warning.innerText = `Equipa ${currentTeam}`;
+      }
+
+      const msg = document.getElementById('player-waiting-msg');
+      if (msg) {
+        if (isRecap) {
+          msg.innerText = isAutoHost
+            ? '⏱️ Tempo esgotado! A confirmar pontos...'
+            : '⏱️ O anfitrião está a confirmar os pontos...';
+        } else {
+          msg.innerText = isAutoHost
+            ? `A Equipa ${currentTeam} está a preparar-se para jogar...`
+            : `A Equipa ${currentTeam} está a jogar`;
+        }
+      }
+
+      const timerEl = document.getElementById('player-waiting-timer');
+      if (timerEl) {
+        if (roundRunning) {
+          timerEl.innerText = gameState.activeRound.timer;
+          timerEl.style.opacity = '1';
+          timerEl.style.color = gameState.activeRound.timer <= 5 ? '#ef4444' : 'rgba(255,255,255,0.7)';
+        } else {
+          timerEl.innerText = '--';
+          timerEl.style.opacity = '0.4';
+          timerEl.style.color = '';
+        }
       }
     }
   }
@@ -1307,6 +1438,16 @@ function updateTimerUI(seconds) {
     } else {
       playerWaitingTimer.style.color = '';
       playerWaitingTimer.style.opacity = '0.5';
+    }
+  }
+
+  const playerValidatorTimer = document.getElementById('player-validator-timer');
+  if (playerValidatorTimer) {
+    playerValidatorTimer.innerText = seconds;
+    if (seconds <= 5) {
+      playerValidatorTimer.classList.add('color-red');
+    } else {
+      playerValidatorTimer.classList.remove('color-red');
     }
   }
 
