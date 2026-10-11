@@ -309,7 +309,7 @@ function setupEventListeners() {
       const selectedTeam = e.target.getAttribute('data-team') || e.target.closest('[data-team]')?.getAttribute('data-team');
       if (!selectedTeam) return;
       sounds.playClick();
-      if (role === 'host') {
+      if (role === 'host' || isHost) {
         addMemberToTeam(selectedTeam);
       } else {
         changeTeam(selectedTeam);
@@ -549,11 +549,17 @@ function handleServerMessage(message) {
 
     case 'STATE_UPDATE':
       gameState = payload.gameState;
-      if (typeof payload.isHost !== 'undefined') isHost = payload.isHost;
-      else if (role === 'host') isHost = true;
-      role = payload.role;
+      if (typeof payload.isHost !== 'undefined') {
+        isHost = payload.isHost;
+      }
+      if (isHost || payload.role === 'host' || role === 'host') {
+        isHost = true;
+        role = 'host';
+      } else {
+        role = payload.role;
+      }
       playerName = payload.playerName;
-      playerTeam = payload.team;
+      if (payload.team) playerTeam = payload.team;
       playersList = payload.players;
       
       // Sincronizar ecrãs
@@ -658,7 +664,8 @@ function updateLobbyUI() {
   const hostElements = document.querySelectorAll('.host-only');
   const playerElements = document.querySelectorAll('.player-only');
   
-  if (role === 'host') {
+  const amIHost = (role === 'host' || isHost);
+  if (amIHost) {
     hostElements.forEach(el => el.classList.remove('hidden'));
     playerElements.forEach(el => el.classList.add('hidden'));
   } else {
@@ -704,7 +711,7 @@ function updateLobbyUI() {
       }
       
       // Botão para o host remover/chutar
-      if (role === 'host') {
+      if (role === 'host' || isHost) {
         const kickBtn = document.createElement('span');
         kickBtn.innerHTML = ' ❌';
         kickBtn.style.cursor = 'pointer';
@@ -737,7 +744,7 @@ function kickPlayer(name) {
 }
 
 function changeTeam(selectedTeam) {
-  if (role === 'host') {
+  if (role === 'host' || isHost) {
     // Host muda a sua própria equipa se participar
     playerTeam = selectedTeam;
   }
@@ -881,7 +888,7 @@ function syncGameScreen(isExplaining) {
     renderStatsTable();
 
     const hostRestarts = document.querySelectorAll('.host-only');
-    if (role === 'host') {
+    if (role === 'host' || isHost) {
       hostRestarts.forEach(el => el.classList.remove('hidden'));
     } else {
       hostRestarts.forEach(el => el.classList.add('hidden'));
@@ -940,7 +947,7 @@ function syncGameScreen(isExplaining) {
     gameScreen.classList.add('player-mode');
     document.getElementById('view-player').classList.remove('hidden');
     renderPlayerMode(isExplaining);
-  } else if (role === 'host') {
+  } else if (role === 'host' || isHost) {
     gameScreen.classList.remove('player-mode');
     document.getElementById('view-host').classList.remove('hidden');
     renderHostControls();
