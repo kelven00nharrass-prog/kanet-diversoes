@@ -336,6 +336,16 @@
         <!-- C: VISÃO DO JOGADOR DA EQUIPA -->
         <div id="view-player" class="view-role hidden">
 
+          <!-- BARRA FIXA DE PLACAR EM DIRETO & ACERTOS NO TELEMÓVEL -->
+          <div class="player-live-ranking-bar">
+            <div id="player-ranking-chips" class="ranking-chips-scroll">
+              <!-- Gerado dinamicamente: 🥇 🔵 Azul: 12 pts (15 acertos)... -->
+            </div>
+            <button type="button" class="btn-ranking-board-toggle" onclick="openBoardModal()">
+              🗺️ Tabuleiro
+            </button>
+          </div>
+
           <!-- Estado 1: Outra equipa joga / Em espera -->
           <div id="player-waiting" class="glass-card text-center flex-center flex-column h-full">
             <div id="player-waiting-role-badge" class="badge-role-pill bg-waiting">⏳ EM ESPERA</div>
@@ -464,6 +474,41 @@
         </div>
       </div>
     </section>
+
+    <!-- MODAL DO TABULEIRO E RANKING EM TEMPO REAL -->
+    <div id="board-modal" class="modal hidden">
+      <div class="glass-card modal-content modal-large">
+        <span class="close-modal" onclick="closeBoardModal()">&times;</span>
+        <h2 style="font-size: 1.3rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+          🏆 Tabuleiro de Corrida & Classificação
+        </h2>
+        
+        <!-- RANKING DETALHADO -->
+        <div class="glass-card" style="margin-bottom: 14px; padding: 12px;">
+          <h4 style="margin: 0 0 10px 0; font-size: 0.95rem; color: #fff;">📊 Classificação & Acertos da Partida</h4>
+          <div id="modal-ranking-list" class="modal-ranking-card">
+            <!-- Injetado dinamicamente -->
+          </div>
+        </div>
+
+        <!-- TABULEIRO DE CORRIDA -->
+        <div class="glass-card flex-column" style="padding: 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <h4 style="margin: 0; font-size: 0.95rem; color: #fff;">🗺️ Posição dos Peões</h4>
+            <span id="modal-target-score-badge" class="badge badge-warning" style="font-size: 0.78rem;">Meta: 30 casas</span>
+          </div>
+          <div class="board-wrapper-responsive">
+            <div id="modal-board-track" class="board-track">
+              <!-- Casas geradas dinamicamente via renderBoard('modal-board-track') -->
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 14px; text-align: center;">
+          <button class="btn btn-primary" onclick="closeBoardModal()" style="width: 100%;">Voltar ao Jogo</button>
+        </div>
+      </div>
+    </div>
 
     <!-- MODAL DE INSTRUÇÕES -->
     <div id="instructions-modal" class="modal hidden">
