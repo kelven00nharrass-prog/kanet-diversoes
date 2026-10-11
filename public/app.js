@@ -1,4 +1,122 @@
 
+// Controlo da Modal do Tabuleiro e Ranking
+function openBoardModal() {
+  sounds.playClick();
+  renderBoardModalContent();
+  const modal = document.getElementById('board-modal');
+  if (modal) modal.classList.remove('hidden');
+}
+window.openBoardModal = openBoardModal;
+
+function closeBoardModal() {
+  sounds.playClick();
+  const modal = document.getElementById('board-modal');
+  if (modal) modal.classList.add('hidden');
+}
+window.closeBoardModal = closeBoardModal;
+
+// Renderizar o conteúdo detalhado da modal do tabuleiro e ranking
+function renderBoardModalContent() {
+  if (!gameState) return;
+
+  const targetScore = parseInt(gameState.targetScore) || 30;
+  const targetBadge = document.getElementById('modal-target-score-badge');
+  if (targetBadge) targetBadge.innerText = `Meta: ${targetScore} casas`;
+
+  // Renderizar o tabuleiro na modal
+  renderBoard('modal-board-track');
+
+  // Renderizar a lista de classificação detalhada
+  const rankingListEl = document.getElementById('modal-ranking-list');
+  if (!rankingListEl) return;
+  rankingListEl.innerHTML = '';
+
+  const teamOrder = gameState.teamOrder || ['Azul', 'Vermelho', 'Verde', 'Amarelo'];
+  const teams = gameState.teams || {};
+
+  // Ordenar equipas por pontuação decrescente
+  const sortedTeams = [...teamOrder].sort((a, b) => {
+    const scoreA = (teams[a] && teams[a].score) || 0;
+    const scoreB = (teams[b] && teams[b].score) || 0;
+    return scoreB - scoreA;
+  });
+
+  const medals = ['🥇 1º', '🥈 2º', '🥉 3º', '4º'];
+
+  sortedTeams.forEach((teamName, idx) => {
+    const tData = teams[teamName] || { score: 0, stats: { totalCorrect: 0 } };
+    const score = tData.score || 0;
+    const totalCorrect = (tData.stats && tData.stats.totalCorrect) || score;
+    const pct = Math.min(100, Math.round((score / targetScore) * 100));
+    const isMyTeam = (playerTeam === teamName);
+
+    const row = document.createElement('div');
+    row.className = `ranking-item-row ${isMyTeam ? 'my-team' : ''}`;
+    if (isMyTeam) {
+      row.style.borderColor = 'rgba(255, 215, 0, 0.4)';
+      row.style.background = 'rgba(255, 215, 0, 0.05)';
+    }
+
+    row.innerHTML = `
+      <div class="ranking-item-left">
+        <span style="font-weight:800; font-size:0.95rem;">${medals[idx] || (idx+1)+'º'}</span>
+        <span style="font-weight:700;">${getTeamIcon(teamName)} ${teamName} ${isMyTeam ? '<small style="color:#ffd700;">(Você)</small>' : ''}</span>
+      </div>
+      <div class="ranking-item-center">
+        <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:rgba(255,255,255,0.7);">
+          <span>Progresso: ${score} / ${targetScore} casas</span>
+          <span style="font-weight:700; color:#38bdf8;">${pct}%</span>
+        </div>
+        <div class="ranking-progress-bar-bg">
+          <div class="ranking-progress-bar-fill bg-team-${teamName}" style="width: ${pct}%; background: var(--color-${teamName.toLowerCase()});"></div>
+        </div>
+      </div>
+      <div class="ranking-item-right">
+        <div style="font-weight:800; color:#38bdf8; font-size:0.95rem;">${score} pts</div>
+        <div style="font-size:0.75rem; color:#a3e635;">🎯 ${totalCorrect} certos</div>
+      </div>
+    `;
+    rankingListEl.appendChild(row);
+  });
+}
+
+// Renderizar a barra compacta de ranking em direto no topo do ecrã do jogador
+function renderPlayerLiveRanking() {
+  if (!gameState) return;
+  const container = document.getElementById('player-ranking-chips');
+  if (!container) return;
+  container.innerHTML = '';
+
+  const teamOrder = gameState.teamOrder || ['Azul', 'Vermelho', 'Verde', 'Amarelo'];
+  const teams = gameState.teams || {};
+
+  const sortedTeams = [...teamOrder].sort((a, b) => {
+    const scoreA = (teams[a] && teams[a].score) || 0;
+    const scoreB = (teams[b] && teams[b].score) || 0;
+    return scoreB - scoreA;
+  });
+
+  const medals = ['🥇', '🥈', '🥉', '4º'];
+
+  sortedTeams.forEach((teamName, idx) => {
+    const tData = teams[teamName] || { score: 0, stats: { totalCorrect: 0 } };
+    const score = tData.score || 0;
+    const totalCorrect = (tData.stats && tData.stats.totalCorrect) || score;
+    const isMyTeam = (playerTeam === teamName);
+
+    const chip = document.createElement('div');
+    chip.className = `ranking-chip ${isMyTeam ? 'my-team' : ''}`;
+    chip.innerHTML = `
+      <span>${medals[idx] || ''}</span>
+      <span class="team-badge-txt">${getTeamIcon(teamName)} ${teamName}</span>
+      <span class="score-txt">${score}pts</span>
+      <span class="hits-txt">(${totalCorrect} acertos)</span>
+    `;
+    container.appendChild(chip);
+  });
+}
+
+
 // Escolha da Equipa pelo Anfitrião no Lobby
 function setHostTeam(team) {
   playerTeam = team;
@@ -908,12 +1026,25 @@ function syncGameScreen(isExplaining) {
   
   const currentPlayingTeam = gameState.teamOrder[gameState.currentTeamIndex];
 
-  gameState.teamOrder.forEach(team => {
+  const sortedForHeader = [...gameState.teamOrder].sort((a, b) => {
+    return ((gameState.teams[b] && gameState.teams[b].score) || 0) - ((gameState.teams[a] && gameState.teams[a].score) || 0);
+  });
+  const headerMedals = ['🥇', '🥈', '🥉', '4º'];
+
+  sortedForHeader.forEach((team, idx) => {
+    const tData = gameState.teams[team] || { score: 0, stats: { totalCorrect: 0 } };
+    const score = tData.score || 0;
+    const totalCorrect = (tData.stats && tData.stats.totalCorrect) || score;
     const scoreItem = document.createElement('div');
     scoreItem.className = `mini-score-item ${team === currentPlayingTeam ? 'active-team color-' + team.toLowerCase() : ''}`;
-    scoreItem.innerHTML = `<strong>${team}</strong>: ${gameState.teams[team].score} pts`;
+    scoreItem.innerHTML = `<span>${headerMedals[idx] || ''}</span> <strong>${getTeamIcon(team)} ${team}</strong>: ${score} pts <small style="color:#a3e635; margin-left:3px;">(${totalCorrect} certos)</small>`;
     scoreBoard.appendChild(scoreItem);
   });
+
+  // Atualizar modal do tabuleiro se estiver aberta
+  if (document.getElementById('board-modal') && !document.getElementById('board-modal').classList.contains('hidden')) {
+    renderBoardModalContent();
+  }
 
   // Renderizar a lista de alinhamento ativa e a ordem de jogo
   renderActiveTeamsInfo();
@@ -1272,6 +1403,10 @@ function renderActiveTeamsInfo() {
 
 // C: VISÃO JOGADOR DA EQUIPA (Com máxima clareza: quem joga e quem fiscaliza)
 function renderPlayerMode() {
+  renderPlayerLiveRanking();
+  if (document.getElementById('board-modal') && !document.getElementById('board-modal').classList.contains('hidden')) {
+    renderBoardModalContent();
+  }
   const currentTeam = gameState.teamOrder[gameState.currentTeamIndex];
   const validatorTeam = gameState.validatorTeam || (gameState.teamOrder[(gameState.currentTeamIndex + 1) % gameState.teamOrder.length]);
   
