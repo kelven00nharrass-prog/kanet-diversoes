@@ -117,6 +117,18 @@
             </div>
           </div>
 
+          <div class="host-only hidden settings-wrapper form-group">
+            <label style="margin-bottom: 10px; display: block;">🤖 Condução da Partida:</label>
+            <div class="dice-mode-toggle">
+              <button id="btn-mode-auto" class="btn btn-mode active" onclick="setAutoHostMode(true)">
+                ⚡ Anfitrião Automático<br><small>Adversários validam / Auto-play</small>
+              </button>
+              <button id="btn-mode-manual" class="btn btn-mode" onclick="setAutoHostMode(false)">
+                👑 Anfitrião Manual<br><small>Árbitro controla tudo</small>
+              </button>
+            </div>
+          </div>
+
           <div class="host-only hidden action-wrapper">
             <button id="btn-start-game" class="btn btn-large btn-primary btn-glow-blue">🚀 Iniciar Partida</button>
           </div>
@@ -308,7 +320,8 @@
           <div id="player-my-team-wait" class="glass-card text-center flex-center flex-column h-full hidden">
             <div id="player-my-turn-warning" class="team-banner-large">--</div>
             <p class="text-large animate-pulse">🎯 É a vossa vez!</p>
-            <p class="text-muted">Aguardem o anfitrião iniciar os 30 segundos...</p>
+            <p id="player-my-team-wait-msg" class="text-muted">Aguardem o anfitrião iniciar os 30 segundos...</p>
+            <button id="btn-player-start-round" class="btn btn-large btn-success btn-glow-green hidden" style="margin-top: 16px; width: 100%; font-size: 1.15rem; padding: 14px 20px;">▶️ Estamos Prontos! Começar (30s)</button>
           </div>
 
           <!-- Estado 3: Round a decorrer — MOSTRAR APENAS AS CARTAS -->
@@ -326,6 +339,21 @@
             </div>
             <!-- Tempo Restante -->
             <div class="big-timer-display color-red" id="player-active-timer">30</div>
+          </div>
+
+          <!-- Estado 4: Validação pelos Adversários (Modo Anfitrião Automático) -->
+          <div id="player-validator" class="glass-card flex-column h-full hidden">
+            <div class="text-center form-group">
+              <span class="badge badge-warning uppercase">⚖️ Vocês são os Fiscais!</span>
+              <p class="text-muted" style="margin-top:6px; font-size:0.9rem;">Marquem as palavras que a equipa adversária acertar:</p>
+            </div>
+            <ul id="player-validator-words-list" class="words-validation-list">
+              <!-- Preenchido dinamicamente com as 5 palavras e check-pills -->
+            </ul>
+            <div class="big-timer-display" id="player-validator-timer" style="text-align:center; margin: 10px 0;">30</div>
+            <div id="player-validator-confirm-wrap" class="hidden" style="margin-top: 10px;">
+              <button id="btn-player-confirm-score" class="btn btn-large btn-success btn-glow-green" style="width:100%;">✅ Confirmar Acertos & Próxima Equipa</button>
+            </div>
           </div>
 
         </div>
