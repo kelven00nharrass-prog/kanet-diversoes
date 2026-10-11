@@ -1615,3 +1615,151 @@ p {
 .host-quick-toggle:hover {
   background: rgba(255, 215, 0, 0.2);
 }
+
+
+/* ==========================================================================
+   BARRA DE RANKING / PLACAR EM DIRETO & MODAL DO TABULEIRO
+   ========================================================================== */
+.player-live-ranking-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: rgba(10, 15, 30, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.ranking-chips-scroll {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  flex: 1;
+}
+.ranking-chips-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.ranking-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+.ranking-chip.my-team {
+  border-color: #ffd700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+.ranking-chip .team-badge-txt {
+  font-weight: 800;
+}
+.ranking-chip .score-txt {
+  color: #38bdf8;
+  font-weight: 800;
+}
+.ranking-chip .hits-txt {
+  color: #a3e635;
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+
+.btn-ranking-board-toggle {
+  background: linear-gradient(135deg, rgba(234, 179, 8, 0.25) 0%, rgba(217, 119, 6, 0.35) 100%);
+  border: 1px solid #ffd700;
+  color: #ffd700;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.btn-ranking-board-toggle:hover {
+  background: rgba(255, 215, 0, 0.35);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+}
+
+/* MODAL DO TABULEIRO */
+.modal-large {
+  max-width: 680px !important;
+  width: 95% !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+}
+
+.board-wrapper-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 0;
+}
+.board-wrapper-responsive .board-track {
+  min-width: 320px;
+}
+
+.modal-ranking-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+.ranking-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 10px;
+}
+.ranking-item-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 130px;
+}
+.ranking-item-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ranking-progress-bar-bg {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.ranking-progress-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+.ranking-item-right {
+  text-align: right;
+  min-width: 70px;
+  font-size: 0.85rem;
+}
