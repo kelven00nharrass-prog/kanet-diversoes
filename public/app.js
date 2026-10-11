@@ -1,4 +1,42 @@
 
+// Escolha da Equipa pelo Anfitrião no Lobby
+function setHostTeam(team) {
+  playerTeam = team;
+  document.querySelectorAll('.btn-host-team').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-team') === team);
+  });
+  sounds.playClick();
+
+  // Atualizar entrada do host na lista de jogadores
+  let updatedPlayers = playersList.filter(p => !p.isHost && p.name !== 'Você (Anfitrião)' && p.name !== 'Anfitrião');
+  const hostEntry = {
+    name: 'Você (Anfitrião)',
+    role: 'player',
+    team: team,
+    active: true,
+    isHost: true
+  };
+  updatedPlayers.unshift(hostEntry);
+
+  socket.send(JSON.stringify({
+    type: 'UPDATE_TEAMS',
+    payload: {
+      players: updatedPlayers,
+      hostTeam: team
+    }
+  }));
+}
+window.setHostTeam = setHostTeam;
+
+// Alternar entre modo jogador e modo árbitro no telemóvel do Anfitrião
+function toggleHostView() {
+  sounds.playClick();
+  hostViewMode = hostViewMode === 'player' ? 'referee' : 'player';
+  syncGameScreen();
+}
+window.toggleHostView = toggleHostView;
+
+
 function getTeamIcon(team) {
   switch (team) {
     case 'Azul': return '🔵';
@@ -181,8 +219,10 @@ const sounds = new SoundSynth();
 let socket = null;
 let roomId = null;
 let role = null; // 'host', 'tv', 'player', 'spectator'
+let isHost = false; // true se este dispositivo criou a sala
+let hostViewMode = 'player'; // 'player' ou 'referee'
 let playerName = null;
-let playerTeam = null; // 'Azul', 'Vermelho', 'Verde', 'Amarelo'
+let playerTeam = 'Azul'; // 'Azul', 'Vermelho', 'Verde', 'Amarelo'
 let gameState = null;
 let playersList = [];
 let wasTimerRunning = false; // Flag para scroll automático no início da rodada
@@ -484,8 +524,10 @@ function handleServerMessage(message) {
     case 'ROOM_CREATED':
       roomId = payload.roomId;
       role = payload.role;
-      playerName = 'Anfitrião';
-      playerTeam = 'Azul';
+      isHost = true;
+      hostViewMode = 'player';
+      playerName = 'Você (Anfitrião)';
+      playerTeam = payload.team || 'Azul';
       gameState = payload.gameState;
       
       saveSession();
@@ -507,6 +549,8 @@ function handleServerMessage(message) {
 
     case 'STATE_UPDATE':
       gameState = payload.gameState;
+      if (typeof payload.isHost !== 'undefined') isHost = payload.isHost;
+      else if (role === 'host') isHost = true;
       role = payload.role;
       playerName = payload.playerName;
       playerTeam = payload.team;
@@ -872,7 +916,31 @@ function syncGameScreen(isExplaining) {
 
   // Ativar a visão correta
   const gameScreen = document.getElementById('screen-game-active');
-  if (role === 'host') {
+  
+  // Botão flutuante para o Host poder ver controles se necessário
+  let hostPill = document.getElementById('btn-host-floating-toggle');
+  if (isHost && gameState.step === 'playing') {
+    if (!hostPill) {
+      hostPill = document.createElement('button');
+      hostPill.id = 'btn-host-floating-toggle';
+      hostPill.className = 'host-quick-toggle';
+      hostPill.onclick = toggleHostView;
+      document.body.appendChild(hostPill);
+    }
+    hostPill.style.display = 'flex';
+    hostPill.innerText = hostViewMode === 'player' ? '👑 Painel Árbitro' : '🎮 Meu Jogo';
+  } else if (hostPill) {
+    hostPill.style.display = 'none';
+  }
+
+  // Se este dispositivo for o host e estiver em modo autoHost com equipa escolhida e hostViewMode='player'
+  const isPlayingHost = (isHost && gameState.autoHost && playerTeam && playerTeam !== 'none' && hostViewMode === 'player');
+
+  if (role === 'player' || isPlayingHost) {
+    gameScreen.classList.add('player-mode');
+    document.getElementById('view-player').classList.remove('hidden');
+    renderPlayerMode(isExplaining);
+  } else if (role === 'host') {
     gameScreen.classList.remove('player-mode');
     document.getElementById('view-host').classList.remove('hidden');
     renderHostControls();
