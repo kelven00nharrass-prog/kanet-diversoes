@@ -263,11 +263,16 @@
 
             <!-- Status do Turno e Cronómetro à direita -->
             <div class="flex-column grid-tv-sidebar">
-              <!-- Turn Banner -->
-              <div class="glass-card text-center flex-center flex-column sidebar-card">
-                <h3 id="tv-turn-title">Vez de Jogar</h3>
-                <div id="tv-current-team" class="team-banner-large">--</div>
-                <div id="tv-current-explainer" class="explainer-name">Explicador: --</div>
+              <!-- Turn Banner: Quem joga e quem fiscaliza -->
+              <div class="glass-card text-center flex-center flex-column sidebar-card" style="padding: 14px; gap: 10px;">
+                <div class="role-box-tv">
+                  <span class="role-badge-label">🎤 A JOGAR (A DESCREVER)</span>
+                  <div id="tv-current-team" class="team-banner-large" style="margin: 0;">--</div>
+                </div>
+                <div class="role-box-tv">
+                  <span class="role-badge-label">⚖️ A MARCAR OS PONTOS (FISCAL)</span>
+                  <div id="tv-validator-team" class="team-banner-large" style="margin: 0; font-size: 1.15rem; padding: 8px 12px;">--</div>
+                </div>
               </div>
 
               <!-- Dado e Tempo -->
@@ -309,25 +314,38 @@
         <!-- C: VISÃO DO JOGADOR DA EQUIPA -->
         <div id="view-player" class="view-role hidden">
 
-          <!-- Estado 1: Outra equipa joga — mostrar timer como contagem decrescente -->
+          <!-- Estado 1: Outra equipa joga / Em espera -->
           <div id="player-waiting" class="glass-card text-center flex-center flex-column h-full">
+            <div id="player-waiting-role-badge" class="badge-role-pill bg-waiting">⏳ EM ESPERA</div>
             <div id="player-turn-warning" class="team-banner-large">--</div>
+            <div id="player-waiting-clarity" class="role-clarity-card">
+              <!-- Injetado dinamicamente -->
+            </div>
             <p id="player-waiting-msg" class="text-muted">A outra equipa está a jogar...</p>
             <div class="big-timer-display" id="player-waiting-timer" style="opacity: 0.5;">--</div>
           </div>
 
           <!-- Estado 2: É a minha vez mas o round ainda não começou -->
           <div id="player-my-team-wait" class="glass-card text-center flex-center flex-column h-full hidden">
-            <div id="player-my-turn-warning" class="team-banner-large">--</div>
-            <p class="text-large animate-pulse">🎯 É a vossa vez!</p>
-            <p id="player-my-team-wait-msg" class="text-muted">Aguardem o anfitrião iniciar os 30 segundos...</p>
-            <button id="btn-player-start-round" class="btn btn-large btn-success btn-glow-green hidden" style="margin-top: 16px; width: 100%; font-size: 1.15rem; padding: 14px 20px;">▶️ Estamos Prontos! Começar (30s)</button>
+            <div class="badge-role-pill bg-playing">🎤 A VOSSA VEZ DE JOGAR!</div>
+            <div id="player-my-turn-warning" class="team-banner-large" style="margin-top: 6px;">--</div>
+            <div class="role-clarity-card" style="margin: 12px 0;">
+              <p style="margin: 0; font-size: 1.05rem; color: #fff;">🗣️ <strong>A vossa equipa:</strong> Descreve as 5 palavras</p>
+              <p id="player-my-team-validator-info" style="margin: 8px 0 0 0; font-size: 0.95rem; color: #fde047;">
+                ⚖️ <strong>Quem marca os vossos pontos:</strong> <span id="my-team-validator-name">--</span>
+              </p>
+            </div>
+            <p id="player-my-team-wait-msg" class="text-muted">Aguardem o início dos 30 segundos...</p>
+            <button id="btn-player-start-round" class="btn btn-large btn-success btn-glow-green hidden" style="margin-top: 14px; width: 100%; font-size: 1.15rem; padding: 14px 20px;">▶️ Estamos Prontos! Começar (30s)</button>
           </div>
 
-          <!-- Estado 3: Round a decorrer — MOSTRAR APENAS AS CARTAS -->
+          <!-- Estado 3: Round a decorrer — A MINHA EQUIPA DESCREVE AS CARTAS -->
           <div id="player-active" class="glass-card flex-center flex-column h-full hidden">
-            <div class="text-center form-group">
-              <span class="badge badge-warning uppercase">🎯 A vossa equipa joga!</span>
+            <div class="text-center form-group" style="width: 100%;">
+              <div class="badge-role-pill bg-playing">🎤 A VOSSA VEZ — DESCREVAM!</div>
+              <div id="player-active-info-sub" style="font-size: 0.85rem; color: rgba(255,255,255,0.85); margin-top: 4px;">
+                ⚖️ A marcar os vossos pontos: <strong id="player-active-validator-label" style="color: #fde047;">--</strong>
+              </div>
             </div>
             <!-- LISTA DE 5 PALAVRAS -->
             <div class="words-card-container" id="player-words-card-active">
@@ -343,16 +361,19 @@
 
           <!-- Estado 4: Validação pelos Adversários (Modo Anfitrião Automático) -->
           <div id="player-validator" class="glass-card flex-column h-full hidden">
-            <div class="text-center form-group">
-              <span class="badge badge-warning uppercase">⚖️ Vocês são os Fiscais!</span>
-              <p class="text-muted" style="margin-top:6px; font-size:0.9rem;">Marquem as palavras que a equipa adversária acertar:</p>
+            <div class="text-center form-group" style="width: 100%;">
+              <div class="badge-role-pill bg-validating">⚖️ VOCÊS SÃO OS FISCAIS — MARQUEM OS PONTOS!</div>
+              <div id="player-validator-target-team-banner" class="team-banner-large" style="margin-top: 8px; font-size: 1.15rem; padding: 8px 12px;">--</div>
+              <p class="text-muted" style="margin-top: 8px; font-size: 0.9rem;">
+                Toquem nas palavras que a <strong id="player-validator-target-name">--</strong> for acertando:
+              </p>
             </div>
             <ul id="player-validator-words-list" class="words-validation-list">
               <!-- Preenchido dinamicamente com as 5 palavras e check-pills -->
             </ul>
             <div class="big-timer-display" id="player-validator-timer" style="text-align:center; margin: 10px 0;">30</div>
             <div id="player-validator-confirm-wrap" class="hidden" style="margin-top: 10px;">
-              <button id="btn-player-confirm-score" class="btn btn-large btn-success btn-glow-green" style="width:100%;">✅ Confirmar Acertos & Próxima Equipa</button>
+              <button id="btn-player-confirm-score" class="btn btn-large btn-success btn-glow-green" style="width:100%;">✅ Confirmar Acertos & Passar Turno</button>
             </div>
           </div>
 
@@ -362,9 +383,10 @@
         <div id="view-spectator" class="view-role hidden">
           <div class="grid-spectator">
             <div class="glass-card flex-column text-center">
-              <h3>Vez de Jogar</h3>
-              <div id="spec-current-team" class="team-banner">--</div>
-              <div id="spec-current-explainer" class="explainer-name">Explicador: --</div>
+              <div style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--color-text-muted); margin-bottom: 4px;">🎤 A Jogar (A Descrever)</div>
+              <div id="spec-current-team" class="team-banner" style="margin-bottom: 10px;">--</div>
+              <div style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--color-text-muted); margin-bottom: 4px;">⚖️ A Marcar os Pontos (Fiscal)</div>
+              <div id="spec-validator-team" class="team-banner" style="margin-bottom: 12px; font-size: 1rem; padding: 6px 12px;">--</div>
               
               <div class="big-timer-display" id="spec-timer-display">30</div>
               <div id="spec-dice-display" class="dice-badge">Dado: --</div>
