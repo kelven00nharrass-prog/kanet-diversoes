@@ -713,7 +713,7 @@ function broadcastRoomState(room) {
       type: 'STATE_UPDATE',
       payload: {
         gameState: filteredState,
-        role: isPlayingHost ? 'player' : role,
+        role: role,
         isHost: (role === 'host'),
         playerName: name,
         team: team,
