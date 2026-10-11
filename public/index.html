@@ -389,6 +389,9 @@
             </div>
             <!-- Tempo Restante -->
             <div class="big-timer-display color-red" id="player-active-timer">30</div>
+            <button id="btn-player-stop-early" class="btn btn-warning btn-glow-yellow" onclick="stopRoundEarly()" style="margin-top: 12px; width: 100%; font-size: 1.05rem; font-weight: 800; padding: 12px 16px;">
+              🛑 Já Terminámos! Parar Tempo
+            </button>
           </div>
 
           <!-- Estado 4: Validação pelos Adversários (Modo Anfitrião Automático) -->
@@ -403,7 +406,10 @@
             <ul id="player-validator-words-list" class="words-validation-list">
               <!-- Preenchido dinamicamente com as 5 palavras e check-pills -->
             </ul>
-            <div class="big-timer-display" id="player-validator-timer" style="text-align:center; margin: 10px 0;">30</div>
+            <div class="big-timer-display" id="player-validator-timer" style="text-align:center; margin: 8px 0;">30</div>
+            <button id="btn-validator-stop-early" class="btn btn-warning btn-glow-yellow" onclick="stopRoundEarly()" style="margin-bottom: 12px; width: 100%; font-size: 1.05rem; font-weight: 800; padding: 12px 16px;">
+              🛑 Parar Tempo (Terminaram)
+            </button>
             <div id="player-validator-confirm-wrap" class="hidden" style="margin-top: 10px;">
               <button id="btn-player-confirm-score" class="btn btn-large btn-success btn-glow-green" style="width:100%;">✅ Confirmar Acertos & Passar Turno</button>
             </div>
