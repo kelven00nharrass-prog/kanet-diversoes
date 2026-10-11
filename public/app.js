@@ -1,3 +1,14 @@
+
+function getTeamIcon(team) {
+  switch (team) {
+    case 'Azul': return '🔵';
+    case 'Vermelho': return '🔴';
+    case 'Verde': return '🟢';
+    case 'Amarelo': return '🟡';
+    default: return '👥';
+  }
+}
+
 /* ==========================================================================
    KA'NET DIVERSÕES — ENGINE DO CLIENTE (JS)
    ========================================================================== */
@@ -887,9 +898,10 @@ function renderHostControls() {
   const currentTeam = gameState.teamOrder[gameState.currentTeamIndex];
   const currentExplainer = gameState.teams[currentTeam].players[gameState.currentExplainerIndex] || "Ninguém";
   
+  const validatorTeam = gameState.validatorTeam || (gameState.teamOrder[(gameState.currentTeamIndex + 1) % gameState.teamOrder.length]);
   const turnBanner = document.getElementById('host-turn-info');
   turnBanner.className = `team-banner bg-team-${currentTeam}`;
-  turnBanner.innerText = `${currentTeam} (Explica: ${currentExplainer})`;
+  turnBanner.innerHTML = `<div>🎤 <strong>A Jogar:</strong> ${getTeamIcon(currentTeam)} Equipa ${currentTeam}</div><div style="font-size:0.9rem; margin-top:4px; opacity:0.9;">⚖️ <strong>Fiscal:</strong> ${getTeamIcon(validatorTeam)} Equipa ${validatorTeam}</div>`;
 
   // Dado
   const rollBtn = document.getElementById('btn-host-roll');
@@ -968,9 +980,17 @@ function renderTVMode() {
   const currentTeam = gameState.teamOrder[gameState.currentTeamIndex];
   const currentExplainer = gameState.teams[currentTeam].players[gameState.currentExplainerIndex] || "Ninguém";
 
-  document.getElementById('tv-current-team').className = `team-banner-large bg-team-${currentTeam}`;
-  document.getElementById('tv-current-team').innerText = currentTeam;
-  document.getElementById('tv-current-explainer').innerText = `Explicador: ${currentExplainer}`;
+  const validatorTeam = gameState.validatorTeam || (gameState.teamOrder[(gameState.currentTeamIndex + 1) % gameState.teamOrder.length]);
+  const currentTeamEl = document.getElementById('tv-current-team');
+  if (currentTeamEl) {
+    currentTeamEl.className = `team-banner-large bg-team-${currentTeam}`;
+    currentTeamEl.innerText = `${getTeamIcon(currentTeam)} Equipa ${currentTeam}`;
+  }
+  const validatorTeamEl = document.getElementById('tv-validator-team');
+  if (validatorTeamEl) {
+    validatorTeamEl.className = `team-banner-large bg-team-${validatorTeam}`;
+    validatorTeamEl.innerText = `${getTeamIcon(validatorTeam)} Equipa ${validatorTeam}`;
+  }
 
   // Dado
   const diceLabel = document.getElementById('tv-dice-label');
@@ -1175,10 +1195,13 @@ function renderActiveTeamsInfo() {
   }
 }
 
-// C: VISÃO JOGADOR DA EQUIPA (simplificada sem nomes e com Modo Anfitrião Automático)
+// C: VISÃO JOGADOR DA EQUIPA (Com máxima clareza: quem joga e quem fiscaliza)
 function renderPlayerMode() {
   const currentTeam = gameState.teamOrder[gameState.currentTeamIndex];
+  const validatorTeam = gameState.validatorTeam || (gameState.teamOrder[(gameState.currentTeamIndex + 1) % gameState.teamOrder.length]);
+  
   const isMyTeamActive = (playerTeam === currentTeam);
+  const isMyTeamValidator = (playerTeam === validatorTeam);
   const roundRunning = gameState.activeRound.isTimerRunning;
   const isRecap = (gameState.step === 'score_recap');
   const isAutoHost = !!gameState.autoHost;
@@ -1188,10 +1211,10 @@ function renderPlayerMode() {
   if (!dbg) {
     dbg = document.createElement('div');
     dbg.id = 'player-debug-bar';
-    dbg.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:rgba(0,0,0,0.85);color:#0f0;font-size:11px;padding:4px 8px;z-index:9999;font-family:monospace;';
+    dbg.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:rgba(0,0,0,0.85);color:#0f0;font-size:10px;padding:3px 8px;z-index:9999;font-family:monospace;';
     document.body.appendChild(dbg);
   }
-  dbg.innerText = `Eu:${playerTeam} | Ativa:${currentTeam} | Minha?${isMyTeamActive} | Timer:${roundRunning} | Step:${gameState.step} | Auto:${isAutoHost}`;
+  dbg.innerText = `Eu:${playerTeam} | Joga:${currentTeam} | Fiscal:${validatorTeam} | Minha?${isMyTeamActive} | SouFiscal?${isMyTeamValidator} | Timer:${roundRunning}`;
 
   const waitingView    = document.getElementById('player-waiting');
   const myTeamWait     = document.getElementById('player-my-team-wait');
@@ -1205,28 +1228,43 @@ function renderPlayerMode() {
   if (validatorView) validatorView.classList.add('hidden');
 
   if (isMyTeamActive) {
-    // ─── A MINHA EQUIPA É A EQUIPA DA VEZ ──────────────────────
+    // ═══════════════════════════════════════════════════════════
+    // 1. A MINHA EQUIPA É QUEM JOGA (DESCREVE AS CARTAS)
+    // ═══════════════════════════════════════════════════════════
     if (!roundRunning && !isRecap) {
-      // Estado 2: Aguardar início da rodada
+      // Estado: Aguardar que a nossa equipa clique em Começar
       hasScrolledThisRound = false;
       if (myTeamWait) myTeamWait.classList.remove('hidden');
+
       const warning = document.getElementById('player-my-turn-warning');
       if (warning) {
         warning.className = `team-banner-large bg-team-${currentTeam}`;
-        warning.innerText = `Equipa ${currentTeam}`;
+        warning.innerText = `${getTeamIcon(currentTeam)} Equipa ${currentTeam}`;
       }
+
+      const validatorNameSpan = document.getElementById('my-team-validator-name');
+      if (validatorNameSpan) {
+        validatorNameSpan.innerText = `${getTeamIcon(validatorTeam)} Equipa ${validatorTeam}`;
+      }
+
       const waitMsg = document.getElementById('player-my-team-wait-msg');
       const btnStart = document.getElementById('btn-player-start-round');
       if (isAutoHost) {
-        if (waitMsg) waitMsg.innerText = 'Quando a vossa equipa estiver pronta, cliquem no botão abaixo para começar a carta!';
+        if (waitMsg) waitMsg.innerText = 'Passem o telemóvel ao explicador e cliquem no botão para começar!';
         if (btnStart) btnStart.classList.remove('hidden');
       } else {
         if (waitMsg) waitMsg.innerText = 'Aguardem o anfitrião iniciar os 30 segundos...';
         if (btnStart) btnStart.classList.add('hidden');
       }
+
     } else if (roundRunning) {
-      // Estado 3: Round a decorrer — A MINHA EQUIPA VÊ AS 5 PALAVRAS PARA EXPLICAR
+      // Estado: Round a decorrer — A MINHA EQUIPA DESCREVE AS 5 PALAVRAS
       if (activeView) activeView.classList.remove('hidden');
+
+      const activeValLabel = document.getElementById('player-active-validator-label');
+      if (activeValLabel) {
+        activeValLabel.innerText = `${getTeamIcon(validatorTeam)} Equipa ${validatorTeam}`;
+      }
 
       if (!hasScrolledThisRound) {
         hasScrolledThisRound = true;
@@ -1254,32 +1292,61 @@ function renderPlayerMode() {
           timerEl.classList.remove('color-red');
         }
       }
+
     } else if (isRecap) {
-      // Estado: Tempo esgotado! Aguardando confirmação dos pontos
+      // Estado: Tempo acabou! A equipa adversária está a rever/confirmar os nossos pontos
       hasScrolledThisRound = false;
       if (waitingView) waitingView.classList.remove('hidden');
+
+      const badge = document.getElementById('player-waiting-role-badge');
+      if (badge) {
+        badge.className = 'badge-role-pill bg-playing';
+        badge.innerText = '⏱️ TEMPO ESGOTADO!';
+      }
+
       const warning = document.getElementById('player-turn-warning');
       if (warning) {
         warning.className = `team-banner-large bg-team-${currentTeam}`;
-        warning.innerText = `Equipa ${currentTeam}`;
+        warning.innerText = `${getTeamIcon(currentTeam)} A Vossa Equipa Jogou`;
       }
+
+      const clarity = document.getElementById('player-waiting-clarity');
+      if (clarity) {
+        clarity.innerHTML = `<p style="margin:0; font-size:1rem; color:#fff;">👀 <strong>Quem está a marcar os vossos pontos:</strong></p><p style="margin:6px 0 0 0; font-size:1.1rem; color:#fde047; font-weight:800;">${getTeamIcon(validatorTeam)} Equipa ${validatorTeam}</p>`;
+      }
+
       const msg = document.getElementById('player-waiting-msg');
       if (msg) {
         msg.innerText = isAutoHost
-          ? '⏱️ Tempo esgotado! Os adversários estão a confirmar os vossos pontos...'
-          : '⏱️ O anfitrião está a confirmar os pontos...';
+          ? `Aguardem: a Equipa ${validatorTeam} está a confirmar os vossos acertos no ecrã deles...`
+          : 'O anfitrião está a confirmar os pontos...';
       }
+
       const timerEl = document.getElementById('player-waiting-timer');
       if (timerEl) {
         timerEl.innerText = '0';
         timerEl.style.opacity = '0.5';
       }
     }
+
   } else {
-    // ─── A OUTRA EQUIPA ESTÁ A JOGAR (EU SOU ADVERSÁRIO) ──────────────────
-    if (isAutoHost && (roundRunning || isRecap)) {
-      // Estado 4: MODO ANFITRIÃO AUTOMÁTICO — ADVERSÁRIOS SÃO OS FISCAIS
+    // ═══════════════════════════════════════════════════════════
+    // 2. A OUTRA EQUIPA JOGA (OU SOU FISCAL OU ESTOU NA FILA)
+    // ═══════════════════════════════════════════════════════════
+    if (isAutoHost && isMyTeamValidator && (roundRunning || isRecap)) {
+      // Estado: NÓS SOMOS OS FISCAIS E O TEMPO ESTÁ A CORRER OU ACABOU DE ACABAR!
       if (validatorView) validatorView.classList.remove('hidden');
+
+      const targetBanner = document.getElementById('player-validator-target-team-banner');
+      if (targetBanner) {
+        targetBanner.className = `team-banner-large bg-team-${currentTeam}`;
+        targetBanner.innerText = `${getTeamIcon(currentTeam)} Equipa ${currentTeam} a Jogar`;
+      }
+
+      const targetNameEl = document.getElementById('player-validator-target-name');
+      if (targetNameEl) {
+        targetNameEl.innerText = `Equipa ${currentTeam}`;
+      }
 
       const wordsList = document.getElementById('player-validator-words-list');
       if (wordsList) {
@@ -1324,27 +1391,47 @@ function renderPlayerMode() {
           confirmWrap.classList.add('hidden');
         }
       }
+
     } else {
-      // Estado 1 normal de espera
+      // Estado de espera geral (ou modo manual, ou 3ª equipa que joga depois)
       hasScrolledThisRound = false;
       if (waitingView) waitingView.classList.remove('hidden');
+
+      const badge = document.getElementById('player-waiting-role-badge');
+      if (badge) {
+        if (isAutoHost && isMyTeamValidator) {
+          badge.className = 'badge-role-pill bg-validating';
+          badge.innerText = '⚖️ VOCÊS VÃO FISCALIZAR';
+        } else {
+          badge.className = 'badge-role-pill bg-waiting';
+          badge.innerText = '⏳ NA FILA DE ESPERA';
+        }
+      }
 
       const warning = document.getElementById('player-turn-warning');
       if (warning) {
         warning.className = `team-banner-large bg-team-${currentTeam}`;
-        warning.innerText = `Equipa ${currentTeam}`;
+        warning.innerText = `${getTeamIcon(currentTeam)} Equipa ${currentTeam} a Jogar`;
+      }
+
+      const clarity = document.getElementById('player-waiting-clarity');
+      if (clarity) {
+        clarity.innerHTML = `
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <div>🎤 <strong>A Jogar:</strong> ${getTeamIcon(currentTeam)} Equipa ${currentTeam}</div>
+            <div>⚖️ <strong>A Marcar Pontos:</strong> ${getTeamIcon(validatorTeam)} Equipa ${validatorTeam}</div>
+          </div>
+        `;
       }
 
       const msg = document.getElementById('player-waiting-msg');
       if (msg) {
-        if (isRecap) {
-          msg.innerText = isAutoHost
-            ? '⏱️ Tempo esgotado! A confirmar pontos...'
-            : '⏱️ O anfitrião está a confirmar os pontos...';
+        if (isAutoHost && isMyTeamValidator) {
+          msg.innerText = `Aguardem que a Equipa ${currentTeam} inicie a rodada para marcarem os pontos!`;
+        } else if (isRecap) {
+          msg.innerText = '⏱️ A confirmar pontos da rodada...';
         } else {
-          msg.innerText = isAutoHost
-            ? `A Equipa ${currentTeam} está a preparar-se para jogar...`
-            : `A Equipa ${currentTeam} está a jogar`;
+          msg.innerText = `A Equipa ${currentTeam} está na sua vez.`;
         }
       }
 
@@ -1373,9 +1460,17 @@ function renderSpectatorMode() {
   const currentTeam = gameState.teamOrder[gameState.currentTeamIndex];
   const currentExplainer = gameState.teams[currentTeam].players[gameState.currentExplainerIndex] || "Ninguém";
 
-  document.getElementById('spec-current-team').className = `team-banner bg-team-${currentTeam}`;
-  document.getElementById('spec-current-team').innerText = currentTeam;
-  document.getElementById('spec-current-explainer').innerText = `Explicador: ${currentExplainer}`;
+  const validatorTeam = gameState.validatorTeam || (gameState.teamOrder[(gameState.currentTeamIndex + 1) % gameState.teamOrder.length]);
+  const specCurrentEl = document.getElementById('spec-current-team');
+  if (specCurrentEl) {
+    specCurrentEl.className = `team-banner bg-team-${currentTeam}`;
+    specCurrentEl.innerText = `${getTeamIcon(currentTeam)} Equipa ${currentTeam}`;
+  }
+  const specValEl = document.getElementById('spec-validator-team');
+  if (specValEl) {
+    specValEl.className = `team-banner bg-team-${validatorTeam}`;
+    specValEl.innerText = `${getTeamIcon(validatorTeam)} Equipa ${validatorTeam}`;
+  }
   document.getElementById('spec-timer-display').innerText = gameState.activeRound.timer;
   
   const specDiceEl = document.getElementById('spec-dice-display');
