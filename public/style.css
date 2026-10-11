@@ -1474,10 +1474,72 @@ p {
 /* Cada estado do jogador ocupa 100dvh completo */
 #screen-game-active.player-mode #player-active,
 #screen-game-active.player-mode #player-waiting,
-#screen-game-active.player-mode #player-my-team-wait {
+#screen-game-active.player-mode #player-my-team-wait,
+#screen-game-active.player-mode #player-validator {
   height: 100dvh;
   min-height: 100dvh;
   border-radius: 0;
   padding: 20px 16px;
   box-sizing: border-box;
+}
+
+/* CRACHÁS E CLAREZA DE PAPÉIS (QUEM JOGA VS QUEM FISCALIZA) */
+.badge-role-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 8px;
+}
+.badge-role-pill.bg-playing {
+  background: rgba(0, 102, 255, 0.25);
+  border: 1px solid var(--color-blue);
+  color: #38bdf8;
+  box-shadow: 0 0 12px rgba(0, 102, 255, 0.3);
+}
+.badge-role-pill.bg-validating {
+  background: rgba(234, 179, 8, 0.25);
+  border: 1px solid var(--color-yellow);
+  color: #fde047;
+  box-shadow: 0 0 12px rgba(234, 179, 8, 0.3);
+}
+.badge-role-pill.bg-waiting {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--color-text-muted);
+}
+
+.role-clarity-card {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.role-box-tv {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 10px 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.role-badge-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  display: block;
+  margin-bottom: 5px;
 }
