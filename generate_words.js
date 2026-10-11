@@ -178,6 +178,16 @@ const rawEverydayWords = [
   "Samora Machel", "Joaquim Chissano", "Armando Guebuza", "Filipe Nyusi", "Daniel Chapo", "Eduardo Mondlane",
   "Josina Machel", "Afonso Dhlakama", "Lurdes Mutola", "Eusébio",
 
+  // Cantores e Músicos Moçambicanos Famosos
+  "Stewart Sukuma", "Neyma", "Mr. Bow", "Marllen (Preta Negra)", "Lizha James", "Dama do Bling",
+  "Moreira Chonguiça", "Wazimbo", "Mingas", "Zaida Chongo", "Fany Mpfumo", "Gabiro Rosa",
+  "Mc Roger", "Mabermuda", "Twenty Fingers", "Humberto Luís", "Júlia Mwito", "Chico António",
+  "Lourena Nhate", "Valter Artístico", "Messias Maricoa", "G2", "Hernâni da Silva", "Laylizzy",
+  "Duas Caras", "Dygo Boy", "Bander", "King Cizzy", "Ziqo", "Azagaia", "Jimmy Dludlu",
+  "Roberto Chitsondzo", "António Marcos", "Salimo Mohamed", "Denny OG", "Justino Ubakka",
+  "Cláudio Ismael", "Shellsy Baronet", "Tamyris Moiane", "Cleyton David", "Euridse Jeque",
+  "Liloca", "Hot Blaze", "Kamané Kamas", "Iveth", "Ellputo", "Bakhita", "Ta Basse", "Babalos",
+
   // Figuras e Líderes Mundiais
   "Donald Trump", "Nelson Mandela", "Barack Obama", "Joe Biden", "Rainha Elizabeth", "Cristiano Ronaldo", "Lionel Messi",
   "Elon Musk", "Bill Gates", "Mark Zuckerberg", "Steve Jobs"
