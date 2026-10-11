@@ -205,6 +205,7 @@ wss.on('connection', (ws) => {
         targetScore: 30,  // Casas para ganhar
         useDice: true,    // true = com dado, false = apenas acertos
         namedMode: true,  // true = app escolhe explicador, false = equipa decide
+        autoHost: true,   // true = Modo Anfitrião Automático (adversários validam)
         activeRound: {
           timer: 30,
           isTimerRunning: false,
@@ -306,7 +307,7 @@ wss.on('connection', (ws) => {
     const room = rooms.get(userSession.roomId);
     if (!room) return;
 
-    const { players, teams, teamOrder, targetScore, useDice, namedMode } = payload;
+    const { players, teams, teamOrder, targetScore, useDice, namedMode, autoHost } = payload;
     
     if (players) room.players = players;
     if (teams) room.gameState.teams = teams;
@@ -314,13 +315,15 @@ wss.on('connection', (ws) => {
     if (targetScore) room.gameState.targetScore = parseInt(targetScore) || 30;
     if (typeof useDice !== 'undefined') room.gameState.useDice = useDice;
     if (typeof namedMode !== 'undefined') room.gameState.namedMode = namedMode;
+    if (typeof autoHost !== 'undefined') room.gameState.autoHost = autoHost;
 
     broadcastRoomState(room);
   }
 
   function handleStartGame(socket) {
     const room = rooms.get(userSession.roomId);
-    if (!room || userSession.role !== 'host') return;
+    if (!room) return;
+    if (userSession.role !== 'host' && !room.gameState.autoHost) return;
 
     // Atualizar equipas com base na lista de jogadores ativos
     // Resetar pontuações
@@ -350,7 +353,11 @@ wss.on('connection', (ws) => {
 
   function handleRollDice(socket) {
     const room = rooms.get(userSession.roomId);
-    if (!room || userSession.role !== 'host') return;
+    if (!room) return;
+    const isHost = (userSession.role === 'host');
+    const currentPlayingTeam = room.gameState.teamOrder[room.gameState.currentTeamIndex];
+    const isActivePlayer = (userSession.role === 'player' && userSession.team === currentPlayingTeam);
+    if (!isHost && !(room.gameState.autoHost && isActivePlayer)) return;
     if (room.gameState.activeRound.hasRolled) return;
 
     // Dado 30 Segundos: Valores 0, 1, ou 2.
@@ -377,8 +384,24 @@ wss.on('connection', (ws) => {
 
   function handleStartRound(socket) {
     const room = rooms.get(userSession.roomId);
-    if (!room || userSession.role !== 'host') return;
+    if (!room) return;
+    const isHost = (userSession.role === 'host');
+    const currentPlayingTeam = room.gameState.teamOrder[room.gameState.currentTeamIndex];
+    const isActivePlayer = (userSession.role === 'player' && userSession.team === currentPlayingTeam);
+    if (!isHost && !(room.gameState.autoHost && isActivePlayer)) return;
     if (room.gameState.activeRound.isTimerRunning) return;
+
+    // Se estiver no modo com dado e ainda não rolou, rolar automaticamente
+    if (room.gameState.useDice && !room.gameState.activeRound.hasRolled) {
+      const rollOptions = [0, 0, 1, 1, 2, 0];
+      const roll = rollOptions[Math.floor(Math.random() * rollOptions.length)];
+      room.gameState.activeRound.diceRoll = roll;
+      room.gameState.activeRound.hasRolled = true;
+      broadcastToAll(room, {
+        type: 'DICE_ROLLED',
+        payload: { roll: roll }
+      });
+    }
 
     room.gameState.activeRound.isTimerRunning = true;
     
@@ -412,7 +435,15 @@ wss.on('connection', (ws) => {
 
   function handleToggleWord(socket, payload) {
     const room = rooms.get(userSession.roomId);
-    if (!room || userSession.role !== 'host') return;
+    if (!room) return;
+
+    // Permitido se for host OU se autoHost estiver ativo e o cliente for de uma equipa adversária
+    const isHost = (userSession.role === 'host');
+    const currentPlayingTeam = room.gameState.teamOrder[room.gameState.currentTeamIndex];
+    const isOpponent = (userSession.role === 'player' && userSession.team !== currentPlayingTeam);
+    const canToggle = isHost || (room.gameState.autoHost && isOpponent);
+
+    if (!canToggle) return;
     
     const { wordIndex, value } = payload;
     if (wordIndex >= 0 && wordIndex < 5) {
@@ -423,7 +454,12 @@ wss.on('connection', (ws) => {
 
   function handleEndRoundEarly(socket) {
     const room = rooms.get(userSession.roomId);
-    if (!room || userSession.role !== 'host') return;
+    if (!room) return;
+    const isHost = (userSession.role === 'host');
+    const currentPlayingTeam = room.gameState.teamOrder[room.gameState.currentTeamIndex];
+    const isOpponent = (userSession.role === 'player' && userSession.team !== currentPlayingTeam);
+    const isActivePlayer = (userSession.role === 'player' && userSession.team === currentPlayingTeam);
+    if (!isHost && !(room.gameState.autoHost && (isOpponent || isActivePlayer))) return;
     if (!room.gameState.activeRound.isTimerRunning) return;
 
     clearInterval(room.timerInterval);
@@ -436,7 +472,14 @@ wss.on('connection', (ws) => {
 
   function handleConfirmRoundScore(socket) {
     const room = rooms.get(userSession.roomId);
-    if (!room || userSession.role !== 'host') return;
+    if (!room) return;
+
+    const isHost = (userSession.role === 'host');
+    const currentPlayingTeam = room.gameState.teamOrder[room.gameState.currentTeamIndex];
+    const isOpponent = (userSession.role === 'player' && userSession.team !== currentPlayingTeam);
+    const canConfirm = isHost || (room.gameState.autoHost && isOpponent);
+
+    if (!canConfirm) return;
     if (room.gameState.step !== 'score_recap') return;
 
     // Calcular pontuação final da rodada
@@ -619,6 +662,7 @@ function broadcastRoomState(room) {
       targetScore: room.gameState.targetScore,
       useDice: room.gameState.useDice,
       namedMode: room.gameState.namedMode,
+      autoHost: room.gameState.autoHost,
       winner: room.gameState.winner,
       activeRound: {
         timer: room.gameState.activeRound.timer,
@@ -629,13 +673,17 @@ function broadcastRoomState(room) {
       }
     };
 
-    // Palavras: visíveis para Host e TODOS os membros da equipa ativa
-    const canSeeWords = role === 'host' || isActiveTeam;
+    // Palavras: visíveis para:
+    // 1. Host
+    // 2. Membros da equipa ativa (para explicar)
+    // 3. Membros da equipa adversária quando o Modo Anfitrião Automático estiver ligado (para fiscalizar/validar!)
+    const isOpponentInAuto = room.gameState.autoHost && (role === 'player' && !isActiveTeam);
+    const canSeeWords = role === 'host' || isActiveTeam || isOpponentInAuto;
 
     if (canSeeWords) {
       filteredState.activeRound.words = room.gameState.activeRound.words;
     } else {
-      // Ocultar palavras para ecrã principal, espectadores ou equipa adversária
+      // Ocultar palavras apenas para ecrã principal (TV) e espectadores
       filteredState.activeRound.words = ["?????", "?????", "?????", "?????", "?????"];
     }
 
