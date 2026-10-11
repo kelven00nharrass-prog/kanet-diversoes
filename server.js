@@ -643,8 +643,10 @@ function broadcastRoomState(room) {
       clientSocket.team = playerObj.team;
     }
 
-    // Determinar se este cliente é o explicador ativo da rodada
+    // Determinar equipa ativa e equipa validadora (fiscal)
     const currentTeamName = room.gameState.teamOrder[room.gameState.currentTeamIndex];
+    const validatorTeamIndex = (room.gameState.currentTeamIndex + 1) % (room.gameState.teamOrder.length || 1);
+    const validatorTeamName = room.gameState.teamOrder[validatorTeamIndex];
     const currentTeamPlayers = room.gameState.teams[currentTeamName] ? room.gameState.teams[currentTeamName].players : [];
     const currentExplainer = currentTeamPlayers[room.gameState.currentExplainerIndex];
     const isActiveTeam = (role === 'player' && team === currentTeamName);
@@ -659,6 +661,7 @@ function broadcastRoomState(room) {
       teamOrder: room.gameState.teamOrder,
       currentTeamIndex: room.gameState.currentTeamIndex,
       currentExplainerIndex: room.gameState.currentExplainerIndex,
+      validatorTeam: validatorTeamName,
       targetScore: room.gameState.targetScore,
       useDice: room.gameState.useDice,
       namedMode: room.gameState.namedMode,
