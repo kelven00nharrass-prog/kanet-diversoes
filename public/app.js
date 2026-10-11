@@ -1,4 +1,12 @@
 
+function stopRoundEarly() {
+  sounds.playClick();
+  sounds.playBuzzer();
+  socket.send(JSON.stringify({ type: 'END_ROUND_EARLY' }));
+}
+window.stopRoundEarly = stopRoundEarly;
+
+
 // Controlo da Modal do Tabuleiro e Ranking
 function openBoardModal() {
   sounds.playClick();
@@ -1593,7 +1601,27 @@ function renderPlayerMode() {
         }
       }
 
+      // Controlo dos botões do fiscal (Parar Tempo vs Confirmar)
+      const btnValStop = document.getElementById('btn-validator-stop-early');
       const confirmWrap = document.getElementById('player-validator-confirm-wrap');
+      
+      const correctCount = (gameState.activeRound.correctWords || []).filter(Boolean).length;
+
+      if (btnValStop) {
+        if (roundRunning) {
+          btnValStop.classList.remove('hidden');
+          if (correctCount === 5) {
+            btnValStop.innerText = '🎉 Acertaram Todas (5/5)! Parar Tempo';
+            btnValStop.className = 'btn btn-success btn-glow-green';
+          } else {
+            btnValStop.innerText = '🛑 Parar Tempo (Terminaram)';
+            btnValStop.className = 'btn btn-warning btn-glow-yellow';
+          }
+        } else {
+          btnValStop.classList.add('hidden');
+        }
+      }
+
       if (confirmWrap) {
         if (isRecap) {
           confirmWrap.classList.remove('hidden');
