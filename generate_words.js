@@ -148,7 +148,39 @@ const rawEverydayWords = [
 
   // Escola e trabalho
   "Nota positiva", "Reprovação", "Exame", "Trabalho de casa", "Recreio", "Biblioteca", "Quadro negro",
-  "Giz", "Régua", "Compasso", "Mochila escolar", "Uniforme", "Diretor de turma", "Colega de turma"
+  "Giz", "Régua", "Compasso", "Mochila escolar", "Uniforme", "Diretor de turma", "Colega de turma",
+
+  // Filmes e Séries
+  "Wandinha", "Vingadores", "Liga da Justiça", "Spider-Man", "O Mentalista", "Velozes e Furiosos", "Harry Potter",
+  "O Senhor dos Anéis", "Titanic", "Avatar", "Matrix", "Stranger Things", "La Casa de Papel", "Game of Thrones",
+  "Breaking Bad", "Homem de Ferro", "Batman", "Coringa", "Pantera Negra", "Thor", "Gladiador", "Rei Leão",
+
+  // Atores e Figuras de Cinema
+  "Jackie Chan", "Will Smith", "Tom Cruise", "Leonardo DiCaprio", "Denzel Washington", "Dwayne Johnson (The Rock)",
+  "Keanu Reeves", "Morgan Freeman", "Angelina Jolie", "Brad Pitt", "Johnny Depp", "Vin Diesel", "Robert Downey Jr.",
+  "Scarlett Johansson", "Samuel L. Jackson", "Chris Hemsworth", "Arnold Schwarzenegger", "Sylvester Stallone", "Rowan Atkinson (Mr. Bean)",
+
+  // Supermercados de Maputo e Moçambique
+  "Super Marés", "VIP Spar", "Recheio", "Premier Spar", "Shoprite", "Lojas Descoberta", "Game Maputo", "Interfranca",
+  "Tchumene Hiper", "Mundo Verde", "Mercearia Moderna",
+
+  // Marcas de Carros
+  "Toyota", "Mercedes-Benz", "BMW", "Nissan", "Ford", "Isuzu", "Volkswagen", "Mitsubishi", "Hyundai", "Honda",
+  "Audi", "Kia", "Land Rover", "Range Rover", "Jeep", "Mazda", "Suzuki", "Volvo", "Peugeot", "Chevrolet",
+
+  // Marcas de Celulares e Tecnologia
+  "iPhone", "Samsung", "Xiaomi", "Huawei", "Tecno", "Infinix", "Nokia", "Motorola", "Sony", "LG", "Oppo", "Vivo", "Honor",
+
+  // Jogos de Tabuleiro e Cartas
+  "Monopólio", "Uno", "30 Segundos", "Ludo", "Damas", "Xadrez", "Scrabble", "Dominó", "Cartas de Sueca", "Twister",
+
+  // Presidentes e Figuras Históricas de Moçambique
+  "Samora Machel", "Joaquim Chissano", "Armando Guebuza", "Filipe Nyusi", "Daniel Chapo", "Eduardo Mondlane",
+  "Josina Machel", "Afonso Dhlakama", "Lurdes Mutola", "Eusébio",
+
+  // Figuras e Líderes Mundiais
+  "Donald Trump", "Nelson Mandela", "Barack Obama", "Joe Biden", "Rainha Elizabeth", "Cristiano Ronaldo", "Lionel Messi",
+  "Elon Musk", "Bill Gates", "Mark Zuckerberg", "Steve Jobs"
 ];
 
 const everydayPool = Array.from(new Set(
