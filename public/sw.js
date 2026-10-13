@@ -1,4 +1,4 @@
-const CACHE_NAME = 'kanet-cache-v12';
+const CACHE_NAME = 'kanet-cache-v13';
 const ASSETS = [
   '/',
   '/index.html',
@@ -8,7 +8,8 @@ const ASSETS = [
   '/words.json',
   '/logo.png',
   '/favicon.png',
-  '/manifest.json'
+  '/manifest.json',
+  '/privacidade.html'
 ];
 
 self.addEventListener('install', (e) => {
