@@ -177,7 +177,20 @@ function getTeamIcon(team) {
    KA'NET DIVERSÕES — ENGINE DO CLIENTE (JS)
    ========================================================================== */
 
-// 1. SINTETIZADOR DE ÁUDIO WEB AUDIO API (Totalmente Offline)
+// 1. SISTEMA HÁPTICO / VIBRAÇÃO NATIVA ANDROID
+const Haptics = {
+  vibrate(pattern) {
+    if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
+      try { navigator.vibrate(pattern); } catch (e) {}
+    }
+  },
+  tap() { this.vibrate(12); },
+  success() { this.vibrate([25, 30, 25]); },
+  warning() { this.vibrate([35, 40, 35]); },
+  buzzer() { this.vibrate([120, 60, 220]); }
+};
+
+// 1.1 SINTETIZADOR DE ÁUDIO WEB AUDIO API (Totalmente Offline e desbloqueado para Android)
 class SoundSynth {
   constructor() {
     this.ctx = null;
@@ -185,11 +198,18 @@ class SoundSynth {
 
   init() {
     if (!this.ctx) {
-      this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (AudioCtx) {
+        this.ctx = new AudioCtx();
+      }
+    }
+    if (this.ctx && this.ctx.state === 'suspended') {
+      this.ctx.resume().catch(() => {});
     }
   }
 
   playClick() {
+    Haptics.tap();
     this.init();
     if (!this.ctx) return;
     const osc = this.ctx.createOscillator();
@@ -229,31 +249,69 @@ class SoundSynth {
   }
 
   playBuzzer() {
+    Haptics.buzzer();
     this.init();
     if (!this.ctx) return;
-    const osc = this.ctx.createOscillator();
-    const osc2 = this.ctx.createOscillator();
-    const gain = this.ctx.createGain();
+    const now = this.ctx.currentTime;
     
-    osc.type = 'sawtooth';
-    osc.frequency.setValueAtTime(110, this.ctx.currentTime);
-    osc.frequency.linearRampToValueAtTime(80, this.ctx.currentTime + 0.6);
+    // Buzina clássica mecânica de jogos de tabuleiro / 30 Seconds (Toque duplo: BZZ! BZZZZ!)
+    const playBuzzerTone = (startTime, duration, volume = 0.22, endDrop = false) => {
+      const osc1 = this.ctx.createOscillator();
+      const osc2 = this.ctx.createOscillator();
+      const osc3 = this.ctx.createOscillator();
+      const filter = this.ctx.createBiquadFilter();
+      const gain = this.ctx.createGain();
 
-    osc2.type = 'sawtooth';
-    osc2.frequency.setValueAtTime(113, this.ctx.currentTime);
-    osc2.frequency.linearRampToValueAtTime(83, this.ctx.currentTime + 0.6);
-    
-    gain.gain.setValueAtTime(0.15, this.ctx.currentTime);
-    gain.gain.linearRampToValueAtTime(0.001, this.ctx.currentTime + 0.6);
-    
-    osc.connect(gain);
-    osc2.connect(gain);
-    gain.connect(this.ctx.destination);
-    
-    osc.start();
-    osc2.start();
-    osc.stop(this.ctx.currentTime + 0.6);
-    osc2.stop(this.ctx.currentTime + 0.6);
+      // Frequências ligeiramente desafinadas para criar a textura áspera mecânica (batimento acústico)
+      const f1 = 146;
+      const f2 = 151;
+      const f3 = 292;
+
+      osc1.type = 'sawtooth';
+      osc2.type = 'square';
+      osc3.type = 'sawtooth';
+
+      osc1.frequency.setValueAtTime(f1, startTime);
+      osc2.frequency.setValueAtTime(f2, startTime);
+      osc3.frequency.setValueAtTime(f3, startTime);
+
+      if (endDrop) {
+        // Leve queda no final do segundo toque imitando o corte do relé mecânico
+        osc1.frequency.setValueAtTime(f1, startTime + duration - 0.1);
+        osc1.frequency.linearRampToValueAtTime(f1 - 15, startTime + duration);
+        osc2.frequency.setValueAtTime(f2, startTime + duration - 0.1);
+        osc2.frequency.linearRampToValueAtTime(f2 - 15, startTime + duration);
+      }
+
+      // Filtro acústico passa-baixa (simula o corpo plástico da buzina clássica)
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(1600, startTime);
+      filter.Q.setValueAtTime(2.5, startTime);
+
+      // Envelope de volume: Ataque imediato, sustentação encorpada e corte seco
+      gain.gain.setValueAtTime(0.001, startTime);
+      gain.gain.linearRampToValueAtTime(volume, startTime + 0.015);
+      gain.gain.setValueAtTime(volume * 0.95, startTime + duration - 0.03);
+      gain.gain.linearRampToValueAtTime(0.001, startTime + duration);
+
+      osc1.connect(filter);
+      osc2.connect(filter);
+      osc3.connect(filter);
+      filter.connect(gain);
+      gain.connect(this.ctx.destination);
+
+      osc1.start(startTime);
+      osc2.start(startTime);
+      osc3.start(startTime);
+      osc1.stop(startTime + duration);
+      osc2.stop(startTime + duration);
+      osc3.stop(startTime + duration);
+    };
+
+    // Toque 1: Alerta rápido e enérgico (180ms)
+    playBuzzerTone(now, 0.18, 0.22, false);
+    // Toque 2: Buzina final enfática e clássica (520ms)
+    playBuzzerTone(now + 0.25, 0.52, 0.25, true);
   }
 
   playChime() {
@@ -367,12 +425,41 @@ const screens = {
 const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
 const wsUrl = `${wsProtocol}//${window.location.host}`;
 
+// Gestão de Instalação PWA / APK Mobile
+let deferredInstallPrompt = null;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  const btnInstall = document.getElementById('btn-pwa-install');
+  if (btnInstall) {
+    btnInstall.classList.remove('hidden');
+    btnInstall.onclick = async () => {
+      Haptics.tap();
+      if (!deferredInstallPrompt) return;
+      deferredInstallPrompt.prompt();
+      const choiceResult = await deferredInstallPrompt.userChoice;
+      if (choiceResult && choiceResult.outcome === 'accepted') {
+        showToast("App instalada com sucesso!", "success");
+        btnInstall.classList.add('hidden');
+      }
+      deferredInstallPrompt = null;
+    };
+  }
+});
+
+// Desbloquear contexto de áudio Web Audio API no primeiro toque Android
+['touchstart', 'pointerdown', 'click'].forEach(evt => {
+  window.addEventListener(evt, () => {
+    sounds.init();
+  }, { once: true, passive: true });
+});
+
 // Inicialização: Tentar reconectar ou ler dados salvos na máquina
 window.addEventListener('DOMContentLoaded', () => {
   setupEventListeners();
   loadSavedSession();
   
-  // Registar Service Worker para suporte PWA (Instalação)
+  // Registar Service Worker para suporte PWA (Instalação e Offline)
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js')
       .then(() => console.log('PWA Service Worker registado!'))
@@ -1424,15 +1511,9 @@ function renderPlayerMode() {
   const isRecap = (gameState.step === 'score_recap');
   const isAutoHost = !!gameState.autoHost;
 
-  // Debug visual no telemovel
-  let dbg = document.getElementById('player-debug-bar');
-  if (!dbg) {
-    dbg = document.createElement('div');
-    dbg.id = 'player-debug-bar';
-    dbg.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:rgba(0,0,0,0.85);color:#0f0;font-size:10px;padding:3px 8px;z-index:9999;font-family:monospace;';
-    document.body.appendChild(dbg);
-  }
-  dbg.innerText = `Eu:${playerTeam} | Joga:${currentTeam} | Fiscal:${validatorTeam} | Minha?${isMyTeamActive} | SouFiscal?${isMyTeamValidator} | Timer:${roundRunning}`;
+  // Remove barra de debug se existir
+  const oldDbg = document.getElementById('player-debug-bar');
+  if (oldDbg) oldDbg.remove();
 
   const waitingView    = document.getElementById('player-waiting');
   const myTeamWait     = document.getElementById('player-my-team-wait');
@@ -1577,6 +1658,11 @@ function renderPlayerMode() {
             li.innerHTML = `<span><strong>${index + 1}.</strong> ${word}</span> <div class="check-pill"></div>`;
 
             li.addEventListener('click', () => {
+              if (!isChecked) {
+                Haptics.success();
+              } else {
+                Haptics.tap();
+              }
               sounds.playClick();
               socket.send(JSON.stringify({
                 type: 'TOGGLE_WORD',
