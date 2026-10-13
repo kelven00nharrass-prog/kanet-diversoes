@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidade — Ka'Net Diversões</title>
+  <style>
+    :root {
+      --bg: #07090e;
+      --card: rgba(13, 18, 30, 0.8);
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --blue: #00d2ff;
+      --border: rgba(255,255,255,0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: radial-gradient(circle at top left, #0d1326 0%, #07090e 100%);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 0;
+    }
+    header {
+      background: rgba(0,0,0,0.4);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    header h1 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--blue);
+    }
+    header span { color: var(--muted); font-size: 0.9rem; }
+    .container {
+      max-width: 760px;
+      margin: 40px auto;
+      padding: 0 20px 60px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+    }
+    h2 {
+      font-size: 1.1rem;
+      color: var(--blue);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    p, li {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 0.97rem;
+      margin-bottom: 10px;
+    }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
+    .updated {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 32px;
+    }
+    a { color: var(--blue); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Ka'Net Diversões</h1>
+    <span>Política de Privacidade</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>1. Quem Somos</h2>
+    <p>
+      O <strong>Ka'Net Diversões</strong> é um jogo digital de entretenimento para grupos, inspirado no jogo de tabuleiro "30 Segundos", desenvolvido em Moçambique. O serviço está disponível em <a href="https://kanet-diversoe.onrender.com">kanet-diversoe.onrender.com</a>.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>2. Dados que Recolhemos</h2>
+    <p>O Ka'Net Diversões foi projetado com <strong>privacidade em primeiro lugar</strong>. Não recolhemos nem armazenamos nenhum dado pessoal de forma permanente.</p>
+    <ul>
+      <li><strong>Nome de jogador:</strong> Introduzido voluntariamente para identificação na sala de jogo. É temporário e eliminado quando a sessão termina.</li>
+      <li><strong>Dados da sessão:</strong> O código da sala, nome e equipa são guardados localmente no dispositivo (<code>localStorage</code>) apenas para facilitar a reconexão após atualização da página.</li>
+      <li><strong>Não recolhemos:</strong> email, telemóvel, localização, contactos, câmara, microfone ou qualquer dado de identificação pessoal.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>3. Como Usamos os Dados</h2>
+    <p>Os dados temporários de sessão (nome e equipa) são usados exclusivamente para:</p>
+    <ul>
+      <li>Mostrar o nome do jogador durante uma partida em tempo real</li>
+      <li>Reconectar automaticamente após a página ser recarregada</li>
+    </ul>
+    <p>Estes dados <strong>nunca são enviados para bases de dados externas</strong> nem partilhados com terceiros.</p>
+  </div>
+
+  <div class="card">
+    <h2>4. Comunicação em Tempo Real</h2>
+    <p>O jogo utiliza <strong>WebSockets</strong> para comunicação em tempo real entre dispositivos numa mesma sala. As mensagens trocadas contêm apenas informações do jogo (palavras da carta, pontuações, estado do timer) e são eliminadas assim que a sessão termina no servidor.</p>
+  </div>
+
+  <div class="card">
+    <h2>5. Cookies e Armazenamento Local</h2>
+    <p>Utilizamos <code>localStorage</code> do navegador para guardar temporariamente:</p>
+    <ul>
+      <li>Código da última sala de jogo</li>
+      <li>Nome do jogador</li>
+      <li>Equipa escolhida</li>
+    </ul>
+    <p>Pode limpar estes dados a qualquer momento nas definições do seu navegador ou app.</p>
+  </div>
+
+  <div class="card">
+    <h2>6. Serviços de Terceiros</h2>
+    <p>O jogo utiliza os seguintes serviços externos:</p>
+    <ul>
+      <li><strong>Render.com</strong> — Hospedagem do servidor (consulte a política de privacidade em <a href="https://render.com/privacy">render.com/privacy</a>)</li>
+      <li><strong>Google Fonts</strong> — Carregamento de tipos de letra (Outfit, Space Grotesk). O Google pode registar pedidos de fonte. Ver <a href="https://policies.google.com/privacy">políticas do Google</a>.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>7. Crianças</h2>
+    <p>O Ka'Net Diversões é um jogo para toda a família. Não recolhemos intencionalmente nenhuma informação de crianças com menos de 13 anos. O jogo não exige registo, conta ou qualquer forma de identificação pessoal.</p>
+  </div>
+
+  <div class="card">
+    <h2>8. Segurança</h2>
+    <p>Toda a comunicação é feita via <strong>HTTPS/WSS (encriptado)</strong>. Os dados temporários de sessão existem apenas na memória do servidor durante a partida e são automaticamente eliminados quando a sala é encerrada.</p>
+  </div>
+
+  <div class="card">
+    <h2>9. Os Seus Direitos</h2>
+    <p>Como não guardamos dados pessoais de forma permanente, não existem dados a solicitar, corrigir ou eliminar. Pode a qualquer momento limpar o armazenamento local do seu dispositivo para remover os dados temporários da sessão.</p>
+  </div>
+
+  <div class="card">
+    <h2>10. Contacto</h2>
+    <p>Para questões relacionadas com privacidade, pode contactar-nos através da aplicação Ka'Net ou pelo e-mail disponível na página do produto.</p>
+  </div>
+
+  <p class="updated">Última atualização: Outubro de 2026</p>
+
+</div>
+</body>
+</html>
