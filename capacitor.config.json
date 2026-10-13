@@ -1,0 +1,15 @@
+{
+  "appId": "com.kanet.diversoes",
+  "appName": "Ka'Net Diversões",
+  "webDir": "public",
+  "bundledWebRuntime": false,
+  "server": {
+    "url": "https://kanet-diversoe.onrender.com",
+    "cleartext": true
+  },
+  "android": {
+    "allowMixedContent": true,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": false
+  }
+}
