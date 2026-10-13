@@ -1,4 +1,4 @@
-const CACHE_NAME = 'kanet-cache-v11';
+const CACHE_NAME = 'kanet-cache-v12';
 const ASSETS = [
   '/',
   '/index.html',
