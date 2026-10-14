@@ -530,6 +530,31 @@ function setupEventListeners() {
     });
   });
 
+  // Botões para jogadores escolherem ou mudarem de equipa no lobby
+  document.querySelectorAll('.btn-player-switch-team').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const selectedTeam = e.target.getAttribute('data-team');
+      if (!selectedTeam) return;
+      sounds.playClick();
+      changeTeam(selectedTeam);
+    });
+  });
+
+  // Tocar no cartão da equipa para trocar de equipa no telemóvel
+  document.querySelectorAll('.team-lobby-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.host-only') || e.target.closest('.btn-player-switch-team')) return;
+      if (!isHost && role === 'player') {
+        const team = card.getAttribute('data-team');
+        if (team && team !== playerTeam) {
+          sounds.playClick();
+          changeTeam(team);
+        }
+      }
+    });
+  });
+
   // Controlos do Jogador no Modo Anfitrião Automático
   const btnPlayerStart = document.getElementById('btn-player-start-round');
   if (btnPlayerStart) {
@@ -552,6 +577,10 @@ function setupEventListeners() {
   document.getElementById('btn-host-start-round').addEventListener('click', hostStartRound);
   document.getElementById('btn-host-stop-early').addEventListener('click', hostStopEarly);
   document.getElementById('btn-host-confirm-score').addEventListener('click', hostConfirmScore);
+  const btnHostConfirmBottom = document.getElementById('btn-host-confirm-score-bottom');
+  if (btnHostConfirmBottom) {
+    btnHostConfirmBottom.addEventListener('click', hostConfirmScore);
+  }
   document.getElementById('btn-host-restart').addEventListener('click', hostResetGame);
 
   // Botoes de Ajuda
@@ -1150,21 +1179,20 @@ function syncGameScreen(isExplaining) {
   // Ativar a visão correta
   const gameScreen = document.getElementById('screen-game-active');
   
-  // Botão flutuante para o Host poder ver controles se necessário
-  let hostPill = document.getElementById('btn-host-floating-toggle');
-  if (isHost && gameState.step === 'playing') {
-    if (!hostPill) {
-      hostPill = document.createElement('button');
-      hostPill.id = 'btn-host-floating-toggle';
-      hostPill.className = 'host-quick-toggle';
-      hostPill.onclick = toggleHostView;
-      document.body.appendChild(hostPill);
+  // Botão integrado na barra de ranking para o Host alternar vista
+  const inBarHostToggle = document.getElementById('btn-host-toggle-inbar');
+  if (inBarHostToggle) {
+    if (isHost && gameState.step === 'playing') {
+      inBarHostToggle.classList.remove('hidden');
+      inBarHostToggle.innerText = hostViewMode === 'player' ? '👑 Árbitro' : '🎮 Meu Jogo';
+    } else {
+      inBarHostToggle.classList.add('hidden');
     }
-    hostPill.style.display = 'flex';
-    hostPill.innerText = hostViewMode === 'player' ? '👑 Painel Árbitro' : '🎮 Meu Jogo';
-  } else if (hostPill) {
-    hostPill.style.display = 'none';
   }
+
+  // Remove qualquer botão flutuante residual para não sobrepor botões na tela do telemóvel
+  const oldHostPill = document.getElementById('btn-host-floating-toggle');
+  if (oldHostPill) oldHostPill.remove();
 
   // Se este dispositivo for o host e estiver em modo autoHost com equipa escolhida e hostViewMode='player'
   const isPlayingHost = (isHost && gameState.autoHost && playerTeam && playerTeam !== 'none' && hostViewMode === 'player');
@@ -1241,11 +1269,27 @@ function renderHostControls() {
     startRoundBtn.classList.remove('hidden');
   }
 
+  // Banner para voltar ao modo jogador se estiver a participar na equipa
+  const returnBanner = document.getElementById('host-switch-to-player-banner');
+  if (returnBanner) {
+    if (isHost && gameState.autoHost && playerTeam && playerTeam !== 'none') {
+      returnBanner.classList.remove('hidden');
+    } else {
+      returnBanner.classList.add('hidden');
+    }
+  }
+
   // Confirmar pontos
+  const confirmScoreBtnBottom = document.getElementById('btn-host-confirm-score-bottom');
+  const hostWordsConfirmBar = document.getElementById('host-words-confirm-bar');
   if (gameState.step === 'score_recap') {
     confirmScoreBtn.disabled = false;
+    if (confirmScoreBtnBottom) confirmScoreBtnBottom.disabled = false;
+    if (hostWordsConfirmBar) hostWordsConfirmBar.classList.remove('hidden');
   } else {
     confirmScoreBtn.disabled = true;
+    if (confirmScoreBtnBottom) confirmScoreBtnBottom.disabled = true;
+    if (hostWordsConfirmBar) hostWordsConfirmBar.classList.add('hidden');
   }
 
   // Palavras
@@ -1567,12 +1611,8 @@ function renderPlayerMode() {
 
       if (!hasScrolledThisRound) {
         hasScrolledThisRound = true;
-        const activeWordsCard = document.getElementById('player-words-card-active');
-        if (activeWordsCard) {
-          setTimeout(() => {
-            activeWordsCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }, 150);
-        }
+        const activeScrollBody = activeView ? activeView.querySelector('.player-scroll-body') : null;
+        if (activeScrollBody) activeScrollBody.scrollTop = 0;
       }
 
       if (gameState.activeRound.words) {
