@@ -288,6 +288,23 @@ p {
 @media (max-width: 768px) {
   .grid-lobby {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .lobby-choice-card {
+    min-height: auto !important;
+    padding: 18px !important;
+  }
+  .app-logo-img {
+    width: 95px !important;
+    height: 95px !important;
+    margin: 0 auto 4px auto !important;
+  }
+  .logo-header {
+    margin-bottom: 14px !important;
+    padding: 14px !important;
+  }
+  .subtitle {
+    font-size: 0.85rem !important;
   }
 }
 
@@ -313,6 +330,27 @@ p {
   padding: 16px 24px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 600px) {
+  .header-room {
+    padding: 10px 14px;
+    margin-bottom: 14px;
+  }
+  .header-room h2 {
+    font-size: 1.15rem;
+  }
+  .teams-container {
+    gap: 10px;
+  }
+  .team-lobby-card {
+    min-height: auto;
+    padding: 12px;
+  }
+  .member-count-badge {
+    padding: 6px 0;
+    font-size: 1.1rem;
+  }
 }
 
 .ip-info {
@@ -1390,51 +1428,89 @@ p {
 
 /* 20. VISTA DO JOGADOR � OTIMIZADA PARA TELEMOVEL */
 
-/* Faz o game-layout ocupar o ecra completo no telemovel */
+/* /* Faz o game-layout ocupar a altura disponível sem esticar fora do ecrã */
 #view-player {
   width: 100%;
-  min-height: calc(100dvh - var(--safe-top) - var(--safe-bottom));
+  flex: 1;
   display: flex;
   flex-direction: column;
-  flex: 1;
+  min-height: 0;
+  overflow: hidden;
 }
 
-/* Cartas: ocupar o ecra completo com safe-areas */
+/* Cartas de estado do jogador: flex column ocupando 100% da altura visível */
 #player-active,
 #player-waiting,
 #player-my-team-wait,
 #player-validator {
   width: 100%;
   flex: 1;
-  min-height: calc(100dvh - 70px);
-  padding: 12px 14px max(24px, var(--safe-bottom)) 14px;
+  min-height: 0;
+  padding: 8px 10px 6px 10px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Container das palavras: ocupa todo o espaco disponivel sem corte */
-#player-words-card-active {
+/* Área rolável de conteúdo (palavras, regras, timer) */
+.player-scroll-body {
   width: 100%;
-  max-width: 500px;
-  margin: 6px auto;
-  gap: clamp(6px, 1.4vh, 12px);
   flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  padding-bottom: 6px;
 }
 
-/* Cada carta de palavra: tamanho generoso no telemovel */
+/* Barra de Ação Fixada/Sticky no Rodapé — 100% visível em qualquer telemóvel */
+.player-bottom-bar {
+  width: 100%;
+  flex-shrink: 0;
+  padding: 8px 0 max(8px, var(--safe-bottom)) 0;
+  background: linear-gradient(to top, rgba(7, 9, 14, 0.98) 75%, rgba(7, 9, 14, 0) 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 50;
+  margin-top: auto;
+}
+
+.player-bottom-bar .btn {
+  width: 100% !important;
+  font-size: clamp(1rem, 4vw, 1.18rem) !important;
+  padding: clamp(12px, 2.2vh, 16px) 16px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4) !important;
+  white-space: normal !important;
+  line-height: 1.25;
+}
+
+/* Container das 5 palavras: espaçamento fluido para nunca cortar */
+#player-words-card-active {
+  width: 100%;
+  max-width: 480px;
+  margin: 4px auto;
+  gap: clamp(5px, 1.2vh, 10px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cada carta de palavra: tamanho ideal para leitura rápida */
 #player-words-card-active .word-card-item {
-  font-size: clamp(1.05rem, 4vw, 1.3rem);
-  padding: clamp(10px, 1.8vh, 16px) 16px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  font-size: clamp(1.02rem, 3.8vw, 1.22rem);
+  padding: clamp(8px, 1.5vh, 13px) 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -1446,18 +1522,18 @@ p {
   border-color: var(--color-blue);
 }
 
-/* Timer no telemovel: grande e centrado */
+/* Timer no telemóvel: compacto e nítido */
 #player-active-timer {
-  font-size: clamp(2.8rem, 7vh, 4.2rem);
+  font-size: clamp(2.2rem, 5.5vh, 3.4rem);
   font-weight: 800;
   line-height: 1;
   margin: 4px 0;
   text-shadow: 0 0 16px rgba(239, 68, 68, 0.4);
 }
 
-/* Timer na vista de espera: discreto mas visivel */
+/* Timer na vista de espera */
 #player-waiting-timer {
-  font-size: clamp(2.4rem, 6vh, 3.4rem);
+  font-size: clamp(2rem, 5vh, 3rem);
   font-weight: 800;
   margin: 6px 0;
   opacity: 0.7;
@@ -1465,35 +1541,34 @@ p {
 
 /* Timer do fiscal */
 #player-validator-timer {
-  font-size: clamp(2.2rem, 5.5vh, 3.2rem);
+  font-size: clamp(2rem, 5vh, 3rem);
   font-weight: 800;
   line-height: 1;
-  margin: 4px 0;
+  margin: 2px 0;
 }
 
-/* Lista de validacao do adversario (Fiscal) no telemovel */
+/* Lista de validação do adversário (Fiscal) no telemóvel */
 #player-validator-words-list {
   width: 100%;
-  max-width: 500px;
-  margin: 6px auto;
-  gap: clamp(6px, 1.2vh, 10px);
-  flex: 1;
+  max-width: 480px;
+  margin: 4px auto;
+  gap: clamp(5px, 1.2vh, 9px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   list-style: none;
 }
 #player-validator-words-list li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: clamp(10px, 1.8vh, 15px) 16px;
+  padding: clamp(8px, 1.5vh, 12px) 14px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
-  font-size: clamp(1rem, 3.6vw, 1.2rem);
+  border-radius: 10px;
+  font-size: clamp(0.95rem, 3.6vw, 1.15rem);
   cursor: pointer;
   touch-action: manipulation;
+  min-height: 46px; /* Alvo tátil generoso para toque de dedos */
   transition: all 0.15s ease;
 }
 #player-validator-words-list li:active {
@@ -1514,10 +1589,7 @@ p {
 }
 
 /* =====================================================
-   21. MODO ECRA COMPLETO PARA JOGADORES (player-mode)
-   Quando o papel e 'player', o ecra de jogo ocupa
-   100dvh sem padding nem header - a carta e o timer
-   ficam imediatamente visiveis, sem scroll.
+   21. MODO ECRÃ COMPLETO PARA JOGADORES (player-mode)
    ===================================================== */
 
 /* O contentor principal no modo jogador */
@@ -1525,12 +1597,11 @@ p {
   padding: 0;
   margin: 0;
   width: 100%;
-  min-height: 100dvh;
+  height: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-y: contain;
+  overflow: hidden;
 }
 
 /* Esconder o header secundário na vista do jogador */
@@ -1542,32 +1613,34 @@ p {
 #screen-game-active.player-mode #game-layout {
   flex: 1;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
+  min-height: 0;
 }
 
-/* O view-player ocupa todo o espaço com scroll se necessário */
+/* O view-player ocupa todo o espaço */
 #screen-game-active.player-mode #view-player {
   flex: 1;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
 }
 
-/* Cada estado do jogador respeita o padding de safe-area e não corta botões */
 #screen-game-active.player-mode #player-active,
 #screen-game-active.player-mode #player-waiting,
 #screen-game-active.player-mode #player-my-team-wait,
 #screen-game-active.player-mode #player-validator {
   flex: 1;
   width: 100%;
-  min-height: 100%;
-  border-radius: 0;
-  padding: 12px 14px max(24px, var(--safe-bottom)) 14px;
+  height: 100%;
+  min-height: 0;
+  border-radius: 12px;
+  padding: 8px 10px 4px 10px;
   box-sizing: border-box;
 }
 
@@ -1683,27 +1756,26 @@ p {
 
 .host-quick-toggle {
   position: fixed;
-  top: 10px;
-  right: 12px;
+  bottom: max(16px, var(--safe-bottom));
+  right: 14px;
   z-index: 999;
-  background: rgba(20, 20, 30, 0.85);
-  border: 1px solid rgba(255, 215, 0, 0.6);
+  background: rgba(20, 20, 30, 0.9);
+  border: 1px solid rgba(255, 215, 0, 0.7);
   color: #ffd700;
-  padding: 5px 12px;
+  padding: 8px 14px;
   border-radius: 20px;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 800;
   cursor: pointer;
   backdrop-filter: blur(8px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
 }
 .host-quick-toggle:hover {
-  background: rgba(255, 215, 0, 0.2);
+  background: rgba(255, 215, 0, 0.25);
 }
-
 
 /* ==========================================================================
    BARRA DE RANKING / PLACAR EM DIRETO & MODAL DO TABULEIRO
@@ -1713,14 +1785,15 @@ p {
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  background: rgba(10, 15, 30, 0.85);
+  background: rgba(10, 15, 30, 0.9);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 12px;
-  padding: 8px 12px;
-  margin-bottom: 10px;
+  padding: 6px 10px;
+  margin-bottom: 8px;
   width: 100%;
+  flex-shrink: 0;
   box-sizing: border-box;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
@@ -1728,7 +1801,7 @@ p {
 .ranking-chips-scroll {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -1741,10 +1814,10 @@ p {
 .ranking-chip {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 0.82rem;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 16px;
+  font-size: 0.78rem;
   font-weight: 700;
   white-space: nowrap;
   background: rgba(255, 255, 255, 0.05);
@@ -1764,17 +1837,43 @@ p {
 }
 .ranking-chip .hits-txt {
   color: #a3e635;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   opacity: 0.9;
 }
 
-.btn-ranking-board-toggle {
-  background: linear-gradient(135deg, rgba(234, 179, 8, 0.25) 0%, rgba(217, 119, 6, 0.35) 100%);
+.ranking-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.btn-ranking-host-toggle {
+  background: rgba(234, 179, 8, 0.2);
   border: 1px solid #ffd700;
   color: #ffd700;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.78rem;
+  padding: 5px 10px;
+  border-radius: 16px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+.btn-ranking-host-toggle:hover {
+  background: rgba(255, 215, 0, 0.35);
+}
+
+.btn-ranking-board-toggle {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(37, 99, 235, 0.35) 100%);
+  border: 1px solid var(--color-blue);
+  color: #38bdf8;
+  padding: 5px 10px;
+  border-radius: 16px;
+  font-size: 0.74rem;
   font-weight: 800;
   cursor: pointer;
   white-space: nowrap;
@@ -1784,8 +1883,30 @@ p {
   gap: 4px;
 }
 .btn-ranking-board-toggle:hover {
-  background: rgba(255, 215, 0, 0.35);
-  box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+  background: rgba(0, 210, 255, 0.35);
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.4);
+}
+
+/* Botão de mudar equipa para jogadores no lobby */
+.btn-player-switch-team {
+  margin-top: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-player-switch-team:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.team-lobby-card:active {
+  transform: scale(0.99);
 }
 
 /* MODAL DO TABULEIRO */
