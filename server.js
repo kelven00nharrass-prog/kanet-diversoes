@@ -18,39 +18,86 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Chave: roomId (ex: A8D7F), Valor: objeto da sala
 const rooms = new Map();
 
-// Carregar palavras do JSON
-let cardDeck = [];
+// Carregar baralhos dos dois modos: TJ e Normal
+let cardDeckTJ = [];
+let cardDeckNormal = [];
+
 try {
-  const wordsData = fs.readFileSync(path.join(__dirname, 'public', 'words.json'), 'utf-8');
-  cardDeck = JSON.parse(wordsData);
-  console.log(`Carregadas ${cardDeck.length} cartas do banco de palavras.`);
+  const tjPath = fs.existsSync(path.join(__dirname, 'public', 'words_tj.json'))
+    ? path.join(__dirname, 'public', 'words_tj.json')
+    : path.join(__dirname, 'public', 'words.json');
+  cardDeckTJ = JSON.parse(fs.readFileSync(tjPath, 'utf-8'));
+  console.log(`Carregadas ${cardDeckTJ.length} cartas do Modo TJ.`);
 } catch (err) {
-  console.error("Erro ao carregar words.json:", err);
+  console.error("Erro ao carregar words_tj.json:", err);
+}
+
+try {
+  const normalPath = fs.existsSync(path.join(__dirname, 'public', 'words_normal.json'))
+    ? path.join(__dirname, 'public', 'words_normal.json')
+    : path.join(__dirname, 'public', 'words.json');
+  cardDeckNormal = JSON.parse(fs.readFileSync(normalPath, 'utf-8'));
+  console.log(`Carregadas ${cardDeckNormal.length} cartas do Modo Normal.`);
+} catch (err) {
+  console.error("Erro ao carregar words_normal.json:", err);
 }
 
 // ── Registo global de cartas jogadas nas últimas 24h ──────────────────────────
-// Chave: cardId (number), Valor: timestamp (ms) da última vez que foi jogada
+// Chave: cardKey (string: "tj_1", "normal_2", etc.), Valor: timestamp (ms)
 const usedCardLog = new Map();
 const TWENTY_FOUR_HOURS = 24 * 60 * 60 * 1000;
 
 /** Remove do registo cartas jogadas há mais de 24h. */
 function purgeOldCards() {
   const now = Date.now();
-  for (const [cardId, ts] of usedCardLog) {
-    if (now - ts > TWENTY_FOUR_HOURS) usedCardLog.delete(cardId);
+  for (const [cardKey, ts] of usedCardLog) {
+    if (now - ts > TWENTY_FOUR_HOURS) usedCardLog.delete(cardKey);
   }
 }
 
 /** Devolve true se a carta já foi jogada nas últimas 24h em qualquer sala. */
-function isCardUsedRecently(cardId) {
-  const ts = usedCardLog.get(cardId);
+function isCardUsedRecently(cardKey) {
+  const ts = usedCardLog.get(cardKey);
   if (!ts) return false;
   return (Date.now() - ts) < TWENTY_FOUR_HOURS;
 }
 
 /** Marca uma carta como jogada agora. */
-function logCardUsed(cardId) {
-  usedCardLog.set(cardId, Date.now());
+function logCardUsed(cardKey) {
+  usedCardLog.set(cardKey, Date.now());
+}
+
+/** Constrói e baralha o baralho para a sala de acordo com o modo escolhido. */
+function buildDeckForRoom(gameMode = 'tj') {
+  purgeOldCards();
+  const sourceDeck = (gameMode === 'normal') ? cardDeckNormal : cardDeckTJ;
+  const modePrefix = (gameMode === 'normal') ? 'normal' : 'tj';
+
+  const unusedCards = [];
+  const usedCards = [];
+
+  sourceDeck.forEach(c => {
+    const key = `${modePrefix}_${c.id}`;
+    if (isCardUsedRecently(key)) {
+      usedCards.push(c);
+    } else {
+      unusedCards.push(c);
+    }
+  });
+
+  const shuffleArr = (arr) => {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  };
+
+  shuffleArr(unusedCards);
+  shuffleArr(usedCards);
+
+  // O baralho da sala coloca primeiro todas as cartas frescas/inéditas
+  return [...unusedCards, ...usedCards];
 }
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -175,32 +222,8 @@ wss.on('connection', (ws) => {
 
   function handleCreateRoom(socket) {
     const roomId = generateRoomId();
-    purgeOldCards();
-    
-    // Separar cartas que ainda não foram jogadas nas últimas 24h das já jogadas
-    const unusedCards = [];
-    const usedCards = [];
-    cardDeck.forEach(c => {
-      if (isCardUsedRecently(c.id)) {
-        usedCards.push(c);
-      } else {
-        unusedCards.push(c);
-      }
-    });
-
-    const shuffleArr = (arr) => {
-      for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-      }
-      return arr;
-    };
-
-    shuffleArr(unusedCards);
-    shuffleArr(usedCards);
-
-    // O baralho da sala coloca primeiro todas as cartas frescas/inéditas
-    const roomDeck = [...unusedCards, ...usedCards];
+    const defaultGameMode = 'tj'; // 'tj' ou 'normal'
+    const roomDeck = buildDeckForRoom(defaultGameMode);
 
     const room = {
       roomId: roomId,
@@ -211,6 +234,7 @@ wss.on('connection', (ws) => {
       players: [], // { name, team, role, active }
       gameState: {
         step: 'lobby', // 'lobby', 'setup', 'playing', 'score_recap', 'game_over'
+        gameMode: defaultGameMode, // 'tj' ou 'normal'
         teams: {
           'Azul': { score: 0, players: [] },
           'Vermelho': { score: 0, players: [] },
@@ -334,7 +358,7 @@ wss.on('connection', (ws) => {
     const room = rooms.get(userSession.roomId);
     if (!room) return;
 
-    const { players, teams, teamOrder, targetScore, useDice, namedMode, autoHost, hostTeam } = payload;
+    const { players, teams, teamOrder, targetScore, useDice, namedMode, autoHost, hostTeam, gameMode } = payload;
     
     if (hostTeam && userSession.role === 'host') {
       userSession.team = hostTeam;
@@ -348,6 +372,17 @@ wss.on('connection', (ws) => {
     if (typeof namedMode !== 'undefined') room.gameState.namedMode = namedMode;
     if (typeof autoHost !== 'undefined') room.gameState.autoHost = autoHost;
 
+    // Troca de modo de cartas: 'tj' vs 'normal'
+    if (gameMode && (gameMode === 'tj' || gameMode === 'normal')) {
+      if (room.gameState.gameMode !== gameMode) {
+        room.gameState.gameMode = gameMode;
+        room.deck = buildDeckForRoom(gameMode);
+        room.deckIndex = 0;
+        room.usedDeck = [];
+        console.log(`Sala ${room.roomId}: Modo alterado para ${gameMode.toUpperCase()}`);
+      }
+    }
+
     broadcastRoomState(room);
   }
 
@@ -355,6 +390,12 @@ wss.on('connection', (ws) => {
     const room = rooms.get(userSession.roomId);
     if (!room) return;
     if (userSession.role !== 'host' && !room.gameState.autoHost) return;
+
+    // Assegurar baralho carregado e baralhado para o modo selecionado
+    if (!room.deck || room.deck.length === 0 || room.deckIndex >= room.deck.length) {
+      room.deck = buildDeckForRoom(room.gameState.gameMode || 'tj');
+      room.deckIndex = 0;
+    }
 
     // Atualizar equipas com base na lista de jogadores ativos
     // Resetar pontuações
@@ -560,6 +601,9 @@ wss.on('connection', (ws) => {
     
     room.gameState.step = 'lobby';
     room.gameState.winner = null;
+    room.deck = buildDeckForRoom(room.gameState.gameMode || 'tj');
+    room.deckIndex = 0;
+    room.usedDeck = [];
     
     for (const t of room.gameState.teamOrder) {
       room.gameState.teams[t].score = 0;
@@ -570,20 +614,19 @@ wss.on('connection', (ws) => {
 
   // Prepara uma nova carta estritamente inédita para a rodada
   function prepareNextRound(room) {
-    // Se esgotar as 570 cartas da sala (caso extremo de mais de 570 rondas):
+    const currentMode = room.gameState.gameMode || 'tj';
+
+    // Se esgotar as cartas da sala (caso extremo de mais de 570 rondas):
     if (room.deckIndex >= room.deck.length) {
-      console.log("Todas as cartas do baralho foram jogadas! Baralhando novamente...");
+      console.log(`Todas as cartas do baralho (${currentMode}) foram jogadas! Baralhando novamente...`);
+      room.deck = buildDeckForRoom(currentMode);
       room.deckIndex = 0;
-      for (let i = room.deck.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [room.deck[i], room.deck[j]] = [room.deck[j], room.deck[i]];
-      }
     }
 
     // Puxa a próxima carta sequencial (garantindo que nunca repete na mesma partida)
     const nextCard = room.deck[room.deckIndex++];
     if (nextCard) {
-      logCardUsed(nextCard.id);
+      logCardUsed(`${currentMode}_${nextCard.id}`);
       room.usedDeck.push(nextCard);
     }
 
