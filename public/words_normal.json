@@ -1,0 +1,5702 @@
+[
+  {
+    "id": 1,
+    "words": [
+      "Casa de Ferro",
+      "Instituto Nacional de Saúde",
+      "Vermelho-Escarlate",
+      "Arquipélago de Bazaruto",
+      "Ossufo Momade"
+    ]
+  },
+  {
+    "id": 2,
+    "words": [
+      "Ministério da Saúde",
+      "Joaquim Chissano",
+      "T3",
+      "Mercado Central de Maputo",
+      "Branco"
+    ]
+  },
+  {
+    "id": 3,
+    "words": [
+      "Ministério da Cultura e Turismo",
+      "Mucapata",
+      "Valter Artístico",
+      "Laranja",
+      "Namaacha"
+    ]
+  },
+  {
+    "id": 4,
+    "words": [
+      "Boane",
+      "Verde-Oliva",
+      "Instituto Nacional de Gestão de Desastres",
+      "Professor",
+      "G2"
+    ]
+  },
+  {
+    "id": 5,
+    "words": [
+      "Bilene",
+      "Notariado de Moçambique",
+      "Pascoal Mocumbi",
+      "Lavanda",
+      "Ferroviário de Maputo"
+    ]
+  },
+  {
+    "id": 6,
+    "words": [
+      "Filipe Nyusi",
+      "Forças Armadas de Defesa de Moçambique",
+      "Xiguinha de Mandioca",
+      "Moatize",
+      "Rosa-Choque"
+    ]
+  },
+  {
+    "id": 7,
+    "words": [
+      "Arroz de Coco",
+      "Vinho",
+      "Graça Machel",
+      "Ministério da Educação e Desenvolvimento Humano",
+      "Chibuto"
+    ]
+  },
+  {
+    "id": 8,
+    "words": [
+      "Ministério da Agricultura e Desenvolvimento Rural",
+      "Alberto Vaquina",
+      "Parque Nacional do Limpopo",
+      "Bege",
+      "Dumba Nengue"
+    ]
+  },
+  {
+    "id": 9,
+    "words": [
+      "Ministério da Defesa Nacional",
+      "Polana Caniço",
+      "Amarelo",
+      "Chita",
+      "Janet Mondlane"
+    ]
+  },
+  {
+    "id": 10,
+    "words": [
+      "Mercado do Peixe",
+      "Azul-Celeste",
+      "Eduardo Silva Nihia",
+      "Instituto Nacional de Estatística",
+      "Gondola"
+    ]
+  },
+  {
+    "id": 11,
+    "words": [
+      "Ministério dos Transportes e Comunicações",
+      "Fúcsia",
+      "Lichinga",
+      "Rinoceronte",
+      "José Craveirinha"
+    ]
+  },
+  {
+    "id": 12,
+    "words": [
+      "Stewart Sukuma",
+      "Torta de Banana",
+      "Bronze",
+      "Ponta do Ouro",
+      "Ministério do Género, Criança e Acção Social"
+    ]
+  },
+  {
+    "id": 13,
+    "words": [
+      "Pemba",
+      "Assembleia da República",
+      "Wazimbo",
+      "Batuque",
+      "Pérola"
+    ]
+  },
+  {
+    "id": 14,
+    "words": [
+      "Estádio Nacional do Zimpeto",
+      "Gabinete do Primeiro-Ministro",
+      "Alice Mabota",
+      "Catandica",
+      "Amarelo-Canário"
+    ]
+  },
+  {
+    "id": 15,
+    "words": [
+      "Maputo Província",
+      "EDM (Electricidade de Moçambique)",
+      "Armando Guebuza",
+      "Maheu",
+      "Azul-Turquesa"
+    ]
+  },
+  {
+    "id": 16,
+    "words": [
+      "Violeta",
+      "Capulana",
+      "Sebastião Marcos Mabote",
+      "Fomento",
+      "Ministério da Terra e Ambiente"
+    ]
+  },
+  {
+    "id": 17,
+    "words": [
+      "Bicicleta",
+      "Tete",
+      "Daviz Simango",
+      "Bordeaux (Bordô)",
+      "Instituto Nacional de Meteorologia"
+    ]
+  },
+  {
+    "id": 18,
+    "words": [
+      "Ministério do Interior",
+      "Eduardo Mondlane",
+      "Púrpura",
+      "Fortaleza de Maputo",
+      "Lago Niassa"
+    ]
+  },
+  {
+    "id": 19,
+    "words": [
+      "Banco de Moçambique",
+      "Dominguês Pelembe",
+      "Castanho-Escuro",
+      "Zambézia",
+      "Desportivo de Maputo"
+    ]
+  },
+  {
+    "id": 20,
+    "words": [
+      "Vermelho",
+      "Badjia de Feijão",
+      "Niassa",
+      "Carlos Cardoso",
+      "Presidência da República de Moçambique"
+    ]
+  },
+  {
+    "id": 21,
+    "words": [
+      "Turquesa",
+      "Mingas",
+      "Rio Save",
+      "Ponte Maputo-Katembe",
+      "Ministério da Administração Estatal e Função Pública"
+    ]
+  },
+  {
+    "id": 22,
+    "words": [
+      "Xai-Xai",
+      "Mia Couto",
+      "Cinzento",
+      "Ministério dos Recursos Minerais e Energia",
+      "Estação Central dos CFM"
+    ]
+  },
+  {
+    "id": 23,
+    "words": [
+      "Ilha de Moçambique",
+      "Verde-Limão",
+      "Ferroviário da Beira",
+      "Julia Duarte",
+      "Conservatória do Registo Civil"
+    ]
+  },
+  {
+    "id": 24,
+    "words": [
+      "Carmim",
+      "Eusébio da Silva Ferreira",
+      "Castanha de Caju",
+      "Conselho Constitucional",
+      "Dondo"
+    ]
+  },
+  {
+    "id": 25,
+    "words": [
+      "Nampula",
+      "Amarelo-Torrado",
+      "Tribunal Supremo de Moçambique",
+      "Paulina Chiziane",
+      "Computador"
+    ]
+  },
+  {
+    "id": 26,
+    "words": [
+      "Nacala",
+      "Samora Machel Júnior",
+      "Nhangau",
+      "Tribunal Administrativo",
+      "Índigo"
+    ]
+  },
+  {
+    "id": 27,
+    "words": [
+      "Twenty Fingers",
+      "Peixe Grelhado",
+      "Imprensa Nacional de Moçambique",
+      "Rosa",
+      "Quelimane"
+    ]
+  },
+  {
+    "id": 28,
+    "words": [
+      "Roxo",
+      "Caia",
+      "Pão com Badjia",
+      "Ministério do Trabalho e Segurança Social",
+      "Carlos Agostinho do Rosário"
+    ]
+  },
+  {
+    "id": 29,
+    "words": [
+      "Secretaria de Estado da Juventude e Emprego",
+      "Marrabenta",
+      "Luísa Diogo",
+      "Ciano",
+      "Costa do Sol"
+    ]
+  },
+  {
+    "id": 30,
+    "words": [
+      "Prateado",
+      "Ministério da Indústria e Comércio",
+      "Dança Mapiko",
+      "Adriano Maleiane",
+      "Rio Limpopo"
+    ]
+  },
+  {
+    "id": 31,
+    "words": [
+      "Comissão Nacional de Eleições",
+      "Azul-Petróleo",
+      "Esperança Bias",
+      "Rio Rovuma",
+      "Clube Costa do Sol"
+    ]
+  },
+  {
+    "id": 32,
+    "words": [
+      "Dukani",
+      "Azul-Marinho",
+      "Autoridade Tributária de Moçambique",
+      "Samora Machel",
+      "Maxixe"
+    ]
+  },
+  {
+    "id": 33,
+    "words": [
+      "Black Bulls",
+      "Grafite",
+      "Mahotas",
+      "Conselho de Ministros",
+      "Marcelino dos Santos"
+    ]
+  },
+  {
+    "id": 34,
+    "words": [
+      "Dugongo de Bazaruto",
+      "Matola",
+      "Castanho-Claro",
+      "Venâncio Mondlane",
+      "Procuradoria-Geral da República"
+    ]
+  },
+  {
+    "id": 35,
+    "words": [
+      "Ministério do Mar, Águas Interiores e Pescas",
+      "Comboio",
+      "Cinza-Chumbo",
+      "Chiquinho Conde",
+      "Inhambane"
+    ]
+  },
+  {
+    "id": 36,
+    "words": [
+      "Sura de Palmeira",
+      "Marrom",
+      "Benfica",
+      "Direcção Nacional de Identificação Civil",
+      "Salomão Moyana"
+    ]
+  },
+  {
+    "id": 37,
+    "words": [
+      "Fany Mpfumo",
+      "Secretariado Técnico de Administração Eleitoral",
+      "Marfim",
+      "Xima",
+      "Búzi"
+    ]
+  },
+  {
+    "id": 38,
+    "words": [
+      "Verde-Água",
+      "Parque Nacional da Gorongosa",
+      "Noémia de Sousa",
+      "Kanimambo",
+      "Secretaria de Estado do Desporto"
+    ]
+  },
+  {
+    "id": 39,
+    "words": [
+      "Ministério da Economia e Finanças",
+      "Castanho",
+      "Tico-Tico Bucuane",
+      "Gaza",
+      "Mercado Janet"
+    ]
+  },
+  {
+    "id": 40,
+    "words": [
+      "Rio Incomáti",
+      "Maria de Lurdes Mutola",
+      "Ponte Kassuende",
+      "Caramelo",
+      "Ministério dos Combatentes"
+    ]
+  },
+  {
+    "id": 41,
+    "words": [
+      "Coral",
+      "Reinildo Mandava",
+      "Mukhero",
+      "Zavala",
+      "Fundo de Estradas"
+    ]
+  },
+  {
+    "id": 42,
+    "words": [
+      "Prata",
+      "Angoche",
+      "Relógio de Pulso",
+      "Ministério dos Negócios Estrangeiros e Cooperação",
+      "Hernâni da Silva"
+    ]
+  },
+  {
+    "id": 43,
+    "words": [
+      "Terracota",
+      "Serviço Nacional de Investigação Criminal",
+      "Malangatana Ngwenya",
+      "Marromeu",
+      "Barco"
+    ]
+  },
+  {
+    "id": 44,
+    "words": [
+      "Sommerschield",
+      "Mostarda",
+      "Girafa",
+      "Ministério da Ciência, Tecnologia e Ensino Superior",
+      "Ziqo"
+    ]
+  },
+  {
+    "id": 45,
+    "words": [
+      "Nampula",
+      "Médico",
+      "Salmão",
+      "Mr. Bow",
+      "Ministério das Obras Públicas, Habitação e Recursos Hídricos"
+    ]
+  },
+  {
+    "id": 46,
+    "words": [
+      "Malanga",
+      "Makhewa",
+      "Daniel Chapo",
+      "Administração Nacional de Estradas",
+      "Champanhe"
+    ]
+  },
+  {
+    "id": 47,
+    "words": [
+      "Mocímboa da Praia",
+      "Verde-Garrafa",
+      "Geny Catamo",
+      "Serviço Nacional de Salvação Pública",
+      "Xigubo de Gaza"
+    ]
+  },
+  {
+    "id": 48,
+    "words": [
+      "Manhiça",
+      "Moreira Chonguiça",
+      "Estádio da Machava",
+      "Polícia da República de Moçambique",
+      "Verde-Musgo"
+    ]
+  },
+  {
+    "id": 49,
+    "words": [
+      "Xipamanine",
+      "Ministério da Justiça, Assuntos Constitucionais e Religiosos",
+      "Laylizzy",
+      "Caril de Amendoim",
+      "Ocre"
+    ]
+  },
+  {
+    "id": 50,
+    "words": [
+      "Chapa 100",
+      "Anil",
+      "CFM (Caminhos de Ferro de Moçambique)",
+      "Chimoio",
+      "Lizha James"
+    ]
+  },
+  {
+    "id": 51,
+    "words": [
+      "Serviço Nacional de Investigação Criminal",
+      "Cobre",
+      "Afonso Dhlakama",
+      "Polícia de Trânsito",
+      "Aeroporto"
+    ]
+  },
+  {
+    "id": 52,
+    "words": [
+      "Rio Zambeze",
+      "Dança Tufo",
+      "Ministério do Mar, Águas Interiores e Pescas",
+      "Verde",
+      "Josina Machel"
+    ]
+  },
+  {
+    "id": 53,
+    "words": [
+      "Dourado",
+      "Catedral de Maputo",
+      "Neyma",
+      "Tribunal Administrativo",
+      "Laulane"
+    ]
+  },
+  {
+    "id": 54,
+    "words": [
+      "Búfalo",
+      "Magenta",
+      "Administração Nacional de Estradas",
+      "Lutero Simango",
+      "Macaneta"
+    ]
+  },
+  {
+    "id": 55,
+    "words": [
+      "Secretariado Técnico de Administração Eleitoral",
+      "Dama do Bling",
+      "Gorongosa",
+      "Bombeiro",
+      "Verde-Esmeralda"
+    ]
+  },
+  {
+    "id": 56,
+    "words": [
+      "Carlos Cardoso",
+      "Munhuana",
+      "Timbila Chope",
+      "Notariado de Moçambique",
+      "Lilás"
+    ]
+  },
+  {
+    "id": 57,
+    "words": [
+      "Creme",
+      "Twenty Fingers",
+      "Mavalane",
+      "Ministério da Administração Estatal e Função Pública",
+      "Crocodilo do Nilo"
+    ]
+  },
+  {
+    "id": 58,
+    "words": [
+      "Azul",
+      "Xitique",
+      "Stewart Sukuma",
+      "Gurúè",
+      "EDM (Electricidade de Moçambique)"
+    ]
+  },
+  {
+    "id": 59,
+    "words": [
+      "Preto",
+      "Serviço Nacional de Salvação Pública",
+      "Liberdade",
+      "Engenheiro",
+      "Mia Couto"
+    ]
+  },
+  {
+    "id": 60,
+    "words": [
+      "Samora Machel Júnior",
+      "Tubarão-Baleia",
+      "Amarelo-Ouro",
+      "Cuamba",
+      "Conservatória do Registo Civil"
+    ]
+  },
+  {
+    "id": 61,
+    "words": [
+      "Ponte Armando Guebuza",
+      "Dominguês Pelembe",
+      "Assembleia da República",
+      "Verde-Limão",
+      "Inhambane"
+    ]
+  },
+  {
+    "id": 62,
+    "words": [
+      "Fúcsia",
+      "Praça da Independência",
+      "Ministério da Saúde",
+      "Josina Machel",
+      "Jardim"
+    ]
+  },
+  {
+    "id": 63,
+    "words": [
+      "Ministério da Cultura e Turismo",
+      "Filipe Nyusi",
+      "Palma",
+      "Feijoada Moçambicana",
+      "Carmim"
+    ]
+  },
+  {
+    "id": 64,
+    "words": [
+      "Reinildo Mandava",
+      "Polícia da República de Moçambique",
+      "Makwayela",
+      "Ciano",
+      "Praia do Tofo"
+    ]
+  },
+  {
+    "id": 65,
+    "words": [
+      "Verde-Musgo",
+      "Geny Catamo",
+      "Beira",
+      "Ministério da Agricultura e Desenvolvimento Rural",
+      "Galinha à Zambeziana"
+    ]
+  },
+  {
+    "id": 66,
+    "words": [
+      "Caril de Caranguejo",
+      "Roxo",
+      "Samora Machel",
+      "Maxaquene",
+      "Procuradoria-Geral da República"
+    ]
+  },
+  {
+    "id": 67,
+    "words": [
+      "Julia Duarte",
+      "Mambas (Selecção Nacional)",
+      "Conselho de Ministros",
+      "Violeta",
+      "Alto Molócue"
+    ]
+  },
+  {
+    "id": 68,
+    "words": [
+      "Alberto Vaquina",
+      "Alto Maé",
+      "Ministério dos Negócios Estrangeiros e Cooperação",
+      "Coral",
+      "Magaíza"
+    ]
+  },
+  {
+    "id": 69,
+    "words": [
+      "Daviz Simango",
+      "Anil",
+      "Manica",
+      "Direcção Nacional de Identificação Civil",
+      "Hipopótamo"
+    ]
+  },
+  {
+    "id": 70,
+    "words": [
+      "Wazimbo",
+      "Amarelo-Ouro",
+      "Chitenge",
+      "Ministério da Economia e Finanças",
+      "Cidade de Maputo"
+    ]
+  },
+  {
+    "id": 71,
+    "words": [
+      "Rio Licungo",
+      "Conselho Constitucional",
+      "União Desportiva do Songo",
+      "Esperança Bias",
+      "Bege"
+    ]
+  },
+  {
+    "id": 72,
+    "words": [
+      "Banco de Moçambique",
+      "Mocuba",
+      "Salomão Moyana",
+      "Flamingo Rosa",
+      "Verde-Oliva"
+    ]
+  },
+  {
+    "id": 73,
+    "words": [
+      "Venâncio Mondlane",
+      "Lilás",
+      "Instituto Nacional de Saúde",
+      "Caril de Camarão",
+      "Marracuene"
+    ]
+  },
+  {
+    "id": 74,
+    "words": [
+      "Txopela",
+      "Eduardo Silva Nihia",
+      "Rosa",
+      "Mafalala",
+      "Ministério do Género, Criança e Acção Social"
+    ]
+  },
+  {
+    "id": 75,
+    "words": [
+      "Moreira Chonguiça",
+      "Vinho",
+      "Zimpeto",
+      "Ministério dos Recursos Minerais e Energia",
+      "Avião"
+    ]
+  },
+  {
+    "id": 76,
+    "words": [
+      "Televisão",
+      "Secretaria de Estado da Juventude e Emprego",
+      "Mingas",
+      "Verde",
+      "Montepuez"
+    ]
+  },
+  {
+    "id": 77,
+    "words": [
+      "Ministério dos Combatentes",
+      "Chamussa",
+      "Cabo Delgado",
+      "Champanhe",
+      "Janet Mondlane"
+    ]
+  },
+  {
+    "id": 78,
+    "words": [
+      "Maputo",
+      "Grafite",
+      "Malangatana Ngwenya",
+      "Ponte Samora Machel (Tete)",
+      "Tribunal Supremo de Moçambique"
+    ]
+  },
+  {
+    "id": 79,
+    "words": [
+      "Instituto Nacional de Meteorologia",
+      "Púrpura",
+      "Monte Binga",
+      "Praça dos Heróis Moçambicanos",
+      "Lutero Simango"
+    ]
+  },
+  {
+    "id": 80,
+    "words": [
+      "Afonso Dhlakama",
+      "Azul-Marinho",
+      "Albufeira de Cahora Bassa",
+      "Jardim Tunduru",
+      "Ministério da Defesa Nacional"
+    ]
+  },
+  {
+    "id": 81,
+    "words": [
+      "Alice Mabota",
+      "Piloto de Avião",
+      "Magenta",
+      "Instituto Nacional de Gestão de Desastres",
+      "Albazine"
+    ]
+  },
+  {
+    "id": 82,
+    "words": [
+      "Piri-piri Moçambicano",
+      "Neyma",
+      "Mostarda",
+      "Ministério da Ciência, Tecnologia e Ensino Superior",
+      "Vilankulo"
+    ]
+  },
+  {
+    "id": 83,
+    "words": [
+      "Armando Guebuza",
+      "Azul",
+      "Hulene",
+      "Camarão Tigre",
+      "Instituto Nacional de Estatística"
+    ]
+  },
+  {
+    "id": 84,
+    "words": [
+      "Coop",
+      "Prata",
+      "Autoridade Tributária de Moçambique",
+      "Ucanhe de Canhu",
+      "Graça Machel"
+    ]
+  },
+  {
+    "id": 85,
+    "words": [
+      "Forças Armadas de Defesa de Moçambique",
+      "Karingana Wa Karingana",
+      "Cinzento",
+      "Ziqo",
+      "Chókwè"
+    ]
+  },
+  {
+    "id": 86,
+    "words": [
+      "Polana Cimento",
+      "Tartaruga Marinha",
+      "Maria de Lurdes Mutola",
+      "Fundo de Estradas",
+      "Terracota"
+    ]
+  },
+  {
+    "id": 87,
+    "words": [
+      "Chamanculo",
+      "Turquesa",
+      "Ministério da Indústria e Comércio",
+      "Lizha James",
+      "Elefante Africano"
+    ]
+  },
+  {
+    "id": 88,
+    "words": [
+      "Rio Púngoè",
+      "Lavanda",
+      "Ministério da Terra e Ambiente",
+      "Eduardo Mondlane",
+      "Advogado"
+    ]
+  },
+  {
+    "id": 89,
+    "words": [
+      "Telemóvel",
+      "Prateado",
+      "Ministério da Educação e Desenvolvimento Humano",
+      "Eusébio da Silva Ferreira",
+      "Tete"
+    ]
+  },
+  {
+    "id": 90,
+    "words": [
+      "Castanho",
+      "Morrumbala",
+      "Zebra",
+      "Ministério da Justiça, Assuntos Constitucionais e Religiosos",
+      "Noémia de Sousa"
+    ]
+  },
+  {
+    "id": 91,
+    "words": [
+      "Ministério dos Transportes e Comunicações",
+      "Sebastião Marcos Mabote",
+      "Mota",
+      "Sofala",
+      "Cinza-Chumbo"
+    ]
+  },
+  {
+    "id": 92,
+    "words": [
+      "Pandza",
+      "Azul-Celeste",
+      "Pascoal Mocumbi",
+      "Ferroviário",
+      "Secretaria de Estado do Desporto"
+    ]
+  },
+  {
+    "id": 93,
+    "words": [
+      "Drone",
+      "Marrom",
+      "Malhangalene",
+      "Ossufo Momade",
+      "Imprensa Nacional de Moçambique"
+    ]
+  },
+  {
+    "id": 94,
+    "words": [
+      "José Craveirinha",
+      "Machava",
+      "Vermelho",
+      "Clube Maxaquene",
+      "Comissão Nacional de Eleições"
+    ]
+  },
+  {
+    "id": 95,
+    "words": [
+      "Pescador",
+      "Sommerschield",
+      "Marcelino dos Santos",
+      "Ministério do Interior",
+      "Salmão"
+    ]
+  },
+  {
+    "id": 96,
+    "words": [
+      "Presidência da República de Moçambique",
+      "Azul-Petróleo",
+      "Cabo Delgado",
+      "Leopardo",
+      "Mr. Bow"
+    ]
+  },
+  {
+    "id": 97,
+    "words": [
+      "Ministério das Obras Públicas, Habitação e Recursos Hídricos",
+      "Valter Artístico",
+      "Golfinho",
+      "Maputo Província",
+      "Amarelo-Canário"
+    ]
+  },
+  {
+    "id": 98,
+    "words": [
+      "Matapa",
+      "Gondola",
+      "Ministério do Trabalho e Segurança Social",
+      "Verde-Água",
+      "G2"
+    ]
+  },
+  {
+    "id": 99,
+    "words": [
+      "Costa do Sol",
+      "Leão da Gorongosa",
+      "CFM (Caminhos de Ferro de Moçambique)",
+      "Dourado",
+      "Paulina Chiziane"
+    ]
+  },
+  {
+    "id": 100,
+    "words": [
+      "Gabinete do Primeiro-Ministro",
+      "Amarelo",
+      "Rio Incomáti",
+      "Chiquinho Conde",
+      "Lobo do Mar"
+    ]
+  },
+  {
+    "id": 101,
+    "words": [
+      "Fany Mpfumo",
+      "Gabinete do Primeiro-Ministro",
+      "Bilene",
+      "Leão da Gorongosa",
+      "Pérola"
+    ]
+  },
+  {
+    "id": 102,
+    "words": [
+      "Ministério dos Combatentes",
+      "Daniel Chapo",
+      "Crocodilo do Nilo",
+      "Ponta do Ouro",
+      "Creme"
+    ]
+  },
+  {
+    "id": 103,
+    "words": [
+      "Tico-Tico Bucuane",
+      "Machava",
+      "Pescador",
+      "Laranja",
+      "Ministério dos Transportes e Comunicações"
+    ]
+  },
+  {
+    "id": 104,
+    "words": [
+      "Catandica",
+      "Ministério da Indústria e Comércio",
+      "Castanho-Escuro",
+      "Adriano Maleiane",
+      "Zebra"
+    ]
+  },
+  {
+    "id": 105,
+    "words": [
+      "Nhangau",
+      "Maputo",
+      "Bronze",
+      "Dama do Bling",
+      "Ministério da Agricultura e Desenvolvimento Rural"
+    ]
+  },
+  {
+    "id": 106,
+    "words": [
+      "Verde-Esmeralda",
+      "Ministério da Justiça, Assuntos Constitucionais e Religiosos",
+      "Avião",
+      "Laylizzy",
+      "Xipamanine"
+    ]
+  },
+  {
+    "id": 107,
+    "words": [
+      "Amarelo-Torrado",
+      "Kanimambo",
+      "Tribunal Administrativo",
+      "Luísa Diogo",
+      "Xai-Xai"
+    ]
+  },
+  {
+    "id": 108,
+    "words": [
+      "Chitenge",
+      "Mavalane",
+      "Hernâni da Silva",
+      "Castanho-Claro",
+      "Ministério do Mar, Águas Interiores e Pescas"
+    ]
+  },
+  {
+    "id": 109,
+    "words": [
+      "Secretaria de Estado do Desporto",
+      "Índigo",
+      "Beira",
+      "Carlos Agostinho do Rosário",
+      "Praça da Independência"
+    ]
+  },
+  {
+    "id": 110,
+    "words": [
+      "Dondo",
+      "Mota",
+      "Joaquim Chissano",
+      "Branco",
+      "Ministério dos Recursos Minerais e Energia"
+    ]
+  },
+  {
+    "id": 111,
+    "words": [
+      "Administração Nacional de Estradas",
+      "Ocre",
+      "Eduardo Mondlane",
+      "Casa de Ferro",
+      "Vilankulo"
+    ]
+  },
+  {
+    "id": 112,
+    "words": [
+      "Xigubo de Gaza",
+      "Munhuana",
+      "Adriano Maleiane",
+      "Marfim",
+      "Instituto Nacional de Meteorologia"
+    ]
+  },
+  {
+    "id": 113,
+    "words": [
+      "Boane",
+      "Ministério da Economia e Finanças",
+      "Preto",
+      "Karingana Wa Karingana",
+      "Samora Machel Júnior"
+    ]
+  },
+  {
+    "id": 114,
+    "words": [
+      "Conselho Constitucional",
+      "Cidade de Maputo",
+      "Ossufo Momade",
+      "Bordeaux (Bordô)",
+      "Barco"
+    ]
+  },
+  {
+    "id": 115,
+    "words": [
+      "Azul-Turquesa",
+      "Benfica",
+      "Mercado do Peixe",
+      "Ministério da Terra e Ambiente",
+      "Neyma"
+    ]
+  },
+  {
+    "id": 116,
+    "words": [
+      "Morrumbala",
+      "Capulana",
+      "Verde-Garrafa",
+      "Dama do Bling",
+      "Ministério da Defesa Nacional"
+    ]
+  },
+  {
+    "id": 117,
+    "words": [
+      "Banco de Moçambique",
+      "Sebastião Marcos Mabote",
+      "Cobre",
+      "Golfinho",
+      "Mocuba"
+    ]
+  },
+  {
+    "id": 118,
+    "words": [
+      "Vermelho-Escarlate",
+      "Secretaria de Estado da Juventude e Emprego",
+      "G2",
+      "Magaíza",
+      "Zambézia"
+    ]
+  },
+  {
+    "id": 119,
+    "words": [
+      "Tico-Tico Bucuane",
+      "Rio Púngoè",
+      "Rosa-Choque",
+      "Estação Central dos CFM",
+      "Presidência da República de Moçambique"
+    ]
+  },
+  {
+    "id": 120,
+    "words": [
+      "Josina Machel",
+      "Clube Maxaquene",
+      "Laulane",
+      "Autoridade Tributária de Moçambique",
+      "Caramelo"
+    ]
+  },
+  {
+    "id": 121,
+    "words": [
+      "Manica",
+      "Professor",
+      "Valter Artístico",
+      "Ministério do Género, Criança e Acção Social",
+      "Violeta"
+    ]
+  },
+  {
+    "id": 122,
+    "words": [
+      "Relógio de Pulso",
+      "Verde",
+      "Mingas",
+      "Lichinga",
+      "Conservatória do Registo Civil"
+    ]
+  },
+  {
+    "id": 123,
+    "words": [
+      "Ferroviário de Maputo",
+      "Janet Mondlane",
+      "Mahotas",
+      "Instituto Nacional de Estatística",
+      "Salmão"
+    ]
+  },
+  {
+    "id": 124,
+    "words": [
+      "Julia Duarte",
+      "Monte Binga",
+      "Polícia da República de Moçambique",
+      "Clube Costa do Sol",
+      "Verde-Musgo"
+    ]
+  },
+  {
+    "id": 125,
+    "words": [
+      "Dança Tufo",
+      "Amarelo-Torrado",
+      "Liberdade",
+      "Tribunal Supremo de Moçambique",
+      "Samora Machel"
+    ]
+  },
+  {
+    "id": 126,
+    "words": [
+      "Matapa",
+      "Azul-Turquesa",
+      "Geny Catamo",
+      "Tete",
+      "Ministério das Obras Públicas, Habitação e Recursos Hídricos"
+    ]
+  },
+  {
+    "id": 127,
+    "words": [
+      "Afonso Dhlakama",
+      "Ferroviário",
+      "Leopardo",
+      "Procuradoria-Geral da República",
+      "Rosa-Choque"
+    ]
+  },
+  {
+    "id": 128,
+    "words": [
+      "Ponte Samora Machel (Tete)",
+      "Parque Nacional do Limpopo",
+      "Púrpura",
+      "Wazimbo",
+      "Ministério do Interior"
+    ]
+  },
+  {
+    "id": 129,
+    "words": [
+      "Ponte Kassuende",
+      "Mafalala",
+      "Forças Armadas de Defesa de Moçambique",
+      "Prateado",
+      "Eduardo Silva Nihia"
+    ]
+  },
+  {
+    "id": 130,
+    "words": [
+      "Ministério do Trabalho e Segurança Social",
+      "Lavanda",
+      "Comboio",
+      "Lutero Simango",
+      "Polana Caniço"
+    ]
+  },
+  {
+    "id": 131,
+    "words": [
+      "Inhambane",
+      "Azul",
+      "Graça Machel",
+      "Chita",
+      "Ministério dos Negócios Estrangeiros e Cooperação"
+    ]
+  },
+  {
+    "id": 132,
+    "words": [
+      "Manhiça",
+      "Ministério da Educação e Desenvolvimento Humano",
+      "Azul-Petróleo",
+      "Xiguinha de Mandioca",
+      "Paulina Chiziane"
+    ]
+  },
+  {
+    "id": 133,
+    "words": [
+      "Secretariado Técnico de Administração Eleitoral",
+      "Pandza",
+      "Moreira Chonguiça",
+      "Caia",
+      "Coral"
+    ]
+  },
+  {
+    "id": 134,
+    "words": [
+      "Comissão Nacional de Eleições",
+      "Dugongo de Bazaruto",
+      "Marcelino dos Santos",
+      "Pérola",
+      "Polana Cimento"
+    ]
+  },
+  {
+    "id": 135,
+    "words": [
+      "Daniel Chapo",
+      "Zavala",
+      "CFM (Caminhos de Ferro de Moçambique)",
+      "Castanho",
+      "Torta de Banana"
+    ]
+  },
+  {
+    "id": 136,
+    "words": [
+      "Xima",
+      "Fundo de Estradas",
+      "Esperança Bias",
+      "Vermelho-Escarlate",
+      "Jardim"
+    ]
+  },
+  {
+    "id": 137,
+    "words": [
+      "Mucapata",
+      "Pascoal Mocumbi",
+      "Castanho-Claro",
+      "Mocímboa da Praia",
+      "Conselho de Ministros"
+    ]
+  },
+  {
+    "id": 138,
+    "words": [
+      "Chókwè",
+      "Ministério da Administração Estatal e Função Pública",
+      "José Craveirinha",
+      "Desportivo de Maputo",
+      "Caramelo"
+    ]
+  },
+  {
+    "id": 139,
+    "words": [
+      "Arquipélago de Bazaruto",
+      "Notariado de Moçambique",
+      "Pão com Badjia",
+      "Lizha James",
+      "Mostarda"
+    ]
+  },
+  {
+    "id": 140,
+    "words": [
+      "Serviço Nacional de Investigação Criminal",
+      "Estádio Nacional do Zimpeto",
+      "Malhangalene",
+      "Creme",
+      "Fany Mpfumo"
+    ]
+  },
+  {
+    "id": 141,
+    "words": [
+      "Alto Maé",
+      "Grafite",
+      "Dominguês Pelembe",
+      "Tartaruga Marinha",
+      "Ministério da Ciência, Tecnologia e Ensino Superior"
+    ]
+  },
+  {
+    "id": 142,
+    "words": [
+      "Imprensa Nacional de Moçambique",
+      "Computador",
+      "Noémia de Sousa",
+      "Tete",
+      "Prata"
+    ]
+  },
+  {
+    "id": 143,
+    "words": [
+      "Marfim",
+      "Jardim Tunduru",
+      "Ministério da Saúde",
+      "Parque Nacional da Gorongosa",
+      "Filipe Nyusi"
+    ]
+  },
+  {
+    "id": 144,
+    "words": [
+      "Mr. Bow",
+      "Flamingo Rosa",
+      "Angoche",
+      "Cinzento",
+      "Direcção Nacional de Identificação Civil"
+    ]
+  },
+  {
+    "id": 145,
+    "words": [
+      "Ministério da Cultura e Turismo",
+      "Carmim",
+      "Hernâni da Silva",
+      "Gurúè",
+      "Peixe Grelhado"
+    ]
+  },
+  {
+    "id": 146,
+    "words": [
+      "Matola",
+      "Fúcsia",
+      "Búfalo",
+      "Salomão Moyana",
+      "Instituto Nacional de Saúde"
+    ]
+  },
+  {
+    "id": 147,
+    "words": [
+      "Anil",
+      "Sofala",
+      "Ziqo",
+      "Bombeiro",
+      "EDM (Electricidade de Moçambique)"
+    ]
+  },
+  {
+    "id": 148,
+    "words": [
+      "Alice Mabota",
+      "Verde-Oliva",
+      "Instituto Nacional de Gestão de Desastres",
+      "Makwayela",
+      "Albufeira de Cahora Bassa"
+    ]
+  },
+  {
+    "id": 149,
+    "words": [
+      "Laylizzy",
+      "Azul-Marinho",
+      "Castanha de Caju",
+      "Serviço Nacional de Salvação Pública",
+      "Inhambane"
+    ]
+  },
+  {
+    "id": 150,
+    "words": [
+      "Carlos Agostinho do Rosário",
+      "Assembleia da República",
+      "Nampula",
+      "Bordeaux (Bordô)",
+      "Arroz de Coco"
+    ]
+  },
+  {
+    "id": 151,
+    "words": [
+      "Stewart Sukuma",
+      "Comissão Nacional de Eleições",
+      "Verde-Limão",
+      "Coop",
+      "Mercado Janet"
+    ]
+  },
+  {
+    "id": 152,
+    "words": [
+      "Galinha à Zambeziana",
+      "Fundo de Estradas",
+      "Amarelo-Ouro",
+      "Carlos Cardoso",
+      "Montepuez"
+    ]
+  },
+  {
+    "id": 153,
+    "words": [
+      "Zimpeto",
+      "Cobre",
+      "Maheu",
+      "Chiquinho Conde",
+      "Ministério dos Recursos Minerais e Energia"
+    ]
+  },
+  {
+    "id": 154,
+    "words": [
+      "Nacala",
+      "Malangatana Ngwenya",
+      "Magenta",
+      "Forças Armadas de Defesa de Moçambique",
+      "Chamussa"
+    ]
+  },
+  {
+    "id": 155,
+    "words": [
+      "Secretariado Técnico de Administração Eleitoral",
+      "Pemba",
+      "Caril de Caranguejo",
+      "Eusébio da Silva Ferreira",
+      "Cinza-Chumbo"
+    ]
+  },
+  {
+    "id": 156,
+    "words": [
+      "Maxixe",
+      "Polícia de Trânsito",
+      "Ministério das Obras Públicas, Habitação e Recursos Hídricos",
+      "Verde-Água",
+      "Venâncio Mondlane"
+    ]
+  },
+  {
+    "id": 157,
+    "words": [
+      "Twenty Fingers",
+      "Gabinete do Primeiro-Ministro",
+      "Chimoio",
+      "Feijoada Moçambicana",
+      "Verde-Esmeralda"
+    ]
+  },
+  {
+    "id": 158,
+    "words": [
+      "Ministério do Trabalho e Segurança Social",
+      "Ciano",
+      "Elefante Africano",
+      "Alberto Vaquina",
+      "Búzi"
+    ]
+  },
+  {
+    "id": 159,
+    "words": [
+      "Maria de Lurdes Mutola",
+      "Ministério da Indústria e Comércio",
+      "Chibuto",
+      "Ocre",
+      "Dança Mapiko"
+    ]
+  },
+  {
+    "id": 160,
+    "words": [
+      "Tribunal Supremo de Moçambique",
+      "Luísa Diogo",
+      "Terracota",
+      "Rio Save",
+      "Rinoceronte"
+    ]
+  },
+  {
+    "id": 161,
+    "words": [
+      "T3",
+      "Reinildo Mandava",
+      "Ministério da Agricultura e Desenvolvimento Rural",
+      "Fortaleza de Maputo",
+      "Índigo"
+    ]
+  },
+  {
+    "id": 162,
+    "words": [
+      "Rosa",
+      "Hulene",
+      "Conservatória do Registo Civil",
+      "Daviz Simango",
+      "Mukhero"
+    ]
+  },
+  {
+    "id": 163,
+    "words": [
+      "Niassa",
+      "Dourado",
+      "Girafa",
+      "Assembleia da República",
+      "Armando Guebuza"
+    ]
+  },
+  {
+    "id": 164,
+    "words": [
+      "Xitique",
+      "Roxo",
+      "Joaquim Chissano",
+      "Namaacha",
+      "Ministério da Economia e Finanças"
+    ]
+  },
+  {
+    "id": 165,
+    "words": [
+      "Serviço Nacional de Salvação Pública",
+      "Bege",
+      "Praia do Tofo",
+      "Timbila Chope",
+      "Mia Couto"
+    ]
+  },
+  {
+    "id": 166,
+    "words": [
+      "Pascoal Mocumbi",
+      "Alto Molócue",
+      "Instituto Nacional de Meteorologia",
+      "Verde-Garrafa",
+      "Hipopótamo"
+    ]
+  },
+  {
+    "id": 167,
+    "words": [
+      "Ilha de Moçambique",
+      "Daviz Simango",
+      "Vermelho",
+      "Ministério do Mar, Águas Interiores e Pescas",
+      "Piri-piri Moçambicano"
+    ]
+  },
+  {
+    "id": 168,
+    "words": [
+      "Lobo do Mar",
+      "Malanga",
+      "Champanhe",
+      "Ministério da Cultura e Turismo",
+      "Eduardo Silva Nihia"
+    ]
+  },
+  {
+    "id": 169,
+    "words": [
+      "Badjia de Feijão",
+      "Quelimane",
+      "Marrom",
+      "Joaquim Chissano",
+      "Instituto Nacional de Gestão de Desastres"
+    ]
+  },
+  {
+    "id": 170,
+    "words": [
+      "Nampula",
+      "Carlos Agostinho do Rosário",
+      "Vinho",
+      "Tribunal Administrativo",
+      "Tubarão-Baleia"
+    ]
+  },
+  {
+    "id": 171,
+    "words": [
+      "Preto",
+      "Gorongosa",
+      "Afonso Dhlakama",
+      "Ministério da Terra e Ambiente",
+      "Chapa 100"
+    ]
+  },
+  {
+    "id": 172,
+    "words": [
+      "Albazine",
+      "Amarelo",
+      "Ponte Armando Guebuza",
+      "Ministério da Educação e Desenvolvimento Humano",
+      "Mia Couto"
+    ]
+  },
+  {
+    "id": 173,
+    "words": [
+      "Branco",
+      "Ministério dos Combatentes",
+      "Rio Zambeze",
+      "Maria de Lurdes Mutola",
+      "Makhewa"
+    ]
+  },
+  {
+    "id": 174,
+    "words": [
+      "Procuradoria-Geral da República",
+      "Piloto de Avião",
+      "Amarelo-Canário",
+      "Chamanculo",
+      "Daniel Chapo"
+    ]
+  },
+  {
+    "id": 175,
+    "words": [
+      "Maxaquene",
+      "Conselho Constitucional",
+      "Eduardo Mondlane",
+      "Castanho-Escuro",
+      "Drone"
+    ]
+  },
+  {
+    "id": 176,
+    "words": [
+      "Ministério da Justiça, Assuntos Constitucionais e Religiosos",
+      "Ponte Maputo-Katembe",
+      "Laranja",
+      "Lago Niassa",
+      "Dama do Bling"
+    ]
+  },
+  {
+    "id": 177,
+    "words": [
+      "Gaza",
+      "Bronze",
+      "Ucanhe de Canhu",
+      "Chiquinho Conde",
+      "Ministério dos Transportes e Comunicações"
+    ]
+  },
+  {
+    "id": 178,
+    "words": [
+      "Estádio da Machava",
+      "Rio Rovuma",
+      "Turquesa",
+      "Polícia da República de Moçambique",
+      "Salomão Moyana"
+    ]
+  },
+  {
+    "id": 179,
+    "words": [
+      "Rio Licungo",
+      "Ossufo Momade",
+      "Azul-Celeste",
+      "Autoridade Tributária de Moçambique",
+      "Marrabenta"
+    ]
+  },
+  {
+    "id": 180,
+    "words": [
+      "União Desportiva do Songo",
+      "Fomento",
+      "Janet Mondlane",
+      "Lilás",
+      "Direcção Nacional de Identificação Civil"
+    ]
+  },
+  {
+    "id": 181,
+    "words": [
+      "Sura de Palmeira",
+      "CFM (Caminhos de Ferro de Moçambique)",
+      "Grafite",
+      "Moatize",
+      "Twenty Fingers"
+    ]
+  },
+  {
+    "id": 182,
+    "words": [
+      "Marromeu",
+      "Ministério da Saúde",
+      "Caril de Amendoim",
+      "Verde",
+      "Filipe Nyusi"
+    ]
+  },
+  {
+    "id": 183,
+    "words": [
+      "Mostarda",
+      "Médico",
+      "Marracuene",
+      "Mr. Bow",
+      "Ministério da Administração Estatal e Função Pública"
+    ]
+  },
+  {
+    "id": 184,
+    "words": [
+      "Rio Limpopo",
+      "Castanho",
+      "Julia Duarte",
+      "EDM (Electricidade de Moçambique)",
+      "Bicicleta"
+    ]
+  },
+  {
+    "id": 185,
+    "words": [
+      "Valter Artístico",
+      "Cuamba",
+      "Prateado",
+      "Mambas (Selecção Nacional)",
+      "Ministério da Defesa Nacional"
+    ]
+  },
+  {
+    "id": 186,
+    "words": [
+      "Dumba Nengue",
+      "Verde-Garrafa",
+      "Eusébio da Silva Ferreira",
+      "Imprensa Nacional de Moçambique",
+      "Macaneta"
+    ]
+  },
+  {
+    "id": 187,
+    "words": [
+      "Geny Catamo",
+      "Roxo",
+      "Telemóvel",
+      "Ministério da Ciência, Tecnologia e Ensino Superior",
+      "Palma"
+    ]
+  },
+  {
+    "id": 188,
+    "words": [
+      "Black Bulls",
+      "Azul-Petróleo",
+      "Ziqo",
+      "Secretaria de Estado do Desporto",
+      "Aeroporto"
+    ]
+  },
+  {
+    "id": 189,
+    "words": [
+      "Benfica",
+      "Reinildo Mandava",
+      "Ferroviário da Beira",
+      "Verde-Musgo",
+      "Ministério dos Negócios Estrangeiros e Cooperação"
+    ]
+  },
+  {
+    "id": 190,
+    "words": [
+      "Secretaria de Estado da Juventude e Emprego",
+      "Alice Mabota",
+      "Vermelho-Escarlate",
+      "Batuque",
+      "Albazine"
+    ]
+  },
+  {
+    "id": 191,
+    "words": [
+      "Notariado de Moçambique",
+      "Amarelo-Canário",
+      "Txopela",
+      "Noémia de Sousa",
+      "Coop"
+    ]
+  },
+  {
+    "id": 192,
+    "words": [
+      "Wazimbo",
+      "Marrom",
+      "Camarão Tigre",
+      "Ministério do Interior",
+      "Rio Rovuma"
+    ]
+  },
+  {
+    "id": 193,
+    "words": [
+      "Advogado",
+      "Lizha James",
+      "Alto Maé",
+      "Serviço Nacional de Investigação Criminal",
+      "Turquesa"
+    ]
+  },
+  {
+    "id": 194,
+    "words": [
+      "Instituto Nacional de Saúde",
+      "Monte Binga",
+      "Vermelho",
+      "Televisão",
+      "Josina Machel"
+    ]
+  },
+  {
+    "id": 195,
+    "words": [
+      "Dukani",
+      "Dourado",
+      "Banco de Moçambique",
+      "Samora Machel Júnior",
+      "Ferroviário"
+    ]
+  },
+  {
+    "id": 196,
+    "words": [
+      "Dominguês Pelembe",
+      "Administração Nacional de Estradas",
+      "Praça dos Heróis Moçambicanos",
+      "Cinzento",
+      "Parque Nacional do Limpopo"
+    ]
+  },
+  {
+    "id": 197,
+    "words": [
+      "Xai-Xai",
+      "Sebastião Marcos Mabote",
+      "Conselho de Ministros",
+      "Mercado Central de Maputo",
+      "Verde-Esmeralda"
+    ]
+  },
+  {
+    "id": 198,
+    "words": [
+      "Búzi",
+      "Lutero Simango",
+      "Violeta",
+      "Presidência da República de Moçambique",
+      "Engenheiro"
+    ]
+  },
+  {
+    "id": 199,
+    "words": [
+      "Bronze",
+      "Montepuez",
+      "Caril de Camarão",
+      "Paulina Chiziane",
+      "Ministério do Género, Criança e Acção Social"
+    ]
+  },
+  {
+    "id": 200,
+    "words": [
+      "Catedral de Maputo",
+      "Instituto Nacional de Estatística",
+      "Namaacha",
+      "Bege",
+      "José Craveirinha"
+    ]
+  },
+  {
+    "id": 201,
+    "words": [
+      "Nampula",
+      "Venâncio Mondlane",
+      "Comboio",
+      "Serviço Nacional de Investigação Criminal",
+      "Marfim"
+    ]
+  },
+  {
+    "id": 202,
+    "words": [
+      "Hernâni da Silva",
+      "Albufeira de Cahora Bassa",
+      "Caramelo",
+      "Direcção Nacional de Identificação Civil",
+      "Mukhero"
+    ]
+  },
+  {
+    "id": 203,
+    "words": [
+      "Cobre",
+      "Ministério da Educação e Desenvolvimento Humano",
+      "Rio Licungo",
+      "Malangatana Ngwenya",
+      "Búfalo"
+    ]
+  },
+  {
+    "id": 204,
+    "words": [
+      "Armando Guebuza",
+      "Tete",
+      "Chamussa",
+      "Verde-Oliva",
+      "Instituto Nacional de Estatística"
+    ]
+  },
+  {
+    "id": 205,
+    "words": [
+      "Xipamanine",
+      "Alberto Vaquina",
+      "Rosa",
+      "Tribunal Supremo de Moçambique",
+      "Computador"
+    ]
+  },
+  {
+    "id": 206,
+    "words": [
+      "Tico-Tico Bucuane",
+      "Rosa-Choque",
+      "Vilankulo",
+      "Instituto Nacional de Gestão de Desastres",
+      "Batuque"
+    ]
+  },
+  {
+    "id": 207,
+    "words": [
+      "Secretariado Técnico de Administração Eleitoral",
+      "Azul-Marinho",
+      "Engenheiro",
+      "Rio Incomáti",
+      "Esperança Bias"
+    ]
+  },
+  {
+    "id": 208,
+    "words": [
+      "Castanho-Escuro",
+      "Magaíza",
+      "Marcelino dos Santos",
+      "Mahotas",
+      "Conselho Constitucional"
+    ]
+  },
+  {
+    "id": 209,
+    "words": [
+      "Ocre",
+      "Cuamba",
+      "Neyma",
+      "Ministério dos Negócios Estrangeiros e Cooperação",
+      "Arroz de Coco"
+    ]
+  },
+  {
+    "id": 210,
+    "words": [
+      "Ministério da Cultura e Turismo",
+      "Mercado do Peixe",
+      "Carmim",
+      "Malanga",
+      "Adriano Maleiane"
+    ]
+  },
+  {
+    "id": 211,
+    "words": [
+      "Púrpura",
+      "Mafalala",
+      "Relógio de Pulso",
+      "G2",
+      "Secretaria de Estado do Desporto"
+    ]
+  },
+  {
+    "id": 212,
+    "words": [
+      "Pemba",
+      "Instituto Nacional de Meteorologia",
+      "Timbila Chope",
+      "Amarelo-Torrado",
+      "Carlos Cardoso"
+    ]
+  },
+  {
+    "id": 213,
+    "words": [
+      "Malhangalene",
+      "Clube Costa do Sol",
+      "Polícia da República de Moçambique",
+      "Samora Machel",
+      "Azul"
+    ]
+  },
+  {
+    "id": 214,
+    "words": [
+      "Índigo",
+      "Matapa",
+      "Conselho de Ministros",
+      "Rio Púngoè",
+      "Moreira Chonguiça"
+    ]
+  },
+  {
+    "id": 215,
+    "words": [
+      "Chókwè",
+      "Instituto Nacional de Saúde",
+      "Ponte Kassuende",
+      "Graça Machel",
+      "Prata"
+    ]
+  },
+  {
+    "id": 216,
+    "words": [
+      "Matola",
+      "Sura de Palmeira",
+      "Creme",
+      "Tribunal Administrativo",
+      "Mingas"
+    ]
+  },
+  {
+    "id": 217,
+    "words": [
+      "Secretaria de Estado da Juventude e Emprego",
+      "Barco",
+      "Laylizzy",
+      "Ponta do Ouro",
+      "Verde-Água"
+    ]
+  },
+  {
+    "id": 218,
+    "words": [
+      "EDM (Electricidade de Moçambique)",
+      "Golfinho",
+      "Cinza-Chumbo",
+      "Fany Mpfumo",
+      "Laulane"
+    ]
+  },
+  {
+    "id": 219,
+    "words": [
+      "Médico",
+      "CFM (Caminhos de Ferro de Moçambique)",
+      "Amarelo-Ouro",
+      "Niassa",
+      "Luísa Diogo"
+    ]
+  },
+  {
+    "id": 220,
+    "words": [
+      "Ministério do Trabalho e Segurança Social",
+      "Laranja",
+      "Gondola",
+      "Leão da Gorongosa",
+      "Stewart Sukuma"
+    ]
+  },
+  {
+    "id": 221,
+    "words": [
+      "Arquipélago de Bazaruto",
+      "Dumba Nengue",
+      "Salmão",
+      "Ministério do Mar, Águas Interiores e Pescas",
+      "Tico-Tico Bucuane"
+    ]
+  },
+  {
+    "id": 222,
+    "words": [
+      "Ministério dos Combatentes",
+      "Zimpeto",
+      "Magenta",
+      "Maheu",
+      "Carlos Cardoso"
+    ]
+  },
+  {
+    "id": 223,
+    "words": [
+      "Noémia de Sousa",
+      "Preto",
+      "Ministério da Economia e Finanças",
+      "Maputo Província",
+      "Ponte Samora Machel (Tete)"
+    ]
+  },
+  {
+    "id": 224,
+    "words": [
+      "Dukani",
+      "Salomão Moyana",
+      "Maxixe",
+      "Assembleia da República",
+      "Lavanda"
+    ]
+  },
+  {
+    "id": 225,
+    "words": [
+      "Mocuba",
+      "Caril de Amendoim",
+      "Ministério da Ciência, Tecnologia e Ensino Superior",
+      "Dama do Bling",
+      "Azul-Celeste"
+    ]
+  },
+  {
+    "id": 226,
+    "words": [
+      "Bordeaux (Bordô)",
+      "Professor",
+      "Manica",
+      "Samora Machel Júnior",
+      "Autoridade Tributária de Moçambique"
+    ]
+  },
+  {
+    "id": 227,
+    "words": [
+      "Jardim",
+      "Ministério da Defesa Nacional",
+      "Casa de Ferro",
+      "Pérola",
+      "Paulina Chiziane"
+    ]
+  },
+  {
+    "id": 228,
+    "words": [
+      "Inhambane",
+      "Gabinete do Primeiro-Ministro",
+      "Vinho",
+      "Rinoceronte",
+      "Fany Mpfumo"
+    ]
+  },
+  {
+    "id": 229,
+    "words": [
+      "Ministério dos Transportes e Comunicações",
+      "Castanho-Claro",
+      "Cabo Delgado",
+      "Ossufo Momade",
+      "Caril de Camarão"
+    ]
+  },
+  {
+    "id": 230,
+    "words": [
+      "Conservatória do Registo Civil",
+      "Coral",
+      "Marrabenta",
+      "Beira",
+      "Laylizzy"
+    ]
+  },
+  {
+    "id": 231,
+    "words": [
+      "Twenty Fingers",
+      "Girafa",
+      "Anil",
+      "Imprensa Nacional de Moçambique",
+      "Marromeu"
+    ]
+  },
+  {
+    "id": 232,
+    "words": [
+      "Chibuto",
+      "Ciano",
+      "Ponte Maputo-Katembe",
+      "Sebastião Marcos Mabote",
+      "Ministério da Administração Estatal e Função Pública"
+    ]
+  },
+  {
+    "id": 233,
+    "words": [
+      "Josina Machel",
+      "Ministério da Saúde",
+      "Black Bulls",
+      "Rio Zambeze",
+      "Azul-Turquesa"
+    ]
+  },
+  {
+    "id": 234,
+    "words": [
+      "Pandza",
+      "Neyma",
+      "Ilha de Moçambique",
+      "Ministério das Obras Públicas, Habitação e Recursos Hídricos",
+      "Amarelo"
+    ]
+  },
+  {
+    "id": 235,
+    "words": [
+      "Mingas",
+      "Polana Cimento",
+      "Branco",
+      "Comissão Nacional de Eleições",
+      "Xiguinha de Mandioca"
+    ]
+  },
+  {
+    "id": 236,
+    "words": [
+      "Champanhe",
+      "Parque Nacional da Gorongosa",
+      "Forças Armadas de Defesa de Moçambique",
+      "Karingana Wa Karingana",
+      "Graça Machel"
+    ]
+  },
+  {
+    "id": 237,
+    "words": [
+      "Adriano Maleiane",
+      "Ferroviário de Maputo",
+      "Verde-Limão",
+      "Presidência da República de Moçambique",
+      "Aeroporto"
+    ]
+  },
+  {
+    "id": 238,
+    "words": [
+      "Bilene",
+      "Fúcsia",
+      "Alberto Vaquina",
+      "Ministério da Justiça, Assuntos Constitucionais e Religiosos",
+      "Clube Maxaquene"
+    ]
+  },
+  {
+    "id": 239,
+    "words": [
+      "Ministério da Terra e Ambiente",
+      "Telemóvel",
+      "Armando Guebuza",
+      "Chamanculo",
+      "Terracota"
+    ]
+  },
+  {
+    "id": 240,
+    "words": [
+      "Banco de Moçambique",
+      "Estádio Nacional do Zimpeto",
+      "Lilás",
+      "Gurúè",
+      "Ziqo"
+    ]
+  },
+  {
+    "id": 241,
+    "words": [
+      "Chapa 100",
+      "Moreira Chonguiça",
+      "Azul-Marinho",
+      "Marracuene",
+      "Notariado de Moçambique"
+    ]
+  },
+  {
+    "id": 242,
+    "words": [
+      "União Desportiva do Songo",
+      "Nampula",
+      "Eduardo Silva Nihia",
+      "Roxo",
+      "Ministério da Agricultura e Desenvolvimento Rural"
+    ]
+  },
+  {
+    "id": 243,
+    "words": [
+      "Geny Catamo",
+      "T3",
+      "Bronze",
+      "Procuradoria-Geral da República",
+      "Xigubo de Gaza"
+    ]
+  },
+  {
+    "id": 244,
+    "words": [
+      "Dança Tufo",
+      "Quelimane",
+      "Prata",
+      "Ministério da Indústria e Comércio",
+      "Pascoal Mocumbi"
+    ]
+  },
+  {
+    "id": 245,
+    "words": [
+      "Capulana",
+      "Joaquim Chissano",
+      "Bordeaux (Bordô)",
+      "Machava",
+      "Ministério do Interior"
+    ]
+  },
+  {
+    "id": 246,
+    "words": [
+      "Desportivo de Maputo",
+      "Caramelo",
+      "Ministério do Género, Criança e Acção Social",
+      "Gaza",
+      "José Craveirinha"
+    ]
+  },
+  {
+    "id": 247,
+    "words": [
+      "Samora Machel",
+      "Administração Nacional de Estradas",
+      "Azul",
+      "Boane",
+      "Ferroviário da Beira"
+    ]
+  },
+  {
+    "id": 248,
+    "words": [
+      "Castanho-Claro",
+      "Manhiça",
+      "Hernâni da Silva",
+      "Fundo de Estradas",
+      "Txopela"
+    ]
+  },
+  {
+    "id": 249,
+    "words": [
+      "Cidade de Maputo",
+      "Kanimambo",
+      "Ministério dos Recursos Minerais e Energia",
+      "G2",
+      "Cinzento"
+    ]
+  },
+  {
+    "id": 250,
+    "words": [
+      "Ocre",
+      "Serviço Nacional de Salvação Pública",
+      "Janet Mondlane",
+      "Mambas (Selecção Nacional)",
+      "Mavalane"
+    ]
+  },
+  {
+    "id": 251,
+    "words": [
+      "Luísa Diogo",
+      "Mercado Central de Maputo",
+      "Procuradoria-Geral da República",
+      "Rosa",
+      "Moatize"
+    ]
+  },
+  {
+    "id": 252,
+    "words": [
+      "Advogado",
+      "Ministério da Indústria e Comércio",
+      "Alto Molócue",
+      "Maria de Lurdes Mutola",
+      "Verde-Água"
+    ]
+  },
+  {
+    "id": 253,
+    "words": [
+      "Verde",
+      "Lichinga",
+      "Caril de Caranguejo",
+      "Eduardo Mondlane",
+      "Ministério dos Combatentes"
+    ]
+  },
+  {
+    "id": 254,
+    "words": [
+      "Caia",
+      "Reinildo Mandava",
+      "Magenta",
+      "Autoridade Tributária de Moçambique",
+      "Chita"
+    ]
+  },
+  {
+    "id": 255,
+    "words": [
+      "Índigo",
+      "Chiquinho Conde",
+      "Liberdade",
+      "Makwayela",
+      "Presidência da República de Moçambique"
+    ]
+  },
+  {
+    "id": 256,
+    "words": [
+      "Lizha James",
+      "Zavala",
+      "Marfim",
+      "Conselho Constitucional",
+      "Chitenge"
+    ]
+  },
+  {
+    "id": 257,
+    "words": [
+      "Carmim",
+      "Mocímboa da Praia",
+      "Eusébio da Silva Ferreira",
+      "Makhewa",
+      "Ministério da Economia e Finanças"
+    ]
+  },
+  {
+    "id": 258,
+    "words": [
+      "Carlos Agostinho do Rosário",
+      "Pérola",
+      "Estádio da Machava",
+      "Ministério da Ciência, Tecnologia e Ensino Superior",
+      "Sofala"
+    ]
+  },
+  {
+    "id": 259,
+    "words": [
+      "Instituto Nacional de Estatística",
+      "Grafite",
+      "Maxaquene",
+      "Dança Mapiko",
+      "Lutero Simango"
+    ]
+  },
+  {
+    "id": 260,
+    "words": [
+      "Daniel Chapo",
+      "Galinha à Zambeziana",
+      "Ministério do Trabalho e Segurança Social",
+      "Azul-Turquesa",
+      "Praia do Tofo"
+    ]
+  },
+  {
+    "id": 261,
+    "words": [
+      "Rosa-Choque",
+      "Ministério da Educação e Desenvolvimento Humano",
+      "Jardim Tunduru",
+      "Filipe Nyusi",
+      "Rio Save"
+    ]
+  },
+  {
+    "id": 262,
+    "words": [
+      "Mr. Bow",
+      "Xitique",
+      "Polícia da República de Moçambique",
+      "Dourado",
+      "Chimoio"
+    ]
+  },
+  {
+    "id": 263,
+    "words": [
+      "Tete",
+      "Azul-Petróleo",
+      "Mia Couto",
+      "Tartaruga Marinha",
+      "Instituto Nacional de Gestão de Desastres"
+    ]
+  },
+  {
+    "id": 264,
+    "words": [
+      "Sommerschield",
+      "Julia Duarte",
+      "Prateado",
+      "Serviço Nacional de Investigação Criminal",
+      "Peixe Grelhado"
+    ]
+  },
+  {
+    "id": 265,
+    "words": [
+      "Costa do Sol",
+      "Vermelho-Escarlate",
+      "Daviz Simango",
+      "Fundo de Estradas",
+      "Ucanhe de Canhu"
+    ]
+  },
+  {
+    "id": 266,
+    "words": [
+      "Lobo do Mar",
+      "Cinza-Chumbo",
+      "Hulene",
+      "Ministério dos Negócios Estrangeiros e Cooperação",
+      "Alice Mabota"
+    ]
+  },
+  {
+    "id": 267,
+    "words": [
+      "Esperança Bias",
+      "Fomento",
+      "Secretaria de Estado da Juventude e Emprego",
+      "Praça dos Heróis Moçambicanos",
+      "Púrpura"
+    ]
+  },
+  {
+    "id": 268,
+    "words": [
+      "Stewart Sukuma",
+      "Bombeiro",
+      "Dondo",
+      "Banco de Moçambique",
+      "Vermelho"
+    ]
+  },
+  {
+    "id": 269,
+    "words": [
+      "Amarelo-Ouro",
+      "Macaneta",
+      "Wazimbo",
+      "Fortaleza de Maputo",
+      "Ministério do Interior"
+    ]
+  },
+  {
+    "id": 270,
+    "words": [
+      "Morrumbala",
+      "Ministério da Defesa Nacional",
+      "Afonso Dhlakama",
+      "Violeta",
+      "Castanha de Caju"
+    ]
+  },
+  {
+    "id": 271,
+    "words": [
+      "Ministério dos Transportes e Comunicações",
+      "Elefante Africano",
+      "Inhambane",
+      "Vinho",
+      "Venâncio Mondlane"
+    ]
+  },
+  {
+    "id": 272,
+    "words": [
+      "CFM (Caminhos de Ferro de Moçambique)",
+      "Dominguês Pelembe",
+      "Terracota",
+      "Zambézia",
+      "Badjia de Feijão"
+    ]
+  },
+  {
+    "id": 273,
+    "words": [
+      "Ministério da Justiça, Assuntos Constitucionais e Religiosos",
+      "Valter Artístico",
+      "Estação Central dos CFM",
+      "Gorongosa",
+      "Champanhe"
+    ]
+  },
+  {
+    "id": 274,
+    "words": [
+      "Piri-piri Moçambicano",
+      "Amarelo",
+      "Rio Limpopo",
+      "Conservatória do Registo Civil",
+      "Marcelino dos Santos"
+    ]
+  },
+  {
+    "id": 275,
+    "words": [
+      "Malangatana Ngwenya",
+      "Televisão",
+      "Palma",
+      "Castanho",
+      "Forças Armadas de Defesa de Moçambique"
+    ]
+  },
+  {
+    "id": 276,
+    "words": [
+      "Marcelino dos Santos",
+      "Mota",
+      "Ministério dos Recursos Minerais e Energia",
+      "Nacala",
+      "Castanho-Escuro"
+    ]
+  },
+  {
+    "id": 277,
+    "words": [
+      "Munhuana",
+      "Imprensa Nacional de Moçambique",
+      "Verde-Oliva",
+      "Praça da Independência",
+      "Janet Mondlane"
+    ]
+  },
+  {
+    "id": 278,
+    "words": [
+      "Azul-Celeste",
+      "Direcção Nacional de Identificação Civil",
+      "Maputo",
+      "Bicicleta",
+      "Dominguês Pelembe"
+    ]
+  },
+  {
+    "id": 279,
+    "words": [
+      "Armando Guebuza",
+      "Secretaria de Estado do Desporto",
+      "Verde-Esmeralda",
+      "Tubarão-Baleia",
+      "Angoche"
+    ]
+  },
+  {
+    "id": 280,
+    "words": [
+      "Ziqo",
+      "Tribunal Administrativo",
+      "Polana Caniço",
+      "Lilás",
+      "Mercado Janet"
+    ]
+  },
+  {
+    "id": 281,
+    "words": [
+      "Mucapata",
+      "Bege",
+      "Comissão Nacional de Eleições",
+      "Catandica",
+      "José Craveirinha"
+    ]
+  },
+  {
+    "id": 282,
+    "words": [
+      "Chiquinho Conde",
+      "Secretariado Técnico de Administração Eleitoral",
+      "Cobre",
+      "Lago Niassa",
+      "Dugongo de Bazaruto"
+    ]
+  },
+  {
+    "id": 283,
+    "words": [
+      "Conselho de Ministros",
+      "Liberdade",
+      "Drone",
+      "Lizha James",
+      "Amarelo-Canário"
+    ]
+  },
+  {
+    "id": 284,
+    "words": [
+      "Noémia de Sousa",
+      "Fúcsia",
+      "Rio Limpopo",
+      "Notariado de Moçambique",
+      "Crocodilo do Nilo"
+    ]
+  },
+  {
+    "id": 285,
+    "words": [
+      "Esperança Bias",
+      "Camarão Tigre",
+      "Administração Nacional de Estradas",
+      "Inhambane",
+      "Marrom"
+    ]
+  },
+  {
+    "id": 286,
+    "words": [
+      "Verde-Limão",
+      "Gondola",
+      "Piloto de Avião",
+      "Twenty Fingers",
+      "Ministério da Administração Estatal e Função Pública"
+    ]
+  },
+  {
+    "id": 287,
+    "words": [
+      "Nhangau",
+      "Verde-Garrafa",
+      "Tico-Tico Bucuane",
+      "Polana Cimento",
+      "EDM (Electricidade de Moçambique)"
+    ]
+  },
+  {
+    "id": 288,
+    "words": [
+      "Ministério do Mar, Águas Interiores e Pescas",
+      "Ponte Armando Guebuza",
+      "Laulane",
+      "Graça Machel",
+      "Anil"
+    ]
+  },
+  {
+    "id": 289,
+    "words": [
+      "Filipe Nyusi",
+      "Ministério da Terra e Ambiente",
+      "Avião",
+      "Nacala",
+      "Lavanda"
+    ]
+  },
+  {
+    "id": 290,
+    "words": [
+      "Namaacha",
+      "Ministério da Cultura e Turismo",
+      "Torta de Banana",
+      "Mostarda",
+      "Daniel Chapo"
+    ]
+  },
+  {
+    "id": 291,
+    "words": [
+      "Pascoal Mocumbi",
+      "Pão com Badjia",
+      "Assembleia da República",
+      "Ponta do Ouro",
+      "Coral"
+    ]
+  },
+  {
+    "id": 292,
+    "words": [
+      "Adriano Maleiane",
+      "Amarelo-Torrado",
+      "Flamingo Rosa",
+      "Ministério das Obras Públicas, Habitação e Recursos Hídricos",
+      "Xipamanine"
+    ]
+  },
+  {
+    "id": 293,
+    "words": [
+      "Xima",
+      "Ministério da Agricultura e Desenvolvimento Rural",
+      "Josina Machel",
+      "Branco",
+      "Dondo"
+    ]
+  },
+  {
+    "id": 294,
+    "words": [
+      "Leopardo",
+      "Benfica",
+      "Gabinete do Primeiro-Ministro",
+      "Luísa Diogo",
+      "Turquesa"
+    ]
+  },
+  {
+    "id": 295,
+    "words": [
+      "Eduardo Silva Nihia",
+      "Zambézia",
+      "Catedral de Maputo",
+      "Tribunal Supremo de Moçambique",
+      "Preto"
+    ]
+  },
+  {
+    "id": 296,
+    "words": [
+      "Polícia de Trânsito",
+      "Beira",
+      "Serviço Nacional de Salvação Pública",
+      "Dama do Bling",
+      "Laranja"
+    ]
+  },
+  {
+    "id": 297,
+    "words": [
+      "Instituto Nacional de Meteorologia",
+      "Cuamba",
+      "Ossufo Momade",
+      "Hipopótamo",
+      "Salmão"
+    ]
+  },
+  {
+    "id": 298,
+    "words": [
+      "Instituto Nacional de Saúde",
+      "Verde-Musgo",
+      "Costa do Sol",
+      "Moreira Chonguiça",
+      "Pescador"
+    ]
+  },
+  {
+    "id": 299,
+    "words": [
+      "Ciano",
+      "Feijoada Moçambicana",
+      "Mia Couto",
+      "Ministério do Género, Criança e Acção Social",
+      "Munhuana"
+    ]
+  },
+  {
+    "id": 300,
+    "words": [
+      "Xai-Xai",
+      "Carlos Agostinho do Rosário",
+      "Ministério da Saúde",
+      "Creme",
+      "Zebra"
+    ]
+  },
+  {
+    "id": 301,
+    "words": [
+      "Rosa-Choque",
+      "Mukhero",
+      "Zimpeto",
+      "Instituto Nacional de Saúde",
+      "Maria de Lurdes Mutola"
+    ]
+  },
+  {
+    "id": 302,
+    "words": [
+      "Prateado",
+      "Ferroviário de Maputo",
+      "Laylizzy",
+      "Matola",
+      "Conselho Constitucional"
+    ]
+  },
+  {
+    "id": 303,
+    "words": [
+      "Sebastião Marcos Mabote",
+      "Grafite",
+      "Secretaria de Estado do Desporto",
+      "Castanha de Caju",
+      "Monte Binga"
+    ]
+  },
+  {
+    "id": 304,
+    "words": [
+      "Amarelo",
+      "Secretaria de Estado da Juventude e Emprego",
+      "Salomão Moyana",
+      "Caia",
+      "Zebra"
+    ]
+  },
+  {
+    "id": 305,
+    "words": [
+      "Crocodilo do Nilo",
+      "Alice Mabota",
+      "Amarelo-Canário",
+      "Autoridade Tributária de Moçambique",
+      "Rio Púngoè"
+    ]
+  },
+  {
+    "id": 306,
+    "words": [
+      "Afonso Dhlakama",
+      "Ministério da Ciência, Tecnologia e Ensino Superior",
+      "Púrpura",
+      "Xigubo de Gaza",
+      "Moatize"
+    ]
+  },
+  {
+    "id": 307,
+    "words": [
+      "Dourado",
+      "Parque Nacional do Limpopo",
+      "Ministério da Educação e Desenvolvimento Humano",
+      "Alberto Vaquina",
+      "Caril de Amendoim"
+    ]
+  },
+  {
+    "id": 308,
+    "words": [
+      "Laranja",
+      "Dumba Nengue",
+      "Mafalala",
+      "Julia Duarte",
+      "Tribunal Administrativo"
+    ]
+  },
+  {
+    "id": 309,
+    "words": [
+      "Samora Machel Júnior",
+      "Angoche",
+      "Black Bulls",
+      "Carmim",
+      "Ministério dos Negócios Estrangeiros e Cooperação"
+    ]
+  },
+  {
+    "id": 310,
+    "words": [
+      "Ministério das Obras Públicas, Habitação e Recursos Hídricos",
+      "Fúcsia",
+      "Malhangalene",
+      "Karingana Wa Karingana",
+      "Wazimbo"
+    ]
+  },
+  {
+    "id": 311,
+    "words": [
+      "Champanhe",
+      "Serviço Nacional de Investigação Criminal",
+      "Mingas",
+      "Piri-piri Moçambicano",
+      "Parque Nacional da Gorongosa"
+    ]
+  },
+  {
+    "id": 312,
+    "words": [
+      "Dugongo de Bazaruto",
+      "Comissão Nacional de Eleições",
+      "Geny Catamo",
+      "Castanho",
+      "Catandica"
+    ]
+  },
+  {
+    "id": 313,
+    "words": [
+      "Ministério dos Transportes e Comunicações",
+      "Rosa",
+      "União Desportiva do Songo",
+      "Eusébio da Silva Ferreira",
+      "Maputo Província"
+    ]
+  },
+  {
+    "id": 314,
+    "words": [
+      "Bordeaux (Bordô)",
+      "Magaíza",
+      "Malanga",
+      "Reinildo Mandava",
+      "Ministério do Trabalho e Segurança Social"
+    ]
+  },
+  {
+    "id": 315,
+    "words": [
+      "Rio Save",
+      "Joaquim Chissano",
+      "Chapa 100",
+      "Castanho-Escuro",
+      "Ministério da Justiça, Assuntos Constitucionais e Religiosos"
+    ]
+  },
+  {
+    "id": 316,
+    "words": [
+      "Ocre",
+      "Malangatana Ngwenya",
+      "Secretariado Técnico de Administração Eleitoral",
+      "Marracuene",
+      "Bicicleta"
+    ]
+  },
+  {
+    "id": 317,
+    "words": [
+      "Makwayela",
+      "Instituto Nacional de Estatística",
+      "Verde-Limão",
+      "Quelimane",
+      "Mr. Bow"
+    ]
+  },
+  {
+    "id": 318,
+    "words": [
+      "Pemba",
+      "Lutero Simango",
+      "Makhewa",
+      "Instituto Nacional de Meteorologia",
+      "Violeta"
+    ]
+  },
+  {
+    "id": 319,
+    "words": [
+      "Neyma",
+      "Estação Central dos CFM",
+      "Assembleia da República",
+      "Azul-Celeste",
+      "Chimoio"
+    ]
+  },
+  {
+    "id": 320,
+    "words": [
+      "Hernâni da Silva",
+      "Tribunal Supremo de Moçambique",
+      "Índigo",
+      "Piloto de Avião",
+      "Mocuba"
+    ]
+  },
+  {
+    "id": 321,
+    "words": [
+      "Samora Machel",
+      "Sommerschield",
+      "CFM (Caminhos de Ferro de Moçambique)",
+      "Amarelo-Ouro",
+      "Marrabenta"
+    ]
+  },
+  {
+    "id": 322,
+    "words": [
+      "Direcção Nacional de Identificação Civil",
+      "Maxaquene",
+      "Azul",
+      "Carlos Cardoso",
+      "Estádio da Machava"
+    ]
+  },
+  {
+    "id": 323,
+    "words": [
+      "Daviz Simango",
+      "Banco de Moçambique",
+      "Catedral de Maputo",
+      "Vermelho-Escarlate",
+      "Gaza"
+    ]
+  },
+  {
+    "id": 324,
+    "words": [
+      "Mercado Central de Maputo",
+      "Conselho de Ministros",
+      "Valter Artístico",
+      "T3",
+      "Vermelho"
+    ]
+  },
+  {
+    "id": 325,
+    "words": [
+      "Lilás",
+      "Leopardo",
+      "Ministério da Indústria e Comércio",
+      "Paulina Chiziane",
+      "Vilankulo"
+    ]
+  },
+  {
+    "id": 326,
+    "words": [
+      "Caramelo",
+      "G2",
+      "Albufeira de Cahora Bassa",
+      "Desportivo de Maputo",
+      "Ministério da Cultura e Turismo"
+    ]
+  },
+  {
+    "id": 327,
+    "words": [
+      "Stewart Sukuma",
+      "Verde-Água",
+      "Maheu",
+      "Ministério do Género, Criança e Acção Social",
+      "Polana Caniço"
+    ]
+  },
+  {
+    "id": 328,
+    "words": [
+      "Ministério da Saúde",
+      "Jardim",
+      "Eduardo Mondlane",
+      "Preto",
+      "Médico"
+    ]
+  },
+  {
+    "id": 329,
+    "words": [
+      "Conservatória do Registo Civil",
+      "Lichinga",
+      "Barco",
+      "Azul-Marinho",
+      "Fany Mpfumo"
+    ]
+  },
+  {
+    "id": 330,
+    "words": [
+      "Cinza-Chumbo",
+      "Ministério da Economia e Finanças",
+      "Manica",
+      "Xitique",
+      "Venâncio Mondlane"
+    ]
+  },
+  {
+    "id": 331,
+    "words": [
+      "Ponte Armando Guebuza",
+      "Valter Artístico",
+      "Nampula",
+      "Polícia da República de Moçambique",
+      "Anil"
+    ]
+  },
+  {
+    "id": 332,
+    "words": [
+      "Televisão",
+      "Serviço Nacional de Salvação Pública",
+      "Terracota",
+      "Arquipélago de Bazaruto",
+      "Armando Guebuza"
+    ]
+  },
+  {
+    "id": 333,
+    "words": [
+      "Txopela",
+      "Nampula",
+      "Azul-Turquesa",
+      "Ministério da Agricultura e Desenvolvimento Rural",
+      "Malangatana Ngwenya"
+    ]
+  },
+  {
+    "id": 334,
+    "words": [
+      "Marfim",
+      "Twenty Fingers",
+      "Xima",
+      "EDM (Electricidade de Moçambique)",
+      "Cabo Delgado"
+    ]
+  },
+  {
+    "id": 335,
+    "words": [
+      "Drone",
+      "Ministério dos Combatentes",
+      "Mahotas",
+      "Neyma",
+      "Ciano"
+    ]
+  },
+  {
+    "id": 336,
+    "words": [
+      "Palma",
+      "Lutero Simango",
+      "Ministério da Administração Estatal e Função Pública",
+      "Capulana",
+      "Salmão"
+    ]
+  },
+  {
+    "id": 337,
+    "words": [
+      "Verde-Esmeralda",
+      "Carlos Agostinho do Rosário",
+      "Ministério da Defesa Nacional",
+      "Clube Maxaquene",
+      "Sofala"
+    ]
+  },
+  {
+    "id": 338,
+    "words": [
+      "Verde-Oliva",
+      "Notariado de Moçambique",
+      "G2",
+      "Coop",
+      "Badjia de Feijão"
+    ]
+  },
+  {
+    "id": 339,
+    "words": [
+      "Búzi",
+      "Pandza",
+      "Creme",
+      "Procuradoria-Geral da República",
+      "Luísa Diogo"
+    ]
+  },
+  {
+    "id": 340,
+    "words": [
+      "Ziqo",
+      "Zavala",
+      "Arroz de Coco",
+      "Ministério do Interior",
+      "Verde-Garrafa"
+    ]
+  },
+  {
+    "id": 341,
+    "words": [
+      "Reinildo Mandava",
+      "Instituto Nacional de Gestão de Desastres",
+      "Tete",
+      "Branco",
+      "Praça dos Heróis Moçambicanos"
+    ]
+  },
+  {
+    "id": 342,
+    "words": [
+      "Relógio de Pulso",
+      "Ilha de Moçambique",
+      "Marrom",
+      "Forças Armadas de Defesa de Moçambique",
+      "Afonso Dhlakama"
+    ]
+  },
+  {
+    "id": 343,
+    "words": [
+      "Amarelo-Torrado",
+      "Hernâni da Silva",
+      "Gabinete do Primeiro-Ministro",
+      "Ferroviário da Beira",
+      "Lago Niassa"
+    ]
+  },
+  {
+    "id": 344,
+    "words": [
+      "Mota",
+      "Morrumbala",
+      "Lizha James",
+      "Cinzento",
+      "Ministério do Mar, Águas Interiores e Pescas"
+    ]
+  },
+  {
+    "id": 345,
+    "words": [
+      "Fundo de Estradas",
+      "Rio Zambeze",
+      "Tartaruga Marinha",
+      "José Craveirinha",
+      "Azul-Petróleo"
+    ]
+  },
+  {
+    "id": 346,
+    "words": [
+      "Feijoada Moçambicana",
+      "Rio Licungo",
+      "Vinho",
+      "Presidência da República de Moçambique",
+      "Samora Machel"
+    ]
+  },
+  {
+    "id": 347,
+    "words": [
+      "Ponte Maputo-Katembe",
+      "Julia Duarte",
+      "Coral",
+      "Gorongosa",
+      "Ministério dos Recursos Minerais e Energia"
+    ]
+  },
+  {
+    "id": 348,
+    "words": [
+      "Camarão Tigre",
+      "Joaquim Chissano",
+      "Imprensa Nacional de Moçambique",
+      "Alto Maé",
+      "Turquesa"
+    ]
+  },
+  {
+    "id": 349,
+    "words": [
+      "Rinoceronte",
+      "Maxixe",
+      "Prata",
+      "Administração Nacional de Estradas",
+      "Dominguês Pelembe"
+    ]
+  },
+  {
+    "id": 350,
+    "words": [
+      "Verde-Musgo",
+      "Xiguinha de Mandioca",
+      "Gurúè",
+      "Ministério da Terra e Ambiente",
+      "Mingas"
+    ]
+  },
+  {
+    "id": 351,
+    "words": [
+      "Mercado do Peixe",
+      "Maputo",
+      "Pérola",
+      "Paulina Chiziane",
+      "Secretariado Técnico de Administração Eleitoral"
+    ]
+  },
+  {
+    "id": 352,
+    "words": [
+      "Ponte Samora Machel (Tete)",
+      "Castanho-Claro",
+      "Pascoal Mocumbi",
+      "Hulene",
+      "Ministério das Obras Públicas, Habitação e Recursos Hídricos"
+    ]
+  },
+  {
+    "id": 353,
+    "words": [
+      "Janet Mondlane",
+      "Macaneta",
+      "Ministério da Indústria e Comércio",
+      "Sura de Palmeira",
+      "Mostarda"
+    ]
+  },
+  {
+    "id": 354,
+    "words": [
+      "Roxo",
+      "Ministério do Género, Criança e Acção Social",
+      "Moreira Chonguiça",
+      "Ferroviário",
+      "Flamingo Rosa"
+    ]
+  },
+  {
+    "id": 355,
+    "words": [
+      "Bege",
+      "Tete",
+      "Elefante Africano",
+      "Laylizzy",
+      "Instituto Nacional de Gestão de Desastres"
+    ]
+  },
+  {
+    "id": 356,
+    "words": [
+      "Ministério da Saúde",
+      "Bronze",
+      "Carlos Cardoso",
+      "Montepuez",
+      "Ponte Kassuende"
+    ]
+  },
+  {
+    "id": 357,
+    "words": [
+      "Golfinho",
+      "Eduardo Silva Nihia",
+      "Ministério da Agricultura e Desenvolvimento Rural",
+      "Cobre",
+      "Mocímboa da Praia"
+    ]
+  },
+  {
+    "id": 358,
+    "words": [
+      "Chibuto",
+      "Magenta",
+      "Ministério da Educação e Desenvolvimento Humano",
+      "Alberto Vaquina",
+      "Ucanhe de Canhu"
+    ]
+  },
+  {
+    "id": 359,
+    "words": [
+      "Lavanda",
+      "Albazine",
+      "Ministério da Economia e Finanças",
+      "Filipe Nyusi",
+      "Batuque"
+    ]
+  },
+  {
+    "id": 360,
+    "words": [
+      "Cidade de Maputo",
+      "Ministério do Trabalho e Segurança Social",
+      "Pescador",
+      "Esperança Bias",
+      "Verde"
+    ]
+  },
+  {
+    "id": 361,
+    "words": [
+      "Ministério da Administração Estatal e Função Pública",
+      "Avião",
+      "Daniel Chapo",
+      "Niassa",
+      "Cinza-Chumbo"
+    ]
+  },
+  {
+    "id": 362,
+    "words": [
+      "Rio Incomáti",
+      "Caril de Camarão",
+      "Presidência da República de Moçambique",
+      "Amarelo-Torrado",
+      "Alice Mabota"
+    ]
+  },
+  {
+    "id": 363,
+    "words": [
+      "Praça da Independência",
+      "Marromeu",
+      "Maria de Lurdes Mutola",
+      "Ministério do Mar, Águas Interiores e Pescas",
+      "Azul-Petróleo"
+    ]
+  },
+  {
+    "id": 364,
+    "words": [
+      "Boane",
+      "Matapa",
+      "Fundo de Estradas",
+      "Dama do Bling",
+      "Lilás"
+    ]
+  },
+  {
+    "id": 365,
+    "words": [
+      "Fomento",
+      "Stewart Sukuma",
+      "Instituto Nacional de Saúde",
+      "Salmão",
+      "Jardim Tunduru"
+    ]
+  },
+  {
+    "id": 366,
+    "words": [
+      "Conservatória do Registo Civil",
+      "Amarelo-Canário",
+      "Ossufo Momade",
+      "Comboio",
+      "Praia do Tofo"
+    ]
+  },
+  {
+    "id": 367,
+    "words": [
+      "Grafite",
+      "Sebastião Marcos Mabote",
+      "Mavalane",
+      "Ministério dos Negócios Estrangeiros e Cooperação",
+      "Pão com Badjia"
+    ]
+  },
+  {
+    "id": 368,
+    "words": [
+      "Assembleia da República",
+      "Rosa-Choque",
+      "Aeroporto",
+      "Geny Catamo",
+      "Timbila Chope"
+    ]
+  },
+  {
+    "id": 369,
+    "words": [
+      "Eduardo Mondlane",
+      "Vermelho",
+      "Dança Mapiko",
+      "Secretaria de Estado da Juventude e Emprego",
+      "Bilene"
+    ]
+  },
+  {
+    "id": 370,
+    "words": [
+      "Clube Costa do Sol",
+      "Alto Molócue",
+      "Laranja",
+      "Wazimbo",
+      "Banco de Moçambique"
+    ]
+  },
+  {
+    "id": 371,
+    "words": [
+      "Vermelho-Escarlate",
+      "Venâncio Mondlane",
+      "Polícia de Trânsito",
+      "Serviço Nacional de Investigação Criminal",
+      "Machava"
+    ]
+  },
+  {
+    "id": 372,
+    "words": [
+      "Comissão Nacional de Eleições",
+      "Verde-Esmeralda",
+      "Chókwè",
+      "Chita",
+      "Chiquinho Conde"
+    ]
+  },
+  {
+    "id": 373,
+    "words": [
+      "Salomão Moyana",
+      "Champanhe",
+      "Manhiça",
+      "Polícia da República de Moçambique",
+      "Fortaleza de Maputo"
+    ]
+  },
+  {
+    "id": 374,
+    "words": [
+      "Magenta",
+      "Inhambane",
+      "Daviz Simango",
+      "Caril de Caranguejo",
+      "Tribunal Supremo de Moçambique"
+    ]
+  },
+  {
+    "id": 375,
+    "words": [
+      "Verde-Musgo",
+      "Chamanculo",
+      "Josina Machel",
+      "Ministério da Ciência, Tecnologia e Ensino Superior",
+      "Búfalo"
+    ]
+  },
+  {
+    "id": 376,
+    "words": [
+      "Ministério da Defesa Nacional",
+      "Adriano Maleiane",
+      "Rio Rovuma",
+      "Coral",
+      "Galinha à Zambeziana"
+    ]
+  },
+  {
+    "id": 377,
+    "words": [
+      "Direcção Nacional de Identificação Civil",
+      "Lobo do Mar",
+      "Mia Couto",
+      "Maxixe",
+      "Verde"
+    ]
+  },
+  {
+    "id": 378,
+    "words": [
+      "Eusébio da Silva Ferreira",
+      "Ministério dos Transportes e Comunicações",
+      "Terracota",
+      "Dukani",
+      "Albufeira de Cahora Bassa"
+    ]
+  },
+  {
+    "id": 379,
+    "words": [
+      "CFM (Caminhos de Ferro de Moçambique)",
+      "Chitenge",
+      "Mr. Bow",
+      "Gurúè",
+      "Turquesa"
+    ]
+  },
+  {
+    "id": 380,
+    "words": [
+      "Imprensa Nacional de Moçambique",
+      "Niassa",
+      "Anil",
+      "Fany Mpfumo",
+      "Mambas (Selecção Nacional)"
+    ]
+  },
+  {
+    "id": 381,
+    "words": [
+      "Azul-Marinho",
+      "Casa de Ferro",
+      "Rio Licungo",
+      "Marcelino dos Santos",
+      "Tribunal Administrativo"
+    ]
+  },
+  {
+    "id": 382,
+    "words": [
+      "Castanho-Escuro",
+      "Graça Machel",
+      "Ministério da Justiça, Assuntos Constitucionais e Religiosos",
+      "Mercado Janet",
+      "Maputo Província"
+    ]
+  },
+  {
+    "id": 383,
+    "words": [
+      "Polana Cimento",
+      "Mucapata",
+      "Autoridade Tributária de Moçambique",
+      "Púrpura",
+      "Tico-Tico Bucuane"
+    ]
+  },
+  {
+    "id": 384,
+    "words": [
+      "Advogado",
+      "Vilankulo",
+      "Ocre",
+      "Samora Machel Júnior",
+      "Instituto Nacional de Meteorologia"
+    ]
+  },
+  {
+    "id": 385,
+    "words": [
+      "Dança Tufo",
+      "Ministério da Cultura e Turismo",
+      "Cinzento",
+      "Munhuana",
+      "Noémia de Sousa"
+    ]
+  },
+  {
+    "id": 386,
+    "words": [
+      "Estádio Nacional do Zimpeto",
+      "Violeta",
+      "Ziqo",
+      "Cabo Delgado",
+      "Ministério dos Combatentes"
+    ]
+  },
+  {
+    "id": 387,
+    "words": [
+      "Girafa",
+      "Lutero Simango",
+      "Ministério dos Recursos Minerais e Energia",
+      "Jardim",
+      "Vinho"
+    ]
+  },
+  {
+    "id": 388,
+    "words": [
+      "Conselho Constitucional",
+      "Bombeiro",
+      "Bordeaux (Bordô)",
+      "Chibuto",
+      "Eusébio da Silva Ferreira"
+    ]
+  },
+  {
+    "id": 389,
+    "words": [
+      "Secretaria de Estado do Desporto",
+      "Alberto Vaquina",
+      "Cobre",
+      "Telemóvel",
+      "Lichinga"
+    ]
+  },
+  {
+    "id": 390,
+    "words": [
+      "Leão da Gorongosa",
+      "Prata",
+      "Arquipélago de Bazaruto",
+      "Neyma",
+      "Ministério da Terra e Ambiente"
+    ]
+  },
+  {
+    "id": 391,
+    "words": [
+      "Dourado",
+      "Luísa Diogo",
+      "Engenheiro",
+      "Procuradoria-Geral da República",
+      "Alto Molócue"
+    ]
+  },
+  {
+    "id": 392,
+    "words": [
+      "Wazimbo",
+      "Carmim",
+      "Kanimambo",
+      "Forças Armadas de Defesa de Moçambique",
+      "Aeroporto"
+    ]
+  },
+  {
+    "id": 393,
+    "words": [
+      "Pascoal Mocumbi",
+      "Tete",
+      "Rosa",
+      "Ministério do Interior",
+      "Professor"
+    ]
+  },
+  {
+    "id": 394,
+    "words": [
+      "Serviço Nacional de Salvação Pública",
+      "Verde-Garrafa",
+      "José Craveirinha",
+      "Computador",
+      "Manhiça"
+    ]
+  },
+  {
+    "id": 395,
+    "words": [
+      "Instituto Nacional de Estatística",
+      "Beira",
+      "Azul-Celeste",
+      "Stewart Sukuma",
+      "Tubarão-Baleia"
+    ]
+  },
+  {
+    "id": 396,
+    "words": [
+      "Notariado de Moçambique",
+      "Fany Mpfumo",
+      "Amarelo",
+      "Torta de Banana",
+      "Ferroviário"
+    ]
+  },
+  {
+    "id": 397,
+    "words": [
+      "Administração Nacional de Estradas",
+      "Lavanda",
+      "Chamussa",
+      "Maria de Lurdes Mutola",
+      "Namaacha"
+    ]
+  },
+  {
+    "id": 398,
+    "words": [
+      "Alto Maé",
+      "Conselho de Ministros",
+      "Hipopótamo",
+      "Adriano Maleiane",
+      "Azul"
+    ]
+  },
+  {
+    "id": 399,
+    "words": [
+      "Gabinete do Primeiro-Ministro",
+      "Nhangau",
+      "Verde-Oliva",
+      "Dominguês Pelembe",
+      "Mocuba"
+    ]
+  },
+  {
+    "id": 400,
+    "words": [
+      "EDM (Electricidade de Moçambique)",
+      "Peixe Grelhado",
+      "Daviz Simango",
+      "Mafalala",
+      "Caramelo"
+    ]
+  },
+  {
+    "id": 401,
+    "words": [
+      "Praça da Independência",
+      "Armando Guebuza",
+      "Sommerschield",
+      "Forças Armadas de Defesa de Moçambique",
+      "Ciano"
+    ]
+  },
+  {
+    "id": 402,
+    "words": [
+      "Rio Zambeze",
+      "Serviço Nacional de Salvação Pública",
+      "Xigubo de Gaza",
+      "Lizha James",
+      "Prateado"
+    ]
+  },
+  {
+    "id": 403,
+    "words": [
+      "Gondola",
+      "Reinildo Mandava",
+      "Fúcsia",
+      "Ministério dos Negócios Estrangeiros e Cooperação",
+      "Ponte Maputo-Katembe"
+    ]
+  },
+  {
+    "id": 404,
+    "words": [
+      "Ministério da Saúde",
+      "Clube Maxaquene",
+      "Azul-Turquesa",
+      "Mavalane",
+      "Ossufo Momade"
+    ]
+  },
+  {
+    "id": 405,
+    "words": [
+      "Laylizzy",
+      "Txopela",
+      "CFM (Caminhos de Ferro de Moçambique)",
+      "Monte Binga",
+      "Creme"
+    ]
+  },
+  {
+    "id": 406,
+    "words": [
+      "Ministério da Indústria e Comércio",
+      "Telemóvel",
+      "Hulene",
+      "Marrom",
+      "Josina Machel"
+    ]
+  },
+  {
+    "id": 407,
+    "words": [
+      "Sebastião Marcos Mabote",
+      "Amarelo-Ouro",
+      "Leopardo",
+      "Maputo",
+      "Instituto Nacional de Saúde"
+    ]
+  },
+  {
+    "id": 408,
+    "words": [
+      "Bege",
+      "Inhambane",
+      "Marrabenta",
+      "Graça Machel",
+      "Polícia da República de Moçambique"
+    ]
+  },
+  {
+    "id": 409,
+    "words": [
+      "Zebra",
+      "Nampula",
+      "Samora Machel",
+      "Ministério do Trabalho e Segurança Social",
+      "Verde-Limão"
+    ]
+  },
+  {
+    "id": 410,
+    "words": [
+      "Relógio de Pulso",
+      "Índigo",
+      "Mr. Bow",
+      "Matola",
+      "Ministério da Ciência, Tecnologia e Ensino Superior"
+    ]
+  },
+  {
+    "id": 411,
+    "words": [
+      "T3",
+      "Presidência da República de Moçambique",
+      "Drone",
+      "Mia Couto",
+      "Castanho-Claro"
+    ]
+  },
+  {
+    "id": 412,
+    "words": [
+      "Xipamanine",
+      "Noémia de Sousa",
+      "Chapa 100",
+      "Gabinete do Primeiro-Ministro",
+      "Mostarda"
+    ]
+  },
+  {
+    "id": 413,
+    "words": [
+      "Castanho",
+      "Tribunal Administrativo",
+      "Desportivo de Maputo",
+      "Parque Nacional do Limpopo",
+      "Moreira Chonguiça"
+    ]
+  },
+  {
+    "id": 414,
+    "words": [
+      "Ministério do Mar, Águas Interiores e Pescas",
+      "Caril de Amendoim",
+      "Samora Machel Júnior",
+      "Gorongosa",
+      "Preto"
+    ]
+  },
+  {
+    "id": 415,
+    "words": [
+      "Instituto Nacional de Estatística",
+      "Quelimane",
+      "Pérola",
+      "Camarão Tigre",
+      "Chiquinho Conde"
+    ]
+  },
+  {
+    "id": 416,
+    "words": [
+      "Dondo",
+      "Eduardo Silva Nihia",
+      "Caril de Camarão",
+      "Branco",
+      "Tribunal Supremo de Moçambique"
+    ]
+  },
+  {
+    "id": 417,
+    "words": [
+      "Conselho Constitucional",
+      "Tico-Tico Bucuane",
+      "Marfim",
+      "Médico",
+      "Marromeu"
+    ]
+  },
+  {
+    "id": 418,
+    "words": [
+      "Estádio da Machava",
+      "Lago Niassa",
+      "Malangatana Ngwenya",
+      "Roxo",
+      "Conselho de Ministros"
+    ]
+  },
+  {
+    "id": 419,
+    "words": [
+      "Venâncio Mondlane",
+      "Computador",
+      "Autoridade Tributária de Moçambique",
+      "Manica",
+      "Verde-Água"
+    ]
+  },
+  {
+    "id": 420,
+    "words": [
+      "Dukani",
+      "Tete",
+      "Alice Mabota",
+      "Bronze",
+      "Serviço Nacional de Investigação Criminal"
+    ]
+  },
+  {
+    "id": 421,
+    "words": [
+      "Conservatória do Registo Civil",
+      "Carlos Agostinho do Rosário",
+      "Nhangau",
+      "Castanho",
+      "Zavala"
+    ]
+  },
+  {
+    "id": 422,
+    "words": [
+      "Boane",
+      "Preto",
+      "Ministério da Justiça, Assuntos Constitucionais e Religiosos",
+      "Castanha de Caju",
+      "Dama do Bling"
+    ]
+  },
+  {
+    "id": 423,
+    "words": [
+      "Caia",
+      "Ministério do Interior",
+      "Mingas",
+      "Ferroviário de Maputo",
+      "Lavanda"
+    ]
+  },
+  {
+    "id": 424,
+    "words": [
+      "Tartaruga Marinha",
+      "Secretaria de Estado do Desporto",
+      "Magenta",
+      "Costa do Sol",
+      "Afonso Dhlakama"
+    ]
+  },
+  {
+    "id": 425,
+    "words": [
+      "Machava",
+      "Branco",
+      "Hernâni da Silva",
+      "Ministério dos Combatentes",
+      "Caril de Caranguejo"
+    ]
+  },
+  {
+    "id": 426,
+    "words": [
+      "Inhambane",
+      "Esperança Bias",
+      "Batuque",
+      "Carmim",
+      "Ministério da Economia e Finanças"
+    ]
+  },
+  {
+    "id": 427,
+    "words": [
+      "Paulina Chiziane",
+      "Malhangalene",
+      "Ministério dos Recursos Minerais e Energia",
+      "Cinzento",
+      "Timbila Chope"
+    ]
+  },
+  {
+    "id": 428,
+    "words": [
+      "Eduardo Mondlane",
+      "Ministério do Género, Criança e Acção Social",
+      "Pescador",
+      "Moatize",
+      "Mostarda"
+    ]
+  },
+  {
+    "id": 429,
+    "words": [
+      "Marcelino dos Santos",
+      "Azul-Celeste",
+      "Elefante Africano",
+      "Ministério da Administração Estatal e Função Pública",
+      "Cidade de Maputo"
+    ]
+  },
+  {
+    "id": 430,
+    "words": [
+      "Instituto Nacional de Meteorologia",
+      "Azul-Marinho",
+      "Rio Limpopo",
+      "Xiguinha de Mandioca",
+      "Janet Mondlane"
+    ]
+  },
+  {
+    "id": 431,
+    "words": [
+      "Ponta do Ouro",
+      "Ministério da Educação e Desenvolvimento Humano",
+      "Ocre",
+      "Geny Catamo",
+      "Badjia de Feijão"
+    ]
+  },
+  {
+    "id": 432,
+    "words": [
+      "Ilha de Moçambique",
+      "Bicicleta",
+      "Verde",
+      "EDM (Electricidade de Moçambique)",
+      "Julia Duarte"
+    ]
+  },
+  {
+    "id": 433,
+    "words": [
+      "Estação Central dos CFM",
+      "Daniel Chapo",
+      "Turquesa",
+      "Praia do Tofo",
+      "Banco de Moçambique"
+    ]
+  },
+  {
+    "id": 434,
+    "words": [
+      "G2",
+      "Zimpeto",
+      "Chitenge",
+      "Imprensa Nacional de Moçambique",
+      "Amarelo-Ouro"
+    ]
+  },
+  {
+    "id": 435,
+    "words": [
+      "Rio Incomáti",
+      "Piloto de Avião",
+      "Twenty Fingers",
+      "Ministério da Cultura e Turismo",
+      "Verde-Garrafa"
+    ]
+  },
+  {
+    "id": 436,
+    "words": [
+      "Salomão Moyana",
+      "Avião",
+      "Assembleia da República",
+      "Rio Save",
+      "Vinho"
+    ]
+  },
+  {
+    "id": 437,
+    "words": [
+      "Prateado",
+      "Mota",
+      "Fundo de Estradas",
+      "Mahotas",
+      "Joaquim Chissano"
+    ]
+  },
+  {
+    "id": 438,
+    "words": [
+      "Champanhe",
+      "União Desportiva do Songo",
+      "Chamanculo",
+      "Administração Nacional de Estradas",
+      "Carlos Cardoso"
+    ]
+  },
+  {
+    "id": 439,
+    "words": [
+      "Ministério das Obras Públicas, Habitação e Recursos Hídricos",
+      "Filipe Nyusi",
+      "Barco",
+      "Benfica",
+      "Amarelo-Torrado"
+    ]
+  },
+  {
+    "id": 440,
+    "words": [
+      "Valter Artístico",
+      "Comissão Nacional de Eleições",
+      "Creme",
+      "Marracuene",
+      "Lobo do Mar"
+    ]
+  },
+  {
+    "id": 441,
+    "words": [
+      "Liberdade",
+      "Terracota",
+      "Instituto Nacional de Gestão de Desastres",
+      "Adriano Maleiane",
+      "Mukhero"
+    ]
+  },
+  {
+    "id": 442,
+    "words": [
+      "Valter Artístico",
+      "Secretaria de Estado da Juventude e Emprego",
+      "Rio Rovuma",
+      "Amarelo",
+      "Leão da Gorongosa"
+    ]
+  },
+  {
+    "id": 443,
+    "words": [
+      "Malanga",
+      "Direcção Nacional de Identificação Civil",
+      "Búfalo",
+      "Marrom",
+      "Ziqo"
+    ]
+  },
+  {
+    "id": 444,
+    "words": [
+      "Chimoio",
+      "Verde-Esmeralda",
+      "Ministério da Agricultura e Desenvolvimento Rural",
+      "Dugongo de Bazaruto",
+      "Samora Machel Júnior"
+    ]
+  },
+  {
+    "id": 445,
+    "words": [
+      "Ministério dos Transportes e Comunicações",
+      "Búzi",
+      "Feijoada Moçambicana",
+      "G2",
+      "Castanho-Escuro"
+    ]
+  },
+  {
+    "id": 446,
+    "words": [
+      "Girafa",
+      "Secretariado Técnico de Administração Eleitoral",
+      "Macaneta",
+      "Marfim",
+      "Moreira Chonguiça"
+    ]
+  },
+  {
+    "id": 447,
+    "words": [
+      "Rio Púngoè",
+      "Estádio Nacional do Zimpeto",
+      "Verde-Água",
+      "Sebastião Marcos Mabote",
+      "Notariado de Moçambique"
+    ]
+  },
+  {
+    "id": 448,
+    "words": [
+      "Venâncio Mondlane",
+      "Xai-Xai",
+      "Ponte Samora Machel (Tete)",
+      "Ministério da Defesa Nacional",
+      "Grafite"
+    ]
+  },
+  {
+    "id": 449,
+    "words": [
+      "Tubarão-Baleia",
+      "Cuamba",
+      "Ministério da Terra e Ambiente",
+      "Laranja",
+      "Dominguês Pelembe"
+    ]
+  },
+  {
+    "id": 450,
+    "words": [
+      "Nacala",
+      "Maheu",
+      "Caramelo",
+      "Procuradoria-Geral da República",
+      "Salomão Moyana"
+    ]
+  },
+  {
+    "id": 451,
+    "words": [
+      "Dança Mapiko",
+      "Paulina Chiziane",
+      "Zambézia",
+      "Procuradoria-Geral da República",
+      "Azul-Turquesa"
+    ]
+  },
+  {
+    "id": 452,
+    "words": [
+      "Laulane",
+      "Cobre",
+      "Carlos Agostinho do Rosário",
+      "Instituto Nacional de Estatística",
+      "Comboio"
+    ]
+  },
+  {
+    "id": 453,
+    "words": [
+      "Tribunal Supremo de Moçambique",
+      "Torta de Banana",
+      "Chiquinho Conde",
+      "Angoche",
+      "Vermelho-Escarlate"
+    ]
+  },
+  {
+    "id": 454,
+    "words": [
+      "Fomento",
+      "Engenheiro",
+      "Neyma",
+      "Anil",
+      "CFM (Caminhos de Ferro de Moçambique)"
+    ]
+  },
+  {
+    "id": 455,
+    "words": [
+      "Cinza-Chumbo",
+      "Forças Armadas de Defesa de Moçambique",
+      "Kanimambo",
+      "Sofala",
+      "Stewart Sukuma"
+    ]
+  },
+  {
+    "id": 456,
+    "words": [
+      "Peixe Grelhado",
+      "Ministério da Agricultura e Desenvolvimento Rural",
+      "Ossufo Momade",
+      "Parque Nacional da Gorongosa",
+      "Castanho-Claro"
+    ]
+  },
+  {
+    "id": 457,
+    "words": [
+      "Maxaquene",
+      "Ministério do Interior",
+      "Mia Couto",
+      "Flamingo Rosa",
+      "Salmão"
+    ]
+  },
+  {
+    "id": 458,
+    "words": [
+      "Chita",
+      "Imprensa Nacional de Moçambique",
+      "Azul",
+      "Catandica",
+      "Daviz Simango"
+    ]
+  },
+  {
+    "id": 459,
+    "words": [
+      "Ministério do Género, Criança e Acção Social",
+      "Dourado",
+      "Karingana Wa Karingana",
+      "Albazine",
+      "Janet Mondlane"
+    ]
+  },
+  {
+    "id": 460,
+    "words": [
+      "EDM (Electricidade de Moçambique)",
+      "Tico-Tico Bucuane",
+      "Fortaleza de Maputo",
+      "Pemba",
+      "Vermelho"
+    ]
+  },
+  {
+    "id": 461,
+    "words": [
+      "Verde-Oliva",
+      "Mocímboa da Praia",
+      "Bombeiro",
+      "Gabinete do Primeiro-Ministro",
+      "Lizha James"
+    ]
+  },
+  {
+    "id": 462,
+    "words": [
+      "Bege",
+      "Twenty Fingers",
+      "Chamussa",
+      "Gaza",
+      "Conservatória do Registo Civil"
+    ]
+  },
+  {
+    "id": 463,
+    "words": [
+      "Rosa-Choque",
+      "Coop",
+      "Jardim Tunduru",
+      "Fundo de Estradas",
+      "Mingas"
+    ]
+  },
+  {
+    "id": 464,
+    "words": [
+      "Armando Guebuza",
+      "Piri-piri Moçambicano",
+      "Coral",
+      "Polana Caniço",
+      "Ministério das Obras Públicas, Habitação e Recursos Hídricos"
+    ]
+  },
+  {
+    "id": 465,
+    "words": [
+      "Lilás",
+      "Morrumbala",
+      "Black Bulls",
+      "Secretaria de Estado da Juventude e Emprego",
+      "Reinildo Mandava"
+    ]
+  },
+  {
+    "id": 466,
+    "words": [
+      "Luísa Diogo",
+      "Instituto Nacional de Gestão de Desastres",
+      "Azul-Petróleo",
+      "Montepuez",
+      "Televisão"
+    ]
+  },
+  {
+    "id": 467,
+    "words": [
+      "Pascoal Mocumbi",
+      "Amarelo-Canário",
+      "Palma",
+      "Secretaria de Estado do Desporto",
+      "Professor"
+    ]
+  },
+  {
+    "id": 468,
+    "words": [
+      "Mercado do Peixe",
+      "Púrpura",
+      "Marcelino dos Santos",
+      "Nampula",
+      "Polícia da República de Moçambique"
+    ]
+  },
+  {
+    "id": 469,
+    "words": [
+      "Mercado Janet",
+      "Verde-Limão",
+      "Noémia de Sousa",
+      "Secretariado Técnico de Administração Eleitoral",
+      "Bilene"
+    ]
+  },
+  {
+    "id": 470,
+    "words": [
+      "Mercado Central de Maputo",
+      "Chókwè",
+      "Fúcsia",
+      "Ministério da Justiça, Assuntos Constitucionais e Religiosos",
+      "Eduardo Mondlane"
+    ]
+  },
+  {
+    "id": 471,
+    "words": [
+      "Ponta do Ouro",
+      "Ucanhe de Canhu",
+      "Índigo",
+      "Ministério dos Transportes e Comunicações",
+      "Graça Machel"
+    ]
+  },
+  {
+    "id": 472,
+    "words": [
+      "Roxo",
+      "Maria de Lurdes Mutola",
+      "Hipopótamo",
+      "Nampula",
+      "Ministério da Ciência, Tecnologia e Ensino Superior"
+    ]
+  },
+  {
+    "id": 473,
+    "words": [
+      "Rio Licungo",
+      "Ministério do Trabalho e Segurança Social",
+      "Dança Tufo",
+      "Geny Catamo",
+      "Violeta"
+    ]
+  },
+  {
+    "id": 474,
+    "words": [
+      "Notariado de Moçambique",
+      "Rosa",
+      "Galinha à Zambeziana",
+      "Alice Mabota",
+      "Matola"
+    ]
+  },
+  {
+    "id": 475,
+    "words": [
+      "Ministério da Saúde",
+      "Benfica",
+      "Makhewa",
+      "Pérola",
+      "Esperança Bias"
+    ]
+  },
+  {
+    "id": 476,
+    "words": [
+      "Coop",
+      "Ferroviário da Beira",
+      "Ciano",
+      "Josina Machel",
+      "Ministério dos Negócios Estrangeiros e Cooperação"
+    ]
+  },
+  {
+    "id": 477,
+    "words": [
+      "Mr. Bow",
+      "Aeroporto",
+      "Administração Nacional de Estradas",
+      "Capulana",
+      "Verde-Musgo"
+    ]
+  },
+  {
+    "id": 478,
+    "words": [
+      "Eusébio da Silva Ferreira",
+      "Conselho de Ministros",
+      "Hulene",
+      "Pão com Badjia",
+      "Bordeaux (Bordô)"
+    ]
+  },
+  {
+    "id": 479,
+    "words": [
+      "Rio Incomáti",
+      "Bronze",
+      "Rinoceronte",
+      "Laylizzy",
+      "Instituto Nacional de Meteorologia"
+    ]
+  },
+  {
+    "id": 480,
+    "words": [
+      "Prata",
+      "Assembleia da República",
+      "Hernâni da Silva",
+      "Rio Púngoè",
+      "Ponte Armando Guebuza"
+    ]
+  },
+  {
+    "id": 481,
+    "words": [
+      "Eduardo Silva Nihia",
+      "Verde-Esmeralda",
+      "Direcção Nacional de Identificação Civil",
+      "Clube Costa do Sol",
+      "Zimpeto"
+    ]
+  },
+  {
+    "id": 482,
+    "words": [
+      "Alberto Vaquina",
+      "Rio Rovuma",
+      "Matapa",
+      "Serviço Nacional de Investigação Criminal",
+      "Índigo"
+    ]
+  },
+  {
+    "id": 483,
+    "words": [
+      "Ministério da Defesa Nacional",
+      "Castanho",
+      "Caia",
+      "Xima",
+      "Samora Machel"
+    ]
+  },
+  {
+    "id": 484,
+    "words": [
+      "Crocodilo do Nilo",
+      "Filipe Nyusi",
+      "T3",
+      "Turquesa",
+      "Presidência da República de Moçambique"
+    ]
+  },
+  {
+    "id": 485,
+    "words": [
+      "Polícia de Trânsito",
+      "Tribunal Administrativo",
+      "Sommerschield",
+      "Afonso Dhlakama",
+      "Verde"
+    ]
+  },
+  {
+    "id": 486,
+    "words": [
+      "Sura de Palmeira",
+      "Amarelo",
+      "Tete",
+      "Serviço Nacional de Salvação Pública",
+      "Dama do Bling"
+    ]
+  },
+  {
+    "id": 487,
+    "words": [
+      "Grafite",
+      "Carlos Cardoso",
+      "Makwayela",
+      "Liberdade",
+      "Conselho Constitucional"
+    ]
+  },
+  {
+    "id": 488,
+    "words": [
+      "Joaquim Chissano",
+      "Mahotas",
+      "Marrom",
+      "Mambas (Selecção Nacional)",
+      "Ministério da Economia e Finanças"
+    ]
+  },
+  {
+    "id": 489,
+    "words": [
+      "Dourado",
+      "Praça dos Heróis Moçambicanos",
+      "Ministério dos Recursos Minerais e Energia",
+      "Malangatana Ngwenya",
+      "Inhambane"
+    ]
+  },
+  {
+    "id": 490,
+    "words": [
+      "Mucapata",
+      "Banco de Moçambique",
+      "Lavanda",
+      "Fany Mpfumo",
+      "Marromeu"
+    ]
+  },
+  {
+    "id": 491,
+    "words": [
+      "Julia Duarte",
+      "Cobre",
+      "Xitique",
+      "Ministério da Administração Estatal e Função Pública",
+      "Maputo"
+    ]
+  },
+  {
+    "id": 492,
+    "words": [
+      "Autoridade Tributária de Moçambique",
+      "Pemba",
+      "José Craveirinha",
+      "Branco",
+      "Casa de Ferro"
+    ]
+  },
+  {
+    "id": 493,
+    "words": [
+      "Lutero Simango",
+      "Ciano",
+      "Comissão Nacional de Eleições",
+      "Moatize",
+      "Magaíza"
+    ]
+  },
+  {
+    "id": 494,
+    "words": [
+      "Catedral de Maputo",
+      "Verde-Água",
+      "Búzi",
+      "Wazimbo",
+      "Ministério dos Combatentes"
+    ]
+  },
+  {
+    "id": 495,
+    "words": [
+      "Mostarda",
+      "Ministério da Indústria e Comércio",
+      "Gondola",
+      "Daniel Chapo",
+      "Pandza"
+    ]
+  },
+  {
+    "id": 496,
+    "words": [
+      "Fany Mpfumo",
+      "Preto",
+      "Gurúè",
+      "Golfinho",
+      "Ministério da Cultura e Turismo"
+    ]
+  },
+  {
+    "id": 497,
+    "words": [
+      "Quelimane",
+      "Paulina Chiziane",
+      "Púrpura",
+      "Ponte Kassuende",
+      "Ministério da Educação e Desenvolvimento Humano"
+    ]
+  },
+  {
+    "id": 498,
+    "words": [
+      "Azul",
+      "Joaquim Chissano",
+      "Ministério do Mar, Águas Interiores e Pescas",
+      "Boane",
+      "Arroz de Coco"
+    ]
+  },
+  {
+    "id": 499,
+    "words": [
+      "Carlos Agostinho do Rosário",
+      "Xai-Xai",
+      "Ocre",
+      "Ministério da Terra e Ambiente",
+      "Advogado"
+    ]
+  },
+  {
+    "id": 500,
+    "words": [
+      "Vilankulo",
+      "Dumba Nengue",
+      "Afonso Dhlakama",
+      "Rosa-Choque",
+      "Instituto Nacional de Saúde"
+    ]
+  },
+  {
+    "id": 501,
+    "words": [
+      "Administração Nacional de Estradas",
+      "Cinza-Chumbo",
+      "Munhuana",
+      "Geny Catamo",
+      "Estação Central dos CFM"
+    ]
+  },
+  {
+    "id": 502,
+    "words": [
+      "Fundo de Estradas",
+      "Mavalane",
+      "Salomão Moyana",
+      "Prateado",
+      "Ferroviário de Maputo"
+    ]
+  },
+  {
+    "id": 503,
+    "words": [
+      "Ponte Kassuende",
+      "Vinho",
+      "Praia do Tofo",
+      "Stewart Sukuma",
+      "Imprensa Nacional de Moçambique"
+    ]
+  },
+  {
+    "id": 504,
+    "words": [
+      "Monte Binga",
+      "Bronze",
+      "Eusébio da Silva Ferreira",
+      "Bicicleta",
+      "Instituto Nacional de Estatística"
+    ]
+  },
+  {
+    "id": 505,
+    "words": [
+      "Makhewa",
+      "Zavala",
+      "Pascoal Mocumbi",
+      "Bege",
+      "Instituto Nacional de Meteorologia"
+    ]
+  },
+  {
+    "id": 506,
+    "words": [
+      "Magaíza",
+      "Fúcsia",
+      "Comissão Nacional de Eleições",
+      "Esperança Bias",
+      "Namaacha"
+    ]
+  },
+  {
+    "id": 507,
+    "words": [
+      "Terracota",
+      "Ministério da Economia e Finanças",
+      "Capulana",
+      "Graça Machel",
+      "Rio Save"
+    ]
+  },
+  {
+    "id": 508,
+    "words": [
+      "Mukhero",
+      "Cuamba",
+      "Forças Armadas de Defesa de Moçambique",
+      "Bordeaux (Bordô)",
+      "Sebastião Marcos Mabote"
+    ]
+  },
+  {
+    "id": 509,
+    "words": [
+      "Timbila Chope",
+      "CFM (Caminhos de Ferro de Moçambique)",
+      "Coral",
+      "Manica",
+      "Janet Mondlane"
+    ]
+  },
+  {
+    "id": 510,
+    "words": [
+      "Arquipélago de Bazaruto",
+      "Chamussa",
+      "Ministério dos Transportes e Comunicações",
+      "Carmim",
+      "Mr. Bow"
+    ]
+  },
+  {
+    "id": 511,
+    "words": [
+      "Txopela",
+      "Amarelo-Torrado",
+      "Nampula",
+      "EDM (Electricidade de Moçambique)",
+      "Dominguês Pelembe"
+    ]
+  },
+  {
+    "id": 512,
+    "words": [
+      "Rosa",
+      "Daviz Simango",
+      "Alto Maé",
+      "Ministério da Terra e Ambiente",
+      "Dança Mapiko"
+    ]
+  },
+  {
+    "id": 513,
+    "words": [
+      "Malhangalene",
+      "Azul-Petróleo",
+      "Samora Machel Júnior",
+      "Direcção Nacional de Identificação Civil",
+      "Estádio Nacional do Zimpeto"
+    ]
+  },
+  {
+    "id": 514,
+    "words": [
+      "Lago Niassa",
+      "Venâncio Mondlane",
+      "Arroz de Coco",
+      "Anil",
+      "Ministério dos Combatentes"
+    ]
+  },
+  {
+    "id": 515,
+    "words": [
+      "Daniel Chapo",
+      "Parque Nacional do Limpopo",
+      "Rinoceronte",
+      "Ministério do Interior",
+      "Caramelo"
+    ]
+  },
+  {
+    "id": 516,
+    "words": [
+      "Ministério da Saúde",
+      "Dama do Bling",
+      "Peixe Grelhado",
+      "Catandica",
+      "Castanho-Claro"
+    ]
+  },
+  {
+    "id": 517,
+    "words": [
+      "Wazimbo",
+      "Flamingo Rosa",
+      "Verde-Musgo",
+      "Notariado de Moçambique",
+      "Bilene"
+    ]
+  },
+  {
+    "id": 518,
+    "words": [
+      "Autoridade Tributária de Moçambique",
+      "Tartaruga Marinha",
+      "Palma",
+      "Twenty Fingers",
+      "Azul-Turquesa"
+    ]
+  },
+  {
+    "id": 519,
+    "words": [
+      "Computador",
+      "Conselho Constitucional",
+      "Chókwè",
+      "Violeta",
+      "Armando Guebuza"
+    ]
+  },
+  {
+    "id": 520,
+    "words": [
+      "Hernâni da Silva",
+      "Polana Cimento",
+      "Prata",
+      "Chita",
+      "Ministério do Trabalho e Segurança Social"
+    ]
+  },
+  {
+    "id": 521,
+    "words": [
+      "Mucapata",
+      "Ministério do Mar, Águas Interiores e Pescas",
+      "Magenta",
+      "Maputo Província",
+      "Noémia de Sousa"
+    ]
+  },
+  {
+    "id": 522,
+    "words": [
+      "Valter Artístico",
+      "Salmão",
+      "Secretaria de Estado do Desporto",
+      "Hipopótamo",
+      "Ilha de Moçambique"
+    ]
+  },
+  {
+    "id": 523,
+    "words": [
+      "Chamanculo",
+      "Ministério da Ciência, Tecnologia e Ensino Superior",
+      "Luísa Diogo",
+      "Amarelo-Canário",
+      "Makwayela"
+    ]
+  },
+  {
+    "id": 524,
+    "words": [
+      "Verde-Garrafa",
+      "Chibuto",
+      "Samora Machel",
+      "Ministério da Educação e Desenvolvimento Humano",
+      "União Desportiva do Songo"
+    ]
+  },
+  {
+    "id": 525,
+    "words": [
+      "Caril de Amendoim",
+      "Marcelino dos Santos",
+      "Lilás",
+      "Ministério dos Negócios Estrangeiros e Cooperação",
+      "Costa do Sol"
+    ]
+  },
+  {
+    "id": 526,
+    "words": [
+      "Banco de Moçambique",
+      "Chiquinho Conde",
+      "Ponte Maputo-Katembe",
+      "Castanho-Escuro",
+      "Manhiça"
+    ]
+  },
+  {
+    "id": 527,
+    "words": [
+      "Reinildo Mandava",
+      "Amarelo-Ouro",
+      "Fomento",
+      "Ministério da Cultura e Turismo",
+      "Praça dos Heróis Moçambicanos"
+    ]
+  },
+  {
+    "id": 528,
+    "words": [
+      "Pérola",
+      "Conservatória do Registo Civil",
+      "Niassa",
+      "Alice Mabota",
+      "Comboio"
+    ]
+  },
+  {
+    "id": 529,
+    "words": [
+      "Gabinete do Primeiro-Ministro",
+      "Parque Nacional da Gorongosa",
+      "Champanhe",
+      "Médico",
+      "Laylizzy"
+    ]
+  },
+  {
+    "id": 530,
+    "words": [
+      "Vermelho-Escarlate",
+      "Eduardo Silva Nihia",
+      "Ministério do Género, Criança e Acção Social",
+      "Batuque",
+      "Inhambane"
+    ]
+  },
+  {
+    "id": 531,
+    "words": [
+      "Tribunal Supremo de Moçambique",
+      "Clube Costa do Sol",
+      "Nacala",
+      "Verde-Limão",
+      "Lutero Simango"
+    ]
+  },
+  {
+    "id": 532,
+    "words": [
+      "Serviço Nacional de Salvação Pública",
+      "Clube Maxaquene",
+      "Roxo",
+      "Mingas",
+      "Marracuene"
+    ]
+  },
+  {
+    "id": 533,
+    "words": [
+      "Azul-Marinho",
+      "Desportivo de Maputo",
+      "Sofala",
+      "Secretariado Técnico de Administração Eleitoral",
+      "Ossufo Momade"
+    ]
+  },
+  {
+    "id": 534,
+    "words": [
+      "Filipe Nyusi",
+      "Mafalala",
+      "Creme",
+      "Mercado Janet",
+      "Procuradoria-Geral da República"
+    ]
+  },
+  {
+    "id": 535,
+    "words": [
+      "Engenheiro",
+      "Maria de Lurdes Mutola",
+      "Secretaria de Estado da Juventude e Emprego",
+      "Albufeira de Cahora Bassa",
+      "Cinzento"
+    ]
+  },
+  {
+    "id": 536,
+    "words": [
+      "Maxixe",
+      "Vermelho",
+      "Moreira Chonguiça",
+      "Ministério da Agricultura e Desenvolvimento Rural",
+      "Girafa"
+    ]
+  },
+  {
+    "id": 537,
+    "words": [
+      "Josina Machel",
+      "Ministério das Obras Públicas, Habitação e Recursos Hídricos",
+      "Estádio da Machava",
+      "Gaza",
+      "Laranja"
+    ]
+  },
+  {
+    "id": 538,
+    "words": [
+      "Polícia da República de Moçambique",
+      "Albazine",
+      "Karingana Wa Karingana",
+      "Carlos Cardoso",
+      "Marfim"
+    ]
+  },
+  {
+    "id": 539,
+    "words": [
+      "José Craveirinha",
+      "Verde-Oliva",
+      "Macaneta",
+      "Serviço Nacional de Investigação Criminal",
+      "Badjia de Feijão"
+    ]
+  },
+  {
+    "id": 540,
+    "words": [
+      "Eduardo Mondlane",
+      "Ministério da Indústria e Comércio",
+      "Laulane",
+      "Catedral de Maputo",
+      "Azul-Celeste"
+    ]
+  },
+  {
+    "id": 541,
+    "words": [
+      "G2",
+      "Ministério da Defesa Nacional",
+      "Verde-Água",
+      "Chitenge",
+      "Montepuez"
+    ]
+  },
+  {
+    "id": 542,
+    "words": [
+      "Rio Limpopo",
+      "Instituto Nacional de Gestão de Desastres",
+      "Fortaleza de Maputo",
+      "Dourado",
+      "Julia Duarte"
+    ]
+  },
+  {
+    "id": 543,
+    "words": [
+      "Neyma",
+      "Mocímboa da Praia",
+      "Búfalo",
+      "Pérola",
+      "Tribunal Administrativo"
+    ]
+  },
+  {
+    "id": 544,
+    "words": [
+      "Vinho",
+      "Ministério da Justiça, Assuntos Constitucionais e Religiosos",
+      "Ferroviário",
+      "Adriano Maleiane",
+      "Mambas (Selecção Nacional)"
+    ]
+  },
+  {
+    "id": 545,
+    "words": [
+      "Verde-Limão",
+      "Tico-Tico Bucuane",
+      "Ministério dos Recursos Minerais e Energia",
+      "Kanimambo",
+      "Machava"
+    ]
+  },
+  {
+    "id": 546,
+    "words": [
+      "Professor",
+      "Instituto Nacional de Saúde",
+      "Verde-Garrafa",
+      "Morrumbala",
+      "Alberto Vaquina"
+    ]
+  },
+  {
+    "id": 547,
+    "words": [
+      "Ziqo",
+      "Tete",
+      "Presidência da República de Moçambique",
+      "Drone",
+      "Carmim"
+    ]
+  },
+  {
+    "id": 548,
+    "words": [
+      "Malangatana Ngwenya",
+      "Azul-Turquesa",
+      "Ministério da Administração Estatal e Função Pública",
+      "Camarão Tigre",
+      "Malanga"
+    ]
+  },
+  {
+    "id": 549,
+    "words": [
+      "Nhangau",
+      "Marfim",
+      "Xipamanine",
+      "Conselho de Ministros",
+      "Lizha James"
+    ]
+  },
+  {
+    "id": 550,
+    "words": [
+      "Assembleia da República",
+      "Vermelho",
+      "Lichinga",
+      "Avião",
+      "Mia Couto"
+    ]
+  },
+  {
+    "id": 551,
+    "words": [
+      "Terracota",
+      "Paulina Chiziane",
+      "Dondo",
+      "Ponte Samora Machel (Tete)",
+      "Polícia da República de Moçambique"
+    ]
+  },
+  {
+    "id": 552,
+    "words": [
+      "Violeta",
+      "Forças Armadas de Defesa de Moçambique",
+      "Polana Caniço",
+      "Casa de Ferro",
+      "Moreira Chonguiça"
+    ]
+  },
+  {
+    "id": 553,
+    "words": [
+      "Verde",
+      "Wazimbo",
+      "Galinha à Zambeziana",
+      "Tribunal Administrativo",
+      "Beira"
+    ]
+  },
+  {
+    "id": 554,
+    "words": [
+      "Angoche",
+      "Direcção Nacional de Identificação Civil",
+      "Xitique",
+      "Carlos Agostinho do Rosário",
+      "Azul-Marinho"
+    ]
+  },
+  {
+    "id": 555,
+    "words": [
+      "Afonso Dhlakama",
+      "Cabo Delgado",
+      "Conservatória do Registo Civil",
+      "Televisão",
+      "Magenta"
+    ]
+  },
+  {
+    "id": 556,
+    "words": [
+      "Noémia de Sousa",
+      "Feijoada Moçambicana",
+      "Cidade de Maputo",
+      "Castanho",
+      "Ministério das Obras Públicas, Habitação e Recursos Hídricos"
+    ]
+  },
+  {
+    "id": 557,
+    "words": [
+      "Gorongosa",
+      "Comissão Nacional de Eleições",
+      "Graça Machel",
+      "Champanhe",
+      "Advogado"
+    ]
+  },
+  {
+    "id": 558,
+    "words": [
+      "Maxaquene",
+      "Caril de Camarão",
+      "Lutero Simango",
+      "Ministério da Cultura e Turismo",
+      "Bordeaux (Bordô)"
+    ]
+  },
+  {
+    "id": 559,
+    "words": [
+      "Chiquinho Conde",
+      "Ministério da Saúde",
+      "Verde-Musgo",
+      "Dança Tufo",
+      "Alto Molócue"
+    ]
+  },
+  {
+    "id": 560,
+    "words": [
+      "Venâncio Mondlane",
+      "Ministério dos Combatentes",
+      "Chimoio",
+      "Piloto de Avião",
+      "Amarelo"
+    ]
+  },
+  {
+    "id": 561,
+    "words": [
+      "Jardim",
+      "Ministério do Trabalho e Segurança Social",
+      "Julia Duarte",
+      "Dukani",
+      "Roxo"
+    ]
+  },
+  {
+    "id": 562,
+    "words": [
+      "Marcelino dos Santos",
+      "Imprensa Nacional de Moçambique",
+      "Tubarão-Baleia",
+      "Rio Zambeze",
+      "Amarelo-Ouro"
+    ]
+  },
+  {
+    "id": 563,
+    "words": [
+      "Ponte Armando Guebuza",
+      "Reinildo Mandava",
+      "Zambézia",
+      "Secretariado Técnico de Administração Eleitoral",
+      "Verde-Oliva"
+    ]
+  },
+  {
+    "id": 564,
+    "words": [
+      "G2",
+      "Mocuba",
+      "Elefante Africano",
+      "Serviço Nacional de Investigação Criminal",
+      "Ciano"
+    ]
+  },
+  {
+    "id": 565,
+    "words": [
+      "Índigo",
+      "Ministério da Defesa Nacional",
+      "Relógio de Pulso",
+      "Luísa Diogo",
+      "Parque Nacional da Gorongosa"
+    ]
+  },
+  {
+    "id": 566,
+    "words": [
+      "Dumba Nengue",
+      "Ocre",
+      "Vilankulo",
+      "Autoridade Tributária de Moçambique",
+      "Samora Machel Júnior"
+    ]
+  },
+  {
+    "id": 567,
+    "words": [
+      "Xipamanine",
+      "Banco de Moçambique",
+      "Jardim Tunduru",
+      "Eduardo Mondlane",
+      "Branco"
+    ]
+  },
+  {
+    "id": 568,
+    "words": [
+      "Rio Licungo",
+      "Rosa-Choque",
+      "Instituto Nacional de Saúde",
+      "Maheu",
+      "Geny Catamo"
+    ]
+  },
+  {
+    "id": 569,
+    "words": [
+      "José Craveirinha",
+      "Fundo de Estradas",
+      "Praça da Independência",
+      "Grafite",
+      "Malhangalene"
+    ]
+  },
+  {
+    "id": 570,
+    "words": [
+      "Secretaria de Estado da Juventude e Emprego",
+      "Ferroviário da Beira",
+      "Rosa",
+      "Alto Molócue",
+      "Neyma"
+    ]
+  }
+]
