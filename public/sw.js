@@ -1,4 +1,4 @@
-const CACHE_NAME = 'kanet-cache-v15';
+const CACHE_NAME = 'kanet-cache-v16';
 const ASSETS = [
   '/',
   '/index.html',
@@ -6,6 +6,8 @@ const ASSETS = [
   '/app.js',
   '/qrcode.min.js',
   '/words.json',
+  '/words_tj.json',
+  '/words_normal.json',
   '/logo.png',
   '/favicon.png',
   '/manifest.json',
