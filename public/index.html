@@ -10,11 +10,11 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="color-scheme" content="dark">
   <title>Ka'Net diversões — O Jogo das Equipas</title>
-  <link rel="icon" type="image/png" href="favicon.png?v=15">
-  <link rel="shortcut icon" type="image/png" href="favicon.png?v=15">
-  <link rel="apple-touch-icon" href="favicon.png?v=15">
-  <link rel="manifest" href="manifest.json?v=15">
-  <link rel="stylesheet" href="style.css?v=15">
+  <link rel="icon" type="image/png" href="favicon.png?v=16">
+  <link rel="shortcut icon" type="image/png" href="favicon.png?v=16">
+  <link rel="apple-touch-icon" href="favicon.png?v=16">
+  <link rel="manifest" href="manifest.json?v=16">
+  <link rel="stylesheet" href="style.css?v=16">
   <!-- Fonte Premium de Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -136,6 +136,19 @@
             </div>
           </div>
 
+          <!-- SELETOR DO MODO DE JOGO / BARALHO DE CARTAS -->
+          <div class="host-only hidden settings-wrapper form-group">
+            <label style="margin-bottom: 10px; display: block; font-weight: 700;">📚 Baralho de Cartas / Modo de Jogo:</label>
+            <div class="dice-mode-toggle">
+              <button id="btn-mode-tj" class="btn btn-mode active" onclick="setGameDeckMode('tj')">
+                🕊️ Modo TJ<br><small>Testemunhas de Jeová</small>
+              </button>
+              <button id="btn-mode-normal" class="btn btn-mode" onclick="setGameDeckMode('normal')">
+                🇲🇿 Modo Normal<br><small>Presidentes, Ministérios, Cores...</small>
+              </button>
+            </div>
+          </div>
+
           <!-- SELETOR DA EQUIPA DO ANFITRIÃO -->
           <div id="host-team-section" class="host-only hidden settings-wrapper form-group">
             <label style="margin-bottom: 6px; display: block; font-weight: 700;">👤 A sua Equipa neste dispositivo:</label>
@@ -163,6 +176,12 @@
           </div>
           <div class="player-only">
             <p class="waiting-message animate-pulse">A aguardar que o anfitrião inicie a partida...</p>
+          </div>
+
+          <!-- INDICADOR DO MODO DE JOGO ATIVO PARA TODOS NO LOBBY -->
+          <div class="mode-indicator-box">
+            <span class="mode-indicator-label">📖 Baralho Ativo:</span>
+            <strong id="display-game-mode" class="mode-indicator-value">🕊️ Modo TJ (Testemunhas de Jeová)</strong>
           </div>
 
           <!-- LISTA DE EQUIPAS E CONTAGEM DE MEMBROS -->
@@ -223,7 +242,8 @@
         <div id="game-score-board" class="mini-score-board">
           <!-- Gerado dinamicamente -->
         </div>
-        <div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span id="game-mode-header-badge" class="badge-mode-mini">🕊️ TJ</span>
           <span class="room-label">Sala: <strong id="game-room-id">-----</strong></span>
         </div>
       </header>
@@ -366,6 +386,7 @@
               <!-- Gerado dinamicamente: 🥇 🔵 Azul: 12 pts (15 acertos)... -->
             </div>
             <div class="ranking-bar-actions">
+              <span id="player-mode-chip" class="ranking-mode-chip">🕊️ TJ</span>
               <button id="btn-host-toggle-inbar" type="button" class="btn-ranking-host-toggle hidden" onclick="toggleHostView()">
                 👑 Árbitro
               </button>
@@ -579,6 +600,6 @@
 
   <!-- BIBLIOTECAS E SCRIPTS -->
   <script src="qrcode.min.js"></script>
-  <script src="app.js"></script>
+  <script src="app.js?v=16"></script>
 </body>
 </html>
