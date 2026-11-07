@@ -771,6 +771,9 @@ function handleServerMessage(message) {
       playerName = 'Você (Anfitrião)';
       playerTeam = payload.team || 'Azul';
       gameState = payload.gameState;
+      if (gameState && gameState.gameMode) {
+        gameDeckMode = gameState.gameMode;
+      }
       
       saveSession();
       showScreen('lobbyActive');
@@ -791,6 +794,9 @@ function handleServerMessage(message) {
 
     case 'STATE_UPDATE':
       gameState = payload.gameState;
+      if (gameState && gameState.gameMode) {
+        gameDeckMode = gameState.gameMode;
+      }
       if (typeof payload.isHost !== 'undefined') {
         isHost = payload.isHost;
       }
@@ -913,6 +919,23 @@ function updateLobbyUI() {
   } else {
     hostElements.forEach(el => el.classList.add('hidden'));
     playerElements.forEach(el => el.classList.remove('hidden'));
+  }
+
+  // Sincronizar UI do Baralho / Modo de Jogo
+  if (gameState && gameState.gameMode) {
+    gameDeckMode = gameState.gameMode;
+  }
+  const btnTJ = document.getElementById('btn-mode-tj');
+  const btnNormal = document.getElementById('btn-mode-normal');
+  if (btnTJ) btnTJ.classList.toggle('active', gameDeckMode === 'tj');
+  if (btnNormal) btnNormal.classList.toggle('active', gameDeckMode === 'normal');
+  const displayEl = document.getElementById('display-game-mode');
+  if (displayEl) {
+    if (gameDeckMode === 'normal') {
+      displayEl.innerHTML = '🇲🇿 <strong>Modo Normal</strong> (Presidentes, Ministérios, Cores, Cultura)';
+    } else {
+      displayEl.innerHTML = '🕊️ <strong>Modo TJ</strong> (Testemunhas de Jeová)';
+    }
   }
 
   // Desenhar QR Code offline
@@ -1038,6 +1061,38 @@ function shuffleTeams() {
   }));
 }
 
+// Baralho de cartas: 'tj' (Testemunhas de Jeová) ou 'normal' (Moçambique & Geral)
+let gameDeckMode = 'tj';
+
+function setGameDeckMode(mode) {
+  gameDeckMode = (mode === 'normal') ? 'normal' : 'tj';
+  const btnTJ = document.getElementById('btn-mode-tj');
+  const btnNormal = document.getElementById('btn-mode-normal');
+  if (btnTJ) btnTJ.classList.toggle('active', gameDeckMode === 'tj');
+  if (btnNormal) btnNormal.classList.toggle('active', gameDeckMode === 'normal');
+  
+  const displayEl = document.getElementById('display-game-mode');
+  if (displayEl) {
+    if (gameDeckMode === 'normal') {
+      displayEl.innerHTML = '🇲🇿 <strong>Modo Normal</strong> (Presidentes, Ministérios, Cores, Cultura)';
+    } else {
+      displayEl.innerHTML = '🕊️ <strong>Modo TJ</strong> (Testemunhas de Jeová)';
+    }
+  }
+
+  // Notificar servidor se conectado como anfitrião
+  if (socket && socket.readyState === WebSocket.OPEN && (role === 'host' || isHost)) {
+    socket.send(JSON.stringify({
+      type: 'UPDATE_TEAMS',
+      payload: {
+        gameMode: gameDeckMode
+      }
+    }));
+  }
+  sounds.playClick();
+}
+window.setGameDeckMode = setGameDeckMode;
+
 // Modo de dado: true = com penalização, false = sem dado
 let useDice = true;
 
@@ -1074,6 +1129,7 @@ function startGame() {
       targetScore: targetScore,
       useDice: useDice,
       autoHost: autoHost,
+      gameMode: gameDeckMode,
       namedMode: false  // Sempre sem nomes: equipa decide quem explica
     }
   }));
@@ -1144,6 +1200,32 @@ function syncGameScreen(isExplaining) {
   // Configurar cabeçalho global do jogo
   document.getElementById('game-room-id').innerText = roomId;
   document.getElementById('game-status-label').innerText = gameState.step === 'score_recap' ? 'RESUMO' : 'A JOGAR';
+  
+  // Atualizar emblema de modo de jogo (TJ vs Normal)
+  const currentMode = gameState.gameMode || 'tj';
+  const modeHeaderBadge = document.getElementById('game-mode-header-badge');
+  if (modeHeaderBadge) {
+    if (currentMode === 'normal') {
+      modeHeaderBadge.className = 'badge-mode-mini mode-normal';
+      modeHeaderBadge.innerHTML = '🇲🇿 NORMAL';
+      modeHeaderBadge.title = 'Modo Normal: Moçambique & Geral';
+    } else {
+      modeHeaderBadge.className = 'badge-mode-mini mode-tj';
+      modeHeaderBadge.innerHTML = '🕊️ TJ';
+      modeHeaderBadge.title = 'Modo TJ: Testemunhas de Jeová';
+    }
+  }
+
+  const playerModeChip = document.getElementById('player-mode-chip');
+  if (playerModeChip) {
+    if (currentMode === 'normal') {
+      playerModeChip.className = 'ranking-mode-chip mode-normal';
+      playerModeChip.innerHTML = '🇲🇿 Normal';
+    } else {
+      playerModeChip.className = 'ranking-mode-chip mode-tj';
+      playerModeChip.innerHTML = '🕊️ TJ';
+    }
+  }
   
   const scoreBoard = document.getElementById('game-score-board');
   scoreBoard.innerHTML = '';
