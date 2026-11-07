@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
@@ -348,6 +348,14 @@
     </div>
     <div class="panel-row">
       <div class="form-group">
+        <label for="select-deck">Baralho / Modo:</label>
+        <select id="select-deck" onchange="changeDeck()">
+          <option value="words_tj.json">🕊️ Modo TJ (Testemunhas de Jeová)</option>
+          <option value="words_normal.json">🇲🇿 Modo Normal (Presidentes, Ministérios, Cores...)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
         <label for="select-range">Intervalo de Cartas (285 Cartas Totais):</label>
         <select id="select-range" onchange="loadCards()">
           <option value="1-27">Cartas 1 a 27 (6 páginas A4: 3 Frente + 3 Verso)</option>
@@ -380,17 +388,27 @@
   <script>
     let allCards = [];
 
-    // Carregar o words.json
-    fetch('words.json')
-      .then(res => res.json())
-      .then(data => {
-        allCards = data;
-        loadCards();
-      })
-      .catch(err => {
-        console.error("Erro ao carregar words.json:", err);
-        document.getElementById('pages-container').innerHTML = "<p style='color:red;'>Erro ao carregar o ficheiro words.json. Certifique-se de que está a correr no servidor.</p>";
-      });
+    function fetchDeck(deckFile) {
+      document.getElementById('pages-container').innerHTML = "<p>A carregar base de dados de palavras...</p>";
+      fetch(deckFile)
+        .then(res => res.json())
+        .then(data => {
+          allCards = data;
+          loadCards();
+        })
+        .catch(err => {
+          console.error("Erro ao carregar baralho:", err);
+          document.getElementById('pages-container').innerHTML = `<p style='color:red;'>Erro ao carregar o ficheiro ${deckFile}. Certifique-se de que está a correr no servidor.</p>`;
+        });
+    }
+
+    function changeDeck() {
+      const file = document.getElementById('select-deck').value;
+      fetchDeck(file);
+    }
+
+    // Carregar o baralho inicial
+    fetchDeck('words_tj.json');
 
     function toggleStyle() {
       const style = document.getElementById('select-style').value;
