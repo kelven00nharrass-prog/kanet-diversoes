@@ -46,13 +46,47 @@ try {
 // Chave: cardKey (string: "tj_1", "normal_2", etc.), Valor: timestamp (ms)
 const usedCardLog = new Map();
 const TWENTY_FOUR_HOURS = 24 * 60 * 60 * 1000;
+const LOG_FILE_PATH = path.join(__dirname, 'used_cards_log.json');
+
+// Carregar histórico de cartas jogadas do disco se existir
+try {
+  if (fs.existsSync(LOG_FILE_PATH)) {
+    const rawData = JSON.parse(fs.readFileSync(LOG_FILE_PATH, 'utf-8'));
+    const now = Date.now();
+    for (const [key, ts] of Object.entries(rawData)) {
+      if (now - ts < TWENTY_FOUR_HOURS) {
+        usedCardLog.set(key, ts);
+      }
+    }
+    console.log(`Carregadas ${usedCardLog.size} cartas jogadas recentemente do histórico persistido.`);
+  }
+} catch (e) {
+  console.error("Aviso ao carregar used_cards_log.json:", e.message);
+}
+
+function saveUsedCardLog() {
+  try {
+    const obj = {};
+    for (const [key, ts] of usedCardLog.entries()) {
+      obj[key] = ts;
+    }
+    fs.writeFileSync(LOG_FILE_PATH, JSON.stringify(obj), 'utf-8');
+  } catch (e) {
+    // Silencioso se filesystem for temporariamente read-only
+  }
+}
 
 /** Remove do registo cartas jogadas há mais de 24h. */
 function purgeOldCards() {
   const now = Date.now();
+  let changed = false;
   for (const [cardKey, ts] of usedCardLog) {
-    if (now - ts > TWENTY_FOUR_HOURS) usedCardLog.delete(cardKey);
+    if (now - ts > TWENTY_FOUR_HOURS) {
+      usedCardLog.delete(cardKey);
+      changed = true;
+    }
   }
+  if (changed) saveUsedCardLog();
 }
 
 /** Devolve true se a carta já foi jogada nas últimas 24h em qualquer sala. */
@@ -65,6 +99,7 @@ function isCardUsedRecently(cardKey) {
 /** Marca uma carta como jogada agora. */
 function logCardUsed(cardKey) {
   usedCardLog.set(cardKey, Date.now());
+  saveUsedCardLog();
 }
 
 /** Constrói e baralha o baralho para a sala de acordo com o modo escolhido. */
